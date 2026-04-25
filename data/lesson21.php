@@ -1,15 +1,15 @@
-<!--lesson21.php-->
+<!-- lesson21.php — переработано в интерактивный Pascal-урок -->
 <div class="lesson">
 
-    <h2 class="text-primary mb-4">
-        Занятие 21. Язык программирования Паскаль. Ветвление 
+    <h2 class="text-primary mb-4">Занятие 21. Ветвление</h2>
 
-    </h2>
+<!-- intro -->
+<div class="alert alert-primary border-start border-primary border-4 fs-5 mb-4">
+    Условный оператор <code>if … then … else</code> позволяет программе принимать решения. Часто строит «развилку»: одно действие — если условие истинно, другое — если ложно.
+</div>
 
-    <!-- ==================================================
-     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
-     ================================================== -->
 
+    <!-- Задание 1: словарь (сохранён без изменений) -->
 <div class="card mb-5">
   <div class="card-header bg-light fw-bold fs-5">
     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
@@ -73,231 +73,158 @@
 </div>
 <!-- Конец задания 1 -->
 
-<!-- 2. Прочитайте текст -->
-<div class="card mb-5 border-primary">
-    <div class="card-header bg-primary text-white fw-bold">2. Прочитайте текст</div>
-    <div class="card-body fs-5 lh-lg">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Для программирования разветвляющихся алгоритмов в языке Паскаль
-существуют различные средства. К ним относятся условный оператор if…then…else
-и оператор выбора case…of.
-      Условный оператор. Формат условного оператора:
-      if выражение then
-            оператор1
-      else
-            оператор2;
+<!-- Теория -->
+<div class="card mb-4 border-info">
+    <div class="card-header bg-info text-white fw-bold">📖 Теория</div>
+    <div class="card-body">
+        
+        <h6 class="text-primary mt-3">Полное и неполное ветвление</h6>
+        <div class="pas-listing">
+            <pre><code>// Неполное: только then
+if условие then оператор;
 
-     Это полная форма условного оператора. Здесь выражение — это условие,
-которое содержит операции отношения и логические операции. Если значение этого
-выражения - не нуль (истина), то выполняется оператор1, если значение
-выражения - нуль (ложь), то выполняется оператор2.
-     Запомните!
-   1. Внутри условного оператора выражение не обязательно заключать в
-      скобки.
-   2. Если тело ветви состоит из одного оператора, скобки begin…end не нужны;
-      для нескольких операторов их используют
-   3. Для неполной формы условного оператора можно опустить else:
+// Полное: then и else
+if условие then оператор1
+          else оператор2;
 
-      Задача 1. Найти наибольшее из двух чисел.
-      В тексте занятия 11 были составлены две блок-схемы решения данной задачи -
-с помощью полной и неполной формы условного алгоритма (рис. 13). На основе
-этих блок-схем составим две программы решения данной задачи.
-Листинг 1_1.
-program MaxOfTwo;
-var
-      x, y, m: real;
+// Составной оператор: begin … end
+if условие then
 begin
-        ReadLn(x);        // ввод значения x
-        ReadLn(y);        // ввод значения y
-        if x &gt; y then
-              m := x
-        else
-              m := y;       // присваивание максимального значения
-
-        WriteLn(m);       // вывод максимального значения
-end.
-
-Листинг 1_2.
-program MaxOfTwo;
-var
-      x, y, m: real;
-begin
-      ReadLn(x);     // ввод значения x
-      ReadLn(y);     // ввод значения y
-
-        m := x;         // присваивание начального значения
-
-        if y &gt; m then    // сравнение и при необходимости обновление m
-              m := y;
-        WriteLn(m);       // вывод максимального значения
-end.
-
-        Задача 2. Найти значение функции у = |x| для любого значения х :
-
-
-
-      Блок-схема решения данной задачи была составлена в тексте занятия 11 (рис.
-14). Составим программу решения данной задачи.
-Листинг 2.
-program AbsoluteValue;
-var
-     x, y: real;       //описание переменных величин вещественного типа
-begin
-     ReadLn(x);        // ввод значения x
-       if x &gt;= 0 then    //сравнение значения величины х с нулём
-           y := x
-       else
-           y := -x;      // вычисление модуля числа
-  WriteLn(y);            // вывод результата
-end.
-      В языке Pascal можно вычислить абсолютное значение числа без
-использования условного оператора if…then…else, используя встроенные функции: y
-:= abs(x); В старых реализациях Pascal для вещественных чисел иногда
-использовалась функция fabs (из математической библиотеки), но в стандартном
-Pascal достаточно abs.
-       Задача 3. Найти значение функции y=f(x) для любого значения x:
-
-
-
-
-     Программу решения данной задачи составим на основе блок-схемы, которая
-содержит вложенные условные алгоритмы (рис. 15, б).
-Листинг 3.
-program ConditionalExample;
-var
-      x, y: real;     //описание переменных величин вещественного типа
-begin
-      ReadLn(x);      // ввод значения x
-
-       if x &lt;= 0 then
-              y := x * x
-       else if x &lt;= 2 then
-              y := 2 * x
-       else
-              y := 4;
-
-       WriteLn(y);           // вывод значения y
-end.
-
-Оператор выбора (переключатель). Формат оператора выбора:
-case целочисленное_выражение of
-      константа1: список_операторов;
-      константа2: список_операторов;
-      …
+  оператор1;
+  оператор2;
+end
 else
-      список_операторов;   // обработка всех остальных случаев
-end;
+  оператор3;</code></pre>
+        </div>
+        <h6 class="text-primary mt-3">Операции сравнения</h6>
+        <div class="pas-listing">
+            <pre><code>=    равно
+&lt;&gt;   не равно
+&lt;    меньше
+&gt;    больше
+&lt;=   меньше или равно
+&gt;=   больше или равно</code></pre>
+        </div>
+    </div>
+</div>
 
 
-   Замечание. В Паскале ветвь else (аналог default в C++) может отсутствовать.
-
-   Порядок выполнения оператора выбора, следующий:
-   1. Вычисляется выражение, указанное после case.
-   2. Полученное значение сравнивается с константами, перечисленными в
-      ветвях case.
-   3. При первом совпадении выполняются операторы, записанные после :.
-         o Если ни с одной константой совпадения не произошло и указана ветвь
-            else, выполняются операторы после else.
-         o Если ветви else нет — выполнение оператора case завершается без
-            какого-либо действия.
-
-
-     Задача 4. Спросить у пользователя номер дня недели и вывести на экран
-название этого дня недели.
-     Дни недели пронумеруем от одного до семи: 1 - понедельник, 2 - вторник, 7 -
-воскресенье.
-
-Листинг 4.
-program DayOfWeek;
-var
-        n: integer;              //описание переменной величины целого типа
+<!-- run-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge run">▶ Запустить</span> Тренажёр: проверка чёт/нечёт
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Программа определяет, чётное число или нечётное.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">EvenOdd.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-success me-2" data-run>▶ Запустить</button>
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
+    </div>
+    <pre><code>program EvenOdd;
+var n: integer;
 begin
-        ReadLn(n);               // ввод числа
-        case n of
-               1: WriteLn(&#x27;Понедельник.&#x27;);
-               2: WriteLn(&#x27;Вторник.&#x27;);
-               3: WriteLn(&#x27;Среда.&#x27;);
-               4: WriteLn(&#x27;Четверг.&#x27;);
-               5: WriteLn(&#x27;Пятница.&#x27;);
-               6: WriteLn(&#x27;Суббота.&#x27;);
-               7: WriteLn(&#x27;Воскресенье.&#x27;);
-        Else                     // если нужного ответа нет
-               WriteLn(&#x27;Такого дня недели нет!&#x27;);
-        end;
-end.
-     Замечание. В Паскал оператор case … of проверяет значение переменной n и
-выполняет соответствующую ветвь. Ветвь else используется для обработки всех
-значений, не указанных явно в списке.</pre>
+  n := 17;
+  if n mod 2 = 0 then writeln(n, ' — чётное')
+  else writeln(n, ' — нечётное');
+end.</code></pre>
+    <div class="pas-run-output"></div>
+</div>
     </div>
 </div>
 
-<!-- 3. Ответьте на вопросы. -->
-<div class="card mb-5">
-    <div class="card-header bg-primary text-white fw-bold">3. Ответьте на вопросы.</div>
+
+<!-- run-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge run">▶ Запустить</span> Тренажёр: максимум двух чисел
+    </div>
     <div class="card-body">
-        <ol class="list-unstyled mb-0">
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">1. Что такое условный (разветвляющийся) алгоритм?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">2. Какие операторы существуют в языке Паскаль для программирования разветвляющихся (условных) алгоритмов?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">3. Какой формат условного оператора?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">4. Что такое выражение в записи условного оператора?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">5. Как выполняется условный оператор?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">6. Какой формат оператора выбора?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">7. Какой порядок выполнения оператора выбора?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-        </ol>
-    </div>
-</div>
-
-<!-- 4. Заполните схему. Напишите названия операторов разветвляющихс -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">4. Заполните схему. Напишите названия операторов разветвляющихся</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">алгоритмов и их особенности.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        <p class="text-muted mb-2">Программа выбирает большее из двух чисел.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">MaxOf2.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-success me-2" data-run>▶ Запустить</button>
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
         </div>
     </div>
+    <pre><code>program MaxOf2;
+var a, b: integer;
+begin
+  a := 23;
+  b := 41;
+  if a &gt; b then writeln('Максимум: ', a)
+  else writeln('Максимум: ', b);
+end.</code></pre>
+    <div class="pas-run-output"></div>
+</div>
+    </div>
 </div>
 
-<!-- 5. Составьте план рассказа о принципах программирования разветв -->
-<div class="card mb-5 border-success">
-    <div class="card-header bg-success text-white fw-bold">5. Составьте план рассказа о принципах программирования разветвляющихся</div>
+
+<!-- predict-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge predict">Что выведет?</span> Тренажёр: что выведет программа?
+    </div>
     <div class="card-body">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">алгоритмов на Паскале. Расскажите текст по плану.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="6" placeholder="Запишите ваш ответ для тренировки…"></textarea>
+        <p class="text-muted mb-2">Вложенное условие — внимательно проследи логику.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">program.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
+    </div>
+    <pre><code>var n: integer;
+begin
+  n := 0;
+  if n &gt; 0 then writeln('положительное')
+  else if n &lt; 0 then writeln('отрицательное')
+  else writeln('ноль');
+end.</code></pre>
+    
+</div>
+        <div class="pas-predict mt-3" data-expected="ноль">
+            <label class="form-label">Что выведет программа? Напиши вывод (каждое значение с новой строки):</label>
+            <textarea class="pas-predict-input" rows="4" placeholder="Твой ответ..."></textarea>
+            <div class="d-flex align-items-center gap-2 mt-2">
+                <button class="btn btn-primary" data-check>Проверить</button>
+                <span class="pas-predict-feedback"></span>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- 6. Составьте программы решения задач задания 8 из занятия 11. И -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">6. Составьте программы решения задач задания 8 из занятия 11. Используйте</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">блок-схемы.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+
+<!-- blanks-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge blank">Заполни пропуск</span> Тренажёр: заполни условие
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Программа находит <strong>минимум</strong> из двух чисел. У нас a = 12, b = 7. Логика простая: если a меньше b — выводим a; иначе — выводим b. Подсказки в комментариях справа.</p>
+        <div class="pas-blanks">
+            <div class="pas-listing">
+                <pre><code class="pas-no-highlight"><span class="pas-keyword">var</span> a, b: <span class="pas-type">integer</span>;
+<span class="pas-keyword">begin</span>
+  a := 12; b := 7;
+  <span class="pas-keyword">if</span> a <input class="pas-blank" data-correct="<" size="6"> b                                 <span class="pas-comment">// введите знак сравнения</span>
+  <span class="pas-keyword">then</span> <span class="pas-builtin">writeln</span>(<span class="pas-string">'Минимум: '</span>, <input class="pas-blank" data-correct="a" size="6">)         <span class="pas-comment">// введите имя переменной</span>
+  <span class="pas-keyword">else</span> <span class="pas-builtin">writeln</span>(<span class="pas-string">'Минимум: '</span>, <input class="pas-blank" data-correct="b" size="6">);        <span class="pas-comment">// введите имя переменной</span>
+<span class="pas-keyword">end</span>.</code></pre>
+            </div>
+            <div class="d-flex align-items-center gap-2 mt-2">
+                <button class="btn btn-primary" data-check>Проверить</button>
+                <span class="pas-blanks-feedback"></span>
+            </div>
         </div>
     </div>
 </div>
+
 
 </div>

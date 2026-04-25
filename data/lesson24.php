@@ -1,15 +1,15 @@
-<!--lesson24.php-->
+<!-- lesson24.php — переработано в интерактивный Pascal-урок -->
 <div class="lesson">
 
-    <h2 class="text-primary mb-4">
-        Занятие 24. Язык программирования Паскаль. Массивы 
+    <h2 class="text-primary mb-4">Занятие 24. Массивы</h2>
 
-    </h2>
+<!-- intro -->
+<div class="alert alert-primary border-start border-primary border-4 fs-5 mb-4">
+    Массив — это упорядоченный набор элементов одного типа, объединённых под одним именем. Каждый элемент имеет свой <strong>индекс</strong> (порядковый номер). Массив идеален для хранения списков: оценок, температур, имён.
+</div>
 
-    <!-- ==================================================
-     Задание 1 (по 148.pdf). Таблица с озвучкой (2 колонки)
-     ================================================== -->
 
+    <!-- Задание 1: словарь (сохранён без изменений) -->
 <div class="card mb-5">
   <div class="card-header bg-light fw-bold fs-5">
     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
@@ -129,241 +129,185 @@
 </div>
 <!-- Конец задания 1 -->
 
-<!-- 2. Прочитайте текст. -->
-<div class="card mb-5 border-primary">
-    <div class="card-header bg-primary text-white fw-bold">2. Прочитайте текст.</div>
-    <div class="card-body fs-5 lh-lg">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">В жизни часто приходится использовать информацию, которая представлена в
-виде таблицы.
-       В программировании для хранения табличной информации используют
-специальный тип данных - массив.
-       Массив — это структура однотипных элементов, которые занимают
-непрерывную область памяти и рассматриваются как одно целое. Основные свойства
-массива - имя, тип, размерность, размер.
-       Имя — это идентификатор, который задаёт программист для обращения к
-массиву.
-       Тип — это тип элементов массива.
-       Размерность — это число индексов (порядковых номеров элементов массива),
-которые нужны для обращения к отдельному элементу. Например, для одномерного
-(линейного) массива нужен один индекс, для двумерного - два индекса и так далее.
-       Формат описания массива:
-       var
-              имя: array[нижняя_граница .. верхняя_граница] of тип_элементов;
-       Константное выражение определяет размер массива. Например, описание
-       var
-         A: array[1..10] of integer; задаёт одномерный массив с именем А, который
-содержит 10 элементов целого типа: А [ 1 ] , А [ 2 ] , А [ 3 ] , А [ 4 ] , А [ 5 ] , А [ 6 ] ,
-А [ 7 ] , А [ 8 ] , А [ 9 ] , А [ 10 ] .
-Каждый элемент массива имеет свой номер - значение индекса. Нумерация элементов
-массива начинается с ижней границы диапазона индексов.
-       Размер массива можно не указывать, если при его описании задаются значения
-всех его элементов. Например,
-       var
-         B: array[5] of integer = (2, 4, 6, 8, 10);. В этом случае создаётся массив из
-пяти элементов со следующими значениями: b [1] =2, b [ 2 ] = 4 , b [ 3 ] = 6 , b [ 4 ] = 8 ,
-b [ 5 ] = 10.
-       Рассмотрим некоторые задачи обработки массивов.
-       Задача 1. Ввести с клавиатуры и вывести на экран одномерный массив из
-десяти элементов.
-Листинг 1.
-program ArrayInputOutput;
-var
-       A: array[10] of integer; // описание переменных величин целого типа
-       i: integer;
-begin
-       // ввод элементов массива
-       for i := 1 to 10 do
-               ReadLn(A[i]);          / / в в о д числа с клавиатуры
-       for i := 1 to 10 do            // вывод элементов массива через пробел
-               Write(A[i], &#x27; &#x27;);
-end.
-
-      Задача 2. Ввести с клавиатуры, вывести на экран одномерный массив из
-десяти элементов и найти сумму всех элементов массива.
-Листинг 2.
-program SumArray;
-var
-        A: array[10] of integer; // описание переменных величин целого типа
-        i, S: integer;
-begin
-        // ввод элементов массива
-        for i := 1 to 10 do
-        ReadLn(A[i]);                 // ввод числа с клавиатуры
-        // вывод элементов массива
-        for i := 1 to 10 do
-        Write(A[i], &#x27; &#x27;);            // вывод значения элемента на экран через пробел
-        WriteLn;
-        // вычисление суммы элементов
-        S := 0;                      //начальное значение величины S
-        for i := 1 to 10 do
-        S := S + A[i];               //прибавление очередного элемента к сумме
-        // вывод результата
-        WriteLn(&#x27;S = &#x27;, S);           //вывод значения суммы на экран
-end.
-      Задача 3. Заполнить двумерный массив случайными числами от 0
-до 99 и вывести его на экран.
-Листинг 3.
-program MatrixOutput;
-const
-      n = 5;                  // размерность матрицы – определение константы
-var
-        A: array[n, n] of integer; //описание переменных величин целого типа
-        i, j: integer;
-begin
-        Randomize;                        // установка датчика случайных чисел
-        // заполнение матрицы и вывод на экран
-        for i := 1 to n do
-        begin
-                for j := 1 to n do
-                begin
-                        A[i, j] := Random(100); // генерация случайного числа от 0 до 99
-                        Write(A[i, j]);         // вывод значения элемента через пробел
-                end;
-                WriteLn;                        // переход на новую строку
-        end;
-end.
-     Задача 4. Заполнить двумерный массив случайными числами от 0
-до 99, вывести его на экран и найти наибольшее значение.
-Листинг 4.
-program MaxElementMatrix;
-const
-      n = 5; // размерность матрицы
-var
-      A: array[1..n, 1..n] of integer;
-        i, j: integer;
-        Imax, Jmax: integer;
-begin
-        Randomize;              // инициализация генератора случайных чисел
-        // --- заполнение матрицы случайными числами и вывод ---
-        WriteLn(&#x27;Матрица A:&#x27;);
-        for i := 1 to n do
-        begin
-        for j := 1 to n do
-        begin
-                A[i, j] := Random(100);            // число от 0 до 99
-                Write(A[i, j]:4);                  // красивое форматирование вывода
-        end;
-        WriteLn;
-        end;
-        // --- поиск максимального элемента ---
-        Imax := 1;
-        Jmax := 1;
-        for i := 1 to n do
-                for j := 1 to n do
-                if A[i, j] &gt; A[Imax, Jmax] then
-                 begin
-                      Imax := i;
-                      Jmax := j;
-                 end;
-        // --- вывод результата ---
-        WriteLn;
-        WriteLn(&#x27;Наибольший элемент матрицы = &#x27;, A[Imax, Jmax]);
-        WriteLn(&#x27;Его позиция: строка &#x27;, Imax, &#x27;, столбец &#x27;, Jmax);
-end.</pre>
-    </div>
-</div>
-
-<!-- 3. Ответьте на вопросы. -->
-<div class="card mb-5">
-    <div class="card-header bg-primary text-white fw-bold">3. Ответьте на вопросы.</div>
+<!-- Теория -->
+<div class="card mb-4 border-info">
+    <div class="card-header bg-info text-white fw-bold">📖 Теория</div>
     <div class="card-body">
-        <ol class="list-unstyled mb-0">
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">1. Что такое массив?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">2. Назовите основные свойства массива.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">3. Что такое имя массива?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">4. Что такое тип массива?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">5. Что такое размерность массива?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">6. Что такое размер массива?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">7. Какой формат описания массива</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-        </ol>
-    </div>
-</div>
+        
+        <h6 class="text-primary mt-3">Объявление массива</h6>
+        <div class="pas-listing">
+            <pre><code>var
+  a: array[1..10] of integer;       // массив из 10 целых чисел
+  marks: array[1..5] of real;       // 5 вещественных чисел
+  letters: array[1..3] of string;   // 3 строки
 
-<!-- 4. Заполните схему. Напишите названия основных свойств массива  -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">4. Заполните схему. Напишите названия основных свойств массива и дайте им</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">определение.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+// Доступ к элементу:
+a[1] := 100;
+writeln(a[1]);</code></pre>
+        </div>
+        <h6 class="text-primary mt-3">Заполнение и обход массива</h6>
+        <div class="pas-listing">
+            <pre><code>for i := 1 to 10 do
+  a[i] := i * i;            // заполнили квадратами
+
+for i := 1 to 10 do
+  writeln(a[i]);            // вывели по одному в строке</code></pre>
         </div>
     </div>
 </div>
 
-<!-- 5. Составьте план рассказа о массивах. Расскажите текст по план -->
-<div class="card mb-5 border-success">
-    <div class="card-header bg-success text-white fw-bold">5. Составьте план рассказа о массивах. Расскажите текст по плану</div>
+
+<!-- run-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge run">▶ Запустить</span> Тренажёр: заполнить и вывести массив
+    </div>
     <div class="card-body">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;"></pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="6" placeholder="Запишите ваш ответ для тренировки…"></textarea>
+        <p class="text-muted mb-2">Запусти — программа создаёт массив квадратов чисел от 1 до 10 и печатает их.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">ArraySquares.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-success me-2" data-run>▶ Запустить</button>
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
+    </div>
+    <pre><code>program ArraySquares;
+var a: array[1..10] of integer;
+    i: integer;
+begin
+  for i := 1 to 10 do
+    a[i] := i * i;
+  for i := 1 to 10 do
+    writeln('a[', i, '] = ', a[i]);
+end.</code></pre>
+    <div class="pas-run-output"></div>
+</div>
+    </div>
+</div>
+
+
+<!-- run-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge run">▶ Запустить</span> Тренажёр: сумма элементов массива
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Программа складывает все элементы массива.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">ArraySum.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-success me-2" data-run>▶ Запустить</button>
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
+    </div>
+    <pre><code>var a: array[1..5] of integer;
+    i, sum: integer;
+begin
+  a[1] := 10; a[2] := 20; a[3] := 30; a[4] := 40; a[5] := 50;
+  sum := 0;
+  for i := 1 to 5 do
+    sum := sum + a[i];
+  writeln('Сумма = ', sum);
+end.</code></pre>
+    <div class="pas-run-output"></div>
+</div>
+    </div>
+</div>
+
+
+<!-- run-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge run">▶ Запустить</span> Тренажёр: поиск максимума
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Программа находит наибольший элемент массива.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">ArrayMax.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-success me-2" data-run>▶ Запустить</button>
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
+    </div>
+    <pre><code>var a: array[1..6] of integer;
+    i, max: integer;
+begin
+  a[1] := 7; a[2] := 23; a[3] := 4; a[4] := 19; a[5] := 41; a[6] := 12;
+  max := a[1];
+  for i := 2 to 6 do
+    if a[i] &gt; max then max := a[i];
+  writeln('Максимум = ', max);
+end.</code></pre>
+    <div class="pas-run-output"></div>
+</div>
+    </div>
+</div>
+
+
+<!-- predict-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge predict">Что выведет?</span> Тренажёр: что выведет программа?
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Массив заполняется в обратном порядке.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">program.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
+    </div>
+    <pre><code>var a: array[1..5] of integer;
+    i: integer;
+begin
+  for i := 1 to 5 do
+    a[i] := 6 - i;
+  for i := 1 to 5 do
+    writeln(a[i]);
+end.</code></pre>
+    
+</div>
+        <div class="pas-predict mt-3" data-expected="5\n4\n3\n2\n1">
+            <label class="form-label">Что выведет программа? Напиши вывод (каждое значение с новой строки):</label>
+            <textarea class="pas-predict-input" rows="4" placeholder="Твой ответ..."></textarea>
+            <div class="d-flex align-items-center gap-2 mt-2">
+                <button class="btn btn-primary" data-check>Проверить</button>
+                <span class="pas-predict-feedback"></span>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- 6. Составьте программы решения задач. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">6. Составьте программы решения задач.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">1.Дан массив натуральных чисел А[n]. Подсчитать, сколько в нём чётных
-     чисел и сколько нечётных чисел.
-     2.Дан массив натуральных чисел А[n]. Подсчитать, сколько в нём чисел,
-     которые делятся нацело на 3.
-     3.Дан массив целых чисел А[n]. Подсчитать, сколько в нём положительных
-     чисел и сколько отрицательных чисел.
-     4.Дан массив целых чисел А[n]. Найти минимальный и максимальный
-     элементы массива.
-     5.Дан массив целых чисел А[n] и числа а и b. Подсчитать, сколько в массиве
-     чисел, которые удовлетворяют неравенству a &lt;A[i] &lt;b, где А[i] - элемент
-     массива.
-     6.Дан массив целых чисел А[n] и числа а и b. Подсчитать, сколько в массиве
-     чисел, которые не удовлетворяют неравенству a &lt;A[i] &lt;b, где A[i] - элемент
-     массива.
-     7.*Дан массив целых чисел А[n]. Переставить все элементы массива по
-     возрастанию (отсортировать).
-     8.*Дан массив целых чисел А[n]. Переставить все элементы массива по
-     убыванию (отсортировать).
-                              ЗАКЛЮЧЕНИЕ
 
-      Настоящее пособие, предназначенное для работы с иностранными гражданами
-на подготовительном факультете, включает в себя такие базовые понятия
-информатики, как основной и элементарный состав компьютера, назначение его
-устройств, архитектура и принцип работы компьютера, программа и данные,
-информация, кодирование, количество и единицы измерения информации, ин-
-формационные процессы, информационные технологии, файловая структура данных,
-программное обеспечение, алгоритм, алгоритмизация, программирование.
-      Вдумчивая постоянная работа с материалами учебного пособия позволит
-читателю научиться понимать и грамотно использовать научную терминологию по
-информатике и компьютерной технике на всём протяжении его обучения в
-университете независимо от будущей специальности.
-      Авторы выражают надежду, что данное пособие станет достойным
-помощником будущим специалистам в их начальном пути освоения русского языка
-и научного стиля речи.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+<!-- blanks-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge blank">Заполни пропуск</span> Тренажёр: заполни массив
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Программа должна заполнить массив <code>A[1..5]</code> <strong>кубами чисел</strong> и вывести их. Подсказки в комментариях справа.</p>
+        <div class="pas-blanks">
+            <div class="pas-listing">
+                <pre><code class="pas-no-highlight"><span class="pas-keyword">var</span> a: <span class="pas-keyword">array</span>[1..<input class="pas-blank" data-correct="5" size="6">] <span class="pas-keyword">of</span> <span class="pas-type">integer</span>;     <span class="pas-comment">// введите число</span>
+    i: <span class="pas-type">integer</span>;
+<span class="pas-keyword">begin</span>
+  <span class="pas-keyword">for</span> i := 1 <span class="pas-keyword">to</span> 5 <span class="pas-keyword">do</span>
+    a[<input class="pas-blank" data-correct="i" size="6">] := i <input class="pas-blank" data-correct="*" size="6"> i <input class="pas-blank" data-correct="*" size="6"> i;        <span class="pas-comment">// имя переменной и арифметические операторы</span>
+  <span class="pas-keyword">for</span> i := 1 <span class="pas-keyword">to</span> 5 <span class="pas-keyword">do</span>
+    <span class="pas-builtin">writeln</span>(a[i]);
+<span class="pas-keyword">end</span>.</code></pre>
+            </div>
+            <div class="d-flex align-items-center gap-2 mt-2">
+                <button class="btn btn-primary" data-check>Проверить</button>
+                <span class="pas-blanks-feedback"></span>
+            </div>
         </div>
     </div>
 </div>
+
 
 </div>

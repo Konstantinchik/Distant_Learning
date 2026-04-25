@@ -1,10 +1,15 @@
-<!--lesson22.php-->
+<!-- lesson22.php — переработано в интерактивный Pascal-урок -->
 <div class="lesson">
 
-    <h2 class="text-primary mb-4">
-        Занятие 22. Язык программирования Паскаль. Циклы
-    </h2>
+    <h2 class="text-primary mb-4">Занятие 22. Циклы</h2>
 
+<!-- intro -->
+<div class="alert alert-primary border-start border-primary border-4 fs-5 mb-4">
+    В Pascal три типа циклов: <strong>for</strong> — с заранее известным числом повторений, <strong>while</strong> — с проверкой условия в начале, <strong>repeat … until</strong> — с проверкой условия в конце.
+</div>
+
+
+    <!-- Задание 1: словарь (сохранён без изменений) -->
 <div class="card mb-5">
   <div class="card-header bg-light fw-bold fs-5">
     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
@@ -58,168 +63,217 @@
 </div>
 <!-- Конец задания 1 -->
 
-<!-- 2. Прочитайте текст. -->
-<div class="card mb-5 border-primary">
-    <div class="card-header bg-primary text-white fw-bold">2. Прочитайте текст.</div>
-    <div class="card-body fs-5 lh-lg">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Для программирования циклов в языке Паскаль существуют три типа
-операторов: цикл с параметром (for), цикл с предусловием (while), цикл с
-постусловием (repeat…until).
-     Цикл с параметром. Формат оператора цикла с параметром:
-     for счетчик := начальное_значение to конечное_значение do
-      оператор;
-
-Cчётчик — переменная, которая изменяется на каждой итерации.
-Начальное_значение — присваивается счётчику один раз в начале цикла.
-Конечное_значение — условие окончания цикла (итерации выполняются, пока
-счётчик ≤ конечного значения).
-Оператор — тело цикла, может быть простым или составным (несколько
-операторов заключаются в begin … end).
-
-      Задача 1. Найти значения функции y = x2 для всех целых значений x из
-отрезка [0; 20]. Блок-схема алгоритма решения данной задачи была составлена в
-тексте занятия 12 (рис. 17). Используем её для составления программы.
-Листинг 11.
-program ForCycle;
-var
-        x, y: integer;              //описание переменных величин целого типа
-begin
-      // цикл с параметром (for)
-      for x := 0 to 20 do           //заголовок цикла
-      begin
-              y := x * x;           // вычисление квадрата
-              WriteLn(x, &#x27; &#x27;, y);   // вывод значений x и y
-      end;
-end.
-      Цикл с предусловием. Формат оператора цикла с предусловием:
-      While выражение do
-           оператор;
-      Цикл с предусловием продолжает работу, пока значение выражения (условие
-продолжения работы цикла) истинно. Как и для цикла с параметром, оператор (тело
-цикла) может быть простым или составным. Если оператор составной, то его нужно
-заключить в блок begin … end.
-      Блок-схема алгоритма решения задачи с помощью цикла с предусловием
-составлена в тексте занятия 12 (рис. 18, а). Используя оператор цикла с предусловием
-для решения задачи 1, получим следующую программу.
-Листинг 1_2.
-program WhileCycle;
-var
-        x, y: integer;           //описание переменных величин целого типа
-begin
-        x := 0;                  // начальное значение
-        while x &lt;= 20 do         // условие продолжения. Цикл с предусловием
-        begin
-                 y := x * x;         // вычисление значения величины у
-                 WriteLn(x, &#x27; &#x27;, y); // вывод x и y
-                 x := x + 1;     // увеличение x
-        end;
-end.
-Листинг 1_3.
-program RepeatCycle;
-var
-        x, y: integer;           //описание переменных величин целого типа
-begin
-        x := 0;                  // начальное значение
-        repeat                   // цикл с постусловием
-        y := x * x;              // вычисление квадрата
-        WriteLn(x, &#x27; &#x27;, y);      // вывод x и y
-        x := x + 1;            // увеличение x на 1
-        until x &gt; 20;          // условие выхода их цикла
-end.
-        Циклические алгоритмы, как и условные, могут быть вложенными.
-
-      Задача 2. Вывести на экран таблицу умножения для чисел от 1 до 10
-(табл. 9).
-      Используя оператор цикла с параметром и блок-схему алгоритма решения
-данной задачи (рис. 19), составим программу.
-Л и с т и нг 2 .
-program NestedLoops;
-var
-        x, y, p: integer;                 //описание переменных величин целого типа
-begin
-        for x := 1 to 10 do               // внешний цикл
-               for y := 1 to 10 do        // внутренний цикл
-               begin
-                        p := x * y;       // вычисление произведения
-                        Write(p, &#x27; &#x27;);    // вывод p через пробел
-               end;
-               WriteLn;        // переход на новую строку после строки таблицы
-end.</pre>
-    </div>
-</div>
-
-<!-- 3. Ответьте на вопросы. -->
-<div class="card mb-5">
-    <div class="card-header bg-primary text-white fw-bold">3. Ответьте на вопросы.</div>
+<!-- Теория -->
+<div class="card mb-4 border-info">
+    <div class="card-header bg-info text-white fw-bold">📖 Теория</div>
     <div class="card-body">
-        <ol class="list-unstyled mb-0">
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">1. Что такое циклический алгоритм?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">2. Какие операторы существуют в языке Паскаль для программирования циклических алгоритмов?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">3. Какой формат оператора цикла с параметром?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">4. Как выполняется оператор цикла с параметром?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">5. Какой формат оператора цикла с предусловием?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">6. Какой порядок выполнения оператора цикла с предусловием?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">7. Какой формат оператора цикла с постусловием?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">8. Как выполняется оператор цикла с постусловием?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-        </ol>
-    </div>
-</div>
+        
+        <h6 class="text-primary mt-3">Цикл for (с параметром)</h6>
+        <div class="pas-listing">
+            <pre><code>for счётчик := от to до do
+  оператор;
 
-<!-- 4. Заполните схему. Напишите названия типов операторов для -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">4. Заполните схему. Напишите названия типов операторов для</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">программирования циклов и их особенности.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+// или с убыванием:
+for счётчик := от downto до do
+  оператор;</code></pre>
+        </div>
+        <h6 class="text-primary mt-3">Цикл while (с предусловием)</h6>
+        <div class="pas-listing">
+            <pre><code>while условие do
+  оператор;
+// Тело цикла выполняется, пока условие истинно.</code></pre>
+        </div>
+        <h6 class="text-primary mt-3">Цикл repeat (с постусловием)</h6>
+        <div class="pas-listing">
+            <pre><code>repeat
+  оператор;
+until условие;
+// Тело выполняется хотя бы один раз; цикл прекращается, когда условие становится истинным.</code></pre>
         </div>
     </div>
 </div>
 
-<!-- 5. Составьте план рассказа о способах программирования цикличес -->
-<div class="card mb-5 border-success">
-    <div class="card-header bg-success text-white fw-bold">5. Составьте план рассказа о способах программирования циклических</div>
+
+<!-- run-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge run">▶ Запустить</span> Тренажёр: цикл for — таблица квадратов
+    </div>
     <div class="card-body">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">алгоритмов на Паскале. Расскажите текст по плану.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="6" placeholder="Запишите ваш ответ для тренировки…"></textarea>
+        <p class="text-muted mb-2">Запусти и убедись, что программа выводит квадраты чисел от 0 до 10.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">ForSquares.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-success me-2" data-run>▶ Запустить</button>
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
+    </div>
+    <pre><code>program ForSquares;
+var x, y: integer;
+begin
+  for x := 0 to 10 do
+  begin
+    y := x * x;
+    writeln(x, ' -&gt; ', y);
+  end;
+end.</code></pre>
+    <div class="pas-run-output"></div>
+</div>
+    </div>
+</div>
+
+
+<!-- run-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge run">▶ Запустить</span> Тренажёр: цикл while
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Тот же результат, но с циклом while.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">WhileSquares.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-success me-2" data-run>▶ Запустить</button>
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
+    </div>
+    <pre><code>program WhileSquares;
+var x, y: integer;
+begin
+  x := 0;
+  while x &lt;= 10 do
+  begin
+    y := x * x;
+    writeln(x, ' -&gt; ', y);
+    x := x + 1;
+  end;
+end.</code></pre>
+    <div class="pas-run-output"></div>
+</div>
+    </div>
+</div>
+
+
+<!-- run-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge run">▶ Запустить</span> Тренажёр: вложенные циклы — таблица умножения
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Цикл внутри цикла — классический способ построить таблицу.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">MultTable.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-success me-2" data-run>▶ Запустить</button>
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
+    </div>
+    <pre><code>program MultTable;
+var x, y, p: integer;
+begin
+  for x := 1 to 5 do
+  begin
+    for y := 1 to 5 do
+    begin
+      p := x * y;
+      write(p, ' ');
+    end;
+    writeln;
+  end;
+end.</code></pre>
+    <div class="pas-run-output"></div>
+</div>
+    </div>
+</div>
+
+
+<!-- predict-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge predict">Что выведет?</span> Тренажёр: что выведет программа?
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Цикл с убыванием — обрати внимание на начальное и конечное значения.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">program.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
+    </div>
+    <pre><code>var i: integer;
+begin
+  for i := 5 downto 1 do
+    writeln(i);
+end.</code></pre>
+    
+</div>
+        <div class="pas-predict mt-3" data-expected="5\n4\n3\n2\n1">
+            <label class="form-label">Что выведет программа? Напиши вывод (каждое значение с новой строки):</label>
+            <textarea class="pas-predict-input" rows="4" placeholder="Твой ответ..."></textarea>
+            <div class="d-flex align-items-center gap-2 mt-2">
+                <button class="btn btn-primary" data-check>Проверить</button>
+                <span class="pas-predict-feedback"></span>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- 6. Составьте программы решения задач задания 8 из занятия 12. И -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">6. Составьте программы решения задач задания 8 из занятия 12. Используйте</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">блок-схемы.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+
+<!-- reorder-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge reorder">Расставь по порядку</span> Тренажёр: расставь строки цикла
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Это цикл <code>repeat-until</code>, выводящий чётные числа от 0 до 10. Расставь строки в правильном порядке. <strong>Обрати внимание</strong> — что должно повторяться на каждой итерации, а что выполняется один раз.</p>
+        <div class="pas-reorder">
+            <div class="pas-reorder-list">
+        <div class="pas-reorder-item" data-order="1">var n: integer;</div>
+        <div class="pas-reorder-item" data-order="2">begin</div>
+        <div class="pas-reorder-item" data-order="3">  n := 0;</div>
+        <div class="pas-reorder-item" data-order="4">  repeat</div>
+        <div class="pas-reorder-item" data-order="5">    writeln(n);</div>
+        <div class="pas-reorder-item" data-order="6">    n := n + 2;</div>
+        <div class="pas-reorder-item" data-order="7">  until n &gt; 10;</div>
+        <div class="pas-reorder-item" data-order="8">end.</div>
+            </div>
+        </div>
+        <div class="d-flex align-items-center gap-2 mt-2">
+            <button class="btn btn-primary" data-check>Проверить порядок</button>
+            <span class="pas-reorder-feedback"></span>
         </div>
     </div>
 </div>
+
+
+<!-- blanks-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge blank">Заполни пропуск</span> Тренажёр: заполни цикл
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Программа должна посчитать <strong>сумму чисел от 1 до 100</strong>. Цикл <code>for</code> прибавляет к переменной <code>s</code> каждое следующее <code>i</code>. Подсказки в комментариях справа.</p>
+        <div class="pas-blanks">
+            <div class="pas-listing">
+                <pre><code class="pas-no-highlight"><span class="pas-keyword">var</span> i, s: <span class="pas-type">integer</span>;
+<span class="pas-keyword">begin</span>
+  s := 0;
+  <span class="pas-keyword">for</span> i := 1 <span class="pas-keyword">to</span> <input class="pas-blank" data-correct="100" size="6"> <span class="pas-keyword">do</span>      <span class="pas-comment">// введите число</span>
+    s := s <input class="pas-blank" data-correct="+" size="6"> i;            <span class="pas-comment">// введите арифметический оператор</span>
+  <span class="pas-builtin">writeln</span>(<input class="pas-blank" data-correct="s" size="6">);                    <span class="pas-comment">// введите имя переменной</span>
+<span class="pas-keyword">end</span>.</code></pre>
+            </div>
+            <div class="d-flex align-items-center gap-2 mt-2">
+                <button class="btn btn-primary" data-check>Проверить</button>
+                <span class="pas-blanks-feedback"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 </div>

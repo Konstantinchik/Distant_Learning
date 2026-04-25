@@ -1,14 +1,15 @@
-<!--lesson23.php-->
+<!-- lesson23.php — переработано в интерактивный Pascal-урок -->
 <div class="lesson">
 
-    <h2 class="text-primary mb-4">
-        Занятие 23. Язык программирования Паскаль. Процедуры и Функции 
-    </h2>
+    <h2 class="text-primary mb-4">Занятие 23. Процедуры и функции</h2>
 
-    <!-- ==================================================
-     Задание 1. Слова и словосочетания (lesson 23)
-     ================================================== -->
+<!-- intro -->
+<div class="alert alert-primary border-start border-primary border-4 fs-5 mb-4">
+    Процедуры и функции — это <strong>подпрограммы</strong>: блоки кода, которые можно вызывать по имени. Они помогают структурировать программу и избегать повторений. Процедура выполняет действие; функция вычисляет и возвращает значение.
+</div>
 
+
+    <!-- Задание 1: словарь (сохранён без изменений) -->
 <div class="card mb-5">
   <div class="card-header bg-light fw-bold fs-5">
     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
@@ -169,272 +170,193 @@
 </div>
 <!-- Конец задания 1 -->
 
-<!-- 2. Прочитайте текст. -->
-<div class="card mb-5 border-primary">
-    <div class="card-header bg-primary text-white fw-bold">2. Прочитайте текст.</div>
-    <div class="card-body fs-5 lh-lg">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">При составлении алгоритмов и программ решения комплексных задач
-используют подпрограммы.
-      Подпрограмма — это вспомогательный алгоритм, который определяется
-отдельно от основной программы и вызывается по имени.
-      Обмен данными между основной программой и подпрограммой может
-производиться через параметры - формальные и фактические.
-      Формальные параметры указываются при описании подпрограммы и
-используются только в ней. Фактические параметры описаны в основной программе
-и указываются при вызове подпрограммы. Значения фактических параметров
-передаются в подпрограмму.
-      В языке Паскаль используются два типа подпрограмм – процедуры и функции.
-      Функция — это подпрограмма, которая возвращает одно значение. Это
-минимальный исполняемый модуль. Функции используются в выражениях так же,
-как и обычные переменные. Функция является основной программной единицей.
-     Формат описания функции:
-     function имя_функции(список_параметров): тип;
-     begin
-          тело_функции;
-          имя_функции := выражение; // возврат результата
-     end;
-
-     Тип функции — это тип результата, который возвращает функция (integer, real,
-Boolean и т.д.).
-     Имя функции — это идентификатор, который задаёт программист.
-     Спецификация параметров — это либо список имён формальных параметров
-функции и их типов, если параметры есть, либо «пусто», если параметров нет.
-     Тело функции — это оператор или операторы.
-     Функция может участвовать в выражениях.
-     Формат оператора возврата:
-     имя_функции := выражение; . Тип этого выражения должен совпадать с
-типом функции.
-     Формат обращения к функции (вызова функции):
-     имя_функции (список_фактических_параметров);
-
-
-     Процедура – это подпрограмма, которая не возвращает значение. Она
-выполняет действие (например, ввод/вывод данных), но не используется в
-выражениях.
-     Формат описания процедуры:
-     procedure имя_процедуры(список_параметров);
-     begin
-            тело_процедуры;
-     end;
-
-
-     Формат вызова процедуры:
-     имя_процедуры (список_фактических_параметров);
-
-
-      Запомните! Фактические параметры нужно указывать в том порядке, который
-задан при описании формальных параметров. Функции и процедуры располагаются
-перед разделом begin … end. основной программы.
-      Задача 1. Найти наибольшее из трёх целых чисел Max(a, b, c).
-Для решения данной задачи можно использовать вспомогательный алгоритм
-нахождения наибольшего из двух чисел (задача 1, листинг 1_1 из текста занятия 21),
-так как верно равенство: Max(a, b, c):= Max(Max(a, b), c).. Другими словами, сначала
-нужно найти наибольшее из двух чисел, а затем этот результат сравнить с третьим
-числом и наибольшее из этих двух чисел.
-
-
-Листинг 1.
-program MaxOfThree;
-// вспомогательная функция, возвращающая большее из двух чисел
-function Max(x, y: integer): integer;
+<!-- Теория -->
+<div class="card mb-4 border-info">
+    <div class="card-header bg-info text-white fw-bold">📖 Теория</div>
+    <div class="card-body">
+        
+        <h6 class="text-primary mt-3">Процедура</h6>
+        <div class="pas-listing">
+            <pre><code>procedure Имя(параметры);
+var локальные_переменные;
 begin
-       if x &gt; y then //сравнение значений величин х и у
-       Max := x               //возврат значения х
- else
-       Max := y;       //возврат значения у
+  тело
 end;
 
-
-var
-       a, b, c, d: integer;
+// вызов:
+Имя(аргументы);</code></pre>
+        </div>
+        <h6 class="text-primary mt-3">Функция</h6>
+        <div class="pas-listing">
+            <pre><code>function Имя(параметры): тип_результата;
+var локальные;
 begin
-       ReadLn(a);                  // ввод значения величины a
-       ReadLn(b);                  // ввод значения величины b
-       ReadLn(c);                  // ввод значения величины c
-       d := Max(Max(a, b), c);     // вызов вспомогательной функции Max
-       WriteLn(d);                 // вывод результата
-end.
-     Как и в других языках программирования, в Паскале допускается рекурсивное
-определение функции.
-     В математике рекурсивным называется определение понятия, в котором
-используется определяемое понятие. В программировании рекурсия — это вызов
-функции (подпрограммы) из неё самой.
-     Задача 2. Найти значение факториала целого неотрицательного числа:
+  тело;
+  Имя := значение;   // возврат
+end;
 
+// вызов в выражении:
+x := Имя(аргументы);</code></pre>
+        </div>
+        <h6 class="text-primary mt-3">Пример процедуры</h6>
+        <div class="pas-listing">
+            <pre><code>procedure Greet(name: string);
+begin
+  writeln('Привет, ', name, '!');
+end;
 
+begin
+  Greet('Анна');
+  Greet('Иван');
+end.</code></pre>
+        </div>
+        <h6 class="text-primary mt-3">Пример функции</h6>
+        <div class="pas-listing">
+            <pre><code>function Square(n: integer): integer;
+begin
+  Square := n * n;
+end;
 
-     Значение 0! = 1 является обязательным начальным значением. От него
-начинается вычисление всех следующих значений факториала:
-     1! = 1 • 0! = 1 • 1 = 1.
-     Рассмотрим описание функции вычисления факториала и её использование в
-программе.
-Листинг 2.
-     program FactorialRec;
-     function Factor(n: integer): longint;
-     // вспомогательная рекурсивная функция
-     begin
-          if n &lt; 0 then
-                   Factor := 0
-          else if n = 0 then
-                   Factor := 1
-          else
-                   Factor := n * Factor(n - 1); // рекурсивный вызов
-     end;
-
-     var
-             n: integer;
-             f: longint;
-     begin
-             ReadLn(n);                      // ввод n
-             f := Factor(n);                 // вызов функции
-             WriteLn(f);                     // вывод результата
-     end.
-
-        Если функция Factor (n) будет вызвана с отрицательным аргументом, то она
-вернёт значение 0 - признак неверного обращения.
-Рассмотрим пошаговое исполнение программы для значения п = 3, то есть будет
-выполнен оператор f:=Factor (3)
-        При вычислении функции с аргументом 3 произойдёт повторное обращение к
-функции Factor ( 2 ) . Это обращение в свою очередь потребует вычисления Factor
-( 1 ) . И, наконец, при вычислении Factor (0) будет получен числовой результат 1.
-Затем вычисления будут выполняться в обратном порядке:
-     Factor(l)=l* Factor(0)=l
-     Factor(2)=2* Factor(1)=2*1=2
-     Factor(3)=3* Factor(2)=3*2=6.
-     Таким образом, в результате работы программы при п = 3 будет получен
-     результат 6.</pre>
+var x: integer;
+begin
+  x := Square(5);
+  writeln(x);
+end.</code></pre>
+        </div>
     </div>
 </div>
 
-<!-- 3. Ответьте на вопросы. -->
-<div class="card mb-5">
-    <div class="card-header bg-primary text-white fw-bold">3. Ответьте на вопросы.</div>
+
+<!-- predict-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge predict">Что выведет?</span> Тренажёр: что выведет программа с процедурой?
+    </div>
     <div class="card-body">
-        <ol class="list-unstyled mb-0">
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">1. Что такое подпрограмма?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">2. Какие существуют параметры?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">3. Для чего используются параметры?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">4. Где описывают и используют формальные параметры?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">5. Где описывают и используют фактические параметры?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">6. Какой тип подпрограмм используется в языке Паскаль?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">7. Что такое функция?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">8. Что такое процедура?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">9. Что такое тип функции?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">10. Что такое имя функции?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">11. Что такое спецификация параметров?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">12. Что такое тело функции?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">13. Какой формат описания оператора возврата?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">14. Как работает оператор возврата?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">15. Какой формат обращения к функции?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">16. Что такое рекурсия?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">17. Как происходит работа рекурсивной функции?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-        </ol>
+        <p class="text-muted mb-2">Процедура PrintLine выводит строку из символов '*' заданной длины.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">program.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
     </div>
+    <pre><code>procedure PrintLine(n: integer);
+var i: integer;
+begin
+  for i := 1 to n do write('*');
+  writeln;
+end;
+
+begin
+  PrintLine(3);
+  PrintLine(5);
+  PrintLine(7);
+end.</code></pre>
+    
 </div>
-
-<!-- 4. Заполните схему. Напишите названия параметров для обмена дан -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">4. Заполните схему. Напишите названия параметров для обмена данными и их</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">особенности.
-
-
-
-
-5. Установите соответствие
-1.Имя функции -               А. это оператор или операторы.
-2.Спецификация параметров -   Б. это тип результата, который возвращает функция.
-3.Тип функции -               В. это подпрограмма, которая не возвращает результат.
-4.Тело функции -              Г. это идентификатор, который задаёт программист.
-5.Функция -                   Д. это список имён формальных параметров функции
-                              или процедуры и их типов.
-6.Процедура -                 Е. это подпрограмма, которая возвращает результат.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        <div class="pas-predict mt-3" data-expected="***\n*****\n*******">
+            <label class="form-label">Что выведет программа? Напиши вывод (каждое значение с новой строки):</label>
+            <textarea class="pas-predict-input" rows="4" placeholder="Твой ответ..."></textarea>
+            <div class="d-flex align-items-center gap-2 mt-2">
+                <button class="btn btn-primary" data-check>Проверить</button>
+                <span class="pas-predict-feedback"></span>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- 6. Составьте план рассказа о подпрограммах и их программировани -->
-<div class="card mb-5 border-success">
-    <div class="card-header bg-success text-white fw-bold">6. Составьте план рассказа о подпрограммах и их программировании на</div>
+
+<!-- predict-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge predict">Что выведет?</span> Тренажёр: что вернёт функция?
+    </div>
     <div class="card-body">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Паскале. Расскажите текст по плану.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="6" placeholder="Запишите ваш ответ для тренировки…"></textarea>
+        <p class="text-muted mb-2">Функция Cube возвращает куб числа.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">program.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
+    </div>
+    <pre><code>function Cube(n: integer): integer;
+begin
+  Cube := n * n * n;
+end;
+
+begin
+  writeln(Cube(2));
+  writeln(Cube(4));
+end.</code></pre>
+    
+</div>
+        <div class="pas-predict mt-3" data-expected="8\n64">
+            <label class="form-label">Что выведет программа? Напиши вывод (каждое значение с новой строки):</label>
+            <textarea class="pas-predict-input" rows="4" placeholder="Твой ответ..."></textarea>
+            <div class="d-flex align-items-center gap-2 mt-2">
+                <button class="btn btn-primary" data-check>Проверить</button>
+                <span class="pas-predict-feedback"></span>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- 7. Решите задачи. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">7. Решите задачи.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">1. Составить программу для нахождения наименьшего из четырёх чисел а,b,с,d.
-  2. Составить программу для нахождения наибольшего из четырёх чисел а,b,с,d.
-  3. Составить программу для нахождения суммы большего и меньшего из трёх
-     чисел а,b,с.
-  4. Треугольник задан координатами своих вершин. Составить программу
-     вычисления его площади.
-  5. Составить программу для вычисления суммы факториалов всех нечётных
-     чисел от 1 до 9.
-  6. Составить программу для вычисления суммы факториалов всех чётных чисел
-     от п до т.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+
+<!-- blanks-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge blank">Заполни пропуск</span> Тренажёр: заполни функцию
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Функция должна возвращать <strong>абсолютное значение</strong> числа: для отрицательного — изменить знак на плюс, для положительного — оставить как есть. Подсказки в комментариях справа.</p>
+        <div class="pas-blanks">
+            <div class="pas-listing">
+                <pre><code class="pas-no-highlight"><span class="pas-keyword">function</span> MyAbs(x: <span class="pas-type">integer</span>): <span class="pas-type"><input class="pas-blank" data-correct="integer" size="9"></span>;     <span class="pas-comment">// введите тип данных</span>
+<span class="pas-keyword">begin</span>
+  <span class="pas-keyword">if</span> x <input class="pas-blank" data-correct="<" size="6"> 0                       <span class="pas-comment">// введите знак сравнения</span>
+  <span class="pas-keyword">then</span> MyAbs := <input class="pas-blank" data-correct="-x" size="6">                  <span class="pas-comment">// введите выражение</span>
+  <span class="pas-keyword">else</span> MyAbs := x;
+<span class="pas-keyword">end</span>;</code></pre>
+            </div>
+            <div class="d-flex align-items-center gap-2 mt-2">
+                <button class="btn btn-primary" data-check>Проверить</button>
+                <span class="pas-blanks-feedback"></span>
+            </div>
         </div>
     </div>
+</div>
+
+
+<!-- reorder-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge reorder">Расставь по порядку</span> Тренажёр: расставь объявление функции
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Это функция Min, возвращающая меньшее из двух чисел. Расставь строки по порядку.</p>
+        <div class="pas-reorder">
+            <div class="pas-reorder-list">
+        <div class="pas-reorder-item" data-order="1">function Min(a, b: integer): integer;</div>
+        <div class="pas-reorder-item" data-order="2">begin</div>
+        <div class="pas-reorder-item" data-order="3">  if a &lt; b</div>
+        <div class="pas-reorder-item" data-order="4">  then Min := a</div>
+        <div class="pas-reorder-item" data-order="5">  else Min := b;</div>
+        <div class="pas-reorder-item" data-order="6">end;</div>
+            </div>
+        </div>
+        <div class="d-flex align-items-center gap-2 mt-2">
+            <button class="btn btn-primary" data-check>Проверить порядок</button>
+            <span class="pas-reorder-feedback"></span>
+        </div>
+    </div>
+</div>
+
+
+<!-- note -->
+<div class="alert alert-warning mb-4">
+    <strong>Примечание:</strong> Учти: встроенный «Запустить» в этих тренажёрах поддерживает базовые конструкции, но <strong>не работает</strong> с procedure/function. Для запуска таких программ используй задание «что выведет?» и проверяй вывод по эталону, либо запусти код в Free Pascal на компьютере.
 </div>
 
 </div>

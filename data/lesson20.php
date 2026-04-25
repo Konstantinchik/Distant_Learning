@@ -1,15 +1,15 @@
-<!--lesson20.php-->
+<!-- lesson20.php — переработано в интерактивный Pascal-урок -->
 <div class="lesson">
 
-    <h2 class="text-primary mb-4">
-        Занятие 20. Язык программирования Паскаль. Линейные программы 
+    <h2 class="text-primary mb-4">Занятие 20. Линейные программы</h2>
 
-    </h2>
+<!-- intro -->
+<div class="alert alert-primary border-start border-primary border-4 fs-5 mb-4">
+    Линейная программа — это последовательность команд, выполняемых одна за другой, без ветвлений и циклов. Самый частый шаблон: <em>прочитал данные → вычислил → вывел</em>.
+</div>
 
-    <!-- ==================================================
-     Задание 1. Слова и словосочетания (2 колонки + озвучка)
-     ================================================== -->
 
+    <!-- Задание 1: словарь (сохранён без изменений) -->
 <div class="card mb-5">
   <div class="card-header bg-light fw-bold fs-5">
     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
@@ -130,187 +130,129 @@
 </div>
 <!-- Конец задания 1 -->
 
-<!-- 2. Прочитайте текст -->
-<div class="card mb-5 border-primary">
-    <div class="card-header bg-primary text-white fw-bold">2. Прочитайте текст</div>
-    <div class="card-body fs-5 lh-lg">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Язык     программирования    Pascal    —   это язык   структурного
-программирования, который также поддерживает средства процедурного и (в
-современных версиях — Object Pascal, PascalABC.NET, Delphi) объектно-
-ориентированного программирования. Рассмотрим некоторые базовые вопросы
-построения простейших программ на языке Pascal.
-
-      Общая структура программы на Pascal имеет вид:
-
-      program имя_программы; { необязательно в PascalABC.NET }
-
-      раздел_подключения_модулей
-      раздел_описаний_типов
-      раздел_описаний_переменных
-      раздел_процедур_и_функций
-
-      begin
-                  исполняемые_операторы
-      end.
-
-      В каждой программе обязательно присутствует основной блок, заключённый
-между словами begin и end. — в нём размещаются операторы, которые выполняются
-при запуске программы. Простейшая программа может содержать только
-исполняемый блок и иметь следующую структуру:
-      begin
-        операторы;
-      end.
-
-     Подключение модулей.
-     Раздел подключения модулей начинается словом uses. Если программе
-необходимы дополнительные процедуры, функции или классы, то в начале
-программы подключают модули, где содержится их описание.
-
-Пример:
-uses System, Math;    список модулей задается поименно, через запятую.
-
-     Определение объектов (описание переменных).
-     Перед началом выполнения программы необходимо описать имена величин, с
-которыми будет работать программа, и указать их типы.
-
-Пример:
-
-var
-       a, b, c: integer;
-       x: real;
-      Операторы языка Паскаль.
-      Оператор в Паскаль — это команда, после которой ставится знак ; (точка с
-запятой). Каждый оператор обозначает отдельное действие, выполняемое на
-очередном шаге работы программы.
-
-Например:
-
-      a := 5;
-      Writeln(a);
-
-     Линейные вычислительные программы.
-     Рассмотрим средства языка Паскаль, которые применяются при создании
-линейных (последовательных) вычислительных программ на примере решения
-конкретной задачи.
-
-
-                                      (      )
-Задача 1. Найдите значение                       выражения для любых значений
-
-величин x и у.
-      Блок-схема алгоритма решения этой задачи рассматривалась в тексте занятия
-10 (рис. 11).
-      Для того чтобы найти значение выражения S . нужно знать значения величин x
-и у. Для ввода исходной информации в Паскале выполняется с помощью стандартных
-процедур Read и ReadLn, а вывод — с помощью Write и WriteLn.
-     Ввод данных в Паскаль рассматривается как чтение значений с клавиатуры и
-присваивание их соответствующим переменным:
-      ReadLn(x);
-      ReadLn(y);
-
-Вывод данных:
-
-      WriteLn(S);
-
-      Вычисление значения выражения S можно организовать разными способами.
-Например, использовать дополнительные величины р, q для вычисления значения
-числителя и знаменателя дроби. Тогда S = p/q. Или сначала найти только значение
-числителя, присвоив его в величине S. А затем разделить это значение на значение
-знаменателя. В этом случае не надо использовать дополнительные величины.
-      При вычислении значения числителя дроби необходимо выражение возводить
-в четвёртую степень. Это действие также можно выполнить разными способами:
-
-   1. Использовать дополнительные переменные p и q для хранения значений
-      числителя и знаменателя дроби, тогда S = p / q.
-   2. Либо сначала вычислить только числитель и сохранить его в переменной S, а
-      затем сразу разделить это значение на знаменатель:
-
-      S := числитель;
-      S := S / знаменатель;
-
-Этот вариант короче, потому что не требует дополнительных переменных.
-
-   При вычислении числителя необходимо возвести выражение в четвёртую
-степень. В Паскале это также можно выполнить двумя способами:
-
-   1. С помощью обычных умножений:
-   2. (x + 2*y) * (x + 2*y) * (x + 2*y) * (x + 2*y)
-   3. Или используя функцию Power(a, b), которая определена в модуле Math:
-
-uses Math;
-p := x * y - Power(x + 2*y, 4);
-Листинг 1.
-uses Math;                            // подключение математического модуля
-var
-        x, y, p, q, s: real;          // описание чисел с плавающей точкой
-begin
-        ReadLn(x);                    // ввод значения величины x
-        ReadLn(y);                    // ввод значения величины y
-        p := x * y - Power(x + 2*y, 4);           // числитель дроби
-        q := x*x + y*y + 1;                       // знаменатель дроби
-        s := p / q;                   // вычисление значения S
-        WriteLn(s);                   // вывод результата
-end.
-
-
-Листинг 2. (более компактный вариант)
-uses Math;
-var
-      x, y, s: real;
-begin
-      ReadLn(x);               // ввод значения x
-      ReadLn(y);               // ввод значения y
-
-        s := x * y - Power(x + 2*y, 4); // числитель
-        s := s / (x*x + y*y + 1);       // деление на знаменатель
-
-        WriteLn(s);                   // вывод результата
-end.
-3.Ответьте на вопросы.
-     1. Какой язык программирования Паскаль?
-     2. Какой вид имеет общая структура программы на Паскале?
-     3. Каких типов бывают переменные? Приведите пример.
-     4. Что такое оператор в Паскаль? Приведите пример.
-     5. Какие стандартные процедуры ввода-вывода вы знаете?
-     6. Что такое ввод данных?
-     7. Что такое вывод данных?</pre>
-    </div>
-</div>
-
-<!-- 4. Соедините стрелками элементы структуры линейной программы с  -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">4. Соедините стрелками элементы структуры линейной программы с их</div>
+<!-- Теория -->
+<div class="card mb-4 border-info">
+    <div class="card-header bg-info text-white fw-bold">📖 Теория</div>
     <div class="card-body">
-        <div class="alert alert-warning small mb-3">
-            <strong>TODO:</strong> для интерактивного подбора (drag&drop / select) разметить вручную. Сейчас — текст из тетради + поле для ответа.
+        
+        <h6 class="text-primary mt-3">Арифметические операции</h6>
+        <div class="pas-listing">
+            <pre><code>+   сложение
+-   вычитание
+*   умножение
+/   деление вещественное
+div деление целое
+mod остаток от деления</code></pre>
         </div>
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">названиями и дайте их определения.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        <h6 class="text-primary mt-3">Пример: длина окружности</h6>
+        <div class="pas-listing">
+            <pre><code>program Circle;
+const Pi = 3.14159;
+var r, c: real;
+begin
+  r := 5;
+  c := 2 * Pi * r;
+  writeln('Длина окружности = ', c);
+end.</code></pre>
         </div>
     </div>
 </div>
 
-<!-- 5. Составьте план рассказа о структуре построения программы на  -->
-<div class="card mb-5 border-success">
-    <div class="card-header bg-success text-white fw-bold">5. Составьте план рассказа о структуре построения программы на Паскале.</div>
+
+<!-- run-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge run">▶ Запустить</span> Тренажёр: запустить программу
+    </div>
     <div class="card-body">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Расскажите текст по плану.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="6" placeholder="Запишите ваш ответ для тренировки…"></textarea>
+        <p class="text-muted mb-2">Программа вычисляет сумму, разность, произведение и частное двух чисел.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">Calc.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-success me-2" data-run>▶ Запустить</button>
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
+    </div>
+    <pre><code>program Calc;
+var a, b: integer;
+begin
+  a := 17;
+  b := 5;
+  writeln('a + b = ', a + b);
+  writeln('a - b = ', a - b);
+  writeln('a * b = ', a * b);
+  writeln('a div b = ', a div b);
+  writeln('a mod b = ', a mod b);
+end.</code></pre>
+    <div class="pas-run-output"></div>
+</div>
+    </div>
+</div>
+
+
+<!-- predict-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge predict">Что выведет?</span> Тренажёр: что выведет программа?
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Особое внимание на порядок операций.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">program.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
+    </div>
+    <pre><code>var x, y: integer;
+begin
+  x := 10;
+  y := 3;
+  writeln(x + y * 2);
+  writeln((x + y) * 2);
+  writeln(x div y);
+  writeln(x mod y);
+end.</code></pre>
+    
+</div>
+        <div class="pas-predict mt-3" data-expected="16\n26\n3\n1">
+            <label class="form-label">Что выведет программа? Напиши вывод (каждое значение с новой строки):</label>
+            <textarea class="pas-predict-input" rows="4" placeholder="Твой ответ..."></textarea>
+            <div class="d-flex align-items-center gap-2 mt-2">
+                <button class="btn btn-primary" data-check>Проверить</button>
+                <span class="pas-predict-feedback"></span>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- 6. Составьте программы решения задач задания 10 из занятия 10.  -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">6. Составьте программы решения задач задания 10 из занятия 10. Используйте</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">блок-схемы.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+
+<!-- blanks-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge blank">Заполни пропуск</span> Тренажёр: заполни пропуски — формула среднего
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Программа должна вычислить <strong>среднее арифметическое</strong> трёх чисел: a=10, b=20, c=30. Среднее = сумма всех чисел, делённая на их количество. Впиши недостающие <strong>арифметические операторы</strong>.</p>
+        <div class="pas-blanks">
+            <div class="pas-listing">
+                <pre><code class="pas-no-highlight"><span class="pas-keyword">var</span> a, b, c, s: <span class="pas-type">integer</span>;
+    avg: <span class="pas-type">real</span>;
+<span class="pas-keyword">begin</span>
+  a := 10; b := 20; c := 30;
+  s := a <input class="pas-blank" data-correct="+" size="6"> b <input class="pas-blank" data-correct="+" size="6"> c;            <span class="pas-comment">// арифметический оператор</span>
+  avg := s <input class="pas-blank" data-correct="/" size="6"> 3;                <span class="pas-comment">// арифметический оператор</span>
+  <span class="pas-builtin">writeln</span>(<span class="pas-string">'Среднее = '</span>, avg);
+<span class="pas-keyword">end</span>.</code></pre>
+            </div>
+            <div class="d-flex align-items-center gap-2 mt-2">
+                <button class="btn btn-primary" data-check>Проверить</button>
+                <span class="pas-blanks-feedback"></span>
+            </div>
         </div>
     </div>
 </div>
+
 
 </div>

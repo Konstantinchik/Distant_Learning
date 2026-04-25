@@ -1,0 +1,269 @@
+/* ============================================================
+ * pascal-trainer.css — стили подсветки Pascal и мини-тренажёров
+ * Подключается на страницах lessons.php?n=19..24 (Pascal-уроки)
+ * ============================================================ */
+
+/* === Контейнер листинга === */
+.pas-listing {
+    position: relative;
+    margin: 1.25rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: #1e1e2e;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.95rem;
+}
+.pas-listing-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background: #2a2a3e;
+    color: #cdd6f4;
+    font-size: 0.85rem;
+    font-family: system-ui, sans-serif;
+    border-bottom: 1px solid #45475a;
+}
+.pas-listing-title {
+    font-weight: 500;
+}
+.pas-listing-title::before {
+    content: "▶ ";
+    color: #f38ba8;
+    margin-right: 4px;
+}
+.pas-listing-actions .btn {
+    font-size: 0.78rem;
+    padding: 0.2rem 0.6rem;
+}
+.pas-listing pre {
+    margin: 0;
+    padding: 1rem 1rem 1rem 0;
+    background: transparent;
+    color: #cdd6f4;
+    overflow-x: auto;
+    counter-reset: line;
+    line-height: 1.55;
+}
+.pas-listing pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+}
+
+/* Нумерация строк */
+.pas-listing pre .pas-line {
+    display: block;
+    padding-left: 3.5rem;
+    position: relative;
+    min-height: 1.55em;
+}
+.pas-listing pre .pas-line::before {
+    counter-increment: line;
+    content: counter(line);
+    position: absolute;
+    left: 0;
+    width: 2.5rem;
+    padding-right: 0.5rem;
+    color: #6c7086;
+    text-align: right;
+    user-select: none;
+    border-right: 1px solid #45475a;
+    margin-right: 0.5rem;
+}
+
+/* Подсветка синтаксиса (VSCode-like) */
+.pas-keyword  { color: #cba6f7; font-weight: 600; }
+.pas-type     { color: #f9e2af; font-weight: 500; }
+.pas-string   { color: #a6e3a1; }
+.pas-number   { color: #fab387; }
+.pas-comment  { color: #6c7086; font-style: italic; }
+.pas-builtin  { color: #89b4fa; font-weight: 500; }
+.pas-operator { color: #f5c2e7; }
+.pas-ident    { color: #cdd6f4; }
+
+/* === Блок «Запустить программу» === */
+.pas-run-output {
+    background: #11111b;
+    color: #a6e3a1;
+    padding: 0.75rem 1rem;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9rem;
+    border-top: 1px solid #45475a;
+    min-height: 2.5rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.pas-run-output:empty::before {
+    content: "Нажмите «Запустить» для выполнения программы";
+    color: #6c7086;
+    font-style: italic;
+}
+.pas-run-output.error {
+    color: #f38ba8;
+}
+
+/* === Тренажёр пошаговой трассировки === */
+.pas-trace {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+@media (max-width: 768px) {
+    .pas-trace { grid-template-columns: 1fr; }
+}
+.pas-trace-state {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1rem;
+}
+.pas-trace-state h6 {
+    margin-bottom: 0.5rem;
+    color: #495057;
+    font-weight: 600;
+}
+.pas-trace-vars {
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+.pas-trace-vars td {
+    padding: 0.25rem 0.5rem;
+    border-bottom: 1px solid #e9ecef;
+    font-family: 'Consolas', monospace;
+}
+.pas-trace-vars .var-name {
+    color: #6610f2;
+    font-weight: 600;
+}
+.pas-trace-vars .var-value {
+    color: #198754;
+    text-align: right;
+}
+.pas-trace-vars .var-value.changed {
+    background: #fff3cd;
+    transition: background 0.5s ease-out;
+}
+.pas-trace-stdout {
+    background: #11111b;
+    color: #a6e3a1;
+    padding: 0.5rem;
+    border-radius: 4px;
+    min-height: 3rem;
+    font-family: 'Consolas', monospace;
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+}
+.pas-trace pre .pas-line.current {
+    background: rgba(245, 194, 231, 0.18);
+    transition: background 0.3s;
+}
+
+/* === Тренажёр «Заполни пропуск» === */
+.pas-blank {
+    display: inline-block;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 4px;
+    padding: 0 0.4rem;
+    color: #664d03;
+    font-family: inherit;
+    font-size: inherit;
+    min-width: 4ch;
+    text-align: left;
+}
+.pas-blank::placeholder {
+    color: #997404;
+    opacity: 0.7;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.85em;
+}
+.pas-blank:focus {
+    outline: 2px solid #fd7e14;
+    border-color: #fd7e14;
+}
+.pas-blank.is-valid   { background: #d1e7dd; border-color: #198754; color: #0f5132; }
+.pas-blank.is-invalid { background: #f8d7da; border-color: #dc3545; color: #842029; }
+
+/* === Тренажёр «Расставь по порядку» === */
+.pas-reorder {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin: 1rem 0;
+}
+.pas-reorder-item {
+    display: block;
+    background: #1e1e2e;
+    color: #cdd6f4;
+    padding: 0.5rem 1rem;
+    margin: 0.35rem 0;
+    border-radius: 6px;
+    font-family: 'Consolas', monospace;
+    cursor: grab;
+    user-select: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s, transform 0.15s;
+}
+.pas-reorder-item:hover { border-left-color: #cba6f7; }
+.pas-reorder-item.dragging { opacity: 0.5; transform: scale(0.98); }
+.pas-reorder-item.correct { border-left-color: #198754; background: #1c2e1c; }
+.pas-reorder-item.incorrect { border-left-color: #dc3545; background: #2e1c1c; }
+.pas-reorder-item.placeholder { background: #45475a; color: transparent; }
+
+/* === Тренажёр «Что выведет программа?» === */
+.pas-predict {
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+.pas-predict label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+.pas-predict-input {
+    width: 100%;
+    background: #11111b;
+    color: #a6e3a1;
+    border: 1px solid #45475a;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    font-family: 'Consolas', monospace;
+    font-size: 0.9rem;
+}
+.pas-predict-input:focus {
+    outline: 2px solid #cba6f7;
+    border-color: #cba6f7;
+}
+.pas-predict-feedback {
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+.pas-predict-feedback.ok    { color: #198754; }
+.pas-predict-feedback.fail  { color: #dc3545; }
+
+/* === Бейдж типа задачи === */
+.pas-task-badge {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+}
+.pas-task-badge.run     { background: #cfe2ff; color: #084298; }
+.pas-task-badge.trace   { background: #fff3cd; color: #664d03; }
+.pas-task-badge.blank   { background: #f8d7da; color: #842029; }
+.pas-task-badge.reorder { background: #d1e7dd; color: #0f5132; }
+.pas-task-badge.predict { background: #e2d9f3; color: #432874; }

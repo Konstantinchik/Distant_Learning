@@ -1,15 +1,15 @@
-<!--lesson19.php-->
+<!-- lesson19.php — переработано в интерактивный Pascal-урок -->
 <div class="lesson">
 
-    <h2 class="text-primary mb-4">
-        Занятие 19. Программирование. Знакомство с языком программирования Паскаль 
-    </h2>
+    <h2 class="text-primary mb-4">Занятие 19. Знакомство с языком программирования Паскаль</h2>
 
-    <!-- ==================================================
-     Задание 1 (lesson19) — термины (2 колонки + озвучка)
-     Референс: 121.pdf
-     ================================================== -->
+<!-- intro -->
+<div class="alert alert-primary border-start border-primary border-4 fs-5 mb-4">
+    Pascal — язык высокого уровня, разработанный Никлаусом Виртом в 1970 году. Это первый язык, который ты будешь изучать всерьёз. Он строгий, понятный и хорошо учит мыслить алгоритмически.
+</div>
 
+
+    <!-- Задание 1: словарь (сохранён без изменений) -->
 <div class="card mb-5">
   <div class="card-header bg-light fw-bold fs-5">
     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
@@ -217,191 +217,143 @@
 </div>
 <!-- Конец задания 1 -->
 
-<!-- 3. Ответьте на вопросы. -->
-<div class="card mb-5">
-    <div class="card-header bg-primary text-white fw-bold">3. Ответьте на вопросы.</div>
+<!-- Теория -->
+<div class="card mb-4 border-info">
+    <div class="card-header bg-info text-white fw-bold">📖 Теория</div>
     <div class="card-body">
-        <ol class="list-unstyled mb-0">
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">1. Что такое программирование?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">2. Какие цели программирования?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">3. Что такое транслятор? Какие существуют трансляторы?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">4. Что такое интерпретатор? Приведите пример.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">5. Что такое компилятор? Приведите пример.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">6. Что такое комментарий?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">7. Для чего нужна директивы компилятора?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">8. Какова структура программы на Паскале?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">9. Что включает в себя алфавит языка Паскаль?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">10. Что такое идентификатор? Для чего он используется в программе?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">11. Что такое служебные слова? Приведите примеры.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">12. На какие группы делятся типы данных в языке Паскаль?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">13. Какие скалярные типы вы знаете?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">14. Какие типы относятся к составным типам?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">15. Что такое выражение в языке программирования?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-        </ol>
-    </div>
-</div>
-
-<!-- 4. Заполните схему. Напишите названия видов трансляторов, дайте -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">4. Заполните схему. Напишите названия видов трансляторов, дайте им</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">характеристику, приведите примеры.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        
+        <h6 class="text-primary mt-3">Структура программы</h6>
+        <div class="pas-listing">
+            <pre><code>program ИмяПрограммы;       // заголовок
+uses модули;                // подключаемые модули (необязательно)
+const ...;                  // константы (необязательно)
+var ...;                    // переменные (необязательно)
+begin                       // начало основного тела
+   операторы;
+end.</code></pre>
+        </div>
+        <h6 class="text-primary mt-3">Простейший пример</h6>
+        <div class="pas-listing">
+            <pre><code>program Hello;
+begin
+  writeln('Привет, мир!');
+end.</code></pre>
         </div>
     </div>
 </div>
 
-<!-- 5. Соедините стрелками части программы и их названия. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">5. Соедините стрелками части программы и их названия.</div>
+
+<!-- run-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge run">▶ Запустить</span> Тренажёр: запустить первую программу
+    </div>
     <div class="card-body">
-        <div class="alert alert-warning small mb-3">
-            <strong>TODO:</strong> для интерактивного подбора (drag&drop / select) разметить вручную. Сейчас — текст из тетради + поле для ответа.
+        <p class="text-muted mb-2">Нажми «Запустить» — программа выполнится прямо в браузере и покажет вывод ниже.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">Hello.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-success me-2" data-run>▶ Запустить</button>
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
         </div>
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;"></pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
+    </div>
+    <pre><code>program Hello;
+begin
+  writeln('Привет, Pascal!');
+  writeln('Это моя первая программа.');
+end.</code></pre>
+    <div class="pas-run-output"></div>
+</div>
     </div>
 </div>
 
-<!-- 6. Заполните схемы. Напишите названия типов языка Паскаль и выр -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">6. Заполните схемы. Напишите названия типов языка Паскаль и выражений.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Дайте им характеристику, приведите примеры.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
 
-<!-- 7. Закончите предложения. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">7. Закончите предложения.</div>
+<!-- predict-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge predict">Что выведет?</span> Тренажёр: что выведет программа?
+    </div>
     <div class="card-body">
-        <ol class="list-unstyled mb-0">
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>1.</strong> Язык программирования Паскаль даёт возможность ... .</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>2.</strong> Язык высокого уровня Паскаль разработал ... .</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>3.</strong> Интерпретатор и компилятор — это ... .</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>4.</strong> Идентификаторы, служебные слова составляют ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>5.</strong> Язык программирования Паскаль позволяет с помощью специальных служебных слов ... .</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>6.</strong> В языке программирования выражение — это ... .</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-        </ol>
+        <p class="text-muted mb-2">Прочитай код, мысленно выполни и впиши ожидаемый вывод. Потом проверь.</p>
+        <div class="pas-listing">
+    <div class="pas-listing-header">
+        <span class="pas-listing-title">program.pas</span>
+        <div class="pas-listing-actions">
+            <button class="btn btn-sm btn-light" data-copy>Копировать</button>
+        </div>
     </div>
+    <pre><code>var a, b: integer;
+begin
+  a := 5;
+  b := 3;
+  writeln('a + b = ', a + b);
+  writeln('a * b = ', a * b);
+end.</code></pre>
+    
 </div>
-
-<!-- 8. Вставьте вместо точек глаголы, данные под чертой, в нужной ф -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">8. Вставьте вместо точек глаголы, данные под чертой, в нужной форме.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">1. Прикладное программирование ... разработкой средств для подготовки
-     задач к решению на компьютере.
-     2. Язык программирования Паскаль ... языком высокого уровня.
-     3. Новый язык программирования Паскаль ... в 1970 г. Никлаусом Виртом.
-     4. Директива USES ... компилятору, что к тексту программы надо ... модули из
-     файла библиотеки.
-     5. Идентификатор ... с буквы.
-     6. Выражения ... при записи команд в программе.
-Сообщать, разработать, начинаться, использовать, подключить, заниматься,
-являться.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        <div class="pas-predict mt-3" data-expected="a + b = 8\na * b = 15">
+            <label class="form-label">Что выведет программа? Напиши вывод (каждое значение с новой строки):</label>
+            <textarea class="pas-predict-input" rows="4" placeholder="Твой ответ..."></textarea>
+            <div class="d-flex align-items-center gap-2 mt-2">
+                <button class="btn btn-primary" data-check>Проверить</button>
+                <span class="pas-predict-feedback"></span>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- 9. Составьте план рассказа о языке программирования Паскаль, ег -->
-<div class="card mb-5 border-success">
-    <div class="card-header bg-success text-white fw-bold">9. Составьте план рассказа о языке программирования Паскаль, его</div>
+
+<!-- blanks-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge blank">Заполни пропуск</span> Тренажёр: заполни пропуски в структуре программы
+    </div>
     <div class="card-body">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">особенностях, структуре программы. Расскажите текст по плану.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="6" placeholder="Запишите ваш ответ для тренировки…"></textarea>
+        <p class="text-muted mb-2">Это типовая структура программы Pascal. Подскажи компьютеру, какие <strong>ключевые слова</strong> должны быть на местах пропусков. Подсказки — в комментариях справа от строки.</p>
+        <div class="pas-blanks">
+            <div class="pas-listing">
+                <pre><code class="pas-no-highlight"><span class="pas-keyword"><input class="pas-blank" data-correct="program" size="9"></span> First;            <span class="pas-comment">// ключевое слово</span>
+<span class="pas-keyword"><input class="pas-blank" data-correct="var" size="6"></span> x: <span class="pas-type">integer</span>;            <span class="pas-comment">// ключевое слово</span>
+<span class="pas-keyword"><input class="pas-blank" data-correct="begin" size="7"></span>                    <span class="pas-comment">// ключевое слово</span>
+  x := 10;
+  <span class="pas-builtin">writeln</span>(x);
+<span class="pas-keyword"><input class="pas-blank" data-correct="end" size="6"></span>.                      <span class="pas-comment">// ключевое слово</span></code></pre>
+            </div>
+            <div class="d-flex align-items-center gap-2 mt-2">
+                <button class="btn btn-primary" data-check>Проверить</button>
+                <span class="pas-blanks-feedback"></span>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- 10. Выполните задание. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">10. Выполните задание.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">1. Для математических выражений запишите соответствующие выражения на
-языке Паскаль:
 
-
-
-
-     2. Запишите математические выражения, которые соответствуют следующим
-выражениям на языке Паскаль:</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+<!-- reorder-тренажёр -->
+<div class="card mb-4">
+    <div class="card-header bg-light fw-bold">
+        <span class="pas-task-badge reorder">Расставь по порядку</span> Тренажёр: расставь строки программы по порядку
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-2">Программа складывает два числа и выводит сумму. <strong>Обрати внимание</strong>: <code>a := 5;</code> и <code>b := 7;</code> — независимы между собой, поэтому их можно ставить <em>в любом порядке</em>. А вот <code>s := a + b;</code> должно идти <strong>после</strong> обоих присваиваний, иначе сумма будет неправильной.</p>
+        <div class="pas-reorder">
+            <div class="pas-reorder-list">
+        <div class="pas-reorder-item" data-order="1">program Sum;</div>
+        <div class="pas-reorder-item" data-order="2">var a, b, s: integer;</div>
+        <div class="pas-reorder-item" data-order="3">begin</div>
+        <div class="pas-reorder-item" data-order="4">  a := 5;</div>
+        <div class="pas-reorder-item" data-order="4">  b := 7;</div>
+        <div class="pas-reorder-item" data-order="5">  s := a + b;</div>
+        <div class="pas-reorder-item" data-order="6">  writeln(s);</div>
+        <div class="pas-reorder-item" data-order="7">end.</div>
+            </div>
+        </div>
+        <div class="d-flex align-items-center gap-2 mt-2">
+            <button class="btn btn-primary" data-check>Проверить порядок</button>
+            <span class="pas-reorder-feedback"></span>
         </div>
     </div>
 </div>
+
 
 </div>

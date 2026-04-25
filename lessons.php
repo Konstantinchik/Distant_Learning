@@ -26,6 +26,11 @@ $file = __DIR__ . "/data/lesson{$lesson}.php";
 
     <!-- Custom styles -->
     <link href="/assets/css/style.css" rel="stylesheet">
+
+    <?php if ($lesson >= 19 && $lesson <= 24): ?>
+    <!-- Pascal-тренажёры: подсветка кода + интерпретатор + тренажёры -->
+    <link href="/assets/css/pascal-trainer.css" rel="stylesheet">
+    <?php endif; ?>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100">
@@ -111,6 +116,11 @@ $file = __DIR__ . "/data/lesson{$lesson}.php";
 
     </div>
 </main>
+
+<?php if ($lesson >= 19 && $lesson <= 24): ?>
+<!-- Pascal-тренажёры: подключаем перед footer, чтобы инициализация произошла после загрузки контента -->
+<script src="/assets/js/pascal-trainer.js" defer></script>
+<?php endif; ?>
 
 <?php include __DIR__ . '/footer.php'; ?>
 
