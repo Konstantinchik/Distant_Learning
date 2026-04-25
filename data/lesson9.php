@@ -5,14 +5,11 @@
         Занятие 9. Алгоритм. Свойства алгоритма. Исполнитель алгоритма. Способы записи алгоритма. Виды алгоритмов
     </h2>
 
-    <div class="alert alert-info mb-4">
-        <strong>Внимание!</strong> Это занятие ещё в разработке. Можно уже тренировать интерактив, но текст и задания нужно дописать по PDF.
-    </div>
-
-<!-- ==================================================
+    <!-- ==================================================
      1. Прочитайте слова и словосочетания (2 колонки + озвучка)
      Референс: 50-51.pdf
      ================================================== -->
+
 <div class="card mb-5">
   <div class="card-header bg-light fw-bold fs-5">
     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
@@ -275,92 +272,422 @@
 </div>
 <!-- Конец задания 1 -->
 
-
-    <!-- Пример задания "да / нет" -->
-    <div class="card mb-4">
-        <div class="card-header bg-light fw-bold">
-            2. Ответьте на вопросы утвердительно или отрицательно («да» или «нет»).
+<!-- 2. Сгруппируйте однокоренные слова. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">2. Сгруппируйте однокоренные слова.</div>
+    <div class="card-body">
+        <div class="alert alert-warning small mb-3">
+            <strong>TODO:</strong> для интерактивного подбора (drag&drop / select) разметить вручную. Сейчас — текст из тетради + поле для ответа.
         </div>
-        <div class="card-body">
-
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да">
-                <p class="fw-500 mb-3">1. [Вопрос по тексту занятия 3]</p>
-                <div class="btn-group btn-group-lg mb-2">
-                    <input type="radio" class="btn-check" name="l3a1" value="да" id="l3a1da">
-                    <label class="btn btn-outline-success px-4" for="l3a1da">да</label>
-                    <input type="radio" class="btn-check" name="l3a1" value="нет" id="l3a1net">
-                    <label class="btn btn-outline-danger px-4" for="l3a1net">нет</label>
-                </div>
-                <div class="feedback mt-2 fw-bold d-none"></div>
-            </div>
-
-            <!-- копируешь этот блок ещё 3–5 раз, меняешь name/id/data-answer и текст вопроса -->
-
-            <div class="text-center mt-3">
-                <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить ответы</button>
-            </div>
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Задать, реально. понять, дискретный, разветвляться, эффективность,
+алгоритмический, результативность. словарь, определить, масса, линейный,
+конечность, графика, циклический. задание, понимать, конец, ветвь, дискретность,
+алгоритм. определённость, реальность, разветвление, закончить. результат, слово,
+понятный, цикл. конечный, массовость, эффективный, алгоритмизировать,
+заданный, линия, реальный, графический, цикличность, разветвляющийся,
+эффективно, понятность, результативный, массовый, линейка, словесный,
+определённый.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
         </div>
     </div>
+</div>
 
-    <!-- Пример теста с четырьмя вариантами -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white fw-bold">
-            3. Выберите правильный вариант ответа.
+<!-- 3. Подберите существительные к прилагательным. Укажите, где воз -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">3. Подберите существительные к прилагательным. Укажите, где возможно,</div>
+    <div class="card-body">
+        <div class="alert alert-warning small mb-3">
+            <strong>TODO:</strong> для интерактивного подбора (drag&drop / select) разметить вручную. Сейчас — текст из тетради + поле для ответа.
         </div>
-        <div class="card-body fs-5">
-
-            <div class="question-block mb-4 p-4 border rounded bg-light" data-correct="c">
-                <p class="fw-bold mb-3">1. [Вопрос теста по занятию 3]</p>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1a" value="a">
-                    <label class="form-check-label ms-2" for="l3q1a">а) Вариант A</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1b" value="b">
-                    <label class="form-check-label ms-2" for="l3q1b">б) Вариант B</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1c" value="c">
-                    <label class="form-check-label ms-2" for="l3q1c">в) Вариант C (правильный)</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1d" value="d">
-                    <label class="form-check-label ms-2" for="l3q1d">г) Вариант D</label>
-                </div>
-
-                <div class="feedback mt-2 fw-bold d-none"></div>
-            </div>
-
-            <!-- ещё вопросы — копипаст question-block, меняешь name и data-correct -->
-
-            <div class="text-center">
-                <button class="btn btn-primary btn-lg px-4" onclick="checkTask7()">Проверить тест</button>
-            </div>
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">варианты. Поставьте прилагательные в правильной форме.
+простой                               число
+графический                           алгоритм
+линейный                              фигура
+конечный                              команды
+циклический                           запись
+абстрактный                           система
+реальный                              элемент
+словесный                             пример
+натуральный</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
         </div>
     </div>
+</div>
 
-    <!-- Заглушка под текст -->
-    <div class="card mb-4 border-primary">
-        <div class="card-header bg-primary text-white fw-bold">
-            Текст занятия 3
-        </div>
-        <div class="card-body">
-            <p class="text-muted mb-0">
-                Здесь будет текст из тетради (задание «Прочитайте текст»). Сейчас можно оставить пустым или вставить черновик.
-            </p>
+<!-- 4. Образуйте существительные по образцу. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">4. Образуйте существительные по образцу.</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Образец: последовательный - последовательность
+     Дискретный, понятный, эффективный, результативный, определённый,
+массовый, конечный.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
         </div>
     </div>
+</div>
 
-    <!-- Итоговое задание «Расскажите…» -->
-    <div class="card mb-4 border-success">
-        <div class="card-header bg-success text-white fw-bold">
-            Итоговое задание
-        </div>
-        <div class="card-body">
-            <p>[Инструкция из тетради: «Расскажите о …»]</p>
-            <textarea class="form-control" rows="5" placeholder="Здесь студент может написать свой ответ…"></textarea>
+<!-- 5. Образуйте существительные от данных глаголов по образцу. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">5. Образуйте существительные от данных глаголов по образцу.</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">A) Образец: удалить – удаление
+     Выполнить, составить (в//вл). изобразить (з//ж). решить, сравнить, сообщить.
+     Б) Образец: понимать - понимание
+     Описать, программировать, использовать.
+     B) Образец: преподавать - преподаватель
+     Исполнить, пользоваться, носить.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
         </div>
     </div>
+</div>
+
+<!-- 6. Преобразуйте словосочетания по образцу. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">6. Преобразуйте словосочетания по образцу.</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Образец: решить задачу (4) - решение задачи (2)
+     Составить алгоритм, выполнить команду, выполнить действие, использовать
+способ, описать действия, сообщить результат, сравнить числа, изобразить
+алгоритм, записать команду.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        </div>
+    </div>
+</div>
+
+<!-- 7. Обратите внимание на конструкции и запомните их. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">7. Обратите внимание на конструкции и запомните их.</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Если … , то … .
+
+Образец: Если числа равны, то сообщить результат.
+         Если X = Y, то закончить работу.
+         Если условие верно, то выполняется одна из последовательностей
+     действий (одна ветвь алгоритма).</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        </div>
+    </div>
+</div>
+
+<!-- 8. Прочитайте текст. -->
+<div class="card mb-5 border-primary">
+    <div class="card-header bg-primary text-white fw-bold">8. Прочитайте текст.</div>
+    <div class="card-body fs-5 lh-lg">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Алгоритмизация — это один из этапов решения задач на компьютере.
+Алгоритмизация — это процесс составления алгоритма решения задачи.
+     Алгоритм — это последовательность действий, которая приводит к решению
+поставленной задачи.
+     Название «алгоритм» произошло от имени математика Мухаммеда ибн Муса
+аль-Хорезми (Alhorithmi) (783 - 850 гг.). Он разработал правила выполнения четырёх
+действий арифметики. Эти правила до сих пор - самый простой пример
+математических алгоритмов.
+     Свойства алгоритма:
+     1. Дискретность. Все действия — это отдельные самые простые команды,
+        которые записываются по порядку их выполнения.
+     2. Определённость. Каждая команда алгоритма - чёткая, точная, имеет только
+        одно значение (однозначная).
+     3. Понятность. Исполнитель алгоритма понимает, как выполнять каждую
+        команду и весь алгоритм.
+     4. Результативность (конечность). Алгоритм за конечное число шагов либо
+        приводит к решению задачи, либо останавливается, потому что задачу
+        решить нельзя.
+     5. Массовость. С помощью алгоритма можно решить множество задач
+        заданного вида.
+     6. Эффективность. Алгоритм помогает использовать минимум действий,
+        чтобы решить задачу. Алгоритм нужен для исполнителя. Исполнитель — это
+        абстрактная или реальная система, которая понимает действия, заданные в
+        алгоритме, и может их выполнить. Исполнителем может быть человек,
+            группа людей, устройство и так далее. В информатике универсальный
+            исполнитель алгоритмов — это компьютер.
+     Алгоритм должен быть понятным для исполнителя. Для разных исполнителей
+используют разные способы записи алгоритма - словесный, графический,
+псевдокоды, язык программирования.
+     Словесный способ записи алгоритма — это описание последовательных
+действий для обработки данных. В этом случае алгоритм записывают на языке,
+который понимает человек - исполнитель этого алгоритма.
+    Сравните два примера словесной записи алгоритма Эвклида «Наибольший
+общий делитель двух натуральных чисел».
+      Пример 1.
+1. Взять два натуральных числа.
+2. Если числа равны, то сообщить результат - любое из чисел, и выполнить пункт 5.
+3. Сравнить числа и найти самое большое.
+4. Заменить самое большое число на разность данных чисел и выполнить пункт 2.
+5. Закончить работу.
+      Пример 2.
+1. Х = А.
+2. Y = В.
+3. Если X = Y, то перейти к пункту 6.
+4. Если X = Y то X =X - Y иначе Y = Y - X.
+5. Перейти к пункту 3.
+6. Наибольший общий делитель чисел А и В равен X.
+7. Конец.
+     Графический способ записи алгоритма — это изображение алгоритма в виде
+набора графических элементов - блоков. Каждый блок — это графическая фигура.
+Разные команды записывают в разные блоки. Последовательность выполнения
+команд указывают стрелками.
+       Блок-схема — это пример графической записи алгоритма (рис. 8).
+           Пример 3. На рисунке 8
+      изображена блок-схема алгоритма
+      Эвклида.
+           Псевдокоды — это система
+      знаков и правил для записи
+      алгоритмов по одной модели.
+            В псевдокоде нет строгих
+      правил для записи команд, но есть
+      базовые конструкции и служебные
+      слова.
+           Точного определения, что
+      такое псевдокод. нет. Поэтому
+      существуют разные псевдокоды,
+      которые отличаются      набором
+      базовых конструкций и служебных
+      слов. Пример псевдокода -
+      алгоритмический язык.
+
+
+Пример 4.
+алг НОД (арг цел а, b, рез цел R)
+       дано два натуральных числа
+       надо НОД двух чисел
+нач цел х, y
+       ввод (а, b)
+       х:=а
+       у:=b
+       пока х&lt;&gt;y
+       нц
+          если х&gt;y
+            то х := х - у
+            иначе у :=у- х
+          всё
+       кц
+       вывод (х)
+кон
+     Язык программирования - строгая система знаков и правил для записи
+алгоритмов в виде, понятном ятя компьютера. Запись алгоритма на языке
+программирования — это программа для компьютера.
+      Примеры языков программирования - Visual C++, Visual Basic. Borland C++.
+Borland Delphi и другие.
+Пример 5.
+Program Example5;
+        Var a, b, x, у : real;
+Begin
+        Write (&#x27;a = &#x27;); Readln(a);
+        Write(&#x27;b = &#x27;); Readln(b);
+        x:=a; у:=b;
+        While x &lt;&gt; y do
+               if x&gt;y then x:=x-y else y:=y-x;
+        Writeln(&#x27;HOД = &#x27;, x);
+End.
+        Для решения разных задач составляют разные алгоритмы.
+        Основные виды алгоритмов - линейные, разветвляющиеся, циклические.
+     Линейный алгоритм — это алгоритм, где все этапы решения задачи
+выполняются по порядку, последовательно.
+     Разветвляющийся (условный) алгоритм — это алгоритм, который содержит
+условие и описывает несколько возможных последовательностей действий. Если
+условие верно, то выполняется одна последовательность действий (одна ветвь
+алгоритма). Иначе - если условие неверно - выполняется другая последовательность
+действий (другая ветвь алгоритма).
+     Циклический алгоритм — это алгоритм, где одна и та же последовательность
+действий выполняется заданное число раз.
+     Алгоритмы решения сложных задач - комплексные. Они содержат все
+основные виды алгоритмов.</pre>
+    </div>
+</div>
+
+<!-- 9. Ответьте на вопросы. -->
+<div class="card mb-5">
+    <div class="card-header bg-primary text-white fw-bold">9. Ответьте на вопросы.</div>
+    <div class="card-body">
+        <ol class="list-unstyled mb-0">
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">1. Что такое алгоритмизация?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">2. Что такое алгоритм?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">3. Кто разработал первые математические алгоритмы?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">4. Назовите свойства алгоритма.</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">5. Что такое исполнитель алгоритма?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">6. Приведите примеры исполнителей алгоритмов.</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">7. Назовите универсальный исполнитель алгоритмов в информатике.</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">8. Какие способы используют для записи алгоритмов?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">9. Приведите пример словесной записи алгоритма.</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">10. Что такое графический способ записи алгоритма?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">11. Что такое псевдокод?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">12. Что такое язык программирования?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+        </ol>
+    </div>
+</div>
+
+<!-- 13. Приведите примеры языков программирования. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">13. Приведите примеры языков программирования.</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;"></pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        </div>
+    </div>
+</div>
+
+<!-- 14. Назовите основные виды алгоритмов. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">14. Назовите основные виды алгоритмов.</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">15. Что такое линейный алгоритм?
+      16. Что такое разветвляющийся (условный) алгоритм?
+      17. Что такое циклический алгоритм?
+
+10. Установите соответствие.
+Свойство алгоритма                     Описание свойства
+
+1. Дискретность                        А. Для решения задачи используется
+                                       минимум действий.
+2. Определённость                      Б. Исполнитель понимает, как выполнять
+                                       алгоритм.
+3. Понятность                          В. Алгоритм помогает решить множество
+                                       задач заданного вида.
+4. Результативность (конечность)       Г. Самые простые команды, которые
+                                       записываются по порядку их выполнения.
+
+5. Массовость                          Д. Алгоритм либо приводит к решению
+                                       задачи, либо останавливается. потому что
+                                       задачу решить нельзя.
+
+6. Эффективность                       Е. Каждая команда точная и однозначная.
+11. Заполните таблицу.
+Способ записи      Описание                                 Примеры
+алгоритма
+Словесный спо-     ...                                      Алгоритм Эвклида
+соб записи алго-                                            «Наибольший общий
+ритма                                                       делитель двух
+                                                            натуральных чисел»
+                   Алгоритм изображается в виде блоков. В   ...
+                   разные блоки записываются разные
+                   команды. Стрелки указывают
+                   последовательность выполнения команд.
+Псевдокоды         ...                                      Алгоритмический
+                                                            язык
+...                Алгоритм записывают в виде, понятном     ...
+                   для компьютера. с помощью строгой
+                   системы знаков и правил.
+12.Соедините линиями вид алгоритма е соответствующим ему описанием.
+
+
+
+
+13. Дайте определения следующих понятий, используя модель что (1) — это
+  что (1).
+      Алгоритмизация, алгоритм, исполнитель, псевдокоды.
+14. Найдите в тексте и выпишите предложения, построенные по моделям:
+   что (1) приводит к чему (3);
+   перейти к чему (3);
+   заменить что (4) на что (4).</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        </div>
+    </div>
+</div>
+
+<!-- 15. Закончите предложения. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">15. Закончите предложения.</div>
+    <div class="card-body">
+        <ol class="list-unstyled mb-0">
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>1.</strong> Математик Мухаммед ибн Муса аль-Хорезми . . . .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>2.</strong> Компьютер — это . . . .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>3.</strong> Описание алгоритма на языке, который понимает человек - исполнитель этого алгоритма. — это . . . .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>4.</strong> Пример графического способа записи алгоритма — это . . . .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>5.</strong> При графическом способе записи алгоритма последовательность выполнения команд ....</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>6.</strong> Существуют разные псевдокоды, потому что . . . .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>7.</strong> В псевдокоде нет . . . .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>8.</strong> Программа для компьютера — это . . . .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+        </ol>
+    </div>
+</div>
+
+<!-- 16. Вставьте вместо точек глаголы, данные под чертой, в нужной ф -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">16. Вставьте вместо точек глаголы, данные под чертой, в нужной форме.</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">1. Исполнитель алгоритма .... как ... каждую команду и весь алгоритм.
+   2. Для разных исполнителей ... разные способы записи алгоритма.
+   3. Алгоритм нужно ... на языке, который ... исполнитель этого алгоритма.
+   4. Разные команды ... в разные блоки.
+   5. Комплексные алгоритмы ... все основные виды алгоритмов.
+   6. С помощью алгоритмов можно ... множество задач заданного вида.
+
+ Использовать, понимать, записать, выполнить, содержать, решить, выполнять,
+ записывать.
+
+17.Составьте план текста и расскажите текст по плану, опираясь на материалы
+  заданий 10-12.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        </div>
+    </div>
+</div>
 
 </div>

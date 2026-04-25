@@ -5,11 +5,7 @@
         Занятие 19. Программирование. Знакомство с языком программирования Паскаль 
     </h2>
 
-    <div class="alert alert-info mb-4">
-        <strong>Внимание!</strong> Это занятие ещё в разработке. Можно уже тренировать интерактив, но текст и задания нужно дописать по PDF.
-    </div>
-
-<!-- ==================================================
+    <!-- ==================================================
      Задание 1 (lesson19) — термины (2 колонки + озвучка)
      Референс: 121.pdf
      ================================================== -->
@@ -219,93 +215,193 @@
     </div>
   </div>
 </div>
+<!-- Конец задания 1 -->
 
+<!-- 3. Ответьте на вопросы. -->
+<div class="card mb-5">
+    <div class="card-header bg-primary text-white fw-bold">3. Ответьте на вопросы.</div>
+    <div class="card-body">
+        <ol class="list-unstyled mb-0">
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">1. Что такое программирование?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">2. Какие цели программирования?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">3. Что такое транслятор? Какие существуют трансляторы?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">4. Что такое интерпретатор? Приведите пример.</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">5. Что такое компилятор? Приведите пример.</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">6. Что такое комментарий?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">7. Для чего нужна директивы компилятора?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">8. Какова структура программы на Паскале?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">9. Что включает в себя алфавит языка Паскаль?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">10. Что такое идентификатор? Для чего он используется в программе?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">11. Что такое служебные слова? Приведите примеры.</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">12. На какие группы делятся типы данных в языке Паскаль?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">13. Какие скалярные типы вы знаете?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">14. Какие типы относятся к составным типам?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">15. Что такое выражение в языке программирования?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+        </ol>
+    </div>
+</div>
 
-    <!-- Пример задания "да / нет" -->
-    <div class="card mb-4">
-        <div class="card-header bg-light fw-bold">
-            2. Ответьте на вопросы утвердительно или отрицательно («да» или «нет»).
-        </div>
-        <div class="card-body">
-
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да">
-                <p class="fw-500 mb-3">1. [Вопрос по тексту занятия 3]</p>
-                <div class="btn-group btn-group-lg mb-2">
-                    <input type="radio" class="btn-check" name="l3a1" value="да" id="l3a1da">
-                    <label class="btn btn-outline-success px-4" for="l3a1da">да</label>
-                    <input type="radio" class="btn-check" name="l3a1" value="нет" id="l3a1net">
-                    <label class="btn btn-outline-danger px-4" for="l3a1net">нет</label>
-                </div>
-                <div class="feedback mt-2 fw-bold d-none"></div>
-            </div>
-
-            <!-- копируешь этот блок ещё 3–5 раз, меняешь name/id/data-answer и текст вопроса -->
-
-            <div class="text-center mt-3">
-                <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить ответы</button>
-            </div>
+<!-- 4. Заполните схему. Напишите названия видов трансляторов, дайте -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">4. Заполните схему. Напишите названия видов трансляторов, дайте им</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">характеристику, приведите примеры.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
         </div>
     </div>
+</div>
 
-    <!-- Пример теста с четырьмя вариантами -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white fw-bold">
-            3. Выберите правильный вариант ответа.
+<!-- 5. Соедините стрелками части программы и их названия. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">5. Соедините стрелками части программы и их названия.</div>
+    <div class="card-body">
+        <div class="alert alert-warning small mb-3">
+            <strong>TODO:</strong> для интерактивного подбора (drag&drop / select) разметить вручную. Сейчас — текст из тетради + поле для ответа.
         </div>
-        <div class="card-body fs-5">
-
-            <div class="question-block mb-4 p-4 border rounded bg-light" data-correct="c">
-                <p class="fw-bold mb-3">1. [Вопрос теста по занятию 3]</p>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1a" value="a">
-                    <label class="form-check-label ms-2" for="l3q1a">а) Вариант A</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1b" value="b">
-                    <label class="form-check-label ms-2" for="l3q1b">б) Вариант B</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1c" value="c">
-                    <label class="form-check-label ms-2" for="l3q1c">в) Вариант C (правильный)</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1d" value="d">
-                    <label class="form-check-label ms-2" for="l3q1d">г) Вариант D</label>
-                </div>
-
-                <div class="feedback mt-2 fw-bold d-none"></div>
-            </div>
-
-            <!-- ещё вопросы — копипаст question-block, меняешь name и data-correct -->
-
-            <div class="text-center">
-                <button class="btn btn-primary btn-lg px-4" onclick="checkTask7()">Проверить тест</button>
-            </div>
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;"></pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
         </div>
     </div>
+</div>
 
-    <!-- Заглушка под текст -->
-    <div class="card mb-4 border-primary">
-        <div class="card-header bg-primary text-white fw-bold">
-            Текст занятия 3
-        </div>
-        <div class="card-body">
-            <p class="text-muted mb-0">
-                Здесь будет текст из тетради (задание «Прочитайте текст»). Сейчас можно оставить пустым или вставить черновик.
-            </p>
+<!-- 6. Заполните схемы. Напишите названия типов языка Паскаль и выр -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">6. Заполните схемы. Напишите названия типов языка Паскаль и выражений.</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Дайте им характеристику, приведите примеры.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
         </div>
     </div>
+</div>
 
-    <!-- Итоговое задание «Расскажите…» -->
-    <div class="card mb-4 border-success">
-        <div class="card-header bg-success text-white fw-bold">
-            Итоговое задание
-        </div>
-        <div class="card-body">
-            <p>[Инструкция из тетради: «Расскажите о …»]</p>
-            <textarea class="form-control" rows="5" placeholder="Здесь студент может написать свой ответ…"></textarea>
+<!-- 7. Закончите предложения. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">7. Закончите предложения.</div>
+    <div class="card-body">
+        <ol class="list-unstyled mb-0">
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>1.</strong> Язык программирования Паскаль даёт возможность ... .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>2.</strong> Язык высокого уровня Паскаль разработал ... .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>3.</strong> Интерпретатор и компилятор — это ... .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>4.</strong> Идентификаторы, служебные слова составляют ....</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>5.</strong> Язык программирования Паскаль позволяет с помощью специальных служебных слов ... .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>6.</strong> В языке программирования выражение — это ... .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+        </ol>
+    </div>
+</div>
+
+<!-- 8. Вставьте вместо точек глаголы, данные под чертой, в нужной ф -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">8. Вставьте вместо точек глаголы, данные под чертой, в нужной форме.</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">1. Прикладное программирование ... разработкой средств для подготовки
+     задач к решению на компьютере.
+     2. Язык программирования Паскаль ... языком высокого уровня.
+     3. Новый язык программирования Паскаль ... в 1970 г. Никлаусом Виртом.
+     4. Директива USES ... компилятору, что к тексту программы надо ... модули из
+     файла библиотеки.
+     5. Идентификатор ... с буквы.
+     6. Выражения ... при записи команд в программе.
+Сообщать, разработать, начинаться, использовать, подключить, заниматься,
+являться.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
         </div>
     </div>
+</div>
+
+<!-- 9. Составьте план рассказа о языке программирования Паскаль, ег -->
+<div class="card mb-5 border-success">
+    <div class="card-header bg-success text-white fw-bold">9. Составьте план рассказа о языке программирования Паскаль, его</div>
+    <div class="card-body">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">особенностях, структуре программы. Расскажите текст по плану.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="6" placeholder="Запишите ваш ответ для тренировки…"></textarea>
+        </div>
+    </div>
+</div>
+
+<!-- 10. Выполните задание. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">10. Выполните задание.</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">1. Для математических выражений запишите соответствующие выражения на
+языке Паскаль:
+
+
+
+
+     2. Запишите математические выражения, которые соответствуют следующим
+выражениям на языке Паскаль:</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        </div>
+    </div>
+</div>
 
 </div>

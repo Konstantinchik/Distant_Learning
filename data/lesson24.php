@@ -6,11 +6,7 @@
 
     </h2>
 
-    <div class="alert alert-info mb-4">
-        <strong>Внимание!</strong> Это занятие ещё в разработке. Можно уже тренировать интерактив, но текст и задания нужно дописать по PDF.
-    </div>
-
-<!-- ==================================================
+    <!-- ==================================================
      Задание 1 (по 148.pdf). Таблица с озвучкой (2 колонки)
      ================================================== -->
 
@@ -131,95 +127,243 @@
     </div>
   </div>
 </div>
-
 <!-- Конец задания 1 -->
 
+<!-- 2. Прочитайте текст. -->
+<div class="card mb-5 border-primary">
+    <div class="card-header bg-primary text-white fw-bold">2. Прочитайте текст.</div>
+    <div class="card-body fs-5 lh-lg">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">В жизни часто приходится использовать информацию, которая представлена в
+виде таблицы.
+       В программировании для хранения табличной информации используют
+специальный тип данных - массив.
+       Массив — это структура однотипных элементов, которые занимают
+непрерывную область памяти и рассматриваются как одно целое. Основные свойства
+массива - имя, тип, размерность, размер.
+       Имя — это идентификатор, который задаёт программист для обращения к
+массиву.
+       Тип — это тип элементов массива.
+       Размерность — это число индексов (порядковых номеров элементов массива),
+которые нужны для обращения к отдельному элементу. Например, для одномерного
+(линейного) массива нужен один индекс, для двумерного - два индекса и так далее.
+       Формат описания массива:
+       var
+              имя: array[нижняя_граница .. верхняя_граница] of тип_элементов;
+       Константное выражение определяет размер массива. Например, описание
+       var
+         A: array[1..10] of integer; задаёт одномерный массив с именем А, который
+содержит 10 элементов целого типа: А [ 1 ] , А [ 2 ] , А [ 3 ] , А [ 4 ] , А [ 5 ] , А [ 6 ] ,
+А [ 7 ] , А [ 8 ] , А [ 9 ] , А [ 10 ] .
+Каждый элемент массива имеет свой номер - значение индекса. Нумерация элементов
+массива начинается с ижней границы диапазона индексов.
+       Размер массива можно не указывать, если при его описании задаются значения
+всех его элементов. Например,
+       var
+         B: array[5] of integer = (2, 4, 6, 8, 10);. В этом случае создаётся массив из
+пяти элементов со следующими значениями: b [1] =2, b [ 2 ] = 4 , b [ 3 ] = 6 , b [ 4 ] = 8 ,
+b [ 5 ] = 10.
+       Рассмотрим некоторые задачи обработки массивов.
+       Задача 1. Ввести с клавиатуры и вывести на экран одномерный массив из
+десяти элементов.
+Листинг 1.
+program ArrayInputOutput;
+var
+       A: array[10] of integer; // описание переменных величин целого типа
+       i: integer;
+begin
+       // ввод элементов массива
+       for i := 1 to 10 do
+               ReadLn(A[i]);          / / в в о д числа с клавиатуры
+       for i := 1 to 10 do            // вывод элементов массива через пробел
+               Write(A[i], &#x27; &#x27;);
+end.
 
-    <!-- Пример задания "да / нет" -->
-    <div class="card mb-4">
-        <div class="card-header bg-light fw-bold">
-            2. Ответьте на вопросы утвердительно или отрицательно («да» или «нет»).
-        </div>
-        <div class="card-body">
+      Задача 2. Ввести с клавиатуры, вывести на экран одномерный массив из
+десяти элементов и найти сумму всех элементов массива.
+Листинг 2.
+program SumArray;
+var
+        A: array[10] of integer; // описание переменных величин целого типа
+        i, S: integer;
+begin
+        // ввод элементов массива
+        for i := 1 to 10 do
+        ReadLn(A[i]);                 // ввод числа с клавиатуры
+        // вывод элементов массива
+        for i := 1 to 10 do
+        Write(A[i], &#x27; &#x27;);            // вывод значения элемента на экран через пробел
+        WriteLn;
+        // вычисление суммы элементов
+        S := 0;                      //начальное значение величины S
+        for i := 1 to 10 do
+        S := S + A[i];               //прибавление очередного элемента к сумме
+        // вывод результата
+        WriteLn(&#x27;S = &#x27;, S);           //вывод значения суммы на экран
+end.
+      Задача 3. Заполнить двумерный массив случайными числами от 0
+до 99 и вывести его на экран.
+Листинг 3.
+program MatrixOutput;
+const
+      n = 5;                  // размерность матрицы – определение константы
+var
+        A: array[n, n] of integer; //описание переменных величин целого типа
+        i, j: integer;
+begin
+        Randomize;                        // установка датчика случайных чисел
+        // заполнение матрицы и вывод на экран
+        for i := 1 to n do
+        begin
+                for j := 1 to n do
+                begin
+                        A[i, j] := Random(100); // генерация случайного числа от 0 до 99
+                        Write(A[i, j]);         // вывод значения элемента через пробел
+                end;
+                WriteLn;                        // переход на новую строку
+        end;
+end.
+     Задача 4. Заполнить двумерный массив случайными числами от 0
+до 99, вывести его на экран и найти наибольшее значение.
+Листинг 4.
+program MaxElementMatrix;
+const
+      n = 5; // размерность матрицы
+var
+      A: array[1..n, 1..n] of integer;
+        i, j: integer;
+        Imax, Jmax: integer;
+begin
+        Randomize;              // инициализация генератора случайных чисел
+        // --- заполнение матрицы случайными числами и вывод ---
+        WriteLn(&#x27;Матрица A:&#x27;);
+        for i := 1 to n do
+        begin
+        for j := 1 to n do
+        begin
+                A[i, j] := Random(100);            // число от 0 до 99
+                Write(A[i, j]:4);                  // красивое форматирование вывода
+        end;
+        WriteLn;
+        end;
+        // --- поиск максимального элемента ---
+        Imax := 1;
+        Jmax := 1;
+        for i := 1 to n do
+                for j := 1 to n do
+                if A[i, j] &gt; A[Imax, Jmax] then
+                 begin
+                      Imax := i;
+                      Jmax := j;
+                 end;
+        // --- вывод результата ---
+        WriteLn;
+        WriteLn(&#x27;Наибольший элемент матрицы = &#x27;, A[Imax, Jmax]);
+        WriteLn(&#x27;Его позиция: строка &#x27;, Imax, &#x27;, столбец &#x27;, Jmax);
+end.</pre>
+    </div>
+</div>
 
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да">
-                <p class="fw-500 mb-3">1. [Вопрос по тексту занятия 3]</p>
-                <div class="btn-group btn-group-lg mb-2">
-                    <input type="radio" class="btn-check" name="l3a1" value="да" id="l3a1da">
-                    <label class="btn btn-outline-success px-4" for="l3a1da">да</label>
-                    <input type="radio" class="btn-check" name="l3a1" value="нет" id="l3a1net">
-                    <label class="btn btn-outline-danger px-4" for="l3a1net">нет</label>
-                </div>
-                <div class="feedback mt-2 fw-bold d-none"></div>
-            </div>
+<!-- 3. Ответьте на вопросы. -->
+<div class="card mb-5">
+    <div class="card-header bg-primary text-white fw-bold">3. Ответьте на вопросы.</div>
+    <div class="card-body">
+        <ol class="list-unstyled mb-0">
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">1. Что такое массив?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">2. Назовите основные свойства массива.</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">3. Что такое имя массива?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">4. Что такое тип массива?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">5. Что такое размерность массива?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">6. Что такое размер массива?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">7. Какой формат описания массива</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+        </ol>
+    </div>
+</div>
 
-            <!-- копируешь этот блок ещё 3–5 раз, меняешь name/id/data-answer и текст вопроса -->
-
-            <div class="text-center mt-3">
-                <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить ответы</button>
-            </div>
+<!-- 4. Заполните схему. Напишите названия основных свойств массива  -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">4. Заполните схему. Напишите названия основных свойств массива и дайте им</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">определение.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
         </div>
     </div>
+</div>
 
-    <!-- Пример теста с четырьмя вариантами -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white fw-bold">
-            3. Выберите правильный вариант ответа.
-        </div>
-        <div class="card-body fs-5">
-
-            <div class="question-block mb-4 p-4 border rounded bg-light" data-correct="c">
-                <p class="fw-bold mb-3">1. [Вопрос теста по занятию 3]</p>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1a" value="a">
-                    <label class="form-check-label ms-2" for="l3q1a">а) Вариант A</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1b" value="b">
-                    <label class="form-check-label ms-2" for="l3q1b">б) Вариант B</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1c" value="c">
-                    <label class="form-check-label ms-2" for="l3q1c">в) Вариант C (правильный)</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1d" value="d">
-                    <label class="form-check-label ms-2" for="l3q1d">г) Вариант D</label>
-                </div>
-
-                <div class="feedback mt-2 fw-bold d-none"></div>
-            </div>
-
-            <!-- ещё вопросы — копипаст question-block, меняешь name и data-correct -->
-
-            <div class="text-center">
-                <button class="btn btn-primary btn-lg px-4" onclick="checkTask7()">Проверить тест</button>
-            </div>
+<!-- 5. Составьте план рассказа о массивах. Расскажите текст по план -->
+<div class="card mb-5 border-success">
+    <div class="card-header bg-success text-white fw-bold">5. Составьте план рассказа о массивах. Расскажите текст по плану</div>
+    <div class="card-body">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;"></pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="6" placeholder="Запишите ваш ответ для тренировки…"></textarea>
         </div>
     </div>
+</div>
 
-    <!-- Заглушка под текст -->
-    <div class="card mb-4 border-primary">
-        <div class="card-header bg-primary text-white fw-bold">
-            Текст занятия 3
-        </div>
-        <div class="card-body">
-            <p class="text-muted mb-0">
-                Здесь будет текст из тетради (задание «Прочитайте текст»). Сейчас можно оставить пустым или вставить черновик.
-            </p>
+<!-- 6. Составьте программы решения задач. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">6. Составьте программы решения задач.</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">1.Дан массив натуральных чисел А[n]. Подсчитать, сколько в нём чётных
+     чисел и сколько нечётных чисел.
+     2.Дан массив натуральных чисел А[n]. Подсчитать, сколько в нём чисел,
+     которые делятся нацело на 3.
+     3.Дан массив целых чисел А[n]. Подсчитать, сколько в нём положительных
+     чисел и сколько отрицательных чисел.
+     4.Дан массив целых чисел А[n]. Найти минимальный и максимальный
+     элементы массива.
+     5.Дан массив целых чисел А[n] и числа а и b. Подсчитать, сколько в массиве
+     чисел, которые удовлетворяют неравенству a &lt;A[i] &lt;b, где А[i] - элемент
+     массива.
+     6.Дан массив целых чисел А[n] и числа а и b. Подсчитать, сколько в массиве
+     чисел, которые не удовлетворяют неравенству a &lt;A[i] &lt;b, где A[i] - элемент
+     массива.
+     7.*Дан массив целых чисел А[n]. Переставить все элементы массива по
+     возрастанию (отсортировать).
+     8.*Дан массив целых чисел А[n]. Переставить все элементы массива по
+     убыванию (отсортировать).
+                              ЗАКЛЮЧЕНИЕ
+
+      Настоящее пособие, предназначенное для работы с иностранными гражданами
+на подготовительном факультете, включает в себя такие базовые понятия
+информатики, как основной и элементарный состав компьютера, назначение его
+устройств, архитектура и принцип работы компьютера, программа и данные,
+информация, кодирование, количество и единицы измерения информации, ин-
+формационные процессы, информационные технологии, файловая структура данных,
+программное обеспечение, алгоритм, алгоритмизация, программирование.
+      Вдумчивая постоянная работа с материалами учебного пособия позволит
+читателю научиться понимать и грамотно использовать научную терминологию по
+информатике и компьютерной технике на всём протяжении его обучения в
+университете независимо от будущей специальности.
+      Авторы выражают надежду, что данное пособие станет достойным
+помощником будущим специалистам в их начальном пути освоения русского языка
+и научного стиля речи.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
         </div>
     </div>
-
-    <!-- Итоговое задание «Расскажите…» -->
-    <div class="card mb-4 border-success">
-        <div class="card-header bg-success text-white fw-bold">
-            Итоговое задание
-        </div>
-        <div class="card-body">
-            <p>[Инструкция из тетради: «Расскажите о …»]</p>
-            <textarea class="form-control" rows="5" placeholder="Здесь студент может написать свой ответ…"></textarea>
-        </div>
-    </div>
+</div>
 
 </div>

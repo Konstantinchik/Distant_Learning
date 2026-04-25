@@ -5,11 +5,7 @@
         Занятие 16. Средства обработки числовой информации. Microsoft Excel
     </h2>
 
-    <div class="alert alert-info mb-4">
-        <strong>Внимание!</strong> Это занятие ещё в разработке. Можно уже тренировать интерактив, но текст и задания нужно дописать по PDF.
-    </div>
-
-<!-- ==================================================
+    <!-- ==================================================
      Занятие 16 — Задание 1 (по 103.pdf)
      1. Прочитайте слова и словосочетания, запомните их значения.
      ДВЕ КОЛОНКИ + ОЗВУЧКА ВЕЗДЕ
@@ -152,93 +148,302 @@
     </div>
   </div>
 </div>
+<!-- Конец задания 1 -->
 
-
-    <!-- Пример задания "да / нет" -->
-    <div class="card mb-4">
-        <div class="card-header bg-light fw-bold">
-            2. Ответьте на вопросы утвердительно или отрицательно («да» или «нет»).
+<!-- 2. Подберите существительные к прилагательным. Укажите, где воз -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">2. Подберите существительные к прилагательным. Укажите, где возможно,</div>
+    <div class="card-body">
+        <div class="alert alert-warning small mb-3">
+            <strong>TODO:</strong> для интерактивного подбора (drag&drop / select) разметить вручную. Сейчас — текст из тетради + поле для ответа.
         </div>
-        <div class="card-body">
-
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да">
-                <p class="fw-500 mb-3">1. [Вопрос по тексту занятия 3]</p>
-                <div class="btn-group btn-group-lg mb-2">
-                    <input type="radio" class="btn-check" name="l3a1" value="да" id="l3a1da">
-                    <label class="btn btn-outline-success px-4" for="l3a1da">да</label>
-                    <input type="radio" class="btn-check" name="l3a1" value="нет" id="l3a1net">
-                    <label class="btn btn-outline-danger px-4" for="l3a1net">нет</label>
-                </div>
-                <div class="feedback mt-2 fw-bold d-none"></div>
-            </div>
-
-            <!-- копируешь этот блок ещё 3–5 раз, меняешь name/id/data-answer и текст вопроса -->
-
-            <div class="text-center mt-3">
-                <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить ответы</button>
-            </div>
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">варианты. Поставьте прилагательные в правильной форме.
+ исходный
+ уникальный                       таблица
+ рабочий                          информация
+ начальный                        адрес
+ числовой                         данные
+ производный                      книга
+ электронный                      лист</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
         </div>
     </div>
+</div>
 
-    <!-- Пример теста с четырьмя вариантами -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white fw-bold">
-            3. Выберите правильный вариант ответа.
-        </div>
-        <div class="card-body fs-5">
-
-            <div class="question-block mb-4 p-4 border rounded bg-light" data-correct="c">
-                <p class="fw-bold mb-3">1. [Вопрос теста по занятию 3]</p>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1a" value="a">
-                    <label class="form-check-label ms-2" for="l3q1a">а) Вариант A</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1b" value="b">
-                    <label class="form-check-label ms-2" for="l3q1b">б) Вариант B</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1c" value="c">
-                    <label class="form-check-label ms-2" for="l3q1c">в) Вариант C (правильный)</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="l3q1" id="l3q1d" value="d">
-                    <label class="form-check-label ms-2" for="l3q1d">г) Вариант D</label>
-                </div>
-
-                <div class="feedback mt-2 fw-bold d-none"></div>
-            </div>
-
-            <!-- ещё вопросы — копипаст question-block, меняешь name и data-correct -->
-
-            <div class="text-center">
-                <button class="btn btn-primary btn-lg px-4" onclick="checkTask7()">Проверить тест</button>
-            </div>
+<!-- 3. Образуйте существительные от данных глаголов по образцу. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">3. Образуйте существительные от данных глаголов по образцу.</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Образец: заливать - заливка
+     Вставить, обработать, установить, сортировать, подготовить, настроить.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
         </div>
     </div>
+</div>
 
-    <!-- Заглушка под текст -->
-    <div class="card mb-4 border-primary">
-        <div class="card-header bg-primary text-white fw-bold">
-            Текст занятия 3
-        </div>
-        <div class="card-body">
-            <p class="text-muted mb-0">
-                Здесь будет текст из тетради (задание «Прочитайте текст»). Сейчас можно оставить пустым или вставить черновик.
-            </p>
+<!-- 4. Прочитайте текст. -->
+<div class="card mb-5 border-primary">
+    <div class="card-header bg-primary text-white fw-bold">4. Прочитайте текст.</div>
+    <div class="card-body fs-5 lh-lg">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Электронные таблицы — это комплексные средства для хранения различных
+типов данных. Основным видом информации (по форме представления), которая
+хранится и обрабатывается в электронных таблицах, является числовая информация.
+Электронные таблицы предоставляют большой набор методов для работы с разного
+рода числовой информацией. Но современные электронные таблицы позволяют
+хранить и обрабатывать и другие виды информации.
+     Основным объектом электронной таблицы является ячейка.
+        Ячейка — это минимальный элемент для хранения данных в электронной
+таблице. Каждая ячейка имеет уникальный адрес. Этот адрес состоит из двух частей
+- номера столбца и номера строки. Номер столбца обозначается буквой латинского
+алфавита (А, В, С, D, Е. ...). Номер строки обозначается порядковым номером (1, 2, 3,
+4, 5, ...). Таким образом, адрес ячейки электронной таблицы можно записать как А1,
+А2, 53, D5, . . . .
+        Каждая ячейка таблицы может содержать информацию одного из двух видов -
+исходную или производную. Исходная информация — это начальные данные
+решаемой задачи, а производная информация — это результат различных
+арифметических и других операций, которые выполняются над начальными
+данными. Ячейки с производной информацией связаны с ячейками, в которых
+хранится исходная информация. При изменении значений ячеек с исходной
+информацией возможно автоматическое изменение значений, связанных с ними ячеек
+с производной информацией. Это основное свойство электронных таблиц.
+        Электронные таблицы используются в компьютерной технике с 80-х годов XX
+века. Примеры программы для обработки электронных таблиц - SuperCalc, Lotus 1-2-
+3. QuattroPro, Microsoft Excel и другие.
+Программы для обработки электронных таблиц широко применяются для решения
+различных задач экономики (бухгалтерский учёт, анализ финансовых, сырьевых и
+товарных рынков и так далее), для обработки результатов технических испытаний,
+для решения различных задач математической статистики и в других областях, то
+есть везде, где необходимо автоматизировать регулярно повторяющиеся вычисления
+достаточно больших объёмов числовых данных.
+        Microsoft Excel - программа, которая предназначена для подготовки и обработки
+электронных таблиц под управлением ОС Windows. Как и Word, программа Excel
+может работать с несколькими документами. Для этого открывается новое окно
+программы. И окно каждого документа является частью окна программы (рис. 33).
+                  Рис. 33. Окно программы Microsoft Excel
+      Основным объектом в программе Excel
+является рабочая книга. Рабочая книга
+сохраняется в файл с произвольным именем и
+расширением .xls, .xlsx. В каждой рабочей                    книге
+может быть произвольное количество
+электронных таблиц, которые называются
+рабочими листами. Количество рабочих                        листов
+в рабочей книге ограничивается объёмом
+доступной памяти компьютера. При создании                   новой
+рабочей книги в ней открыт один рабочий                      лист
+(рис. 33) с возможностью создавать новые
+рабочие листы.
+      Окно программы Excel, как и
+программы Word, имеет большое верхнее                       меню.
+Оно состоит из следующих пунктов: Файл,
+Главная, Вставка, Разметка страниц.
+Формулы, Данные, Рецензирование и Вид.
+Инструменты, представленные в пункте меню                    Файл,
+- сведения, создать, открыть, сохранить и                   другие
+- предназначены для выполнения операций со                    всей
+рабочей книгой как с файлом (рис. 34).
+     Инструменты, собранные в пункте меню Главная (рис. 35), разделены на 7
+групп по их назначению:
+      1.   Буфер обмена - группа инструментов для вырезания, копирования,
+вставки выделенных фрагментов электронной таблицы, а также форматирования по
+заданному образцу.
+     2.  Шрифт - группа инструментов для изменения и настройки внешнего вида
+информации, записанной в выбранных ячейках таблицы.
+     3.   Выравнивание - группа инструментов для изменения и настройки
+расположения информации внутри каждой выбранной ячейки.
+     4.    Число - группа инструментов для определения или изменения формата
+представления данных в выбранных ячейках.
+     5.    Стили - группа инструментов для форматирования (в том числе и
+цветового оформления) как отдельной ячейки, так и всей таблицы в целом.
+      6.    Ячейки - группа инструментов для изменения размеров и других
+параметров ячеек, а также для вставки и удаления как отдельных ячеек, так и целых
+строк, и столбцов таблицы.
+     7.    Редактирование - группа инструментов для быстрого доступа к
+отдельным, часто используемым функциям, например сумма, среднее, поиск,
+сортировка, фильтр и другие.
+
+
+
+
+                Рис. 35. Пункт меню Главная программы Excel
+      Инструменты, собранные в пункте меню Вставка (рис. 36), предназначены для
+вставки на рабочий лист таких элементов, как диаграммы, рисунки, гиперссылки,
+специальные символы и так далее.
+
+
+
+
+                Рис. 36. Пункт меню Вставка программы Excel
+     Инструменты пункта меню Разметка страниц (рис. 37) предназначены для
+подготовки рабочего листа к печати на принтере - установки размеров листа бумаги,
+отступов от края листа до границ ячеек с информацией, ориентации листа и так далее.
+
+
+
+
+            Рис. 37. Пункт меню Разметка страниц программы Excel
+     Инструменты пункта меню Формулы (рис. 38) предоставляют пользователю
+возможность организации вычислений с помощью встроенных функций - логических,
+финансовых, математических, текстовых и многих других.
+
+
+
+
+                Рис. 38. Пункт меню Формулы программы Excel
+     Подробную информацию об этих и других возможностях программы
+обработки электронных таблиц Microsoft Excel можно получить из специальных
+источников. Например, https://support.office.com.</pre>
+    </div>
+</div>
+
+<!-- 5. Ответьте на вопросы. -->
+<div class="card mb-5">
+    <div class="card-header bg-primary text-white fw-bold">5. Ответьте на вопросы.</div>
+    <div class="card-body">
+        <ol class="list-unstyled mb-0">
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">1. Что такое электронные таблицы?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">2. Каков основной вид информации, которая хранится и обрабатывается в электронных таблицах?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">3. Что является основным объектом электронных таблиц?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">4. Что такое ячейка?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">5. Из чего состоит адрес ячейки? Приведите примеры.</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">6. Что такое исходная информация?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">7. Что такое производная информация?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">8. В чём заключается основное свойство электронных таблиц?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">9. Для чего применяются программы обработки электронных таблиц?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">10. Что такое Microsoft Excel?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">11. Может ли Excel одновременно работать с несколькими документами?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">12. Что является основным объектом в программе Excel? Из чего он состоит?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">13. В каких форматах можно сохранять документы в программе Excel?</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">14. Назовите основные части верхнего меню программы Excel.</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2 fw-500">15. Назовите основные возможности программы Excel. 6. Установите соответствие 1. Формулы             А. Инструменты этого пункта меню необходимы для выполнения операций со всей рабочей книгой как с файлом 2. Вставка             Б. Инструменты этого пункта меню помогают подготовить рабочий лист к печати на принтере 3. Главная             В. С помощью инструментов этого пункта меню можно вставить на рабочий стол диаграммы, рисунки, гиперссылки и т.д. 4. Разметка страниц    Г. С помощью различных встроенных функций инструментов этого пункта меню можно производить необходимые вычисления 5. Файл                Д. Одна из групп инструментов этого пункта меню нужна для изменения и настройки внешнего вида информации, которая записана в выбранных ячейках таблицы</p>
+                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                </li>
+        </ol>
+    </div>
+</div>
+
+<!-- 7. Закончите предложения. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">7. Закончите предложения.</div>
+    <div class="card-body">
+        <ol class="list-unstyled mb-0">
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>1.</strong> Ячейка — это ....</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>2.</strong> Уникальный адрес ячейки состоит их двух частей - ... .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>3.</strong> Начальные данные решаемой задачи — это ... .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>4.</strong> Производная информация — это ... .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+                <li class="list-group-item p-3 mb-2 bg-light border rounded">
+                    <p class="mb-2"><strong>5.</strong> В каждой рабочей книге может быть ... .</p>
+                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
+                </li>
+        </ol>
+    </div>
+</div>
+
+<!-- 8. Вставьте вместо точек глаголы, данные под чертой, в нужной ф -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">8. Вставьте вместо точек глаголы, данные под чертой, в нужной форме.</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">1.Современные электронные таблицы позволяют ... и ... различные виды
+     информации.
+     2.Каждая ячейка ... уникальный адрес.
+     3.Каждая ячейка таблицы может ... исходную или производную информацию.
+     4.Программа Excel может ... с несколькими документами.
+     5.Рабочая книга ... основным объектом в программе Excel.
+Содержать, хранить, являться, иметь, работать, обрабатывать.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
         </div>
     </div>
+</div>
 
-    <!-- Итоговое задание «Расскажите…» -->
-    <div class="card mb-4 border-success">
-        <div class="card-header bg-success text-white fw-bold">
-            Итоговое задание
-        </div>
-        <div class="card-body">
-            <p>[Инструкция из тетради: «Расскажите о …»]</p>
-            <textarea class="form-control" rows="5" placeholder="Здесь студент может написать свой ответ…"></textarea>
+<!-- 9. Составьте план рассказа о программе Excel, её особенностях.  -->
+<div class="card mb-5 border-success">
+    <div class="card-header bg-success text-white fw-bold">9. Составьте план рассказа о программе Excel, её особенностях. Расскажите</div>
+    <div class="card-body">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">текст по плану.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="6" placeholder="Запишите ваш ответ для тренировки…"></textarea>
         </div>
     </div>
+</div>
+
+<!-- 10. Выполните задание. -->
+<div class="card mb-5">
+    <div class="card-header bg-light fw-bold">10. Выполните задание.</div>
+    <div class="card-body fs-5">
+<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">С помощью инструментов программы Excel создайте документ, в котором:
+1) составьте таблицe значений функции у = ( х - п ) 2 + n, где п - номер
+компьютера, для x  [-10, 10] с шагом 0,5;
+2) постройте график функции из задания № 1 на отдельном листе;
+3) составьте таблицу расходов в магазине по образцу, используйте ссылки на ячейки
+и встроенные функции.
+
+
+
+
+     Используйте различные шрифты, цветовое оформление и другие возможности
+программы Excel.
+     Файл сохраните в формате *.xls в папке C:\Students\n_grup.</pre>
+        <div class="mt-3">
+            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        </div>
+    </div>
+</div>
 
 </div>
