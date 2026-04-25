@@ -1,0 +1,58 @@
+# ============================================================
+#  .gitignore — Distant_Learning (penzarepetitor.ru)
+# ============================================================
+
+# --- Видеофайлы (заливаются на хостинг через Sprut.IO напрямую) ---
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.webm
+*.flv
+*.wmv
+
+# --- Другие крупные медиа ---
+*.iso
+*.dmg
+
+# --- Архивы (часто временные/исходники, не нужны в репозитории) ---
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+
+# --- Системные файлы ОС ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+
+# --- Файлы редакторов ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.bak
+*.tmp
+
+# --- PHP / общие веб-артефакты ---
+*.log
+error_log
+access_log
+.htpasswd
+
+# --- Чувствительные данные (на будущее) ---
+.env
+.env.local
+config.local.php
+secrets.php
+
+# --- Sprut.IO / cPanel служебное ---
+.sprutio
+.htaccess.bak

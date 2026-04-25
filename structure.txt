@@ -1,0 +1,61 @@
+/public_html/
+├── index.php              ← главная
+├── lessons.php            ← все 24 занятия (один файл, динамическая загрузка)
+├── extra-lessons.php      ← страница ссылок на дополнительные занятия
+├── header.php
+├── footer.php
+├── structure.txt
+│
+├── assets/
+│   │
+│   ├── books/
+│   │   ├── workbook.pdf                       ← основной учебник (PDF)
+│   │   ├── 112 Тестов.zip
+│   │   ├── Внеклассный урок AutoCAD.docx
+│   │   ├── Глоссарий.txt
+│   │   └── Рабочая тетрадь оглавление.txt
+│   │
+│   ├── css/
+│   │   ├── bootstrap.min.css
+│   │   ├── bootstrap.min.css.map
+│   │   └── style.css                          ← минималистичный дизайн в стиле ТГТУ
+│   │
+│   ├── js/
+│   │   ├── main.js                            ← вся интерактивность
+│   │   ├── bootstrap.bundle.js
+│   │   ├── bootstrap.bundle.js.map
+│   │   ├── bootstrap.bundle.min.js
+│   │   └── bootstrap.bundle.min.js.map
+│   │
+│   ├── images/                                ← все картинки и схемы из рабочей тетради (155 шт.)
+│   │   │
+│   │   ├── autocad/
+│   │   │   ├── autocad1.png
+│   │   │   └── autocad2.png
+│   │   │
+│   │   ├── icons/
+│   │   │   ├── favicon.png
+│   │   │   └── favicon128.png
+│   │   │
+│   │   ├── image-0028.jpg
+│   │   │   ...
+│   │   └── image-0705.jpg
+│   │
+│   └── video/
+│       │
+│       ├── autocad/                           ← видео для уроков по AutoCAD
+│       │   ├── Autocad1.mp4
+│       │   ├── Autocad2.mp4
+│       │   └── Autocad3.mp4
+│       │
+│       └── pre_test/                          ← тестовые/черновые видео (не для прода)
+│
+└── data/
+    │
+    ├── lesson1.php
+    │   ...
+    ├── lesson24.php                           ← весь текст занятий в структурированном виде
+    │
+    └── extra-lessons/
+        ├── lesson-autocad.php
+        └── lesson-office-test.php
