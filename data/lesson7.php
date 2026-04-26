@@ -431,8 +431,8 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="драйверы относятся к системному уровню. На базовом уровне — BIOS.">
-                <p class="fw-500 mb-2">4. Драйверы относятся к программному обеспечению базового уровня.</p>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="каждый уровень программного обеспечения взаимодействует с предшествующими — драйверы (системный уровень) обращаются к BIOS (базовый уровень).">
+                <p class="fw-500 mb-2">4. Драйверы устройств взаимодействуют с программами базового уровня.</p>
                 <div class="btn-group btn-group-lg mb-2">
                     <input type="radio" class="btn-check" name="l7_yn4" value="да" id="l7_yn4_y">
                     <label class="btn btn-outline-success px-4" for="l7_yn4_y">да</label>
