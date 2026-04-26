@@ -1,15 +1,15 @@
-<!--lesson7.php-->
+<!-- lesson7.php — переработано в интерактивный урок (теория + 5 тестов) -->
 <div class="lesson">
 
-    <h2 class="text-primary mb-4">
-        Занятие 7. Хранение информации. Файловая система. Обработка информации. Программное обеспечение
-    </h2>
+    <h2 class="text-primary mb-4">Занятие 7. Хранение информации. Файловая система. Программное обеспечение</h2>
 
-    <!-- ==================================================
-     Занятие 7 — Задание 1
-     Слова и словосочетания (2 колонки + озвучка)
-     ================================================== -->
+<!-- intro -->
+<div class="alert alert-primary border-start border-primary border-4 fs-5 mb-4">
+    В этом занятии — три большие темы: <strong>файлы</strong> (как компьютер хранит данные), <strong>файловая система</strong> (как файлы организованы) и <strong>программное обеспечение</strong> (как делятся программы по назначению).
+</div>
 
+
+    <!-- Задание 1: словарь (сохранён без изменений) -->
 <div class="card mb-5">
   <div class="card-header bg-light fw-bold fs-5">
     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
@@ -372,388 +372,374 @@
 </div>
 <!-- Конец задания 1 -->
 
-<!-- 2. Сгруппируйте однокоренные слова. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">2. Сгруппируйте однокоренные слова.</div>
-    <div class="card-body">
-        <div class="alert alert-warning small mb-3">
-            <strong>TODO:</strong> для интерактивного подбора (drag&drop / select) разметить вручную. Сейчас — текст из тетради + поле для ответа.
-        </div>
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Создавать, переименовать, копия, использованный, носитель, лучший,
-управление, удалить, обеспечение, перемешать, выполнение, шире, сохранность,
-записанный, обработать, загрузить, файловый. корень, загрузка, удобно, вложение,
-имя. автоматизация, выполнить, переименованный, записывать, удаление,
-созданный, место, расширенный, хранение, автоматизировать, улучшение,
-переместить. запись, обрабатывать, удобство, удалённый, копирование, улучшать,
-обеспечение, создать, расширить, файл, переименование, скопировать, носить,
-сохранить, загруженный, лучше, воспользоваться. обеспечить, пользователь,
-расширение, корневой, вложенный, создание, улучшенный, копировать. удалять,
-именованный, выполнять, записать, улучшить, расширять, перемещение, загружать,
-автоматизированный,      обработка,     хранить,    управлять,     пользоваться,
-переименовывать, удобный.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
+<!-- theory -->
+<div class="card mb-4 border-info">
+    <div class="card-header bg-info text-white fw-bold fs-5">
+        <span class="badge bg-light text-info me-2">📖 Теория</span> Краткое содержание занятия
     </div>
-</div>
-
-<!-- 3. Подберите существительные к прилагательным. Укажите, где воз -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">3. Подберите существительные к прилагательным. Укажите, где возможно,</div>
-    <div class="card-body">
-        <div class="alert alert-warning small mb-3">
-            <strong>TODO:</strong> для интерактивного подбора (drag&drop / select) разметить вручную. Сейчас — текст из тетради + поле для ответа.
-        </div>
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">варианты. Поставьте прилагательные в правильной форме.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
-
-<!-- 4. Образуйте существительные от данных глаголов по образцу. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">4. Образуйте существительные от данных глаголов по образцу.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">A) Образец: представить (в//вл) – представление
-     Хранить, расширить, переместить (ст//щ). обеспечить, удалить. управлять,
-     улучшить, выполнить.
-     Б) Образец: понимать - понимание
-     Создать, переименовать, копировать.
-     B)   Образец: преподавать - преподаватель
-     Пользоваться, носить.
-     Г) Образец: проверить – проверка
-     Загрузить, отладить, поддержать, настроить, наладить.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
-
-<!-- 5. Обратите внимание на конструкции и запомните их. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">5. Обратите внимание на конструкции и запомните их.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">что (1) входит в состав чего (2)
-Составьте предложения по образцу, используя данные ниже слова и словосочетания.
-     Образец: Внешняя память входит в элементарный состав компьютера.
-     Драйверы - программное обеспечение системного уровня.
-     Средства для создания приложений - программное обеспечение прикладного
-     уровня.
-     Пакеты прикладных программ - программное обеспечение прикладного
-     уровня.
-                   что (1) взаимодействует с чем (5)
-Составьте предложения по образцу, используя данные ниже слова и словосочетания.
-     Образец: Программное обеспечение служебного уровня взаимодействует с
-программами базового уровня.
-     Программы системного уровня - программы базового уровня.
-     Программы служебного уровня - программы системного уровня.
-     Каждый уровень программного обеспечения компьютера - программы
-     предшествующих уровней.
-              взаимодействие (кого, чего (2)) с чем, с кем (5)
-Составьте предложения по образцу, используя данные ниже слова и словосочетания.
-     Образец: Задача драйверов - взаимодействие с устройствами компьютера.
-     Задача программ системного уровня - пользователь.
-     Задача программ системного уровня - устройства компьютера.
-     Задача ядра операционной системы - человек, компьютер.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
-
-<!-- 6. Прочитайте текст -->
-<div class="card mb-5 border-primary">
-    <div class="card-header bg-primary text-white fw-bold">6. Прочитайте текст</div>
     <div class="card-body fs-5 lh-lg">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Хранение информации — это информационный процесс. Компьютер — это
-основное техническое средство реализации информационных процессов. Внешняя
-память входит в элементарный состав компьютера. В разных устройствах внешней
-памяти используют разные принципы хранения информации.
-      Информация, которая обрабатывается в компьютере с помощью программ. —
-это данные. Для хранения на устройствах внешней памяти данные организуют в виде
-файлов. Файл — это именованная область внешней памяти.
-     Файл имеет имя. Имя файлу даёт пользователь, который создаёт файл, или
-программа, которая сохраняет файл. Полное имя файла имеет две части - имя и
-расширение. Имя — это информация для пользователя - что находится в данном
-файле. Расширение — это информация для компьютера - какую программу
-использовать для работы с данным файлом.
-     Способ организации информации о файлах на носителях — это файловая
-система. Файловая система определяет правила именования файлов, обеспечивает
-выполнение операций с файлами.
-     Основные операции с файлами - создание, переименование, копирование,
-перемещение, удаление файлов.
-     Файл — это элемент файловой системы. Каталог (папка, директорий) — это
-тоже элемент файловой системы. Каталоги используют, чтобы разделить файлы на
-группы по разным принципам.
-     На внешнем носителе (диске) всегда есть корневой каталог — это имя диска.
-Корневой каталог только один. Все другие каталоги — это вложенные каталоги.
-Запись, которая состоит из названий всех каталогов и имени файла. — это путь поиска
-файла (рис. 7). Путь поиска файла используют, чтобы найти нужный файл на
-носителе.
+<h6 class="text-primary mt-3 mb-2">Файл и имя файла</h6>
+<p class="mb-3"><strong>Файл</strong> — это именованная область внешней памяти. У файла есть имя, которое даёт пользователь или программа. Полное имя файла состоит из <strong>двух частей</strong>: <em>имя</em> (информация для пользователя — что в файле) и <em>расширение</em> (информация для компьютера — какой программой открывать).</p>
+<h6 class="text-primary mt-3 mb-2">Файловая система и операции</h6>
+<p class="mb-3"><strong>Файловая система</strong> — это способ организации информации о файлах на носителях. Она определяет правила именования и обеспечивает основные операции: <em>создание, переименование, копирование, перемещение, удаление</em>.</p>
+<h6 class="text-primary mt-3 mb-2">Каталоги</h6>
+<p class="mb-3"><strong>Каталог</strong> (папка, директорий) — элемент файловой системы для группировки файлов. На внешнем носителе всегда есть только <strong>один</strong> корневой каталог (имя диска). Все остальные — вложенные. Запись из всех каталогов и имени файла называется <strong>путь поиска файла</strong>.</p>
+<h6 class="text-primary mt-3 mb-2">Уровни программного обеспечения</h6>
+<p class="mb-3">Программное обеспечение компьютера делится на <strong>четыре уровня</strong> (пирамида, каждый следующий взаимодействует с предыдущими):<ul class='mb-0 mt-2'><li><strong>Базовый</strong> — BIOS, начальная загрузка. Записан в ПЗУ.</li><li><strong>Системный</strong> — драйверы устройств и средства интерфейса. Образует ядро операционной системы.</li><li><strong>Служебный</strong> — утилиты для проверки и настройки.</li><li><strong>Прикладной</strong> — программы для решения задач пользователя.</li></ul></p>
+<h6 class="text-primary mt-3 mb-2">Прикладные программы</h6>
+<p class="mb-3">Прикладные программы делятся по виду информации: <em>текстовые редакторы</em> (Word, Notepad — .txt, .docx), <em>графические редакторы</em> (Paint, Photoshop — .jpg, .png), <em>СУБД</em> (Access, Oracle — .accdb, .db), <em>электронные таблицы</em> (Excel — .xls, .xlsx), <em>CAD-системы</em> (AutoCAD, КОМПАС — .dwg, .cdw), <em>системы видеомонтажа</em> (.avi, .mp4), <em>браузеры</em> (.html, .htm).</p>
 
-
-
-
-                           Рис. 7. Путь поиска файла
-
-
-     Обработка информации — это информационный процесс. Центральный
-процессор компьютера — это устройство обработки информации. Процессор
-исполняет программы.
-     Программа — это последовательность действий (последовательность команд),
-которую должен выполнить компьютер, чтобы решить задачу обработки
-информации. Конечная цель любой компьютерной программы - управление
-устройствами компьютера.
-     Программное обеспечение компьютера — это весь набор программ
-компьютера. Программное обеспечение компьютера можно разделить на четыре
-уровня - базовый, системный, служебный, прикладной. Уровни программного
-обеспечения — это пирамида. Каждый следующий уровень взаимодействует с
-программным обеспечением предшествующих уровней.
-      Базовый уровень. Самый низкий уровень программного обеспечения — это
-базовое программное обеспечение - базовая система ввода-вывода (BIOS – Basic lnput
-/ Output System). Его задача - начальная загрузка компьютера. Базовое программное
-обеспечение записано в микросхеме постоянного запоминающего устройства (ПЗУ)
-(ROM - read-onlymemory).
-      Системный уровень. Это переходный уровень. Задача программ этого уровня
--взаимодействие других программ компьютера с программами базового уровня,
-устройствами компьютера. пользователем.
-     Драйверы устройств — это системные программы. Задача драйверов -
-взаимодействие с устройствами компьютера. Драйверы входят в состав
-программного обеспечения системного уровня.
-      Программы системного уровня, которые отвечают за взаимодействие с
-пользователем, — это средства обеспечения пользовательского интерфейса. Их
-задача - удобство работы с компьютером.
-     Всё программное обеспечение системного уровня — это ядро операционной
-системы компьютера. Его задача — это взаимодействие человека с компьютером.
-     Служебный уровень. Программное обеспечение этого уровня
-взаимодействует с программами базового уровня и программами системного
-уровня. Служебные программы — это утилиты. Их задача - автоматизация работ по
-проверке и настройке компьютерной системы, расширение и улучшение функций
-системных программ.
-      Прикладной уровень. Программное обеспечение прикладного уровня — это
-комплекс прикладных программ. Эти программы помогают пользователю решать
-свои задачи.
-      Средства для создания приложений н пакеты прикладных программ входят в
-состав программного обеспечения прикладного уровня.
-     Средства (программы) для создания приложений — это набор языков и систем
-программирования. различные программные комплексы для отладки и поддержки
-создаваемых программ.
-      Примеры программ для создания приложений: Microsoft Visual C++. Microsoft
-Visual Basic. Borland С—f Builder, Borland Delphi, Microsoft Quick C. Corel Paradox.
-Visual dBase. Microsoft Visual FoxPro и другие. Результат работы таких программ -
-исполняемый файл с расширениями .exe (execution). .com (command).
-     Пакет прикладных программ (application program package) — это комплекс
-программ для решения задач пользователя.
-      По виду информации прикладные программы можно разделить на следующие:
-текстовые редакторы и процессоры, графические редакторы, системы управления
-базами данных (СУБД), электронные таблицы, системы автоматизированного
-проектирования (CAD-системы), системы видеомонтажа и анимации, браузеры
-(средства просмотра Web) и другие.
-        Примеры текстовых редакторов и процессоров: Notepad (Блокнот). WordPad,
-Microsoft Office Word, Acrobat. Текстовые файлы имеют расширения .txt, .doc, .docx,
-.rtf, .pdf и другие.
-     Примеры графических редакторов: Paint, Adobe Photoshop, CorelDraw.
-Графические файлы имеют расширения .pic, .gif, .jpg, .png. .psd, .cdr, .csc и другие.
-     Примеры СУБД: Microsoft Office Access, Corel Paradox, Microsoft Visual
-FoxPro, Oracle, Inter-base, MSSQLServer, MySQL.Файлы баз данных имеют
-расширения:. mbd, .accdb, .db, .fsl, .dbf, .pjt, .fpt, .ora, .dbg, .dbs, .frm и другие.
-      Примеры электронных таблиц: Microsoft Office Excel, OpenOffice.orgCalc,
-Apple Works. Файлы электронных таблиц имеют расширения .xls, .xlsx, .ots, .silk,
-.cgm, .cwk, .cws и другие.
-      Примеры CAD-систем: КОМПАС, AutoCAD, Mineframe, FreeCAD, ArchiCAD,
-Bocad-3D, Math-CAD, P-CAD. Файлы CAD-систем имеют расширения: .cdw, .frw,
-.kdw, .dws, .dwt, .mcd, .mcdx и другие.
-     Примеры систем видеомонтажа и анимации: Pinnacle Studio, Windows Movie
-Maker, Adobe Premier, Anime Studio Pro, Autodesk 3Ds Max, Dragonframe.
-Видеофайлы имеют расширения .avi, .flv,.mkv, .mov, .mp4, .swf, .wmv и другие.
-     Примеры браузеров: Internet Explorer, Opera, Mozilla Firefox, Yandex. Файлы,
-которые открываются в браузерах, имеют расширения .htm, .html, .xhtml, .php и
-другие.</pre>
     </div>
 </div>
 
-<!-- 7. Ответьте на вопросы. -->
-<div class="card mb-5">
-    <div class="card-header bg-primary text-white fw-bold">7. Ответьте на вопросы.</div>
+
+<!-- yesno-test -->
+<div class="card mb-4">
+    <div class="card-header bg-warning-subtle fw-bold fs-5">
+        <span class="badge bg-warning text-dark me-2">Понимание</span> Тест: верно ли утверждение?
+    </div>
     <div class="card-body">
+        <p class="text-muted mb-3">Прочитай каждое утверждение и нажми «да», если оно верно, «нет» — если неверно.</p>
+        
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да">
+                <p class="fw-500 mb-2">1. Файл — это именованная область внешней памяти.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l7_yn1" value="да" id="l7_yn1_y">
+                    <label class="btn btn-outline-success px-4" for="l7_yn1_y">да</label>
+                    <input type="radio" class="btn-check" name="l7_yn1" value="нет" id="l7_yn1_n">
+                    <label class="btn btn-outline-danger px-4" for="l7_yn1_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет">
+                <p class="fw-500 mb-2">2. Полное имя файла состоит только из имени, без расширения.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l7_yn2" value="да" id="l7_yn2_y">
+                    <label class="btn btn-outline-success px-4" for="l7_yn2_y">да</label>
+                    <input type="radio" class="btn-check" name="l7_yn2" value="нет" id="l7_yn2_n">
+                    <label class="btn btn-outline-danger px-4" for="l7_yn2_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет">
+                <p class="fw-500 mb-2">3. На внешнем носителе может быть несколько корневых каталогов.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l7_yn3" value="да" id="l7_yn3_y">
+                    <label class="btn btn-outline-success px-4" for="l7_yn3_y">да</label>
+                    <input type="radio" class="btn-check" name="l7_yn3" value="нет" id="l7_yn3_n">
+                    <label class="btn btn-outline-danger px-4" for="l7_yn3_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет">
+                <p class="fw-500 mb-2">4. Драйверы относятся к программному обеспечению базового уровня.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l7_yn4" value="да" id="l7_yn4_y">
+                    <label class="btn btn-outline-success px-4" for="l7_yn4_y">да</label>
+                    <input type="radio" class="btn-check" name="l7_yn4" value="нет" id="l7_yn4_n">
+                    <label class="btn btn-outline-danger px-4" for="l7_yn4_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет">
+                <p class="fw-500 mb-2">5. Утилиты — это программы прикладного уровня.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l7_yn5" value="да" id="l7_yn5_y">
+                    <label class="btn btn-outline-success px-4" for="l7_yn5_y">да</label>
+                    <input type="radio" class="btn-check" name="l7_yn5" value="нет" id="l7_yn5_n">
+                    <label class="btn btn-outline-danger px-4" for="l7_yn5_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да">
+                <p class="fw-500 mb-2">6. BIOS относится к базовому уровню программного обеспечения.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l7_yn6" value="да" id="l7_yn6_y">
+                    <label class="btn btn-outline-success px-4" for="l7_yn6_y">да</label>
+                    <input type="radio" class="btn-check" name="l7_yn6" value="нет" id="l7_yn6_n">
+                    <label class="btn btn-outline-danger px-4" for="l7_yn6_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- mcq-test -->
+<div class="card mb-4">
+    <div class="card-header bg-primary text-white fw-bold fs-5">
+        <span class="badge bg-light text-primary me-2">Выбор ответа</span> Тест: выбери правильный вариант
+    </div>
+    <div class="card-body mcq-set">
+        <p class="text-muted mb-3">В каждом вопросе только один правильный ответ.</p>
+        
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b">
+                <p class="fw-bold mb-2">1. Что такое файл?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq1" id="l7_mcq1_a" value="a">
+                    <label class="form-check-label ms-2" for="l7_mcq1_a">а) программа для запуска</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq1" id="l7_mcq1_b" value="b">
+                    <label class="form-check-label ms-2" for="l7_mcq1_b">б) именованная область внешней памяти</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq1" id="l7_mcq1_c" value="c">
+                    <label class="form-check-label ms-2" for="l7_mcq1_c">в) каталог</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq1" id="l7_mcq1_d" value="d">
+                    <label class="form-check-label ms-2" for="l7_mcq1_d">г) операционная система</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b">
+                <p class="fw-bold mb-2">2. Какая часть имени файла нужна компьютеру (для выбора программы)?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq2" id="l7_mcq2_a" value="a">
+                    <label class="form-check-label ms-2" for="l7_mcq2_a">а) только имя</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq2" id="l7_mcq2_b" value="b">
+                    <label class="form-check-label ms-2" for="l7_mcq2_b">б) расширение</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq2" id="l7_mcq2_c" value="c">
+                    <label class="form-check-label ms-2" for="l7_mcq2_c">в) полный путь к файлу</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq2" id="l7_mcq2_d" value="d">
+                    <label class="form-check-label ms-2" for="l7_mcq2_d">г) размер файла</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="c">
+                <p class="fw-bold mb-2">3. На сколько уровней делится программное обеспечение компьютера?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq3" id="l7_mcq3_a" value="a">
+                    <label class="form-check-label ms-2" for="l7_mcq3_a">а) 2</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq3" id="l7_mcq3_b" value="b">
+                    <label class="form-check-label ms-2" for="l7_mcq3_b">б) 3</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq3" id="l7_mcq3_c" value="c">
+                    <label class="form-check-label ms-2" for="l7_mcq3_c">в) 4</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq3" id="l7_mcq3_d" value="d">
+                    <label class="form-check-label ms-2" for="l7_mcq3_d">г) 5</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="d">
+                <p class="fw-bold mb-2">4. Какой уровень программного обеспечения самый низкий?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq4" id="l7_mcq4_a" value="a">
+                    <label class="form-check-label ms-2" for="l7_mcq4_a">а) системный</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq4" id="l7_mcq4_b" value="b">
+                    <label class="form-check-label ms-2" for="l7_mcq4_b">б) служебный</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq4" id="l7_mcq4_c" value="c">
+                    <label class="form-check-label ms-2" for="l7_mcq4_c">в) прикладной</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq4" id="l7_mcq4_d" value="d">
+                    <label class="form-check-label ms-2" for="l7_mcq4_d">г) базовый</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b">
+                <p class="fw-bold mb-2">5. К какому уровню программного обеспечения относятся драйверы устройств?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq5" id="l7_mcq5_a" value="a">
+                    <label class="form-check-label ms-2" for="l7_mcq5_a">а) базовому</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq5" id="l7_mcq5_b" value="b">
+                    <label class="form-check-label ms-2" for="l7_mcq5_b">б) системному</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq5" id="l7_mcq5_c" value="c">
+                    <label class="form-check-label ms-2" for="l7_mcq5_c">в) служебному</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l7_mcq5" id="l7_mcq5_d" value="d">
+                    <label class="form-check-label ms-2" for="l7_mcq5_d">г) прикладному</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- fill-in -->
+<div class="card mb-4">
+    <div class="card-header bg-success-subtle fw-bold fs-5">
+        <span class="badge bg-success me-2">Заполни пропуск</span> Тест: закончи предложение
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">Выбери из выпадающего списка слово, которое лучше всего подходит.</p>
         <ol class="list-unstyled mb-0">
+            
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">1. Что такое данные?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">1. Полное имя файла имеет две части — имя и <select class="form-select d-inline-block w-auto mx-1" data-correct="расширение"><option value="">— выбери —</option><option value="размер">размер</option><option value="расширение">расширение</option><option value="путь">путь</option><option value="тип">тип</option></select>.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">2. Что такое файл?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">2. На внешнем носителе всегда есть только один <select class="form-select d-inline-block w-auto mx-1" data-correct="корневой"><option value="">— выбери —</option><option value="вложенный">вложенный</option><option value="системный">системный</option><option value="корневой">корневой</option><option value="временный">временный</option></select> каталог.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">3. Для чего данные организуют в виде файлов?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">3. Программы для проверки и настройки компьютера называются <select class="form-select d-inline-block w-auto mx-1" data-correct="утилиты"><option value="">— выбери —</option><option value="драйверы">драйверы</option><option value="утилиты">утилиты</option><option value="браузеры">браузеры</option><option value="редакторы">редакторы</option></select>.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">4. Какие части имеет полное имя файла? Какую информацию содержат эти части?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">4. Базовое программное обеспечение записано в микросхеме <select class="form-select d-inline-block w-auto mx-1" data-correct="ПЗУ"><option value="">— выбери —</option><option value="оперативной памяти">оперативной памяти</option><option value="процессора">процессора</option><option value="ПЗУ">ПЗУ</option><option value="видеокарты">видеокарты</option></select>.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">5. Что такое файловая система? Что определяет файловая система?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+        </ol>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- open-questions -->
+<div class="card mb-4">
+    <div class="card-header bg-secondary text-white fw-bold fs-5">
+        <span class="badge bg-light text-secondary me-2">Развёрнутый ответ</span> Сформулируй своими словами
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">
+            Сначала постарайся ответить сам, написав в поле или вслух. Потом нажми «Показать эталон» и сравни.
+        </p>
+        <ol class="list-unstyled mb-0">
+            
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">1. Что такое файл?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Файл — это именованная область внешней памяти.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">6. Назовите основные операции с файлами.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">2. Какие основные операции с файлами?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Создание, переименование, копирование, перемещение, удаление файлов.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">7. Что такое каталог? Какие есть каталоги?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">3. На какие уровни делится программное обеспечение компьютера?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Базовый, системный, служебный, прикладной.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">8. Что такое путь поиска файла? Приведите пример.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">4. Что такое утилиты и какая их задача?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Утилиты — это программы служебного уровня. Их задача — автоматизация работ по проверке и настройке компьютерной системы, расширение и улучшение функций системных программ.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">9. Что такое программа? Какая цель программы?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">10. Что такое программное обеспечение компьютера?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">11. На какие уровни можно разделить программное обеспечение компьютера?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">12. Какая задача базового программного обеспечения?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">13. Какая задача программного обеспечения системного уровня?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">14. Что такое драйверы устройств? Какая задача драйверов?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">15. Что такое ядро операционной системы?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">16. Что такое утилиты? Какая задача утилит?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">17. Что входит в состав программного обеспечения прикладного уровня?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">18. Что такое средства для создания приложений? Приведите примеры.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">19. Что такое пакет прикладных программ?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">20. На какие группы можно разделить прикладные программы? Приведите примеры.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">5. Что такое пакет прикладных программ?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Пакет прикладных программ — это комплекс программ для решения задач пользователя.
+                    </div>
                 </li>
         </ol>
     </div>
 </div>
 
-<!-- 8. Найдите соответствия в правой и левой колонках. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">8. Найдите соответствия в правой и левой колонках.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;"></pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
 
-<!-- 9. Дайте определения следующих понятий, используя модель -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">9. Дайте определения следующих понятий, используя модель</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">что (1) — это что (1).
-     Данные, файл, файловая система, имя файла, расширение файла, каталог,
-корневой каталог, вложенные каталоги, путь поиска файла, программное
-обеспечение компьютера, базовое программное обеспечение, драйверы устройств,
-средства обеспечения пользовательского интерфейса, ядро операционной системы,
-утилиты, программы для создания приложений, пакет прикладных программ.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
+<!-- final -->
+<div class="card mb-4 border-success">
+    <div class="card-header bg-success text-white fw-bold fs-5">
+        <span class="badge bg-light text-success me-2">Финал</span> Расскажи тему целиком
     </div>
-</div>
-
-<!-- 10. Закончите предложения. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">10. Закончите предложения.</div>
     <div class="card-body">
-        <ol class="list-unstyled mb-0">
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>1.</strong> Для хранения на устройствах внешней памяти ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>2.</strong> Файловая система определяет ... и обеспечивает ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>3.</strong> Имя диска всегда есть ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>4.</strong> Управление устройствами компьютера — это ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>5.</strong> Базовое программное обеспечение записано….</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-        </ol>
-    </div>
-</div>
-
-<!-- 11. Вставьте вместо точек глаголы, данные под чертой, в нужной ф -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">11. Вставьте вместо точек глаголы, данные под чертой, в нужной форме.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">1. Пользователь ... имя файлу.
-      2. Пользователь ... файл.
-      3. Программа ... имя файлу и ... файл.
-      4. Чтобы ... файлы на группы по разным принципам… каталоги.
-      5. Чтобы ... нужный файл. ... путь поиска файла.
-      6. Всё программное обеспечение компьютера можно ... на четыре уровня.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        <p>Когда ответил на все тесты — попробуй <strong>устно или письменно</strong> рассказать о теме урока, опираясь на блок «Краткая теория».</p>
+        <textarea class="form-control mb-3" rows="6" placeholder="Можешь написать здесь свой развёрнутый рассказ для тренировки…"></textarea>
+        <div class="text-center">
+            <button class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(7); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
+                Я разобрал тему
+            </button>
         </div>
     </div>
 </div>
 
-<!-- 12. Заполните таблицу -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">12. Заполните таблицу</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;"></pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
 
-<!-- 13. Расскажите об уровнях программного обеспечения компьютера, о -->
-<div class="card mb-5 border-success">
-    <div class="card-header bg-success text-white fw-bold">13. Расскажите об уровнях программного обеспечения компьютера, опираясь</div>
-    <div class="card-body">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">на заполненную таблицу задания 12.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="6" placeholder="Запишите ваш ответ для тренировки…"></textarea>
-        </div>
-    </div>
-</div>
+<script>
+// Общая проверка fill-in select'ов в текущей карточке
+window.checkFillIn = function(btn) {
+    const card = btn.closest('.card-body');
+    if (!card) return;
+    let correct = 0, total = 0;
+    card.querySelectorAll('select[data-correct]').forEach(sel => {
+        total++;
+        const fb = sel.parentElement.querySelector('.feedback');
+        sel.classList.remove('is-valid', 'is-invalid');
+        if (fb) fb.classList.remove('d-none', 'text-success', 'text-danger', 'text-warning');
+        if (!sel.value) {
+            if (fb) { fb.textContent = 'Не выбрано'; fb.classList.add('text-warning'); }
+        } else if (sel.value === sel.dataset.correct) {
+            sel.classList.add('is-valid');
+            if (fb) { fb.textContent = '✓ Правильно'; fb.classList.add('text-success'); }
+            correct++;
+        } else {
+            sel.classList.add('is-invalid');
+            if (fb) { fb.innerHTML = 'Неверно. Правильный: <strong>' + sel.dataset.correct + '</strong>'; fb.classList.add('text-danger'); }
+        }
+    });
+    let result = card.querySelector('.fill-in-result');
+    if (!result) {
+        result = document.createElement('div');
+        result.className = 'fill-in-result mt-3 fw-bold text-center';
+        card.appendChild(result);
+    }
+    result.className = 'fill-in-result mt-3 fw-bold text-center ' + (correct === total ? 'text-success' : 'text-danger');
+    result.textContent = correct === total
+        ? '✓ Все ' + total + ' ответов правильно!'
+        : 'Правильных: ' + correct + ' из ' + total;
+};
+
+// Показать/скрыть эталон ответа
+window.toggleAnswer = function(btn) {
+    const sample = btn.nextElementSibling;
+    if (sample.classList.contains('d-none')) {
+        sample.classList.remove('d-none');
+        btn.textContent = 'Скрыть эталон';
+    } else {
+        sample.classList.add('d-none');
+        btn.textContent = 'Показать эталон';
+    }
+};
+</script>
+
 
 </div>

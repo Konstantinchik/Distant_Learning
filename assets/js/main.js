@@ -598,3 +598,57 @@ window.markLessonCompleted = function(lessonNum) {
   }
   updateGlobalProgress();
 };
+
+// ============================================================
+// MCQ — Multiple Choice Questions (общий обработчик)
+// ------------------------------------------------------------
+// Использование:
+//   <div class="mcq-set">
+//     <div class="question-block" data-correct="b">
+//       <p>Вопрос?</p>
+//       <input type="radio" name="qN" value="a"><label>а) ...</label>
+//       <input type="radio" name="qN" value="b"><label>б) ... (правильный)</label>
+//       ...
+//       <div class="feedback d-none"></div>
+//     </div>
+//     <button onclick="checkMCQ(this)">Проверить</button>
+//   </div>
+// ============================================================
+window.checkMCQ = function(btn) {
+  const set = btn.closest('.mcq-set');
+  if (!set) return;
+  let correct = 0, total = 0;
+  set.querySelectorAll('.question-block').forEach(block => {
+    total++;
+    const expected = block.dataset.correct;
+    const checked = block.querySelector('input[type=radio]:checked');
+    const fb = block.querySelector('.feedback');
+    block.classList.remove('border-success','border-danger');
+    if (fb) {
+      fb.classList.remove('d-none','text-success','text-danger','text-warning');
+    }
+    if (!checked) {
+      if (fb) { fb.textContent = 'Не выбран ответ'; fb.classList.add('text-warning'); }
+    } else if (checked.value === expected) {
+      if (fb) { fb.textContent = 'Правильно!'; fb.classList.add('text-success'); }
+      block.classList.add('border-success');
+      correct++;
+    } else {
+      if (fb) {
+        fb.innerHTML = 'Неверно. Правильный: <strong>' + String(expected).toUpperCase() + '</strong>';
+        fb.classList.add('text-danger');
+      }
+      block.classList.add('border-danger');
+    }
+  });
+  let result = set.querySelector('.mcq-result');
+  if (!result) {
+    result = document.createElement('div');
+    result.className = 'mcq-result mt-3';
+    set.appendChild(result);
+  }
+  result.className = 'mcq-result mt-3 fw-bold ' + (correct === total ? 'text-success' : 'text-danger');
+  result.textContent = correct === total
+    ? '✓ Все ' + total + ' вопросов правильно!'
+    : 'Правильных ответов: ' + correct + ' из ' + total;
+};
