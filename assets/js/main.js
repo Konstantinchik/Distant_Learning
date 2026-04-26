@@ -695,3 +695,38 @@ window.checkAllYesNo = function() {
     }
   });
 };
+
+// ============================================================
+// checkInputs — проверка input[data-correct] по кнопке (для языковых упражнений)
+// ============================================================
+window.checkInputs = function(btn) {
+  const card = btn.closest('.card-body');
+  if (!card) return;
+  let correct = 0, total = 0;
+  card.querySelectorAll('input[data-correct]').forEach(inp => {
+    total++;
+    const ans = (inp.value || '').trim().toLowerCase();
+    const exp = (inp.dataset.correct || '').trim().toLowerCase();
+    inp.classList.remove('is-valid', 'is-invalid');
+    if (!ans) {
+      // пусто
+    } else if (ans === exp) {
+      inp.classList.add('is-valid');
+      correct++;
+    } else {
+      inp.classList.add('is-invalid');
+      inp.title = 'Правильно: ' + inp.dataset.correct;
+    }
+  });
+  let result = card.querySelector('.inputs-check-result');
+  if (!result) {
+    result = document.createElement('div');
+    result.className = 'inputs-check-result mt-3 fw-bold text-center';
+    card.appendChild(result);
+  }
+  result.className = 'inputs-check-result mt-3 fw-bold text-center ' +
+    (correct === total ? 'text-success' : 'text-danger');
+  result.textContent = correct === total
+    ? '✓ Все ' + total + ' ответов правильно!'
+    : 'Правильно: ' + correct + ' из ' + total + ' (наведи курсор на красные поля — увидишь правильный ответ)';
+};

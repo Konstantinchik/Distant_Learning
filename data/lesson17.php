@@ -1,14 +1,15 @@
-<!--lesson17.php-->
+<!-- lesson17.php -->
 <div class="lesson">
 
-    <h2 class="text-primary mb-4">
-        Занятие 17. Средства представления и обработки мультимедийной информации. Microsoft PowerPoint
-    </h2>
+    <h2 class="text-primary mb-4">Занятие 17. Мультимедиа. Microsoft PowerPoint</h2>
 
-    <!-- ==================================================
-     1. Прочитайте слова и словосочетания (2 колонки + озвучка)
-     ================================================== -->
+<!-- intro -->
+<div class="alert alert-primary border-start border-primary border-4 fs-5 mb-4">
+    <strong>Презентация</strong> — набор цветных <strong>слайдов</strong> с мультимедийной информацией на определённую тему. Один из самых популярных способов подачи информации.
+</div>
 
+
+    <!-- Task1: dictionary -->
 <div class="card mb-5">
   <div class="card-header bg-light fw-bold fs-5">
     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
@@ -81,256 +82,442 @@
     </div>
   </div>
 </div>
-<!-- Конец задания 1 -->
+<!-- End task 1 -->
 
-<!-- 2. Сгруппируйте однокоренные слова. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">2. Сгруппируйте однокоренные слова.</div>
+<!-- LANG SECTION INTRO -->
+<div class="alert alert-warning border-start border-warning border-4 mb-4">
+    <h5 class="mb-1">📝 Русский язык</h5>
+    <p class="mb-0">Прежде чем перейти к информатике, потренируем <strong>русскую лексику</strong> по теме урока — это поможет лучше понимать терминологию.</p>
+</div>
+
+<!-- lang-word-formation -->
+<div class="card mb-4 border-warning">
+    <div class="card-header bg-warning-subtle fw-bold">
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> Образуй существительное от глагола
+    </div>
     <div class="card-body">
-        <div class="alert alert-warning small mb-3">
-            <strong>TODO:</strong> для интерактивного подбора (drag&drop / select) разметить вручную. Сейчас — текст из тетради + поле для ответа.
-        </div>
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Показ, автоматический, рука, создавать, меняться, показывать, смена, ручной,
-автоматика, сменить, создание.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        <p class="mb-2"><strong>Образец:</strong> <code>удалить → удаление</code></p>
+        <p class="text-muted mb-3">Образуй существительное от каждого глагола по образцу.</p>
+        <table class="table align-middle" style="max-width:500px">
+            <tbody>
+                <tr>
+                    <td class="text-end pe-2 fw-500">представить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="представление" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">демонстрировать</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="демонстрация" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">создать</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="создание" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">показать</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="показ" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">оформить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="оформление" autocomplete="off">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
 
-<!-- 3. Прочитайте текст. -->
-<div class="card mb-5 border-primary">
-    <div class="card-header bg-primary text-white fw-bold">3. Прочитайте текст.</div>
+<!-- lang-roots -->
+<div class="card mb-4 border-warning">
+    <div class="card-header bg-warning-subtle fw-bold">
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> К какому корню относится слово?
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">Выбери корень для каждого слова.</p>
+        <table class="table align-middle" style="max-width:500px">
+            <tbody>
+                <tr>
+                    <td class="text-end pe-3 fw-500">презентация</td>
+                    <td>
+                        <select class="form-select" data-correct="представить">
+                            <option value="">— корень —</option>
+                            <option value="представить">представить</option><option value="программа">программа</option><option value="процесс">процесс</option><option value="причина">причина</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">слайдовый</td>
+                    <td>
+                        <select class="form-select" data-correct="слайд">
+                            <option value="">— корень —</option>
+                            <option value="слайд">слайд</option><option value="слово">слово</option><option value="сила">сила</option><option value="связь">связь</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">демонстрация</td>
+                    <td>
+                        <select class="form-select" data-correct="демонстрировать">
+                            <option value="">— корень —</option>
+                            <option value="демон">демон</option><option value="демократ">демократ</option><option value="демонстрировать">демонстрировать</option><option value="декабрь">декабрь</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">мультимедийный</td>
+                    <td>
+                        <select class="form-select" data-correct="мульти">
+                            <option value="">— корень —</option>
+                            <option value="мульти">мульти</option><option value="музыка">музыка</option><option value="машина">машина</option><option value="масса">масса</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- theory -->
+<div class="card mb-4 border-info">
+    <div class="card-header bg-info text-white fw-bold fs-5">
+        <span class="badge bg-light text-info me-2">📖 Теория</span> Краткое содержание занятия
+    </div>
     <div class="card-body fs-5 lh-lg">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Презентация (от англ. presentation - представление) — это набор цветных
-картинок-слайдов с мультимедийной информацией на определённую тему.
-Презентация хранится в файле специального формата. Презентация — это один из
-самых популярных способов подачи информации.
-      Каждый слайд презентации может содержать различную текстовую, числовую,
-графическую и видеоинформацию. Также каждый слайд отдельно или вся
-презентация в целом может иметь звуковое сопровождение.
-      Демонстрация презентации — это показ подготовленных слайдов зрителям.
-Демонстрация презентации — это смена слайдов. Смена слайдов может быть
-автоматической или ручной. Для организации автоматической смены слайдов
-необходимо при создании презентации определить промежуток времени, через
-который будут меняться слайды. Если этот промежуток определить трудно или
-невозможно, то смена слайдов производится пользователем непосредственно во
-время демонстрации.
-      В настоящее время для создания презентации используют различные
-программные комплексы. Например, Microsoft PowerPoint, Piktochart, Prezi.
-RealtuneBoard, Adobe Slate, Adobe Photoshop, Adobe After Effects и многие другие.
-      Термин «презентация» связан с информационными и рекламными функциями
-картинок. Но это не все возможности использования презентаций. Презентации
-(слайд-фильмы) используют, чтобы подготовить доклад, выступление на различные
-темы - от серьёзных научных проблем до рассказов о коллекциях, спортивных
-достижениях или проведённом путешествии.
-     Microsoft PowerPoint - программа, которая предназначена для создания
-презентаций. Как и Word, программа PowerPoint может работать с несколькими
-документами. Для этого открывается новое окно программы. И окно каждого
-документа является частью окна программы (рис. 39).
+<h6 class="text-primary mt-3 mb-2">Что такое презентация и слайд</h6>
+<p class="mb-3"><strong>Презентация</strong> — набор картинок-слайдов с мультимедиа на тему, хранящийся в файле специального формата. Каждый <strong>слайд</strong> может содержать текст, числа, графику, видео и звук.</p>
+<h6 class="text-primary mt-3 mb-2">Демонстрация и смена слайдов</h6>
+<p class="mb-3"><strong>Демонстрация</strong> — показ слайдов зрителям. Смена слайдов бывает <em>автоматической</em> (по таймеру) или <em>ручной</em> (по щелчку). Автоматический режим требует заранее задать промежуток времени между слайдами.</p>
+<h6 class="text-primary mt-3 mb-2">Программы для создания презентаций</h6>
+<p class="mb-3">Самая известная — <strong>Microsoft PowerPoint</strong>. Также: Piktochart, Prezi, Adobe Slate, Google Slides. Презентации применяются в докладах, рекламе, образовании, рассказах о коллекциях и путешествиях.</p>
 
-
-
-
-      Окно программы PowerPoint, как и программы Word,
-имеет большое верхнее меню. Оно состоит из следующих
-пунктов: Файл, Главная. Вставка. Дизайн. Переходы.
-Анимация,      Слайд-шоу,     Рецензирование    и    Вид.
-Инструменты, представленные в пункте меню Файл, -
-сведения, создать, открыть, сохранить и другие -
-предназначены для выполнения операций со всей
-презентацией как с файлом (рис. 40).
-Инструменты, собранные в пункте меню Главная (рис. 41),
-разделены на 6 групп:
-1.Буфер обмена - группа инструментов для вырезания,
-копирования, вставки выделенных фрагментов информации
-или слайдов, а также форматирования по заданному образцу.
-2.Слайды - группа инструментов для создания по заданным
-шаблонам (образцам), изменения шаблонов слайдов,
-разделения слайдов по разделам.
-3.Шрифт - группа инструментов для изменения внешнего вида
-текстовой и числовой информации, расположенной на выбранном слайде.
-4.Абзац - группа инструментов для определения пли изменения расположения
-текстовой н числовой информации на выбранном слайде.
-5.Рисование - группа инструментов для создания и изменения различных фигур и их
-свойств.
-6.Редактирование - группа инструментов для быстрого поиска, замены, выделения в
-презентации необходимой информации.
-
-
-
-
-             Рис. 41. Пункт меню Главная программы PowerPoint
-      Инструменты, собранные в пункте меню Вставка (рис. 42), предназначены
-для размещения на текущем слайде таких элементов, как таблицы, рисунки, фигуры,
-диаграммы, ссылки, текст, специальные символы, объекты мультимедиа (звук и
-видео) и других.
-
-
-
-
-             Рис. 42. Пункт меню Вставка программы PowerPoint
-      Инструменты пункта меню Дизайн (рис. 43) предназначены для выбора стиля
-и цветового оформления слайдов презентации, для определения размеров и формата
-фона слайдов. Все эти параметры определяются один раз для всей презентации и
-являются общими для всех слайдов.
-
-
-
-
-             Рис. 43. Пункт меню Дизайн программы PowerPoint
-     Инструменты пункта меню Переходы (рис. 44) предоставляют пользователю
-возможность организации смены слайдов презентации. Для каждого слайда можно
-определить способ его появления и исчезновения, времени показа и длительность
-перехода к следующему слайду, звуковое сопровождение.
-
-
-
-
-            Рис. 44. Пункт меню Переходы программы PowerPoint
-     Инструменты пункта меню Анимация (рис. 45) предоставляют пользователю
-возможность создания анимации на текущем слайде, то есть определить способ
-появления и исчезновения отдельных элементов, расположенных на текущем слайде.
-
-
-
-
-            Рис. 45. Пункт меню Анимация программы PowerPoint
-
-
-
-
-            Рис. 46. Пункт меню Слайд-шоу программы PowerPoint
-     Подробную информацию об этих и других возможностях программы
-подготовки презентаций Microsoft PowerPoint можно получить из специальных
-источников. Например, https://support.office.com.</pre>
     </div>
 </div>
 
-<!-- 4. Ответьте на вопросы. -->
-<div class="card mb-5">
-    <div class="card-header bg-primary text-white fw-bold">4. Ответьте на вопросы.</div>
+
+<!-- yesno-test -->
+<div class="card mb-4">
+    <div class="card-header bg-warning-subtle fw-bold fs-5">
+        <span class="badge bg-warning text-dark me-2">Понимание</span> Тест: верно ли утверждение?
+    </div>
     <div class="card-body">
+        <p class="text-muted mb-3">Прочитай каждое утверждение и нажми «да», если оно верно, «нет» — если неверно.</p>
+        
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="слайды — главный элемент презентации.">
+                <p class="fw-500 mb-2">1. Презентация состоит из набора слайдов.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l17_yn1" value="да" id="l17_yn1_y">
+                    <label class="btn btn-outline-success px-4" for="l17_yn1_y">да</label>
+                    <input type="radio" class="btn-check" name="l17_yn1" value="нет" id="l17_yn1_n">
+                    <label class="btn btn-outline-danger px-4" for="l17_yn1_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="слайд может содержать текст, числа, графику, видео, звук.">
+                <p class="fw-500 mb-2">2. Слайд может содержать только текст.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l17_yn2" value="да" id="l17_yn2_y">
+                    <label class="btn btn-outline-success px-4" for="l17_yn2_y">да</label>
+                    <input type="radio" class="btn-check" name="l17_yn2" value="нет" id="l17_yn2_n">
+                    <label class="btn btn-outline-danger px-4" for="l17_yn2_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="также бывает ручная — по щелчку пользователя.">
+                <p class="fw-500 mb-2">3. Смена слайдов может быть только автоматической.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l17_yn3" value="да" id="l17_yn3_y">
+                    <label class="btn btn-outline-success px-4" for="l17_yn3_y">да</label>
+                    <input type="radio" class="btn-check" name="l17_yn3" value="нет" id="l17_yn3_n">
+                    <label class="btn btn-outline-danger px-4" for="l17_yn3_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="PowerPoint — самая известная программа этого класса.">
+                <p class="fw-500 mb-2">4. Microsoft PowerPoint — это программа для презентаций.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l17_yn4" value="да" id="l17_yn4_y">
+                    <label class="btn btn-outline-success px-4" for="l17_yn4_y">да</label>
+                    <input type="radio" class="btn-check" name="l17_yn4" value="нет" id="l17_yn4_n">
+                    <label class="btn btn-outline-danger px-4" for="l17_yn4_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="презентация хранится в файле специального формата (.pptx и др.).">
+                <p class="fw-500 mb-2">5. Презентация хранится в обычном текстовом файле.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l17_yn5" value="да" id="l17_yn5_y">
+                    <label class="btn btn-outline-success px-4" for="l17_yn5_y">да</label>
+                    <input type="radio" class="btn-check" name="l17_yn5" value="нет" id="l17_yn5_n">
+                    <label class="btn btn-outline-danger px-4" for="l17_yn5_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- mcq-test -->
+<div class="card mb-4">
+    <div class="card-header bg-primary text-white fw-bold fs-5">
+        <span class="badge bg-light text-primary me-2">Выбор ответа</span> Тест: выбери правильный вариант
+    </div>
+    <div class="card-body mcq-set">
+        <p class="text-muted mb-3">В каждом вопросе только один правильный ответ.</p>
+        
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="презентация — это слайды с мультимедиа.">
+                <p class="fw-bold mb-2">1. Что такое презентация?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq1" id="l17_mcq1_a" value="a">
+                    <label class="form-check-label ms-2" for="l17_mcq1_a">а) программа</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq1" id="l17_mcq1_b" value="b">
+                    <label class="form-check-label ms-2" for="l17_mcq1_b">б) набор слайдов с мультимедийной информацией</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq1" id="l17_mcq1_c" value="c">
+                    <label class="form-check-label ms-2" for="l17_mcq1_c">в) текстовый документ</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq1" id="l17_mcq1_d" value="d">
+                    <label class="form-check-label ms-2" for="l17_mcq1_d">г) электронная таблица</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="c" data-explanation="слайд может содержать любую мультимедийную информацию.">
+                <p class="fw-bold mb-2">2. Что может содержать слайд?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq2" id="l17_mcq2_a" value="a">
+                    <label class="form-check-label ms-2" for="l17_mcq2_a">а) только текст</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq2" id="l17_mcq2_b" value="b">
+                    <label class="form-check-label ms-2" for="l17_mcq2_b">б) только графику</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq2" id="l17_mcq2_c" value="c">
+                    <label class="form-check-label ms-2" for="l17_mcq2_c">в) текст, числа, графику, видео, звук</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq2" id="l17_mcq2_d" value="d">
+                    <label class="form-check-label ms-2" for="l17_mcq2_d">г) только формулы</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="c" data-explanation="автоматический (таймер) и ручной (по щелчку).">
+                <p class="fw-bold mb-2">3. Какие бывают режимы смены слайдов?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq3" id="l17_mcq3_a" value="a">
+                    <label class="form-check-label ms-2" for="l17_mcq3_a">а) только автоматический</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq3" id="l17_mcq3_b" value="b">
+                    <label class="form-check-label ms-2" for="l17_mcq3_b">б) только ручной</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq3" id="l17_mcq3_c" value="c">
+                    <label class="form-check-label ms-2" for="l17_mcq3_c">в) автоматический и ручной</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq3" id="l17_mcq3_d" value="d">
+                    <label class="form-check-label ms-2" for="l17_mcq3_d">г) только смешанный</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="PowerPoint — самая популярная программа для презентаций.">
+                <p class="fw-bold mb-2">4. Какая самая известная программа для создания презентаций?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq4" id="l17_mcq4_a" value="a">
+                    <label class="form-check-label ms-2" for="l17_mcq4_a">а) Microsoft Word</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq4" id="l17_mcq4_b" value="b">
+                    <label class="form-check-label ms-2" for="l17_mcq4_b">б) Microsoft PowerPoint</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq4" id="l17_mcq4_c" value="c">
+                    <label class="form-check-label ms-2" for="l17_mcq4_c">в) Microsoft Excel</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l17_mcq4" id="l17_mcq4_d" value="d">
+                    <label class="form-check-label ms-2" for="l17_mcq4_d">г) Microsoft Outlook</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- fill-in -->
+<div class="card mb-4">
+    <div class="card-header bg-success-subtle fw-bold fs-5">
+        <span class="badge bg-success me-2">Заполни пропуск</span> Тест: закончи предложение
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">Выбери из выпадающего списка слово, которое лучше всего подходит.</p>
         <ol class="list-unstyled mb-0">
+            
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">1. Что такое презентация?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">1. Один элемент презентации — это <select class="form-select d-inline-block w-auto mx-1" data-correct="слайд"><option value="">— выбери —</option><option value="страница">страница</option><option value="слайд">слайд</option><option value="ячейка">ячейка</option><option value="параграф">параграф</option></select>.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">2. Из чего состоит презентация?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">2. Показ слайдов зрителям называется <select class="form-select d-inline-block w-auto mx-1" data-correct="демонстрацией"><option value="">— выбери —</option><option value="трансляцией">трансляцией</option><option value="демонстрацией">демонстрацией</option><option value="печатью">печатью</option><option value="переводом">переводом</option></select>.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">3. Что такое демонстрация презентации?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">3. Программа Microsoft <select class="form-select d-inline-block w-auto mx-1" data-correct="PowerPoint"><option value="">— выбери —</option><option value="Word">Word</option><option value="Excel">Excel</option><option value="PowerPoint">PowerPoint</option><option value="Access">Access</option></select> предназначена для создания презентаций.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">4. Как можно организовать смену слайдов презентации?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+        </ol>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- open-questions -->
+<div class="card mb-4">
+    <div class="card-header bg-secondary text-white fw-bold fs-5">
+        <span class="badge bg-light text-secondary me-2">Развёрнутый ответ</span> Сформулируй своими словами
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">
+            Сначала постарайся ответить сам, написав в поле или вслух. Потом нажми «Показать эталон» и сравни.
+        </p>
+        <ol class="list-unstyled mb-0">
+            
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">1. Что такое презентация?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Набор цветных картинок-слайдов с мультимедийной информацией на определённую тему.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">5. Для чего используют презентации?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">2. Какую информацию может содержать слайд?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Текстовую, числовую, графическую, видео и звуковую (мультимедийную).
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">6. Что такое Microsoft PowerPoint?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">3. Какие бывают способы смены слайдов?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Автоматический (через заданный промежуток времени) и ручной (по щелчку пользователя).
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">7. Может ли PowerPoint одновременно работать с несколькими документами?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">8. Что является основным объектом в программе PowerPoint? Из чего он состоит?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">9. В каких форматах можно сохранять документы в программе Excel?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">10. Назовите основные части верхнего меню программы PowerPoint.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">11. Назовите основные возможности программы PowerPoint. 5. Установите соответствие 1. Файл            А. Инструменты этого пункта меню помогают в демонстрации слайдов презентации 2. Главная         Б. Инструменты этого пункта меню необходимы при определении способа появления и исчезновения отдельных элементов на текущем слайде 3. Вставка         В. Инструменты этого пункта меню позволяют организовать смену слайдов 4. Дизайн          Г. Инструменты этого пункта меню позволяют расположить на текущем слайде таблицы. рисунки, фигуры и т.д. 5. Переходы        Д. Группа инструментов этого пункта меню необходима для создания и изменения различных фигур и их свойств б. Анимация        Е. Инструменты этого пункта меню используют при выборе стиля, цвета, формата фона слайдов 7. Слайд-шоу       Ж. Инструменты этого пункта меню нужны для выполнения операций со всей презентацией как с файлом</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">4. Назовите программы для создания презентаций.</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Microsoft PowerPoint, Piktochart, Prezi, Adobe Slate, Google Slides.
+                    </div>
                 </li>
         </ol>
     </div>
 </div>
 
-<!-- 6. Закончите предложения. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">6. Закончите предложения.</div>
+
+<!-- final -->
+<div class="card mb-4 border-success">
+    <div class="card-header bg-success text-white fw-bold fs-5">
+        <span class="badge bg-light text-success me-2">Финал</span> Расскажи тему целиком
+    </div>
     <div class="card-body">
-        <ol class="list-unstyled mb-0">
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>1.</strong> Презентация — это ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>2.</strong> Демонстрация презентации может быть ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>3.</strong> Если промежуток времени, через который будут меняться слайды, определить трудно, то ...</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>4.</strong> Microsoft PowerPoint — это ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>5.</strong> Абзац — это группа инструментов в пункте меню Главная для ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-        </ol>
-    </div>
-</div>
-
-<!-- 7. Вставьте вместо точек глаголы, данные под чертой, в нужной ф -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">7. Вставьте вместо точек глаголы, данные под чертой, в нужной форме.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">1.      Презентация ... в файле специального формата.
-     2.      Для создания презентации ... различные программные комплексы.
-     3.      Программа Microsoft PowerPoint может ... с несколькими документами.
-     4.   Верхнее меню окна программы PowerPoint... следующих пунктов: Файл,
-     Главная, Вставка, Дизайн и т.д.
-     5.   Шрифт — это группа инструментов в пункте меню Главная, которая
-     необходима, чтобы ... внешний вид текстовой и числовой информации на
-     выбранном слайде.
-Изменить, работать, состоять из, использовать, храниться.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        <p>Когда ответил на все тесты — попробуй <strong>устно или письменно</strong> рассказать о теме урока, опираясь на блок «Краткая теория».</p>
+        <textarea class="form-control mb-3" rows="6" placeholder="Можешь написать здесь свой развёрнутый рассказ для тренировки…"></textarea>
+        <div class="text-center">
+            <button class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(17); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
+                Я разобрал тему
+            </button>
         </div>
     </div>
 </div>
 
-<!-- 8. Составьте план рассказа о программе PowerPoint, её особеннос -->
-<div class="card mb-5 border-success">
-    <div class="card-header bg-success text-white fw-bold">8. Составьте план рассказа о программе PowerPoint, её особенностях.</div>
-    <div class="card-body">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Расскажите текст по плану.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="6" placeholder="Запишите ваш ответ для тренировки…"></textarea>
-        </div>
-    </div>
-</div>
 
-<!-- 9. Выполните задание. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">9. Выполните задание.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">С помощью инструментов программы PowerPoint создайте документ, который
-содержит рассказ о вашем хобби. Используйте рисунки, фотографии, различные
-шрифты, цветовое оформление и другие возможности программы PowerPoint.
-     Файл сохраните в формате *.ppt в папке C:\Students\n_grup.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
+<script>
+// Общая проверка fill-in select'ов в текущей карточке
+window.checkFillIn = function(btn) {
+    const card = btn.closest('.card-body');
+    if (!card) return;
+    let correct = 0, total = 0;
+    card.querySelectorAll('select[data-correct]').forEach(sel => {
+        total++;
+        const fb = sel.parentElement.querySelector('.feedback');
+        sel.classList.remove('is-valid', 'is-invalid');
+        if (fb) fb.classList.remove('d-none', 'text-success', 'text-danger', 'text-warning');
+        if (!sel.value) {
+            if (fb) { fb.textContent = 'Не выбрано'; fb.classList.add('text-warning'); }
+        } else if (sel.value === sel.dataset.correct) {
+            sel.classList.add('is-valid');
+            if (fb) { fb.textContent = '✓ Правильно'; fb.classList.add('text-success'); }
+            correct++;
+        } else {
+            sel.classList.add('is-invalid');
+            if (fb) { fb.innerHTML = 'Неверно. Правильный: <strong>' + sel.dataset.correct + '</strong>'; fb.classList.add('text-danger'); }
+        }
+    });
+    let result = card.querySelector('.fill-in-result');
+    if (!result) {
+        result = document.createElement('div');
+        result.className = 'fill-in-result mt-3 fw-bold text-center';
+        card.appendChild(result);
+    }
+    result.className = 'fill-in-result mt-3 fw-bold text-center ' + (correct === total ? 'text-success' : 'text-danger');
+    result.textContent = correct === total
+        ? '✓ Все ' + total + ' ответов правильно!'
+        : 'Правильных: ' + correct + ' из ' + total;
+};
+
+// Показать/скрыть эталон ответа
+window.toggleAnswer = function(btn) {
+    const sample = btn.nextElementSibling;
+    if (sample.classList.contains('d-none')) {
+        sample.classList.remove('d-none');
+        btn.textContent = 'Скрыть эталон';
+    } else {
+        sample.classList.add('d-none');
+        btn.textContent = 'Показать эталон';
+    }
+};
+</script>
+
 
 </div>

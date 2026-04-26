@@ -1,16 +1,15 @@
-<!--lesson10.php-->
+<!-- lesson10.php -->
 <div class="lesson">
 
-    <h2 class="text-primary mb-4">
-        Занятие 10. Блок-схема алгоритма. Величина. Линейный алгоритм
-    </h2>
+    <h2 class="text-primary mb-4">Занятие 10. Блок-схема алгоритма. Величина. Линейный алгоритм</h2>
 
-    <!-- ==================================================
-     Занятие 10 — Задание 1
-     1. Прочитайте слова и словосочетания, запомните их значения.
-     (2 колонки + озвучка в обеих колонках)
-     ================================================== -->
+<!-- intro -->
+<div class="alert alert-primary border-start border-primary border-4 fs-5 mb-4">
+    <strong>Блок-схема</strong> — графический способ записи алгоритма. <strong>Величина</strong> — основная единица для работы с информацией. <strong>Линейный алгоритм</strong> — самый простой вид алгоритма: команды выполняются по порядку, без ветвлений и циклов.
+</div>
 
+
+    <!-- Task1: dictionary -->
 <div class="card mb-5">
   <div class="card-header bg-light fw-bold fs-5">
     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
@@ -238,258 +237,449 @@
     </div>
   </div>
 </div>
-<!-- Конец задания 1 -->
+<!-- End task 1 -->
 
-<!-- 2. Сгруппируйте однокоренные слова. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">2. Сгруппируйте однокоренные слова.</div>
+<!-- LANG SECTION INTRO -->
+<div class="alert alert-warning border-start border-warning border-4 mb-4">
+    <h5 class="mb-1">📝 Русский язык</h5>
+    <p class="mb-0">Прежде чем перейти к информатике, потренируем <strong>русскую лексику</strong> по теме урока — это поможет лучше понимать терминологию.</p>
+</div>
+
+<!-- lang-word-formation -->
+<div class="card mb-4 border-warning">
+    <div class="card-header bg-warning-subtle fw-bold">
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> Образуй существительное от глагола
+    </div>
     <div class="card-body">
-        <div class="alert alert-warning small mb-3">
-            <strong>TODO:</strong> для интерактивного подбора (drag&drop / select) разметить вручную. Сейчас — текст из тетради + поле для ответа.
-        </div>
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Начинать, выбрать, разорванный, логика, кончить, присваивание, вещь,
-соединитель, ветвь, символизировать, проверенный, текст, заканчивать, выбор,
-линейка, присваивать, соединять, начальный. разрыв, проверить, соединение,
-разветвляющийся, разрывать, линейный, начало, присвоенный, окончание,
-выбранный, проверять, соединить, символ, ветвление, присвоить, разорвать,
-выбирать, конец, вещественный, логический, линия, начать, проверка, символьный,
-текстовый.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
-
-<!-- 3. Образуйте существительные от данных глаголов по образцу. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">3. Образуйте существительные от данных глаголов по образцу.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">А) Образец: удалить - удаление
-     Решить, измерить, обозначить, сообщить, продолжить, изобразить (з/ж).
-     Б) Образец: понимать - понимание
-     Присваивать, программировать, использовать.
-     В) Образец: преподавать - преподаватель
-     Исполнить, пользоваться, соединить.
-     Г) Образец: обрывать - обрыв
-     Вводить, выводить, разрывать, входить, выходить.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
-
-<!-- 4. Преобразуйте словосочетания по образцу. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">4. Преобразуйте словосочетания по образцу.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Образец: выполнить команду (4) - выполнение команды (2)
-     Решить задачу, изобразить алгоритм, проверить условие, выбрать действие,
-описать параметр, выполнить алгоритм, разрывать линию, сообщить результат,
-использовать блок.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
-
-<!-- 5. Обратите внимание на конструкции и запомните их. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">5. Обратите внимание на конструкции и запомните их.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Что (1) состоит      из   чего (2)
-
-     Образец: Имя величины состоит из одной или нескольких букв латинского
-алфавита, цифр и других знаков.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        <p class="mb-2"><strong>Образец:</strong> <code>удалить → удаление</code></p>
+        <p class="text-muted mb-3">Образуй существительное от каждого глагола по образцу.</p>
+        <table class="table align-middle" style="max-width:500px">
+            <tbody>
+                <tr>
+                    <td class="text-end pe-2 fw-500">изменить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="изменение" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">обозначить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="обозначение" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">определить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="определение" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">вычислить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="вычисление" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">ввести</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="ввод" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">вывести</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="вывод" autocomplete="off">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
 
-<!-- 6. Прочитайте текст. -->
-<div class="card mb-5 border-primary">
-    <div class="card-header bg-primary text-white fw-bold">6. Прочитайте текст.</div>
+<!-- lang-roots -->
+<div class="card mb-4 border-warning">
+    <div class="card-header bg-warning-subtle fw-bold">
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> К какому корню относится слово?
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">Выбери корень для каждого слова.</p>
+        <table class="table align-middle" style="max-width:500px">
+            <tbody>
+                <tr>
+                    <td class="text-end pe-3 fw-500">вычисление</td>
+                    <td>
+                        <select class="form-select" data-correct="вычислить">
+                            <option value="">— корень —</option>
+                            <option value="число">число</option><option value="вычислить">вычислить</option><option value="выражение">выражение</option><option value="выбор">выбор</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">обозначение</td>
+                    <td>
+                        <select class="form-select" data-correct="обозначить">
+                            <option value="">— корень —</option>
+                            <option value="обозначить">обозначить</option><option value="область">область</option><option value="основа">основа</option><option value="описать">описать</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">линейный</td>
+                    <td>
+                        <select class="form-select" data-correct="линия">
+                            <option value="">— корень —</option>
+                            <option value="линия">линия</option><option value="логика">логика</option><option value="лента">лента</option><option value="лимит">лимит</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">значение</td>
+                    <td>
+                        <select class="form-select" data-correct="значить">
+                            <option value="">— корень —</option>
+                            <option value="знак">знак</option><option value="значить">значить</option><option value="знание">знание</option><option value="знакомство">знакомство</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- theory -->
+<div class="card mb-4 border-info">
+    <div class="card-header bg-info text-white fw-bold fs-5">
+        <span class="badge bg-light text-info me-2">📖 Теория</span> Краткое содержание занятия
+    </div>
     <div class="card-body fs-5 lh-lg">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Алгоритм — это последовательность действий, которая приводит к решению
-поставленной задачи. Существуют разные способы записи алгоритма - словесный,
-графический, псевдокоды, язык программирования.
-     Блок-схема — это пример графической записи алгоритма. Блок-схема — это
-изображение алгоритма в виде набора графических элементов - блоков. Каждый
-блок — это действие, которое должен выполнить исполнитель.
-     Для записи алгоритмов используют следующие основные блоки (табл. 2).
-                         2. Основные блоки блок-схемы
+<h6 class="text-primary mt-3 mb-2">Блок-схема</h6>
+<p class="mb-3"><strong>Блок-схема</strong> — изображение алгоритма в виде набора графических блоков. Каждый блок — это действие. Основные блоки: начало/конец, ввод/вывод данных, вычисления, ветвление, цикл.</p>
+<h6 class="text-primary mt-3 mb-2">Величина и её характеристики</h6>
+<p class="mb-3"><strong>Величина</strong> — основная единица для работы с информацией. У величины четыре характеристики: <em>имя</em> (обозначение, например a, m1), <em>значение</em> (число, текст), <em>тип</em> (целый, вещественный, символьный, логический) и <em>вид</em> (постоянная — не меняется, переменная — меняется в процессе работы).</p>
+<h6 class="text-primary mt-3 mb-2">Линейный алгоритм</h6>
+<p class="mb-3"><strong>Линейный алгоритм</strong> — алгоритм, в котором команды выполняются по порядку, одна за другой, без ветвлений и циклов. Это самый простой вид алгоритма: ввести данные → вычислить → вывести результат.</p>
 
-
-
-
-     Величина (в математике, физике и других науках) — это результат измерения.
-В информатике величина — это основная единица для работы с информацией.
-Основные характеристики величины: имя. значение, тип и вид.
-       Имя величины — это её обозначение. Имя величины состоит из одной или
-нескольких букв латинского алфавита, цифр и других знаков. Например, a, m1, St.
-       Значение величины — это число, знак, текст и так далее. Например. 10, -21.6,
-‘f’, &quot;число&quot;.
-       Значение величины определяется её типом (табл. 3).
-                            3. Основные типы величин
-
-
-
-
- Рис.9 Блок-схема линейного алгоритма
-                                           По виду величины делят на постоянные и
-                                      переменные.
-                                           Если значение величины не изменяется
-                                      при исполнении алгоритма, то это постоянная
-                                      величина.
-                                           Если значение величины изменяется при
-                                      исполнении алгоритма, то это переменная
-                                      величина.
-                                           Величине можно дать начальное значение
-                                      или изменить существующее. Для этого
-                                      используют оператор присваивания. Его можно
-                                      обозначать знаком «:=». Например. запись а := 5
-                                      означает, что величине а присваивается (даётся)
-                                      значение 5. А запись а := а + 5 означает, что
-                                      значение величины а увеличивается на 5.
-                                           Оператор присваивания используют при
-записи          в             алгоритмах           арифметических          действий.
-Например, а := 5; b : = 7 :с := а *2+b *4.
-     Линейный алгоритм — это алгоритм, где все этапы решения задачи
-исполнитель должен выполнять по порядку. последовательно (рис. 9).
-Составим блок-схемы решения задач.
-Задача 1. Найдите значение выражения, если а              = с- d, b = с +
-d , с = 10, d = 6 .
-Исходная информация (начальные данные) — это значения величин с = 10, d= 6.
-Решение задачи — это значение величины S.
-    Чтобы найти значение величины S, надо:
-    1) найти значения величин а и b по заданным формулам:
-    2) найти значение выражения р = а 2 – b 2 ;
-    3) найти значение величины q = 3b + 5а;
-    4) найти значение S= p/q.
-   Все шаги алгоритма — это вычислительные действия. Для их записи будем
-использовать блок «Процесс». Чтобы сообщить результат - значение величины S -
-будем использовать блок «Ввод- вывод». Блок-схема решения задачи может иметь
-вид, который изображён на рис. 10.
-
-   Задача 2. Найдите значение выражения для любых                      значений
-величин х и у.
-Исходная информация (начальные данные) — это значения величин х, у.
-Решение задачи — это значение величины S.
-     Чтобы найти значение величины 5, надо:
-     1) узнать значения величин х и у - спросить у пользователя;
-     2) найти значение выражения S = ху - (х + 2у) 4 ;
-     3) найти значение величины S = S/(x 2 + у2 + 1 ) .
-
-     Для ввода пользователем значений величин х и у будем использовать блок
-«Ввод-вывод». Остальные действия в алгоритме — это вычислительные действия.
-Для их записи будем использовать блок «Процесс». Чтобы сообщить результат -
-значение величины S - будем использовать блок «Ввод-вывод». Блок-схема решения
-задачи может иметь вид, который изображён на рис. 11.
-
-
-
-
-      Рис. 10. Блок-схема              Рис. 11. Блок-схема алгоритма
-алгоритма решения задачи 1                   решения задачи 2
-      Замечание. Для задач 1 и 2 мы рассмотрели только один из способов
-составления блок-схемы решения задачи.</pre>
     </div>
 </div>
 
-<!-- 7. Ответьте на вопросы. -->
-<div class="card mb-5">
-    <div class="card-header bg-primary text-white fw-bold">7. Ответьте на вопросы.</div>
+
+<!-- yesno-test -->
+<div class="card mb-4">
+    <div class="card-header bg-warning-subtle fw-bold fs-5">
+        <span class="badge bg-warning text-dark me-2">Понимание</span> Тест: верно ли утверждение?
+    </div>
     <div class="card-body">
+        <p class="text-muted mb-3">Прочитай каждое утверждение и нажми «да», если оно верно, «нет» — если неверно.</p>
+        
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="блок-схема состоит из графических блоков.">
+                <p class="fw-500 mb-2">1. Блок-схема — это графический способ записи алгоритма.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l10_yn1" value="да" id="l10_yn1_y">
+                    <label class="btn btn-outline-success px-4" for="l10_yn1_y">да</label>
+                    <input type="radio" class="btn-check" name="l10_yn1" value="нет" id="l10_yn1_n">
+                    <label class="btn btn-outline-danger px-4" for="l10_yn1_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="у величины четыре характеристики: имя, значение, тип и вид.">
+                <p class="fw-500 mb-2">2. У величины три характеристики: имя, значение и тип.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l10_yn2" value="да" id="l10_yn2_y">
+                    <label class="btn btn-outline-success px-4" for="l10_yn2_y">да</label>
+                    <input type="radio" class="btn-check" name="l10_yn2" value="нет" id="l10_yn2_n">
+                    <label class="btn btn-outline-danger px-4" for="l10_yn2_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="линейный алгоритм — это алгоритм без ветвлений и циклов.">
+                <p class="fw-500 mb-2">3. Линейный алгоритм содержит ветвления.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l10_yn3" value="да" id="l10_yn3_y">
+                    <label class="btn btn-outline-success px-4" for="l10_yn3_y">да</label>
+                    <input type="radio" class="btn-check" name="l10_yn3" value="нет" id="l10_yn3_n">
+                    <label class="btn btn-outline-danger px-4" for="l10_yn3_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="это и есть отличие постоянной величины от переменной.">
+                <p class="fw-500 mb-2">4. Постоянная величина не изменяется во время работы алгоритма.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l10_yn4" value="да" id="l10_yn4_y">
+                    <label class="btn btn-outline-success px-4" for="l10_yn4_y">да</label>
+                    <input type="radio" class="btn-check" name="l10_yn4" value="нет" id="l10_yn4_n">
+                    <label class="btn btn-outline-danger px-4" for="l10_yn4_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="имя состоит из букв латинского алфавита, цифр и других знаков, но обычно начинается с буквы.">
+                <p class="fw-500 mb-2">5. Имя величины может состоять только из цифр.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l10_yn5" value="да" id="l10_yn5_y">
+                    <label class="btn btn-outline-success px-4" for="l10_yn5_y">да</label>
+                    <input type="radio" class="btn-check" name="l10_yn5" value="нет" id="l10_yn5_n">
+                    <label class="btn btn-outline-danger px-4" for="l10_yn5_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- mcq-test -->
+<div class="card mb-4">
+    <div class="card-header bg-primary text-white fw-bold fs-5">
+        <span class="badge bg-light text-primary me-2">Выбор ответа</span> Тест: выбери правильный вариант
+    </div>
+    <div class="card-body mcq-set">
+        <p class="text-muted mb-3">В каждом вопросе только один правильный ответ.</p>
+        
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="блок-схема — графическая запись алгоритма.">
+                <p class="fw-bold mb-2">1. Что такое блок-схема?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq1" id="l10_mcq1_a" value="a">
+                    <label class="form-check-label ms-2" for="l10_mcq1_a">а) программа на Pascal</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq1" id="l10_mcq1_b" value="b">
+                    <label class="form-check-label ms-2" for="l10_mcq1_b">б) графическая запись алгоритма в виде блоков</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq1" id="l10_mcq1_c" value="c">
+                    <label class="form-check-label ms-2" for="l10_mcq1_c">в) словесное описание задачи</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq1" id="l10_mcq1_d" value="d">
+                    <label class="form-check-label ms-2" for="l10_mcq1_d">г) таблица данных</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="c" data-explanation="имя, значение, тип, вид.">
+                <p class="fw-bold mb-2">2. Сколько характеристик у величины?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq2" id="l10_mcq2_a" value="a">
+                    <label class="form-check-label ms-2" for="l10_mcq2_a">а) 2</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq2" id="l10_mcq2_b" value="b">
+                    <label class="form-check-label ms-2" for="l10_mcq2_b">б) 3</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq2" id="l10_mcq2_c" value="c">
+                    <label class="form-check-label ms-2" for="l10_mcq2_c">в) 4</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq2" id="l10_mcq2_d" value="d">
+                    <label class="form-check-label ms-2" for="l10_mcq2_d">г) 5</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="c" data-explanation="линейный — самый простой: команды одна за другой.">
+                <p class="fw-bold mb-2">3. Чем линейный алгоритм отличается от других видов?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq3" id="l10_mcq3_a" value="a">
+                    <label class="form-check-label ms-2" for="l10_mcq3_a">а) имеет ветвления</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq3" id="l10_mcq3_b" value="b">
+                    <label class="form-check-label ms-2" for="l10_mcq3_b">б) имеет циклы</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq3" id="l10_mcq3_c" value="c">
+                    <label class="form-check-label ms-2" for="l10_mcq3_c">в) команды выполняются по порядку, без ветвлений и циклов</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq3" id="l10_mcq3_d" value="d">
+                    <label class="form-check-label ms-2" for="l10_mcq3_d">г) использует процедуры</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="по виду — постоянные (значение не меняется) и переменные (меняется).">
+                <p class="fw-bold mb-2">4. Какие бывают виды величин?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq4" id="l10_mcq4_a" value="a">
+                    <label class="form-check-label ms-2" for="l10_mcq4_a">а) большие и малые</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq4" id="l10_mcq4_b" value="b">
+                    <label class="form-check-label ms-2" for="l10_mcq4_b">б) постоянные и переменные</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq4" id="l10_mcq4_c" value="c">
+                    <label class="form-check-label ms-2" for="l10_mcq4_c">в) числовые и текстовые</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l10_mcq4" id="l10_mcq4_d" value="d">
+                    <label class="form-check-label ms-2" for="l10_mcq4_d">г) главные и второстепенные</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- fill-in -->
+<div class="card mb-4">
+    <div class="card-header bg-success-subtle fw-bold fs-5">
+        <span class="badge bg-success me-2">Заполни пропуск</span> Тест: закончи предложение
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">Выбери из выпадающего списка слово, которое лучше всего подходит.</p>
         <ol class="list-unstyled mb-0">
+            
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">1. Что такое алгоритм?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">1. Графическая запись алгоритма с помощью блоков — это <select class="form-select d-inline-block w-auto mx-1" data-correct="блок-схема"><option value="">— выбери —</option><option value="программа">программа</option><option value="блок-схема">блок-схема</option><option value="псевдокод">псевдокод</option><option value="словарь">словарь</option></select>.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">2. Назовите способы записи алгоритма?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">2. Если значение величины не меняется, то это <select class="form-select d-inline-block w-auto mx-1" data-correct="постоянная"><option value="">— выбери —</option><option value="переменная">переменная</option><option value="постоянная">постоянная</option><option value="логическая">логическая</option><option value="целая">целая</option></select> величина.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">3. Что такое блок-схема?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">3. Имя величины обозначается <select class="form-select d-inline-block w-auto mx-1" data-correct="латинского"><option value="">— выбери —</option><option value="русского">русского</option><option value="латинского">латинского</option><option value="греческого">греческого</option><option value="арабского">арабского</option></select> алфавита.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">4. Назовите основные блоки?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+        </ol>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- open-questions -->
+<div class="card mb-4">
+    <div class="card-header bg-secondary text-white fw-bold fs-5">
+        <span class="badge bg-light text-secondary me-2">Развёрнутый ответ</span> Сформулируй своими словами
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">
+            Сначала постарайся ответить сам, написав в поле или вслух. Потом нажми «Показать эталон» и сравни.
+        </p>
+        <ol class="list-unstyled mb-0">
+            
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">1. Что такое блок-схема алгоритма?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Изображение алгоритма в виде набора графических блоков. Каждый блок — отдельное действие.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">5. Что такое величина в математике, физике и других науках?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">2. Назовите четыре характеристики величины.</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Имя, значение, тип, вид.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">6. Что такое величина в информатике?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">3. Что такое линейный алгоритм?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Алгоритм, в котором команды выполняются по порядку, без ветвлений и циклов.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">7. Назовите основные характеристики величины.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">8. Что такое имя величины? Из чего оно состоит? Приведите примеры.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">9. Что такое значение величины? Приведите примеры.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">10. Чем определяется значение величины?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">4. Чем переменная величина отличается от постоянной?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Значение постоянной величины не меняется, а значение переменной величины меняется во время работы алгоритма.
+                    </div>
                 </li>
         </ol>
     </div>
 </div>
 
-<!-- 11. Назовите основные типы величин и их значения. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">11. Назовите основные типы величин и их значения.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">12. На какие виды делят величины?
-  13. Что такое постоянная величина?
-  14. Что такое переменная величина?
-  15. Для чего используют оператор присваивания? Приведите примеры.
-  16. Что такое линейный алгоритм?
-  17. Какие блоки используют для записи линейного алгоритма?
 
-
-8. Расскажите об основных блоках блок-схемы.
-
-
-9. Расскажите об основных типах, значениях и видах величин. Приведите
-примеры
-10. Составьте блок-схемы алгоритмов решения задач.
-А. Найдите значение выражения S , если а = п , b = 2 п , с = 3 п , п — номер
-задачи.
-
-
-
-
-Б. Найдите значение выражения S для заданных значений величин:
-
-
-
-
-В. Найдите значения S для любых значений величин:
-Г. Решите задачи повышенной сложности.
-  16. *Даны два числа - значения величин а и b. Поменять местами значения величин
-   а и b. Дополнительные величины не использовать!
-  17. *Даны три величины а, b и с. Изменить значения этих величин так, чтобы в а
-   хранилось значение a + b, в b хранилась разность старых значений c - а, а в с
-   хранилась сумма старых значений а + b + с. Например, если а = 0, b = 2, с = 5,
-   тогда новые значения а = 2, b = 5 и с = 7. Дополнительные величины не
-   использовать!
-  18. *Дано число а. С помощью только операции умножения найдите: а) а4 за две
-   операции; б) а6 за три операции; в) а7, а10, а16 за четыре операции: г) а5, а15, а19за
-   пять операций.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+<!-- final -->
+<div class="card mb-4 border-success">
+    <div class="card-header bg-success text-white fw-bold fs-5">
+        <span class="badge bg-light text-success me-2">Финал</span> Расскажи тему целиком
+    </div>
+    <div class="card-body">
+        <p>Когда ответил на все тесты — попробуй <strong>устно или письменно</strong> рассказать о теме урока, опираясь на блок «Краткая теория».</p>
+        <textarea class="form-control mb-3" rows="6" placeholder="Можешь написать здесь свой развёрнутый рассказ для тренировки…"></textarea>
+        <div class="text-center">
+            <button class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(10); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
+                Я разобрал тему
+            </button>
         </div>
     </div>
 </div>
+
+
+<script>
+// Общая проверка fill-in select'ов в текущей карточке
+window.checkFillIn = function(btn) {
+    const card = btn.closest('.card-body');
+    if (!card) return;
+    let correct = 0, total = 0;
+    card.querySelectorAll('select[data-correct]').forEach(sel => {
+        total++;
+        const fb = sel.parentElement.querySelector('.feedback');
+        sel.classList.remove('is-valid', 'is-invalid');
+        if (fb) fb.classList.remove('d-none', 'text-success', 'text-danger', 'text-warning');
+        if (!sel.value) {
+            if (fb) { fb.textContent = 'Не выбрано'; fb.classList.add('text-warning'); }
+        } else if (sel.value === sel.dataset.correct) {
+            sel.classList.add('is-valid');
+            if (fb) { fb.textContent = '✓ Правильно'; fb.classList.add('text-success'); }
+            correct++;
+        } else {
+            sel.classList.add('is-invalid');
+            if (fb) { fb.innerHTML = 'Неверно. Правильный: <strong>' + sel.dataset.correct + '</strong>'; fb.classList.add('text-danger'); }
+        }
+    });
+    let result = card.querySelector('.fill-in-result');
+    if (!result) {
+        result = document.createElement('div');
+        result.className = 'fill-in-result mt-3 fw-bold text-center';
+        card.appendChild(result);
+    }
+    result.className = 'fill-in-result mt-3 fw-bold text-center ' + (correct === total ? 'text-success' : 'text-danger');
+    result.textContent = correct === total
+        ? '✓ Все ' + total + ' ответов правильно!'
+        : 'Правильных: ' + correct + ' из ' + total;
+};
+
+// Показать/скрыть эталон ответа
+window.toggleAnswer = function(btn) {
+    const sample = btn.nextElementSibling;
+    if (sample.classList.contains('d-none')) {
+        sample.classList.remove('d-none');
+        btn.textContent = 'Скрыть эталон';
+    } else {
+        sample.classList.add('d-none');
+        btn.textContent = 'Показать эталон';
+    }
+};
+</script>
+
 
 </div>

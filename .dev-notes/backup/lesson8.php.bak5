@@ -1,15 +1,15 @@
-<!-- lesson8.php -->
+<!-- lesson8.php — переработано в интерактивный урок (теория + 5 тестов) -->
 <div class="lesson">
 
     <h2 class="text-primary mb-4">Занятие 8. Обработка информации. Этапы решения задач на компьютере</h2>
 
 <!-- intro -->
 <div class="alert alert-primary border-start border-primary border-4 fs-5 mb-4">
-    Решение задачи на компьютере — это <strong>совместная работа</strong> человека и компьютера. Процесс делится на <strong>шесть последовательных этапов</strong>: от постановки задачи до анализа результатов.
+    Решение задачи на компьютере — это <strong>совместная работа</strong> человека и компьютера. Процесс делится на <strong>шесть последовательных этапов</strong>: от постановки задачи до анализа результатов. На каждом этапе у человека и у компьютера — свои роли.
 </div>
 
 
-    <!-- Task1: dictionary -->
+    <!-- Задание 1: словарь (сохранён без изменений) -->
 <div class="card mb-5">
   <div class="card-header bg-light fw-bold fs-5">
     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
@@ -271,219 +271,7 @@
     </div>
   </div>
 </div>
-<!-- End task 1 -->
-
-<!-- LANG SECTION INTRO -->
-<div class="alert alert-warning border-start border-warning border-4 mb-4">
-    <h5 class="mb-1">📝 Русский язык</h5>
-    <p class="mb-0">Прежде чем перейти к информатике, потренируем <strong>русскую лексику</strong> по теме урока — это поможет лучше понимать терминологию.</p>
-</div>
-
-<!-- lang-word-formation -->
-<div class="card mb-4 border-warning">
-    <div class="card-header bg-warning-subtle fw-bold">
-        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> Образуй существительное от глагола
-    </div>
-    <div class="card-body">
-        <p class="mb-2"><strong>Образец:</strong> <code>удалить → удаление</code></p>
-        <p class="text-muted mb-3">Образуй существительное от каждого глагола по образцу.</p>
-        <table class="table align-middle" style="max-width:500px">
-            <tbody>
-                <tr>
-                    <td class="text-end pe-2 fw-500">решить</td>
-                    <td class="text-center px-2">→</td>
-                    <td>
-                        <input type="text" class="form-control" data-correct="решение" autocomplete="off">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-end pe-2 fw-500">выполнить</td>
-                    <td class="text-center px-2">→</td>
-                    <td>
-                        <input type="text" class="form-control" data-correct="выполнение" autocomplete="off">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-end pe-2 fw-500">определить</td>
-                    <td class="text-center px-2">→</td>
-                    <td>
-                        <input type="text" class="form-control" data-correct="определение" autocomplete="off">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-end pe-2 fw-500">сравнить</td>
-                    <td class="text-center px-2">→</td>
-                    <td>
-                        <input type="text" class="form-control" data-correct="сравнение" autocomplete="off">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-end pe-2 fw-500">завершить</td>
-                    <td class="text-center px-2">→</td>
-                    <td>
-                        <input type="text" class="form-control" data-correct="завершение" autocomplete="off">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-end pe-2 fw-500">исправить</td>
-                    <td class="text-center px-2">→</td>
-                    <td>
-                        <input type="text" class="form-control" data-correct="исправление" autocomplete="off">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
-        </div>
-    </div>
-</div>
-
-<!-- lang-word-formation -->
-<div class="card mb-4 border-warning">
-    <div class="card-header bg-warning-subtle fw-bold">
-        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> Образуй существительное от глагола
-    </div>
-    <div class="card-body">
-        <p class="mb-2"><strong>Образец:</strong> <code>понимать → понимание</code></p>
-        <p class="text-muted mb-3">Образуй существительное от каждого глагола по образцу.</p>
-        <table class="table align-middle" style="max-width:500px">
-            <tbody>
-                <tr>
-                    <td class="text-end pe-2 fw-500">описать</td>
-                    <td class="text-center px-2">→</td>
-                    <td>
-                        <input type="text" class="form-control" data-correct="описание" autocomplete="off">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-end pe-2 fw-500">моделировать</td>
-                    <td class="text-center px-2">→</td>
-                    <td>
-                        <input type="text" class="form-control" data-correct="моделирование" autocomplete="off">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-end pe-2 fw-500">преобразовать</td>
-                    <td class="text-center px-2">→</td>
-                    <td>
-                        <input type="text" class="form-control" data-correct="преобразование" autocomplete="off">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-end pe-2 fw-500">программировать</td>
-                    <td class="text-center px-2">→</td>
-                    <td>
-                        <input type="text" class="form-control" data-correct="программирование" autocomplete="off">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-end pe-2 fw-500">кодировать</td>
-                    <td class="text-center px-2">→</td>
-                    <td>
-                        <input type="text" class="form-control" data-correct="кодирование" autocomplete="off">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-end pe-2 fw-500">тестировать</td>
-                    <td class="text-center px-2">→</td>
-                    <td>
-                        <input type="text" class="form-control" data-correct="тестирование" autocomplete="off">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
-        </div>
-    </div>
-</div>
-
-<!-- lang-roots -->
-<div class="card mb-4 border-warning">
-    <div class="card-header bg-warning-subtle fw-bold">
-        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> К какому корню относится слово?
-    </div>
-    <div class="card-body">
-        <p class="text-muted mb-3">Выбери корень для каждого слова.</p>
-        <table class="table align-middle" style="max-width:500px">
-            <tbody>
-                <tr>
-                    <td class="text-end pe-3 fw-500">моделирование</td>
-                    <td>
-                        <select class="form-select" data-correct="модель">
-                            <option value="">— корень —</option>
-                            <option value="модель">модель</option><option value="мочь">мочь</option><option value="метод">метод</option><option value="масса">масса</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-end pe-3 fw-500">программирование</td>
-                    <td>
-                        <select class="form-select" data-correct="программа">
-                            <option value="">— корень —</option>
-                            <option value="программа">программа</option><option value="прибор">прибор</option><option value="процесс">процесс</option><option value="причина">причина</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-end pe-3 fw-500">тестирование</td>
-                    <td>
-                        <select class="form-select" data-correct="тест">
-                            <option value="">— корень —</option>
-                            <option value="тест">тест</option><option value="техника">техника</option><option value="тип">тип</option><option value="трасса">трасса</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-end pe-3 fw-500">алгоритмизация</td>
-                    <td>
-                        <select class="form-select" data-correct="алгоритм">
-                            <option value="">— корень —</option>
-                            <option value="арифметика">арифметика</option><option value="автомат">автомат</option><option value="алгоритм">алгоритм</option><option value="анализ">анализ</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-end pe-3 fw-500">исполнение</td>
-                    <td>
-                        <select class="form-select" data-correct="исполнить">
-                            <option value="">— корень —</option>
-                            <option value="использовать">использовать</option><option value="исполнить">исполнить</option><option value="исправить">исправить</option><option value="изменить">изменить</option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
-        </div>
-    </div>
-</div>
-
-<!-- lang-constructions -->
-<div class="card mb-4 border-warning">
-    <div class="card-header bg-warning-subtle fw-bold">
-        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> Учим конструкции
-    </div>
-    <div class="card-body">
-        <p class="text-muted mb-3">Изучи каждую конструкцию, посмотри образец и попробуй составить свои предложения.</p>
-        
-        <div class="p-3 mb-3 bg-light rounded border">
-            <p class="fw-bold mb-2"><span class="text-primary fs-5">Если ... , то ... , иначе ... .</span></p>
-            <p class="mb-2"><strong>Образец:</strong> <em>Надо проверить условие D ≥ 0. Если условие D ≥ 0 верно, то найти значения x₁, x₂ и сообщить результат, иначе сообщить, что уравнение решений не имеет.</em></p>
-            <p class="mb-2 text-muted small">Составь предложения по образцу:</p>
-            <p class="mb-1">— Условие a ≠ 0 — выполнить № 3 — выполнить № 1.</p><p class="mb-1">— Условие D ≥ 0 — выполнить № 5 — выполнить № 6.</p><p class="mb-1">— Программа без ошибок — описать результаты — найти и исправить ошибки.</p>
-            <textarea class="form-control mt-2" rows="3" placeholder="Запиши свои предложения здесь…"></textarea>
-            <button class="btn btn-sm btn-outline-secondary mt-2" onclick="toggleAnswer(this)">Показать варианты ответов</button>
-            <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
-                <strong class="text-success">Возможные предложения:</strong>
-                <p class="mb-1">• Если условие a ≠ 0 верно, то выполнить № 3, иначе выполнить № 1.</p><p class="mb-1">• Если условие D ≥ 0 верно, то выполнить № 5, иначе выполнить № 6.</p><p class="mb-1">• Если программа без ошибок, то описать результаты, иначе найти и исправить ошибки.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
+<!-- Конец задания 1 -->
 
 <!-- theory -->
 <div class="card mb-4 border-info">
@@ -492,11 +280,13 @@
     </div>
     <div class="card-body fs-5 lh-lg">
 <h6 class="text-primary mt-3 mb-2">Что такое обработка информации</h6>
-<p class="mb-3"><strong>Обработка информации</strong> — преобразование одних информационных объектов в другие при выполнении алгоритмов. <strong>Решение задачи на компьютере</strong> — это автоматическое преобразование информации, совместная деятельность человека и компьютера.</p>
+<p class="mb-3"><strong>Обработка информации</strong> — это информационный процесс, при котором одни информационные объекты преобразуются в другие при выполнении алгоритмов. <strong>Решение задачи на компьютере</strong> — это автоматическое преобразование информации ради достижения цели. Это всегда <em>совместная деятельность</em> человека и компьютера.</p>
 <h6 class="text-primary mt-3 mb-2">Шесть этапов решения задачи</h6>
-<p class="mb-3"><ol class='mb-0 mt-2'><li><strong>Постановка задачи</strong> — что дано, ограничения, что найти.</li><li><strong>Математическое моделирование</strong> — анализ задач, методов, условий.</li><li><strong>Алгоритмизация</strong> — выбор способа записи, набор команд, порядок.</li><li><strong>Программирование</strong> — кодирование алгоритма на языке программирования.</li><li><strong>Тестирование и отладка</strong> — проверка на ошибки.</li><li><strong>Анализ результатов</strong> — описание полученных результатов.</li></ol></p>
+<p class="mb-3">Процесс решения задачи на компьютере представлен в виде последовательных этапов:<ol class='mb-0 mt-2'><li><strong>Постановка задачи</strong> — что дано, какие ограничения, что надо найти.</li><li><strong>Математическое моделирование</strong> — анализ похожих задач, технических возможностей и условий существования решения.</li><li><strong>Алгоритмизация</strong> — выбор способа записи алгоритма, набор команд, порядок.</li><li><strong>Программирование</strong> — кодирование алгоритма на языке программирования.</li><li><strong>Тестирование и отладка</strong> — проверка программы на технические, грамматические и алгоритмические ошибки.</li><li><strong>Анализ результатов</strong> — описание полученных результатов после исправления ошибок.</li></ol></p>
 <h6 class="text-primary mt-3 mb-2">Кто что делает</h6>
-<p class="mb-3">Задача компьютера — автоматически выполнять команды по алгоритму. Всё остальное (постановка задачи, моделирование, написание алгоритма и программы, проверка) — задача человека.</p>
+<p class="mb-3"><strong>Задача компьютера</strong> — автоматически выполнять команды по алгоритму. <strong>Всё остальное</strong> (формулировка задачи, моделирование, написание алгоритма, написание программы, проверка, описание результатов) — это <em>задача человека</em>. Без человека компьютер не знает, что делать.</p>
+<h6 class="text-primary mt-3 mb-2">Программа, тестирование, отладка</h6>
+<p class="mb-3"><strong>Программа</strong> — это один из способов записи алгоритма, понятный компьютеру. Чтобы её написать, используют <em>языки программирования</em>. <strong>Отладка</strong> — это проверка программы на наличие ошибок. <strong>Тестирование</strong> — сравнение известных результатов тестов с результатами, которые выдала программа. Тесты составляют так, чтобы проверить все варианты работы алгоритма.</p>
 
     </div>
 </div>
@@ -510,8 +300,8 @@
     <div class="card-body">
         <p class="text-muted mb-3">Прочитай каждое утверждение и нажми «да», если оно верно, «нет» — если неверно.</p>
         
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="это определение из учебника.">
-                <p class="fw-500 mb-2">1. Обработка информации — это преобразование одних объектов в другие при выполнении алгоритмов.</p>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="именно так звучит определение в учебнике.">
+                <p class="fw-500 mb-2">1. Обработка информации — это преобразование одних информационных объектов в другие при выполнении алгоритмов.</p>
                 <div class="btn-group btn-group-lg mb-2">
                     <input type="radio" class="btn-check" name="l8_yn1" value="да" id="l8_yn1_y">
                     <label class="btn btn-outline-success px-4" for="l8_yn1_y">да</label>
@@ -520,7 +310,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="первый этап — постановка задачи. Программирование — четвёртый.">
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="первый этап — постановка задачи. Программирование — четвёртый этап.">
                 <p class="fw-500 mb-2">2. Программирование — это первый этап решения задачи на компьютере.</p>
                 <div class="btn-group btn-group-lg mb-2">
                     <input type="radio" class="btn-check" name="l8_yn2" value="да" id="l8_yn2_y">
@@ -530,7 +320,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="программа — это запись алгоритма на языке программирования.">
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="программа — это запись алгоритма на языке программирования, который понимает компьютер.">
                 <p class="fw-500 mb-2">3. Программа — это один из способов записи алгоритма.</p>
                 <div class="btn-group btn-group-lg mb-2">
                     <input type="radio" class="btn-check" name="l8_yn3" value="да" id="l8_yn3_y">
@@ -540,8 +330,8 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="это совместная работа: человек составляет тесты и сравнивает результаты.">
-                <p class="fw-500 mb-2">4. Тестирование выполняет только компьютер.</p>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="тестирование — это совместная работа человека и компьютера: человек составляет тесты, компьютер выдаёт результаты, человек сравнивает.">
+                <p class="fw-500 mb-2">4. Тестирование программы выполняет только компьютер.</p>
                 <div class="btn-group btn-group-lg mb-2">
                     <input type="radio" class="btn-check" name="l8_yn4" value="да" id="l8_yn4_y">
                     <label class="btn btn-outline-success px-4" for="l8_yn4_y">да</label>
@@ -550,7 +340,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="этапов шесть.">
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="этапов шесть: постановка → моделирование → алгоритмизация → программирование → тестирование → анализ результатов.">
                 <p class="fw-500 mb-2">5. Этапов решения задачи на компьютере четыре.</p>
                 <div class="btn-group btn-group-lg mb-2">
                     <input type="radio" class="btn-check" name="l8_yn5" value="да" id="l8_yn5_y">
@@ -560,7 +350,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="отладка ищет технические, грамматические и алгоритмические ошибки.">
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="отладка ищет технические, грамматические и алгоритмические ошибки в программе.">
                 <p class="fw-500 mb-2">6. Отладка программы — это проверка программы на наличие ошибок.</p>
                 <div class="btn-group btn-group-lg mb-2">
                     <input type="radio" class="btn-check" name="l8_yn6" value="да" id="l8_yn6_y">
@@ -585,12 +375,12 @@
     <div class="card-body mcq-set">
         <p class="text-muted mb-3">В каждом вопросе только один правильный ответ.</p>
         
-            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="обработка — это преобразование объектов при выполнении алгоритмов.">
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="обработка информации — это именно преобразование одних объектов в другие при выполнении алгоритмов.">
                 <p class="fw-bold mb-2">1. Что такое обработка информации?</p>
                 
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="l8_mcq1" id="l8_mcq1_a" value="a">
-                    <label class="form-check-label ms-2" for="l8_mcq1_a">а) хранение данных</label>
+                    <label class="form-check-label ms-2" for="l8_mcq1_a">а) хранение данных в памяти компьютера</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="l8_mcq1" id="l8_mcq1_b" value="b">
@@ -598,7 +388,7 @@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="l8_mcq1" id="l8_mcq1_c" value="c">
-                    <label class="form-check-label ms-2" for="l8_mcq1_c">в) ввод с клавиатуры</label>
+                    <label class="form-check-label ms-2" for="l8_mcq1_c">в) ввод данных с клавиатуры</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="l8_mcq1" id="l8_mcq1_d" value="d">
@@ -606,7 +396,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="d" data-explanation="шесть этапов: постановка → моделирование → алгоритмизация → программирование → тестирование → анализ.">
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="d" data-explanation="шесть этапов: постановка → моделирование → алгоритмизация → программирование → тестирование → анализ результатов.">
                 <p class="fw-bold mb-2">2. Сколько этапов в процессе решения задачи на компьютере?</p>
                 
                 <div class="form-check">
@@ -627,8 +417,8 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="a" data-explanation="именно на этапе постановки задачи определяют исходные данные и результат.">
-                <p class="fw-bold mb-2">3. На каком этапе определяется «что дано» и «что надо найти»?</p>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="a" data-explanation="именно на этапе постановки задачи определяют начальные данные, ограничения и то, что должно стать результатом.">
+                <p class="fw-bold mb-2">3. На каком этапе человек определяет «что дано» и «что надо найти»?</p>
                 
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="l8_mcq3" id="l8_mcq3_a" value="a">
@@ -648,7 +438,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="программа — это запись алгоритма на языке программирования.">
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="программа — это запись алгоритма на языке программирования, понятная компьютеру.">
                 <p class="fw-bold mb-2">4. Что такое программа?</p>
                 
                 <div class="form-check">
@@ -661,16 +451,16 @@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="l8_mcq4" id="l8_mcq4_c" value="c">
-                    <label class="form-check-label ms-2" for="l8_mcq4_c">в) описание задачи</label>
+                    <label class="form-check-label ms-2" for="l8_mcq4_c">в) описание условия задачи</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="l8_mcq4" id="l8_mcq4_d" value="d">
-                    <label class="form-check-label ms-2" for="l8_mcq4_d">г) устройство компьютера</label>
+                    <label class="form-check-label ms-2" for="l8_mcq4_d">г) техническое устройство компьютера</label>
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="c" data-explanation="компьютер — автомат, выполняющий команды. Всё остальное делает человек.">
-                <p class="fw-bold mb-2">5. Какая главная задача компьютера?</p>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="c" data-explanation="компьютер — это автомат: он быстро и точно выполняет команды. Всё остальное делает человек.">
+                <p class="fw-bold mb-2">5. Какая главная задача компьютера при решении задачи?</p>
                 
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="l8_mcq5" id="l8_mcq5_a" value="a">
@@ -678,7 +468,7 @@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="l8_mcq5" id="l8_mcq5_b" value="b">
-                    <label class="form-check-label ms-2" for="l8_mcq5_b">б) выбирать модель</label>
+                    <label class="form-check-label ms-2" for="l8_mcq5_b">б) выбирать математическую модель</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="l8_mcq5" id="l8_mcq5_c" value="c">
@@ -707,7 +497,7 @@
         <ol class="list-unstyled mb-0">
             
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">1. На этапе постановки задачи нужно ответить на вопросы: «<select class="form-select d-inline-block w-auto mx-1" data-correct="Что дано?"><option value="">— выбери —</option><option value="Что дано?">Что дано?</option><option value="Кто решает?">Кто решает?</option><option value="Где хранить?">Где хранить?</option><option value="Когда закончить?">Когда закончить?</option></select>» и «Что надо найти?».</span>
+                    <span class="fs-5">1. На этапе постановки задачи нужно ответить на два главных вопроса: «<select class="form-select d-inline-block w-auto mx-1" data-correct="Что дано?"><option value="">— выбери —</option><option value="Что дано?">Что дано?</option><option value="Кто решает?">Кто решает?</option><option value="Где хранить?">Где хранить?</option><option value="Когда закончить?">Когда закончить?</option></select>» и «Что надо найти?».</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
@@ -715,7 +505,7 @@
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">3. Тестирование — сравнение результатов тестов с результатами <select class="form-select d-inline-block w-auto mx-1" data-correct="компьютера"><option value="">— выбери —</option><option value="компьютера">компьютера</option><option value="человека">человека</option><option value="программиста">программиста</option><option value="учителя">учителя</option></select>.</span>
+                    <span class="fs-5">3. Тестирование — это сравнение результатов тестов с результатами <select class="form-select d-inline-block w-auto mx-1" data-correct="компьютера"><option value="">— выбери —</option><option value="компьютера">компьютера</option><option value="человека">человека</option><option value="программиста">программиста</option><option value="учителя">учителя</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
@@ -746,7 +536,7 @@
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
                     <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
-                        <strong class="text-success">Эталон:</strong> Преобразование одних информационных объектов в другие при выполнении алгоритмов.
+                        <strong class="text-success">Эталон:</strong> Обработка информации — это преобразование одних информационных объектов в другие при выполнении алгоритмов.
                     </div>
                 </li>
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
@@ -754,15 +544,15 @@
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
                     <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
-                        <strong class="text-success">Эталон:</strong> 1) Постановка задачи. 2) Математическое моделирование. 3) Алгоритмизация. 4) Программирование. 5) Тестирование и отладка. 6) Анализ результатов.
+                        <strong class="text-success">Эталон:</strong> 1) Постановка задачи. 2) Математическое моделирование. 3) Алгоритмизация. 4) Программирование. 5) Тестирование и отладка программы. 6) Анализ результатов.
                     </div>
                 </li>
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
-                    <p class="fw-500 mb-2 fs-5">3. Что такое программа?</p>
+                    <p class="fw-500 mb-2 fs-5">3. Какова главная задача компьютера при решении задачи?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
                     <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
-                        <strong class="text-success">Эталон:</strong> Программа — один из способов записи алгоритма на языке программирования.
+                        <strong class="text-success">Эталон:</strong> Компьютер автоматически обрабатывает информацию по заданному алгоритму. Всё остальное (постановка задачи, моделирование, составление алгоритма и программы, описание результатов) — задача человека.
                     </div>
                 </li>
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
@@ -770,15 +560,15 @@
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
                     <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
-                        <strong class="text-success">Эталон:</strong> Проверка программы на наличие технических, грамматических и алгоритмических ошибок.
+                        <strong class="text-success">Эталон:</strong> Отладка программы — это проверка программы на наличие технических, грамматических и алгоритмических ошибок.
                     </div>
                 </li>
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
-                    <p class="fw-500 mb-2 fs-5">5. Что такое тестирование?</p>
+                    <p class="fw-500 mb-2 fs-5">5. Что такое тестирование и кто его выполняет?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
                     <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
-                        <strong class="text-success">Эталон:</strong> Сравнение известных результатов тестов с результатами, полученными при работе компьютера.
+                        <strong class="text-success">Эталон:</strong> Тестирование — это сравнение известных результатов тестов с результатами, которые получены при работе компьютера. Это совместная работа человека (составил программу и тесты) и компьютера (выдаёт результаты).
                     </div>
                 </li>
         </ol>

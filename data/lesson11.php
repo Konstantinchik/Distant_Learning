@@ -1,14 +1,15 @@
-<!--lesson11.php-->
+<!-- lesson11.php -->
 <div class="lesson">
 
-    <h2 class="text-primary mb-4">
-        Занятие 11. Блок-схема алгоритма. Условный алгоритм. Логические величины и выражения
-    </h2>
+    <h2 class="text-primary mb-4">Занятие 11. Условный алгоритм. Логические величины и операции</h2>
 
-    <!-- ==================================================
-     Задание 1 (по 67.pdf)
-     ================================================== -->
+<!-- intro -->
+<div class="alert alert-primary border-start border-primary border-4 fs-5 mb-4">
+    <strong>Условный (разветвляющийся) алгоритм</strong> — алгоритм, в котором выбор действия зависит от <em>истинности</em> или <em>ложности</em> условия. Условие — это логическое выражение со значением <strong>истина</strong> (true) или <strong>ложь</strong> (false).
+</div>
 
+
+    <!-- Task1: dictionary -->
 <div class="card mb-5">
   <div class="card-header bg-light fw-bold fs-5">
     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
@@ -239,280 +240,442 @@
     </div>
   </div>
 </div>
-<!-- Конец задания 1 -->
+<!-- End task 1 -->
 
-<!-- 2. Сгруппируйте однокоренные слова. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">2. Сгруппируйте однокоренные слова.</div>
+<!-- LANG SECTION INTRO -->
+<div class="alert alert-warning border-start border-warning border-4 mb-4">
+    <h5 class="mb-1">📝 Русский язык</h5>
+    <p class="mb-0">Прежде чем перейти к информатике, потренируем <strong>русскую лексику</strong> по теме урока — это поможет лучше понимать терминологию.</p>
+</div>
+
+<!-- lang-word-formation -->
+<div class="card mb-4 border-warning">
+    <div class="card-header bg-warning-subtle fw-bold">
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> Образуй существительное от глагола
+    </div>
     <div class="card-body">
-        <div class="alert alert-warning small mb-3">
-            <strong>TODO:</strong> для интерактивного подбора (drag&drop / select) разметить вручную. Сейчас — текст из тетради + поле для ответа.
-        </div>
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Логический, истинно, разветвляющийся, сравнивать, вложить, ложь, логично,
-ложность, разветвление, вложенный, ложный, сравнение, истина, вложение, ветвь,
-логика, сравнить, истинный, ложно, ветвление, истинность, равно.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        <p class="mb-2"><strong>Образец:</strong> <code>удалить → удаление</code></p>
+        <p class="text-muted mb-3">Образуй существительное от каждого глагола по образцу.</p>
+        <table class="table align-middle" style="max-width:500px">
+            <tbody>
+                <tr>
+                    <td class="text-end pe-2 fw-500">сравнить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="сравнение" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">выполнить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="выполнение" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">отрицать</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="отрицание" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">выбрать</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="выбор" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">определить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="определение" autocomplete="off">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
 
-<!-- 3. Подберите существительные к прилагательным. Укажите, где воз -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">3. Подберите существительные к прилагательным. Укажите, где возможно,</div>
+<!-- lang-roots -->
+<div class="card mb-4 border-warning">
+    <div class="card-header bg-warning-subtle fw-bold">
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> К какому корню относится слово?
+    </div>
     <div class="card-body">
-        <div class="alert alert-warning small mb-3">
-            <strong>TODO:</strong> для интерактивного подбора (drag&drop / select) разметить вручную. Сейчас — текст из тетради + поле для ответа.
-        </div>
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">варианты. Поставьте прилагательные в правильной форме.
- сложный
-                                      форма
- неверный
-                                      выражение
- ложный
-                                      условие
- логический
-                                      неравенство
- полный
-                                      операция
- верный
-                                      величина
- истинный
-                                      значение
- простой
- неполный</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        <p class="text-muted mb-3">Выбери корень для каждого слова.</p>
+        <table class="table align-middle" style="max-width:500px">
+            <tbody>
+                <tr>
+                    <td class="text-end pe-3 fw-500">истина</td>
+                    <td>
+                        <select class="form-select" data-correct="истина">
+                            <option value="">— корень —</option>
+                            <option value="истина">истина</option><option value="использовать">использовать</option><option value="изменить">изменить</option><option value="источник">источник</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">ложный</td>
+                    <td>
+                        <select class="form-select" data-correct="ложь">
+                            <option value="">— корень —</option>
+                            <option value="ложь">ложь</option><option value="логика">логика</option><option value="лента">лента</option><option value="линия">линия</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">ветвление</td>
+                    <td>
+                        <select class="form-select" data-correct="ветка">
+                            <option value="">— корень —</option>
+                            <option value="ветка">ветка</option><option value="ветер">ветер</option><option value="вечер">вечер</option><option value="вес">вес</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">логический</td>
+                    <td>
+                        <select class="form-select" data-correct="логика">
+                            <option value="">— корень —</option>
+                            <option value="логика">логика</option><option value="лента">лента</option><option value="лимит">лимит</option><option value="линия">линия</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
 
-<!-- 4. Обратите внимание на конструкции и запомните их. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">4. Обратите внимание на конструкции и запомните их.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Что (1) зависит от чего (2)
-     Образец: В условном алгоритме выбор действия для выполнения зависит от
-истинности или ложности условия.
-      Результат решения задачи будет зависеть от результата сравнения.
-                       Что (1) состоит из чего (2)
-     Образец: Логическое выражение состоит из логических величин, операций
-отношения и логических операций.
-     Простое логическое выражение состоит из одной логической величины или
-одного отношения.
-      Условие этого алгоритма состоит из двух простых условий.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
 
-<!-- 5. Прочитайте текст. -->
-<div class="card mb-5 border-primary">
-    <div class="card-header bg-primary text-white fw-bold">5. Прочитайте текст.</div>
+<!-- theory -->
+<div class="card mb-4 border-info">
+    <div class="card-header bg-info text-white fw-bold fs-5">
+        <span class="badge bg-light text-info me-2">📖 Теория</span> Краткое содержание занятия
+    </div>
     <div class="card-body fs-5 lh-lg">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Условный (разветвляющийся) алгоритм — это один из видов алгоритмов.
-      В условном алгоритме выбор действия
-(или группы действий) для выполнения зависит
-от истинности или ложности условия. Условный
-алгоритм — это средство ветвления процесса
-решения задачи. Условный алгоритм всегда
-содержит условие и хотя бы одну команду.
-      Для записи условного алгоритма
-используют элемент блок-схемы «Ветвление»
-(рис. 12).
-     Здесь условие — это логическая величина или логическое выражение.
-     В математике запись вида а &gt; b - это неравенство. Неравенства бывают
-верными и неверными. В информатике записи вида а &gt; b, А и В - это логические
-выражения. Логические выражения бывают истинными или ложными.
-     Логическое выражение — это выражение, которое состоит из логических
-величин, операций отношения и логических операций.
-       Логическая величина — это величина, которая имеет только два значения -
-истина (true) или ложь (false). Логическое значение «истина» можно записывать как
-1, а значение «ложь» - как 0.
-      Для сравнения значений двух величин используют операции отношения (см.
-табл. 4).
-                            4. Операции отношения
-     Знак отношения        Операция отношения              Пример
+<h6 class="text-primary mt-3 mb-2">Условный алгоритм</h6>
+<p class="mb-3"><strong>Условный алгоритм</strong> — это средство <em>ветвления</em> процесса решения задачи. Он всегда содержит условие и хотя бы одну команду. Для записи используется элемент блок-схемы «Ветвление». Структура: <em>если условие верно — выполнить одно, иначе — другое</em>.</p>
+<h6 class="text-primary mt-3 mb-2">Логические величины и выражения</h6>
+<p class="mb-3"><strong>Логическая величина</strong> имеет только два значения: <em>истина</em> (true, 1) или <em>ложь</em> (false, 0). <strong>Логическое выражение</strong> состоит из логических величин, операций отношения и логических операций. В отличие от математики (где a > b — это «неравенство»), в информатике это выражение со значением true/false.</p>
+<h6 class="text-primary mt-3 mb-2">Операции отношения и логические операции</h6>
+<p class="mb-3"><strong>Операции отношения</strong>: = (равно), &lt;&gt; (не равно), &lt; (меньше), &gt; (больше), &lt;= (меньше или равно), &gt;= (больше или равно). <strong>Логические операции</strong>: <em>and</em> (и — оба условия истинны), <em>or</em> (или — хотя бы одно), <em>not</em> (не — отрицание).</p>
 
-=                        Равно                    2+3=5
-&lt;&gt;                       Не равно                 2 + 3 &lt;&gt; 6
-&gt;                        Больше                   2+3&gt;4
-&gt;=                       Больше или равно         а &gt;= 4
-&lt;                        Меньше                   2+3&lt;7
-&lt;=                       Меньше или равно         b &lt;= 7
-
-
-Логические операции помогают из простых условий составить сложное (см. табл. 5).
-                            6.    Логические операции
-Знак операции            Логическая операция      Пример
-не (not)                 Отрицание                не A (not A)
-и (and)                  Конъюнкция               A и В ( A and В )
-или (or)                 Дизъюнкция               А или В ( A or В )
-
-      Для логических операций составляют таблицы истинности (см. табл. 6).
-
-                 6. Таблицы истинности логических операций
-
-
-
-
-     Если логическое выражение состоит из одной логической величины или
-одного отношения, то это простое логическое выражение.
-    Если выражение содержит логические операции, то это сложное логическое
-выражение.
-       Для любого логического выражения можно найти его значение. Но в
-результате получается не число, а логическое значение: истина (true) или ложь
-(false).
-      Пример. Составим таблицу истинности значений логического выражения (A
-or В) and (not А or В) (табл. 7).
-                7. Таблица истинности логического выражения
-
-
-
-
-     Условный алгоритм может быть записан в полной или неполной форме.
-     Если условный алгоритм содержит действия только в одной ветви, то алгоритм
-записан в неполной форме.
-     Если условный алгоритм содержит действия в обеих ветвях, то алгоритм
-записан в полной форме.
-     Задача 1. Найти наибольшее из двух чисел: Max (x, y).
-     Составим блок-схему решения этой задачи с помощью полной и неполной форм
-условного алгоритма.
-      Основное действие в данной задаче — это сравнение. Надо сравнить числа х и
-у. Результат решения задачи будет зависеть от результата сравнения. Если х &gt; у, то
-наибольшим из двух чисел будет число х. Если х &lt; у, то наибольшим из двух чисел
-будет число у.
-     Сравните блок-схемы алгоритма решения данной задачи (рис. 13).
-              Рис. 13. Блок-схемы алгоритма решения задачи 1:
-а - полная форма условного алгоритма: б - неполная форма условного алгоритма
-
-
-     Задача 2. Найти значение функции у = |x| для любого значения x:
-
-
-
-
-      Основное действие в данной задаче — это сравнение числа х с числом нуль.
-Составим блок-схему решения данной задачи с полной формой условного алгоритма
-(рис. 14). Для сравнения составьте самостоятельно блок-схему алгоритма решения
-данной задачи с помощью неполной формы условного алгоритма.
-      Задача 3. Найти значение функции у = f(x) для любого значения x:
-
-
-
-
-     Данную задачу можно решить с помощью
-трёх условных алгоритмов в неполной форме.
-Условия для первого и третьего алгоритмов -
-простые: 1) .x &lt; 0, 2) .x &gt; 2. Условие для второго
-алгоритма - сложное (оно состоит из двух
-простых условий): (0 &lt; х ) и ( х &lt; 2) (рис. 15, а).
-     Также данную задачу можно решить с
-помощью двух условных алгоритмов в полной
-форме. Причём один алгоритм будет находиться
-внутри другого. Это вложенные условные
-алгоритмы (рис. 15, б).
-     Сравните эти решения. Есть ли другие
-способы решения данной задачи? Если да, то
-чем они будут отличаться?</pre>
     </div>
 </div>
 
-<!-- 6. Ответьте на вопросы. -->
-<div class="card mb-5">
-    <div class="card-header bg-primary text-white fw-bold">6. Ответьте на вопросы.</div>
+
+<!-- yesno-test -->
+<div class="card mb-4">
+    <div class="card-header bg-warning-subtle fw-bold fs-5">
+        <span class="badge bg-warning text-dark me-2">Понимание</span> Тест: верно ли утверждение?
+    </div>
     <div class="card-body">
+        <p class="text-muted mb-3">Прочитай каждое утверждение и нажми «да», если оно верно, «нет» — если неверно.</p>
+        
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="именно так: всегда есть условие и хотя бы одна команда.">
+                <p class="fw-500 mb-2">1. Условный алгоритм содержит хотя бы одно условие.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l11_yn1" value="да" id="l11_yn1_y">
+                    <label class="btn btn-outline-success px-4" for="l11_yn1_y">да</label>
+                    <input type="radio" class="btn-check" name="l11_yn1" value="нет" id="l11_yn1_n">
+                    <label class="btn btn-outline-danger px-4" for="l11_yn1_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="только два: истина (true) или ложь (false).">
+                <p class="fw-500 mb-2">2. Логическая величина может иметь три значения.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l11_yn2" value="да" id="l11_yn2_y">
+                    <label class="btn btn-outline-success px-4" for="l11_yn2_y">да</label>
+                    <input type="radio" class="btn-check" name="l11_yn2" value="нет" id="l11_yn2_n">
+                    <label class="btn btn-outline-danger px-4" for="l11_yn2_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="это операция отношения «не равно».">
+                <p class="fw-500 mb-2">3. Знак «<>» в информатике означает «не равно».</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l11_yn3" value="да" id="l11_yn3_y">
+                    <label class="btn btn-outline-success px-4" for="l11_yn3_y">да</label>
+                    <input type="radio" class="btn-check" name="l11_yn3" value="нет" id="l11_yn3_n">
+                    <label class="btn btn-outline-danger px-4" for="l11_yn3_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="and даёт истину, когда оба условия истинны.">
+                <p class="fw-500 mb-2">4. Операция «and» (и) даёт истину, если оба условия ложны.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l11_yn4" value="да" id="l11_yn4_y">
+                    <label class="btn btn-outline-success px-4" for="l11_yn4_y">да</label>
+                    <input type="radio" class="btn-check" name="l11_yn4" value="нет" id="l11_yn4_n">
+                    <label class="btn btn-outline-danger px-4" for="l11_yn4_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="ветвление — стандартный блок для условия.">
+                <p class="fw-500 mb-2">5. В блок-схеме условный алгоритм изображается элементом «Ветвление».</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l11_yn5" value="да" id="l11_yn5_y">
+                    <label class="btn btn-outline-success px-4" for="l11_yn5_y">да</label>
+                    <input type="radio" class="btn-check" name="l11_yn5" value="нет" id="l11_yn5_n">
+                    <label class="btn btn-outline-danger px-4" for="l11_yn5_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- mcq-test -->
+<div class="card mb-4">
+    <div class="card-header bg-primary text-white fw-bold fs-5">
+        <span class="badge bg-light text-primary me-2">Выбор ответа</span> Тест: выбери правильный вариант
+    </div>
+    <div class="card-body mcq-set">
+        <p class="text-muted mb-3">В каждом вопросе только один правильный ответ.</p>
+        
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="только два: истина (true) или ложь (false).">
+                <p class="fw-bold mb-2">1. Сколько значений может иметь логическая величина?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq1" id="l11_mcq1_a" value="a">
+                    <label class="form-check-label ms-2" for="l11_mcq1_a">а) 1</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq1" id="l11_mcq1_b" value="b">
+                    <label class="form-check-label ms-2" for="l11_mcq1_b">б) 2</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq1" id="l11_mcq1_c" value="c">
+                    <label class="form-check-label ms-2" for="l11_mcq1_c">в) 3</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq1" id="l11_mcq1_d" value="d">
+                    <label class="form-check-label ms-2" for="l11_mcq1_d">г) много</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="<> в Pascal означает «не равно».">
+                <p class="fw-bold mb-2">2. Какой знак отношения означает «не равно»?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq2" id="l11_mcq2_a" value="a">
+                    <label class="form-check-label ms-2" for="l11_mcq2_a">а) =</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq2" id="l11_mcq2_b" value="b">
+                    <label class="form-check-label ms-2" for="l11_mcq2_b">б) <></label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq2" id="l11_mcq2_c" value="c">
+                    <label class="form-check-label ms-2" for="l11_mcq2_c">в) <=</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq2" id="l11_mcq2_d" value="d">
+                    <label class="form-check-label ms-2" for="l11_mcq2_d">г) >=</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="and (и) — оба условия должны быть истинны.">
+                <p class="fw-bold mb-2">3. Какую логическую операцию использовать, чтобы оба условия были истинны?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq3" id="l11_mcq3_a" value="a">
+                    <label class="form-check-label ms-2" for="l11_mcq3_a">а) or</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq3" id="l11_mcq3_b" value="b">
+                    <label class="form-check-label ms-2" for="l11_mcq3_b">б) and</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq3" id="l11_mcq3_c" value="c">
+                    <label class="form-check-label ms-2" for="l11_mcq3_c">в) not</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq3" id="l11_mcq3_d" value="d">
+                    <label class="form-check-label ms-2" for="l11_mcq3_d">г) xor</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="условный алгоритм — это ветвление: одно действие, если условие истинно, другое — если ложно.">
+                <p class="fw-bold mb-2">4. Что делает условный алгоритм?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq4" id="l11_mcq4_a" value="a">
+                    <label class="form-check-label ms-2" for="l11_mcq4_a">а) повторяет действие много раз</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq4" id="l11_mcq4_b" value="b">
+                    <label class="form-check-label ms-2" for="l11_mcq4_b">б) выбирает действие в зависимости от истинности условия</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq4" id="l11_mcq4_c" value="c">
+                    <label class="form-check-label ms-2" for="l11_mcq4_c">в) выполняет команды по порядку</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l11_mcq4" id="l11_mcq4_d" value="d">
+                    <label class="form-check-label ms-2" for="l11_mcq4_d">г) останавливает программу</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- fill-in -->
+<div class="card mb-4">
+    <div class="card-header bg-success-subtle fw-bold fs-5">
+        <span class="badge bg-success me-2">Заполни пропуск</span> Тест: закончи предложение
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">Выбери из выпадающего списка слово, которое лучше всего подходит.</p>
         <ol class="list-unstyled mb-0">
+            
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">1. Что такое условный (разветвляющийся) алгоритм?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">1. Логическая величина имеет два значения: истина или <select class="form-select d-inline-block w-auto mx-1" data-correct="ложь"><option value="">— выбери —</option><option value="правда">правда</option><option value="ложь">ложь</option><option value="ноль">ноль</option><option value="пусто">пусто</option></select>.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">2. От чего зависит выбор действия в условном алгоритме?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">2. Операция отношения «&gt;=» означает <select class="form-select d-inline-block w-auto mx-1" data-correct="больше или равно"><option value="">— выбери —</option><option value="больше">больше</option><option value="больше или равно">больше или равно</option><option value="меньше">меньше</option><option value="не равно">не равно</option></select>.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">3. Какой элемент блок-схемы используют для записи условного алгоритма?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">3. Логическая операция <select class="form-select d-inline-block w-auto mx-1" data-correct="or"><option value="">— выбери —</option><option value="and">and</option><option value="or">or</option><option value="not">not</option><option value="xor">xor</option></select> даёт истину, когда хотя бы одно условие истинно.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">4. Что такое условие?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+        </ol>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- open-questions -->
+<div class="card mb-4">
+    <div class="card-header bg-secondary text-white fw-bold fs-5">
+        <span class="badge bg-light text-secondary me-2">Развёрнутый ответ</span> Сформулируй своими словами
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">
+            Сначала постарайся ответить сам, написав в поле или вслух. Потом нажми «Показать эталон» и сравни.
+        </p>
+        <ol class="list-unstyled mb-0">
+            
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">1. Что такое условный алгоритм?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Алгоритм, в котором выбор действия зависит от истинности или ложности условия.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">5. Что такое логическое выражение?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">2. Какие два значения может иметь логическая величина?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Истина (true) или ложь (false).
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">6. Что такое логическая величина? Какие значения имеет логическая величина?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">3. Назовите три основные логические операции.</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> and (и), or (или), not (не).
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">7. Какие операции используют для сравнения значений двух величин?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">8. Какие логические операции вы знаете?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">9. Какие бывают логические выражения?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">10. Какие таблицы составляют для логических операций и выражений?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">11. В каких формах может быть записан условный алгоритм? Чем они отличаются</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">12. Расскажите, как найти наибольшее из двух чисел х и у?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">13. Расскажите, как найти наименьшее из двух чисел х и у?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">14. Что такое вложенные условные алгоритмы?   7. Разделите текст на части. Составьте план и расскажите текст по плану.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">4. Чем логическое выражение отличается от математического неравенства?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> В информатике логическое выражение имеет значение «истина» или «ложь», а в математике неравенство просто «верно» или «неверно».
+                    </div>
                 </li>
         </ol>
     </div>
 </div>
 
-<!-- 8. Составьте блок-схемы алгоритмов решения задач. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">8. Составьте блок-схемы алгоритмов решения задач.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Вычислить.
 
-
-
-
-13. Найти наименьшее из трёх чисел а, b, с.
-14. Найти наибольшее из трёх чисел а, b, с.
-15. Найти наименьшее из четырёх чисел а, b, с, d.
-16. Найти наибольшее из четырёх чисел а, b, с, d.
-17. Дано число от 1 до 12. Вывести название месяца, которое соответствует данному
-числу.
-18. *Определить. в каком координатном углу или на какой координатной оси лежит
-точка М(х, у).
-19. *Поставьте слово «рубль» в правильную форму в зависимости от значения n.
-Например, если n = 1, то «1 рубль». Если n = 2, то «2 рубля». Если n = 5, то «5
-рублей».
-20. *Дана дата из трёх чисел (день, месяц и год). Вывести yes. если такая дата
-существует, и по, в противном случае. Например. 12 02 1999 - yes. 22 13 2001 - nо.
-21. *Даны две даты, каждая из которых состоит из трёх чисел (день, месяц и год).
-Вывести yes, если первая дата записана в календаре раньше второй, иначе вывести
-по.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+<!-- final -->
+<div class="card mb-4 border-success">
+    <div class="card-header bg-success text-white fw-bold fs-5">
+        <span class="badge bg-light text-success me-2">Финал</span> Расскажи тему целиком
+    </div>
+    <div class="card-body">
+        <p>Когда ответил на все тесты — попробуй <strong>устно или письменно</strong> рассказать о теме урока, опираясь на блок «Краткая теория».</p>
+        <textarea class="form-control mb-3" rows="6" placeholder="Можешь написать здесь свой развёрнутый рассказ для тренировки…"></textarea>
+        <div class="text-center">
+            <button class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(11); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
+                Я разобрал тему
+            </button>
         </div>
     </div>
 </div>
+
+
+<script>
+// Общая проверка fill-in select'ов в текущей карточке
+window.checkFillIn = function(btn) {
+    const card = btn.closest('.card-body');
+    if (!card) return;
+    let correct = 0, total = 0;
+    card.querySelectorAll('select[data-correct]').forEach(sel => {
+        total++;
+        const fb = sel.parentElement.querySelector('.feedback');
+        sel.classList.remove('is-valid', 'is-invalid');
+        if (fb) fb.classList.remove('d-none', 'text-success', 'text-danger', 'text-warning');
+        if (!sel.value) {
+            if (fb) { fb.textContent = 'Не выбрано'; fb.classList.add('text-warning'); }
+        } else if (sel.value === sel.dataset.correct) {
+            sel.classList.add('is-valid');
+            if (fb) { fb.textContent = '✓ Правильно'; fb.classList.add('text-success'); }
+            correct++;
+        } else {
+            sel.classList.add('is-invalid');
+            if (fb) { fb.innerHTML = 'Неверно. Правильный: <strong>' + sel.dataset.correct + '</strong>'; fb.classList.add('text-danger'); }
+        }
+    });
+    let result = card.querySelector('.fill-in-result');
+    if (!result) {
+        result = document.createElement('div');
+        result.className = 'fill-in-result mt-3 fw-bold text-center';
+        card.appendChild(result);
+    }
+    result.className = 'fill-in-result mt-3 fw-bold text-center ' + (correct === total ? 'text-success' : 'text-danger');
+    result.textContent = correct === total
+        ? '✓ Все ' + total + ' ответов правильно!'
+        : 'Правильных: ' + correct + ' из ' + total;
+};
+
+// Показать/скрыть эталон ответа
+window.toggleAnswer = function(btn) {
+    const sample = btn.nextElementSibling;
+    if (sample.classList.contains('d-none')) {
+        sample.classList.remove('d-none');
+        btn.textContent = 'Скрыть эталон';
+    } else {
+        sample.classList.add('d-none');
+        btn.textContent = 'Показать эталон';
+    }
+};
+</script>
+
 
 </div>

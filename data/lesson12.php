@@ -1,14 +1,15 @@
-<!--lesson12.php-->
+<!-- lesson12.php -->
 <div class="lesson">
 
-    <h2 class="text-primary mb-4">
-        Занятие 12. Блок-схема алгоритма. Циклический алгоритм
-    </h2>
+    <h2 class="text-primary mb-4">Занятие 12. Циклический алгоритм</h2>
 
-    <!-- ==================================================
-     Занятие 12 — Задание 1 (референс: 75.pdf)
-     ================================================== -->
+<!-- intro -->
+<div class="alert alert-primary border-start border-primary border-4 fs-5 mb-4">
+    <strong>Циклический алгоритм</strong> — алгоритм, в котором набор команд выполняется <strong>несколько раз</strong>. Бывает три вида циклов: с параметром, с предусловием и с постусловием.
+</div>
 
+
+    <!-- Task1: dictionary -->
 <div class="card mb-5">
   <div class="card-header bg-light fw-bold fs-5">
     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
@@ -128,259 +129,442 @@
     </div>
   </div>
 </div>
-<!-- Конец задания 1 -->
+<!-- End task 1 -->
 
-<!-- 2. Сгруппируйте однокоренные слова. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">2. Сгруппируйте однокоренные слова.</div>
+<!-- LANG SECTION INTRO -->
+<div class="alert alert-warning border-start border-warning border-4 mb-4">
+    <h5 class="mb-1">📝 Русский язык</h5>
+    <p class="mb-0">Прежде чем перейти к информатике, потренируем <strong>русскую лексику</strong> по теме урока — это поможет лучше понимать терминологию.</p>
+</div>
+
+<!-- lang-word-formation -->
+<div class="card mb-4 border-warning">
+    <div class="card-header bg-warning-subtle fw-bold">
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> Образуй существительное от глагола
+    </div>
     <div class="card-body">
-        <div class="alert alert-warning small mb-3">
-            <strong>TODO:</strong> для интерактивного подбора (drag&drop / select) разметить вручную. Сейчас — текст из тетради + поле для ответа.
-        </div>
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Считать, внутренний, ложно, цикл, шагать, умножение, вложенный, истина,
-перебор, вложить, шаг, перебирать, истинный, циклический, внутри, ложный,
-умножить, счётчик, вложение, перебрать, ложь, пошаговый, истинно.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        <p class="mb-2"><strong>Образец:</strong> <code>удалить → удаление</code></p>
+        <p class="text-muted mb-3">Образуй существительное от каждого глагола по образцу.</p>
+        <table class="table align-middle" style="max-width:500px">
+            <tbody>
+                <tr>
+                    <td class="text-end pe-2 fw-500">повторить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="повторение" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">выполнить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="выполнение" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">изменить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="изменение" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">продолжить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="продолжение" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">окончить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="окончание" autocomplete="off">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
 
-<!-- 3. Прочитайте текст. -->
-<div class="card mb-5 border-primary">
-    <div class="card-header bg-primary text-white fw-bold">3. Прочитайте текст.</div>
+<!-- lang-roots -->
+<div class="card mb-4 border-warning">
+    <div class="card-header bg-warning-subtle fw-bold">
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> К какому корню относится слово?
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">Выбери корень для каждого слова.</p>
+        <table class="table align-middle" style="max-width:500px">
+            <tbody>
+                <tr>
+                    <td class="text-end pe-3 fw-500">циклический</td>
+                    <td>
+                        <select class="form-select" data-correct="цикл">
+                            <option value="">— корень —</option>
+                            <option value="цикл">цикл</option><option value="цифра">цифра</option><option value="цвет">цвет</option><option value="центр">центр</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">счётчик</td>
+                    <td>
+                        <select class="form-select" data-correct="считать">
+                            <option value="">— корень —</option>
+                            <option value="считать">считать</option><option value="сначала">сначала</option><option value="совсем">совсем</option><option value="связь">связь</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">повторение</td>
+                    <td>
+                        <select class="form-select" data-correct="повторить">
+                            <option value="">— корень —</option>
+                            <option value="второй">второй</option><option value="повторить">повторить</option><option value="праздник">праздник</option><option value="покой">покой</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">параметрический</td>
+                    <td>
+                        <select class="form-select" data-correct="параметр">
+                            <option value="">— корень —</option>
+                            <option value="параметр">параметр</option><option value="параграф">параграф</option><option value="паук">паук</option><option value="пауза">пауза</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- theory -->
+<div class="card mb-4 border-info">
+    <div class="card-header bg-info text-white fw-bold fs-5">
+        <span class="badge bg-light text-info me-2">📖 Теория</span> Краткое содержание занятия
+    </div>
     <div class="card-body fs-5 lh-lg">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Циклический алгоритм — это один из
-видов алгоритмов.
-     В циклическом алгоритме набор
-действий (команд) выполняется несколько раз.
-      Циклический алгоритм состоит из
-заголовка цикла и тела цикла. Заголовок цикла
-— это описание условия продолжения или
-окончания работы цикла. Тело цикла — это набор действий (команд), которые
-выполняются во время работы цикла.
-     Циклические алгоритмы (циклы) можно разделить на три группы: с
-параметром, с предусловием, с постусловием.
-      Если заранее известно, сколько раз надо выполнить набор команд (тело цикла),
-то используют цикл с параметром.
-         Для записи цикла с параметром используют блок «Цикл с параметром» (рис.
-16).
-         Чтобы считать, сколько раз надо выполнить тело цикла, используют счётчик
-      Счётчик — это переменная величина, которая перед началом работы цикла или
-в начале работы цикла получает начальное
-значение. Во время работы цикла значение
-счётчика изменяется по заданному
-правилу. Текущее значение счётчика
-показывает, надо ещё раз выполнять тело
-цикла или нет.
-      Задача 1. Найти значения функции у
-   2
-= х для всех целых значений x из отрезка
-[0; 20].
-      Чтобы решить эту задачу, надо
-найти значение функции для следующих
-значений x: 0, 1, 2, 3,…,19, 20. В задаче
-известно начальное значение x, конечное
-значение x и правило изменения значений
-x (шаг цикла): x0 = 0, хn = 20, xi+1 = xi + 1.
-Здесь величину х можно использовать как
-счётчик.
-     На каждом шаге цикла надо
-выполнять следующие действия:
-1)   найти значение функции по формуле - блок «Процесс»;
-2)   вывести значения x и у - блок «Ввод-вывод».
-       Блок-схема решения данной задачи приведена на рис. 17.
-       Рассмотрим пошаговое исполнение этого алгоритма.
-Для этого составим табл. 8.
-                         8. Пошаговое исполнение алгоритма
- Номер     Значение           Условие            Значение     Результат работы
-   шага        x        продолжения работы           у      блока «Ввод-вывод»
- 1         х=0         0 &lt; 20 - истина           y=0        0; 0
- 2         х=1         1 &lt; 20 - истина           y=l        1; 1
- 3         х=2         2 &lt; 20 - истина           y=4        2; 4
- 4         х=3         3 &lt; 20 - истина           y=9        3; 9
- …         …           …                         …          …
- 21        х = 20      20 &lt; 20 - истина          y = 400    20; 400
- 22        х = 21      21 &lt; 20 - ложь
-     Если заранее не известно, сколько раз надо выполнить набор команд (тело
-цикла), то используют цикл с предусловием или цикл с постусловием. Для записи этих
-циклов используют блок «Ветвление».
-     Правило работы цикла с предусловием - сначала надо проверить условие
-продолжения работы цикла. Если условие истинно, то надо выполнить тело цикла
-один раз. Если условие ложно, то надо закончить работу цикла.
-      Правило работы цикла с постусловием - сначала надо один раз выполнить тело
-цикла, а потом проверить условие окончания работы цикла. Если условие истинно,
-то надо закончить работу цикла. Если условие ложно, то надо выполнить тело цикла
-ещё один раз.
-     Сравните блок-схемы алгоритмов решения задачи 1:
-     -     с помощью цикла с предусловием (рис. 18, а);
-     -     с помочью цикла с постусловием (рис. 18, б).
+<h6 class="text-primary mt-3 mb-2">Структура цикла</h6>
+<p class="mb-3">Цикл состоит из <strong>заголовка</strong> (описание условия продолжения или окончания) и <strong>тела</strong> (набор команд, повторяющихся во время работы цикла).</p>
+<h6 class="text-primary mt-3 mb-2">Три вида циклов</h6>
+<p class="mb-3"><ol class='mb-0 mt-2'><li><strong>Цикл с параметром</strong> — когда заранее известно, сколько раз выполнить тело цикла. Использует <em>счётчик</em> — переменную, значение которой меняется по правилу.</li><li><strong>Цикл с предусловием</strong> — условие проверяется в начале каждой итерации. Тело может не выполниться ни разу.</li><li><strong>Цикл с постусловием</strong> — условие проверяется в конце. Тело выполняется хотя бы один раз.</li></ol></p>
+<h6 class="text-primary mt-3 mb-2">Счётчик цикла</h6>
+<p class="mb-3"><strong>Счётчик</strong> — это переменная, которая получает начальное значение в начале цикла, изменяется по правилу и определяет, надо ли выполнять тело цикла ещё раз.</p>
 
-
-
-
-               Рис. 18. Блок-схемы алгоритма решения задачи 1:
-                а - цикл с предусловием: б - цикл с постусловием
-      Циклические алгоритмы, как и условные, могут быть вложенными.
-Задача 2. Вывести на экран таблицу умножения для чисел от 1 до 10 (табл. 9).
-                             9. Таблица умножения
-
-
-
-
-     Операция умножения — это
-операция с двумя числами. В задаче
-каждое из чисел изменяется от числа 1
-до числа 10. Чтобы перебрать все
-значения всех множителей, надо
-использовать два цикла. Эти циклы
-должны работать не по порядку, а
-вместе -один внутри другого. Это
-вложенные циклы. Здесь для одного
-значения счётчика первого цикла
-счётчик второго цикла примет все свои
-значения.
-     Пусть переменная i — это
-счётчик первого цикла - первый
-множитель, a j — это счётчик второго
-цикла - второй множитель. Для
-перебора всех значений счётчиков
-будем использовать блок «Цикл с
-параметром». В теле первого цикла
-будет второй (вложенный) цикл. В теле второго (вложенного) цикла будут блоки
-«Процесс» для вычисления произведения и «Ввод-вывод» для вывода результата.
-      Блок-схема решения данной задачи приведена на рис. 19.
-      Рассмотрим пошаговое исполнение этого алгоритма. Для этого составим табл.
-10.
-                     10. Пошаговое исполнение алгоритма</pre>
     </div>
 </div>
 
-<!-- 4. Ответьте на вопросы. -->
-<div class="card mb-5">
-    <div class="card-header bg-primary text-white fw-bold">4. Ответьте на вопросы.</div>
+
+<!-- yesno-test -->
+<div class="card mb-4">
+    <div class="card-header bg-warning-subtle fw-bold fs-5">
+        <span class="badge bg-warning text-dark me-2">Понимание</span> Тест: верно ли утверждение?
+    </div>
     <div class="card-body">
+        <p class="text-muted mb-3">Прочитай каждое утверждение и нажми «да», если оно верно, «нет» — если неверно.</p>
+        
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="это и есть смысл цикла.">
+                <p class="fw-500 mb-2">1. Циклический алгоритм выполняет набор команд несколько раз.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l12_yn1" value="да" id="l12_yn1_y">
+                    <label class="btn btn-outline-success px-4" for="l12_yn1_y">да</label>
+                    <input type="radio" class="btn-check" name="l12_yn1" value="нет" id="l12_yn1_n">
+                    <label class="btn btn-outline-danger px-4" for="l12_yn1_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="у цикла есть и заголовок (условие), и тело.">
+                <p class="fw-500 mb-2">2. Цикл состоит только из тела цикла.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l12_yn2" value="да" id="l12_yn2_y">
+                    <label class="btn btn-outline-success px-4" for="l12_yn2_y">да</label>
+                    <input type="radio" class="btn-check" name="l12_yn2" value="нет" id="l12_yn2_n">
+                    <label class="btn btn-outline-danger px-4" for="l12_yn2_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="именно поэтому используется счётчик.">
+                <p class="fw-500 mb-2">3. В цикле с параметром заранее известно число повторений.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l12_yn3" value="да" id="l12_yn3_y">
+                    <label class="btn btn-outline-success px-4" for="l12_yn3_y">да</label>
+                    <input type="radio" class="btn-check" name="l12_yn3" value="нет" id="l12_yn3_n">
+                    <label class="btn btn-outline-danger px-4" for="l12_yn3_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="тело выполняется хотя бы один раз — условие проверяется после.">
+                <p class="fw-500 mb-2">4. Цикл с постусловием может не выполнить тело ни разу.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l12_yn4" value="да" id="l12_yn4_y">
+                    <label class="btn btn-outline-success px-4" for="l12_yn4_y">да</label>
+                    <input type="radio" class="btn-check" name="l12_yn4" value="нет" id="l12_yn4_n">
+                    <label class="btn btn-outline-danger px-4" for="l12_yn4_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="три вида: с параметром, с предусловием, с постусловием.">
+                <p class="fw-500 mb-2">5. Существует только два вида циклов.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l12_yn5" value="да" id="l12_yn5_y">
+                    <label class="btn btn-outline-success px-4" for="l12_yn5_y">да</label>
+                    <input type="radio" class="btn-check" name="l12_yn5" value="нет" id="l12_yn5_n">
+                    <label class="btn btn-outline-danger px-4" for="l12_yn5_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- mcq-test -->
+<div class="card mb-4">
+    <div class="card-header bg-primary text-white fw-bold fs-5">
+        <span class="badge bg-light text-primary me-2">Выбор ответа</span> Тест: выбери правильный вариант
+    </div>
+    <div class="card-body mcq-set">
+        <p class="text-muted mb-3">В каждом вопросе только один правильный ответ.</p>
+        
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="цикл — это повторение набора команд.">
+                <p class="fw-bold mb-2">1. Что такое циклический алгоритм?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq1" id="l12_mcq1_a" value="a">
+                    <label class="form-check-label ms-2" for="l12_mcq1_a">а) алгоритм с одним действием</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq1" id="l12_mcq1_b" value="b">
+                    <label class="form-check-label ms-2" for="l12_mcq1_b">б) алгоритм, в котором команды повторяются несколько раз</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq1" id="l12_mcq1_c" value="c">
+                    <label class="form-check-label ms-2" for="l12_mcq1_c">в) алгоритм с условием</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq1" id="l12_mcq1_d" value="d">
+                    <label class="form-check-label ms-2" for="l12_mcq1_d">г) алгоритм с процедурами</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="три: с параметром, с предусловием, с постусловием.">
+                <p class="fw-bold mb-2">2. Сколько видов циклов?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq2" id="l12_mcq2_a" value="a">
+                    <label class="form-check-label ms-2" for="l12_mcq2_a">а) 2</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq2" id="l12_mcq2_b" value="b">
+                    <label class="form-check-label ms-2" for="l12_mcq2_b">б) 3</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq2" id="l12_mcq2_c" value="c">
+                    <label class="form-check-label ms-2" for="l12_mcq2_c">в) 4</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq2" id="l12_mcq2_d" value="d">
+                    <label class="form-check-label ms-2" for="l12_mcq2_d">г) 5</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="цикл — это заголовок (условие) + тело (команды).">
+                <p class="fw-bold mb-2">3. Из каких частей состоит цикл?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq3" id="l12_mcq3_a" value="a">
+                    <label class="form-check-label ms-2" for="l12_mcq3_a">а) только из тела</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq3" id="l12_mcq3_b" value="b">
+                    <label class="form-check-label ms-2" for="l12_mcq3_b">б) заголовка и тела</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq3" id="l12_mcq3_c" value="c">
+                    <label class="form-check-label ms-2" for="l12_mcq3_c">в) заголовка, тела и хвоста</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq3" id="l12_mcq3_d" value="d">
+                    <label class="form-check-label ms-2" for="l12_mcq3_d">г) начала и конца</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="c" data-explanation="в цикле с постусловием условие проверяется в конце, поэтому тело выполняется как минимум один раз.">
+                <p class="fw-bold mb-2">4. В каком цикле тело выполняется хотя бы один раз?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq4" id="l12_mcq4_a" value="a">
+                    <label class="form-check-label ms-2" for="l12_mcq4_a">а) с параметром</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq4" id="l12_mcq4_b" value="b">
+                    <label class="form-check-label ms-2" for="l12_mcq4_b">б) с предусловием</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq4" id="l12_mcq4_c" value="c">
+                    <label class="form-check-label ms-2" for="l12_mcq4_c">в) с постусловием</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l12_mcq4" id="l12_mcq4_d" value="d">
+                    <label class="form-check-label ms-2" for="l12_mcq4_d">г) во всех видах</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- fill-in -->
+<div class="card mb-4">
+    <div class="card-header bg-success-subtle fw-bold fs-5">
+        <span class="badge bg-success me-2">Заполни пропуск</span> Тест: закончи предложение
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">Выбери из выпадающего списка слово, которое лучше всего подходит.</p>
         <ol class="list-unstyled mb-0">
+            
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">1. Что такое цикл? Из чего состоит цикл?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">1. Часть цикла, в которой описывается условие — это <select class="form-select d-inline-block w-auto mx-1" data-correct="заголовок"><option value="">— выбери —</option><option value="тело">тело</option><option value="заголовок">заголовок</option><option value="начало">начало</option><option value="конец">конец</option></select> цикла.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">2. Что такое заголовок цикла?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">2. Переменная, считающая итерации цикла — это <select class="form-select d-inline-block w-auto mx-1" data-correct="счётчик"><option value="">— выбери —</option><option value="параметр">параметр</option><option value="счётчик">счётчик</option><option value="условие">условие</option><option value="заголовок">заголовок</option></select>.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">3. Что такое тело цикла?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">3. Цикл, в котором заранее известно число повторений — это цикл <select class="form-select d-inline-block w-auto mx-1" data-correct="с параметром"><option value="">— выбери —</option><option value="с предусловием">с предусловием</option><option value="с постусловием">с постусловием</option><option value="с параметром">с параметром</option><option value="бесконечный">бесконечный</option></select>.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">4. На какие группы можно разделить циклические алгоритмы?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+        </ol>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- open-questions -->
+<div class="card mb-4">
+    <div class="card-header bg-secondary text-white fw-bold fs-5">
+        <span class="badge bg-light text-secondary me-2">Развёрнутый ответ</span> Сформулируй своими словами
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">
+            Сначала постарайся ответить сам, написав в поле или вслух. Потом нажми «Показать эталон» и сравни.
+        </p>
+        <ol class="list-unstyled mb-0">
+            
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">1. Что такое циклический алгоритм?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Алгоритм, в котором набор команд (тело цикла) выполняется несколько раз.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">5. Какой блок используют для записи цикла с параметром? Опишите правило его работы.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">2. Назовите три вида циклов.</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Цикл с параметром, цикл с предусловием, цикл с постусловием.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">6. Что такое счётчик цикла? Для чего его используют?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">3. Что такое счётчик цикла?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Переменная, которая в начале цикла получает начальное значение, во время работы изменяется по заданному правилу и определяет, выполнять ли тело цикла ещё раз.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">7. Что показывает текущее значение счётчика?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">8. Какой блок используют для записи цикла с предусловием? Опишите правило его работы.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">9. Какой блок используют для записи цикла с постусловием? Опишите правило его работы.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">10. Что такое вложенные циклы?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">4. Чем цикл с предусловием отличается от цикла с постусловием?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> В цикле с предусловием условие проверяется в начале — тело может не выполниться ни разу. В цикле с постусловием условие в конце — тело выполняется минимум один раз.
+                    </div>
                 </li>
         </ol>
     </div>
 </div>
 
-<!-- 5. Заполните таблицу. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">5. Заполните таблицу.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;"></pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
 
-<!-- 6. Закончите предложения. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">6. Закончите предложения.</div>
+<!-- final -->
+<div class="card mb-4 border-success">
+    <div class="card-header bg-success text-white fw-bold fs-5">
+        <span class="badge bg-light text-success me-2">Финал</span> Расскажи тему целиком
+    </div>
     <div class="card-body">
-        <ol class="list-unstyled mb-0">
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>1.</strong> Заголовок цикла — это ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>2.</strong> Набор команд, которые выполняются во время работы цикла. — это</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>3.</strong> Циклический алгоритм можно разделить на три группы: ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>4.</strong> Счётчик используют, чтобы считать, ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>5.</strong> Блок «Ветвление» используют для записи циклов ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>6.</strong> Вложенные циклы работают не по порядку, а ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-        </ol>
-    </div>
-</div>
-
-<!-- 7. Вставьте вместо точек глаголы, данные под чертой, в нужной ф -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">7. Вставьте вместо точек глаголы, данные под чертой, в нужной форме.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">1. В циклическом алгоритме набор команд ... несколько раз.
-   2. Циклический алгоритм ... из заголовка цикла и тела цикла.
-   3. Для записи цикла с параметром ... блок «Цикл с параметром».
-   4. Во время работы цикла значение счётчика ... по правилу.
-   5. Чтобы ... все значения множителей, надо ... два цикла.
- Изменяться, состоять, перебрать, использовать, выполняться.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        <p>Когда ответил на все тесты — попробуй <strong>устно или письменно</strong> рассказать о теме урока, опираясь на блок «Краткая теория».</p>
+        <textarea class="form-control mb-3" rows="6" placeholder="Можешь написать здесь свой развёрнутый рассказ для тренировки…"></textarea>
+        <div class="text-center">
+            <button class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(12); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
+                Я разобрал тему
+            </button>
         </div>
     </div>
 </div>
 
-<!-- 8. Составьте блок-схемы решения задач. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">8. Составьте блок-схемы решения задач.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">A. Найти значения функции у =f(х) для х  [а, b] с шагом h.
 
+<script>
+// Общая проверка fill-in select'ов в текущей карточке
+window.checkFillIn = function(btn) {
+    const card = btn.closest('.card-body');
+    if (!card) return;
+    let correct = 0, total = 0;
+    card.querySelectorAll('select[data-correct]').forEach(sel => {
+        total++;
+        const fb = sel.parentElement.querySelector('.feedback');
+        sel.classList.remove('is-valid', 'is-invalid');
+        if (fb) fb.classList.remove('d-none', 'text-success', 'text-danger', 'text-warning');
+        if (!sel.value) {
+            if (fb) { fb.textContent = 'Не выбрано'; fb.classList.add('text-warning'); }
+        } else if (sel.value === sel.dataset.correct) {
+            sel.classList.add('is-valid');
+            if (fb) { fb.textContent = '✓ Правильно'; fb.classList.add('text-success'); }
+            correct++;
+        } else {
+            sel.classList.add('is-invalid');
+            if (fb) { fb.innerHTML = 'Неверно. Правильный: <strong>' + sel.dataset.correct + '</strong>'; fb.classList.add('text-danger'); }
+        }
+    });
+    let result = card.querySelector('.fill-in-result');
+    if (!result) {
+        result = document.createElement('div');
+        result.className = 'fill-in-result mt-3 fw-bold text-center';
+        card.appendChild(result);
+    }
+    result.className = 'fill-in-result mt-3 fw-bold text-center ' + (correct === total ? 'text-success' : 'text-danger');
+    result.textContent = correct === total
+        ? '✓ Все ' + total + ' ответов правильно!'
+        : 'Правильных: ' + correct + ' из ' + total;
+};
 
+// Показать/скрыть эталон ответа
+window.toggleAnswer = function(btn) {
+    const sample = btn.nextElementSibling;
+    if (sample.classList.contains('d-none')) {
+        sample.classList.remove('d-none');
+        btn.textContent = 'Скрыть эталон';
+    } else {
+        sample.classList.add('d-none');
+        btn.textContent = 'Показать эталон';
+    }
+};
+</script>
 
-
-Б. Найти значения квадратов и кубов чисел от а до b с шагом h.
-    В. *Найти значения коэффициентов треугольника Паскаля и кубов чисел от
-а до b с шагом h.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
 
 </div>

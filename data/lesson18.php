@@ -1,18 +1,15 @@
-<!--lesson18.php-->
+<!-- lesson18.php -->
 <div class="lesson">
 
-    <h2 class="text-primary mb-4">
-        Занятие 18. Средства поиска информации. Интернет. Браузеры
-    </h2>
+    <h2 class="text-primary mb-4">Занятие 18. Интернет. Браузеры</h2>
 
-    <!-- ==================================================
-     Задание 1. Слова и словосочетания (2 колонки + озвучка)
-     Lesson 18 (по 116.pdf)
-     ================================================== -->
-<!-- ==================================================
-     Задание 1. Таблица (как в образце на картинке) + озвучка
-     ================================================== -->
+<!-- intro -->
+<div class="alert alert-primary border-start border-primary border-4 fs-5 mb-4">
+    <strong>Интернет</strong> — глобальная компьютерная сеть, объединяющая компьютеры всего мира. У сети нет единого центра управления, и она работает по специальным <strong>протоколам</strong>.
+</div>
 
+
+    <!-- Task1: dictionary -->
 <div class="card mb-5">
   <div class="card-header bg-light fw-bold fs-5">
     1. Прочитайте слова и словосочетания, переведите, запомните их значения.
@@ -141,273 +138,442 @@
     </div>
   </div>
 </div>
-<!-- Конец задания 1 -->
+<!-- End task 1 -->
 
-<!-- 2. Подберите существительные к прилагательным. Укажите, где воз -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">2. Подберите существительные к прилагательным. Укажите, где возможно,</div>
+<!-- LANG SECTION INTRO -->
+<div class="alert alert-warning border-start border-warning border-4 mb-4">
+    <h5 class="mb-1">📝 Русский язык</h5>
+    <p class="mb-0">Прежде чем перейти к информатике, потренируем <strong>русскую лексику</strong> по теме урока — это поможет лучше понимать терминологию.</p>
+</div>
+
+<!-- lang-word-formation -->
+<div class="card mb-4 border-warning">
+    <div class="card-header bg-warning-subtle fw-bold">
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> Образуй существительное от глагола
+    </div>
     <div class="card-body">
-        <div class="alert alert-warning small mb-3">
-            <strong>TODO:</strong> для интерактивного подбора (drag&drop / select) разметить вручную. Сейчас — текст из тетради + поле для ответа.
-        </div>
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">варианты. Поставьте прилагательные в правильной форме.
-глобальный
-числовой
-фиксированный
-свободный
-                                   сеть
-территориальный
-уникальный                         пространство
-компьютерный
-временный                          IР-адрес
-современный
-локальный
-информационный
-постоянный
-транснациональный
-доменный</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        <p class="mb-2"><strong>Образец:</strong> <code>удалить → удаление</code></p>
+        <p class="text-muted mb-3">Образуй существительное от каждого глагола по образцу.</p>
+        <table class="table align-middle" style="max-width:500px">
+            <tbody>
+                <tr>
+                    <td class="text-end pe-2 fw-500">подключить</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="подключение" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">обмениваться</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="обмен" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">передать</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="передача" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">принять</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="приём" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-2 fw-500">использовать</td>
+                    <td class="text-center px-2">→</td>
+                    <td>
+                        <input type="text" class="form-control" data-correct="использование" autocomplete="off">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
 
-<!-- 3. Прочитайте текст. -->
-<div class="card mb-5 border-primary">
-    <div class="card-header bg-primary text-white fw-bold">3. Прочитайте текст.</div>
+<!-- lang-roots -->
+<div class="card mb-4 border-warning">
+    <div class="card-header bg-warning-subtle fw-bold">
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> К какому корню относится слово?
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">Выбери корень для каждого слова.</p>
+        <table class="table align-middle" style="max-width:500px">
+            <tbody>
+                <tr>
+                    <td class="text-end pe-3 fw-500">сетевой</td>
+                    <td>
+                        <select class="form-select" data-correct="сеть">
+                            <option value="">— корень —</option>
+                            <option value="сеть">сеть</option><option value="сено">сено</option><option value="север">север</option><option value="середина">середина</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">информационный</td>
+                    <td>
+                        <select class="form-select" data-correct="информация">
+                            <option value="">— корень —</option>
+                            <option value="информация">информация</option><option value="использование">использование</option><option value="изменение">изменение</option><option value="издание">издание</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">цифровой</td>
+                    <td>
+                        <select class="form-select" data-correct="цифра">
+                            <option value="">— корень —</option>
+                            <option value="цифра">цифра</option><option value="цикл">цикл</option><option value="центр">центр</option><option value="цвет">цвет</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-end pe-3 fw-500">компьютерный</td>
+                    <td>
+                        <select class="form-select" data-correct="компьютер">
+                            <option value="">— корень —</option>
+                            <option value="компьютер">компьютер</option><option value="команда">команда</option><option value="комплекс">комплекс</option><option value="коробка">коробка</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- theory -->
+<div class="card mb-4 border-info">
+    <div class="card-header bg-info text-white fw-bold fs-5">
+        <span class="badge bg-light text-info me-2">📖 Теория</span> Краткое содержание занятия
+    </div>
     <div class="card-body fs-5 lh-lg">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">Интернет — это глобальная транснациональная компьютерная сеть, которая
-объединяет компьютеры во всём мире в единое информационное пространство. Эта
-сеть работает по самым разнообразным протоколам, связывает всевозможные типы
-компьютеров, передаёт данные по телефонным проводам и оптоволокну, через
-спутники и радиомодемы.
-      Важнейшая особенность этой глобальной сети: Интернет никому не
-принадлежит. У сети Интернет нет централизованного управления. Интернет
-является свободным информационным пространством.
-      Прообраз современной сети Интернет - американская военно-промышленная
-территориальная сеть ARPAnet (Advanced Research Project Agency - Агентство по
-передовым исследовательским проектам, 1969 г.).
-      Структура сети Интернет
-      Интернет похож на живой организм без единого центра управления. Каждый
-узел сети Интернет обеспечивает работу всей системы в целом. Узлом может являться
-как отдельный компьютер, так и локальная сеть. Взаимодействие узлов не зависит от
-типов компьютеров, их архитектуры и операционных систем, а также физической
-реализации связи между ними. Обмен информацией между узлами сети Интернет
-происходит с помощью специальных протоколов.
-      Для организации обмена информацией необходимо, чтобы каждый узел имел
-своё уникальное имя - IP-адрес в пространстве сети Интернет.
-      Существуют фиксированные (постоянные) и временные IP-адреса.
-Большинство пользователей, которые подключаются к сети для временного сеанса
-связи, не имеют фиксированного IP- адреса. Им присваивается временный IP-адрес.
-Компьютеры в организациях, локальные сети которых постоянно подключены к сети
-Интернет, имеют свои уникальные фиксированные IР-адреса.
-     Также IP-адреса делят на числовые и доменные (домен от англ. domain -
-территория, сфера, область). Эти адреса дополняют друг друга: числовой адрес
-понятнее компьютеру, доменный адрес - человеку.
-     Числовой адрес — это набор из четырёх чисел, разделённых точками. Каждое
-число не может быть больше, чем 255. Например, 192.117.64.66. В числовом адресе
-указывают класс сети, номер сети и номер компьютера.
-      Доменный адрес — это понятная человеку запись, в которой указывают имя,
-род деятельности и код страны. Например, в адресе www.pnzgu.ru. www указывает на
-принадлежность узла ко Всемирной Информационной Паутине (WWW - World Wide
-Web), pnzgu - название организации (ПГУ - Пензенский государственный
-университет), ru (Russia) указывает на страну, в которой находится эта организация.
-      Некоторые сокращения для определения в доменном адресе рода деятельности
-организации: .com (коммерческие организации), .net (сетевые организации разных
-сетей, в том числе провайдеры), .org (организации), .biz (бизнес), .info (информация).
-       Несколько двухбуквенных кодов стран: .ru, .рф - Россия, .uk, .gb -
-Великобритания, .de - Г ер- мания, .us - США, .bw - Ботсвана, .cd - Демократическая
-Республика Конго, .eg - Республика Конго, .dz - Алжир, .fr - Франция, .lk - Шри-Ланка,
-.vn - Вьетнам, .zin - Замбия, .iq - Ирак, .sy - Сирия.
-     В сети Интернет скрыты очень большие возможности. Здесь можно найти
-различную информацию. архивы файлов, базы данных и многое другое.
-     Чтобы успешно работать с информацией в сети Интернет, нужно знать правила
-поведения в сети и уметь обращаться с сетевыми сервисами.
-     Один из самых популярных и интересных сервисов сети Интернет — это
-Всемирная Информационная Паутина WWW.
-     Проект WWW разработал в 1989 году Тим Бернерс-Ли (Tim Bemers-Lee) в
-швейцарской лаборатории физики высоких энергий CERN (Conseil Europeen pour la
-Recherche Nucleaire) как метод обмена исследовательскими данными и идеями между
-учеными Мира через Интернет. В 1992 году была создана первая программа для
-просмотра документов в Web - Mosaic. Сегодня существует много разных программ
-просмотра Web-документов - браузеров.
-      Браузеры (обозреватели, средства просмотра Web) — это программные
-средства для просмотра электронных документов в формате HTML. HTML (hypertext
-mark language) - это формат Web- документов. Современные браузеры воспроизводят
-текст, графику, музыку, человеческую речь. Они позволяют слушать радиопередачи
-в Интернете, смотреть телевизионные передачи и многое другое.
-     Среди популярных браузеров можно назвать следующие (рис. 47): Google
-Chrome, Яндекс Браузер, Mozilla Firefox, Opera, Internet Explorer, Edge, Safari и многие
-другие.
+<h6 class="text-primary mt-3 mb-2">Что такое Интернет</h6>
+<p class="mb-3"><strong>Интернет</strong> — глобальная транснациональная компьютерная сеть, объединяющая компьютеры в единое информационное пространство. Никому не принадлежит, не имеет централизованного управления. Прообраз — американская сеть ARPAnet (1969).</p>
+<h6 class="text-primary mt-3 mb-2">IP-адрес и домен</h6>
+<p class="mb-3"><strong>IP-адрес</strong> — уникальное имя узла в Интернете. Бывают <em>фиксированные</em> (постоянные) и <em>временные</em>. Также различают <strong>числовые</strong> (для компьютера) и <strong>доменные</strong> (для человека) адреса. Эти адреса дополняют друг друга.</p>
+<h6 class="text-primary mt-3 mb-2">Браузеры</h6>
+<p class="mb-3"><strong>Браузер</strong> — прикладная программа для просмотра веб-страниц. Примеры: Internet Explorer, Edge, Opera, Mozilla Firefox, Google Chrome, Yandex Browser. Файлы веб-страниц имеют расширения <code>.htm</code>, <code>.html</code>, <code>.php</code>.</p>
 
-
-
-
-                    Рис. 47. Некоторые популярные браузеры
-     Все браузеры предоставляют пользователю большой набор возможностей при
-просмотре Web-документов. Например, поиск по тексту, по картинке, быстрый
-перевод на другой язык, быстрый переход с одной страницы на другую по
-гиперссылке, подключение дополнительных возможностей (плагинов), возможность
-сохранения часто посещаемых сайтов.</pre>
     </div>
 </div>
 
-<!-- 4. Ответьте на вопросы. -->
-<div class="card mb-5">
-    <div class="card-header bg-primary text-white fw-bold">4. Ответьте на вопросы.</div>
+
+<!-- yesno-test -->
+<div class="card mb-4">
+    <div class="card-header bg-warning-subtle fw-bold fs-5">
+        <span class="badge bg-warning text-dark me-2">Понимание</span> Тест: верно ли утверждение?
+    </div>
     <div class="card-body">
+        <p class="text-muted mb-3">Прочитай каждое утверждение и нажми «да», если оно верно, «нет» — если неверно.</p>
+        
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="Интернет никому не принадлежит и не имеет центра управления.">
+                <p class="fw-500 mb-2">1. У Интернета есть единый центр управления.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l18_yn1" value="да" id="l18_yn1_y">
+                    <label class="btn btn-outline-success px-4" for="l18_yn1_y">да</label>
+                    <input type="radio" class="btn-check" name="l18_yn1" value="нет" id="l18_yn1_n">
+                    <label class="btn btn-outline-danger px-4" for="l18_yn1_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="именно IP-адрес идентифицирует узел в сети.">
+                <p class="fw-500 mb-2">2. Каждый узел в Интернете имеет уникальный IP-адрес.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l18_yn2" value="да" id="l18_yn2_y">
+                    <label class="btn btn-outline-success px-4" for="l18_yn2_y">да</label>
+                    <input type="radio" class="btn-check" name="l18_yn2" value="нет" id="l18_yn2_n">
+                    <label class="btn btn-outline-danger px-4" for="l18_yn2_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="бывают фиксированные (постоянные) и временные.">
+                <p class="fw-500 mb-2">3. Существует только один тип IP-адресов — фиксированные.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l18_yn3" value="да" id="l18_yn3_y">
+                    <label class="btn btn-outline-success px-4" for="l18_yn3_y">да</label>
+                    <input type="radio" class="btn-check" name="l18_yn3" value="нет" id="l18_yn3_n">
+                    <label class="btn btn-outline-danger px-4" for="l18_yn3_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="это и есть назначение браузера.">
+                <p class="fw-500 mb-2">4. Браузер — это программа для просмотра веб-страниц.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l18_yn4" value="да" id="l18_yn4_y">
+                    <label class="btn btn-outline-success px-4" for="l18_yn4_y">да</label>
+                    <input type="radio" class="btn-check" name="l18_yn4" value="нет" id="l18_yn4_n">
+                    <label class="btn btn-outline-danger px-4" for="l18_yn4_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="ARPAnet появилась в 1969 году в США.">
+                <p class="fw-500 mb-2">5. Прообразом Интернета была сеть ARPAnet.</p>
+                <div class="btn-group btn-group-lg mb-2">
+                    <input type="radio" class="btn-check" name="l18_yn5" value="да" id="l18_yn5_y">
+                    <label class="btn btn-outline-success px-4" for="l18_yn5_y">да</label>
+                    <input type="radio" class="btn-check" name="l18_yn5" value="нет" id="l18_yn5_n">
+                    <label class="btn btn-outline-danger px-4" for="l18_yn5_n">нет</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- mcq-test -->
+<div class="card mb-4">
+    <div class="card-header bg-primary text-white fw-bold fs-5">
+        <span class="badge bg-light text-primary me-2">Выбор ответа</span> Тест: выбери правильный вариант
+    </div>
+    <div class="card-body mcq-set">
+        <p class="text-muted mb-3">В каждом вопросе только один правильный ответ.</p>
+        
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="c" data-explanation="Интернет — глобальная сеть, объединяющая компьютеры по всему миру.">
+                <p class="fw-bold mb-2">1. Что такое Интернет?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq1" id="l18_mcq1_a" value="a">
+                    <label class="form-check-label ms-2" for="l18_mcq1_a">а) программа</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq1" id="l18_mcq1_b" value="b">
+                    <label class="form-check-label ms-2" for="l18_mcq1_b">б) локальная сеть в одной комнате</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq1" id="l18_mcq1_c" value="c">
+                    <label class="form-check-label ms-2" for="l18_mcq1_c">в) глобальная компьютерная сеть, объединяющая компьютеры всего мира</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq1" id="l18_mcq1_d" value="d">
+                    <label class="form-check-label ms-2" for="l18_mcq1_d">г) устройство</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="IP-адрес однозначно идентифицирует узел в Интернете.">
+                <p class="fw-bold mb-2">2. Что такое IP-адрес?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq2" id="l18_mcq2_a" value="a">
+                    <label class="form-check-label ms-2" for="l18_mcq2_a">а) имя сайта</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq2" id="l18_mcq2_b" value="b">
+                    <label class="form-check-label ms-2" for="l18_mcq2_b">б) уникальный идентификатор узла в сети</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq2" id="l18_mcq2_c" value="c">
+                    <label class="form-check-label ms-2" for="l18_mcq2_c">в) имя файла</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq2" id="l18_mcq2_d" value="d">
+                    <label class="form-check-label ms-2" for="l18_mcq2_d">г) пароль</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="фиксированные (постоянные) и временные (на время сеанса).">
+                <p class="fw-bold mb-2">3. Какие виды IP-адресов бывают?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq3" id="l18_mcq3_a" value="a">
+                    <label class="form-check-label ms-2" for="l18_mcq3_a">а) большие и малые</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq3" id="l18_mcq3_b" value="b">
+                    <label class="form-check-label ms-2" for="l18_mcq3_b">б) фиксированные и временные</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq3" id="l18_mcq3_c" value="c">
+                    <label class="form-check-label ms-2" for="l18_mcq3_c">в) быстрые и медленные</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq3" id="l18_mcq3_d" value="d">
+                    <label class="form-check-label ms-2" for="l18_mcq3_d">г) открытые и закрытые</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="a" data-explanation="браузер — приложение для просмотра веб-сайтов.">
+                <p class="fw-bold mb-2">4. Что такое браузер?</p>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq4" id="l18_mcq4_a" value="a">
+                    <label class="form-check-label ms-2" for="l18_mcq4_a">а) программа для просмотра веб-страниц</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq4" id="l18_mcq4_b" value="b">
+                    <label class="form-check-label ms-2" for="l18_mcq4_b">б) антивирус</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq4" id="l18_mcq4_c" value="c">
+                    <label class="form-check-label ms-2" for="l18_mcq4_c">в) текстовый редактор</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="l18_mcq4" id="l18_mcq4_d" value="d">
+                    <label class="form-check-label ms-2" for="l18_mcq4_d">г) операционная система</label>
+                </div>
+                <div class="feedback mt-2 fw-bold d-none"></div>
+            </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- fill-in -->
+<div class="card mb-4">
+    <div class="card-header bg-success-subtle fw-bold fs-5">
+        <span class="badge bg-success me-2">Заполни пропуск</span> Тест: закончи предложение
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">Выбери из выпадающего списка слово, которое лучше всего подходит.</p>
         <ol class="list-unstyled mb-0">
+            
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">1. Что такое Интернет?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">1. Уникальное имя узла в Интернете — это <select class="form-select d-inline-block w-auto mx-1" data-correct="IP"><option value="">— выбери —</option><option value="MAC">MAC</option><option value="IP">IP</option><option value="HTTP">HTTP</option><option value="URL">URL</option></select>-адрес.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">2. Какая важнейшая особенность сети Интернет?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">2. Программа для просмотра веб-страниц — это <select class="form-select d-inline-block w-auto mx-1" data-correct="браузер"><option value="">— выбери —</option><option value="почта">почта</option><option value="браузер">браузер</option><option value="файл">файл</option><option value="редактор">редактор</option></select>.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">3. Опишите структуру сети Интернет?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                    <span class="fs-5">3. Прообраз Интернета — американская сеть <select class="form-select d-inline-block w-auto mx-1" data-correct="ARPAnet"><option value="">— выбери —</option><option value="ARPAnet">ARPAnet</option><option value="Bitnet">Bitnet</option><option value="Usenet">Usenet</option><option value="Skynet">Skynet</option></select>.</span>
+                    <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">4. Что может являться узлом сети Интернет?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+        </ol>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- open-questions -->
+<div class="card mb-4">
+    <div class="card-header bg-secondary text-white fw-bold fs-5">
+        <span class="badge bg-light text-secondary me-2">Развёрнутый ответ</span> Сформулируй своими словами
+    </div>
+    <div class="card-body">
+        <p class="text-muted mb-3">
+            Сначала постарайся ответить сам, написав в поле или вслух. Потом нажми «Показать эталон» и сравни.
+        </p>
+        <ol class="list-unstyled mb-0">
+            
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">1. Что такое Интернет?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Глобальная транснациональная компьютерная сеть, объединяющая компьютеры всего мира в единое информационное пространство.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">5. Что должен иметь каждый узел сети Интернет?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">2. Что такое IP-адрес?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Уникальное имя узла в пространстве сети Интернет. Бывают фиксированные (постоянные) и временные.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">6. Какие вы знаете виды адресов узлов?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">3. Чем числовой IP-адрес отличается от доменного?</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Числовой адрес понятнее компьютеру, доменный — человеку. Они дополняют друг друга.
+                    </div>
                 </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">7. Какие узлы имеют временные IР-адреса?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">8. Какие узлы имеют фиксированные IР-адреса?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">9. Что такое числовой IР-адрес?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">10. Что такое доменный IР-адрес?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">11. Какие двухбуквенные коды стран вы знаете?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">12. От чего зависит эффективность работы в сети Интернет?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">13. Что такое WWW?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">14. Что такое браузер? Приведите примеры популярных браузеров.</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2 fw-500">15. Какие возможности предоставляет браузер пользователю?</p>
-                    <textarea class="form-control" rows="2" placeholder="Ваш ответ…"></textarea>
+                <li class="list-group-item p-3 mb-3 bg-light border rounded">
+                    <p class="fw-500 mb-2 fs-5">4. Назовите примеры браузеров.</p>
+                    <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
+                        <strong class="text-success">Эталон:</strong> Internet Explorer, Edge, Opera, Mozilla Firefox, Google Chrome, Yandex Browser.
+                    </div>
                 </li>
         </ol>
     </div>
 </div>
 
-<!-- 5. Заполните схему. Напишите, какие бывают IP-адреса, дайте им -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">5. Заполните схему. Напишите, какие бывают IP-адреса, дайте им</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">характеристику.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
 
-<!-- 6. Закончите предложения. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">6. Закончите предложения.</div>
+<!-- final -->
+<div class="card mb-4 border-success">
+    <div class="card-header bg-success text-white fw-bold fs-5">
+        <span class="badge bg-light text-success me-2">Финал</span> Расскажи тему целиком
+    </div>
     <div class="card-body">
-        <ol class="list-unstyled mb-0">
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>1.</strong> Интернет никому не принадлежит — это ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>2.</strong> Узлом сети Интернет может являться ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>3.</strong> В 1989 году был разработан ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>4.</strong> Первая программа дня просмотра документов в Web - Mosaic была создана ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>5.</strong> Браузеры — это ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>6.</strong> Популярные браузеры - ... .</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-                <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <p class="mb-2"><strong>7.</strong> Поиск по тексту и по картинке, быстрый перевод на другой язык, переход с одной страницы на другую по гиперссылке и т.д. — это ....</p>
-                    <textarea class="form-control" rows="2" placeholder="Закончите предложение…"></textarea>
-                </li>
-        </ol>
-    </div>
-</div>
-
-<!-- 7. Вставьте вместо точек глаголы, данные под чертой, в нужной ф -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">7. Вставьте вместо точек глаголы, данные под чертой, в нужной форме.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">1.    Интернет — это глобальная компьютерная сеть, которая ... компьютеры
-     во всём мире в единое информационное пространство.
-     2.   Интернет ... свободным информационным пространством.
-     3.   Каждый узел сети должен ... своё уникальное имя – IР-адрес.
-     4.   В сети Интернет можно ... различную информацию, базы данных и
-     другое.
-     5.   ... много разных программ для просмотра браузеров.
-Найти, являться, существовать, объединять, иметь</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
+        <p>Когда ответил на все тесты — попробуй <strong>устно или письменно</strong> рассказать о теме урока, опираясь на блок «Краткая теория».</p>
+        <textarea class="form-control mb-3" rows="6" placeholder="Можешь написать здесь свой развёрнутый рассказ для тренировки…"></textarea>
+        <div class="text-center">
+            <button class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(18); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
+                Я разобрал тему
+            </button>
         </div>
     </div>
 </div>
 
-<!-- 8. Составьте план рассказа о сети Интернет, её особенностях. Ра -->
-<div class="card mb-5 border-success">
-    <div class="card-header bg-success text-white fw-bold">8. Составьте план рассказа о сети Интернет, её особенностях. Расскажите текст</div>
-    <div class="card-body">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">по плану.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="6" placeholder="Запишите ваш ответ для тренировки…"></textarea>
-        </div>
-    </div>
-</div>
 
-<!-- 9. Выполните задание. -->
-<div class="card mb-5">
-    <div class="card-header bg-light fw-bold">9. Выполните задание.</div>
-    <div class="card-body fs-5">
-<pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">С помощью любого браузера найдите информацию о вашем любимом фильме.
-     Материал сохраните C:\Students\n_grup\Internet.</pre>
-        <div class="mt-3">
-            <textarea class="form-control" rows="4" placeholder="Ваш ответ…"></textarea>
-        </div>
-    </div>
-</div>
+<script>
+// Общая проверка fill-in select'ов в текущей карточке
+window.checkFillIn = function(btn) {
+    const card = btn.closest('.card-body');
+    if (!card) return;
+    let correct = 0, total = 0;
+    card.querySelectorAll('select[data-correct]').forEach(sel => {
+        total++;
+        const fb = sel.parentElement.querySelector('.feedback');
+        sel.classList.remove('is-valid', 'is-invalid');
+        if (fb) fb.classList.remove('d-none', 'text-success', 'text-danger', 'text-warning');
+        if (!sel.value) {
+            if (fb) { fb.textContent = 'Не выбрано'; fb.classList.add('text-warning'); }
+        } else if (sel.value === sel.dataset.correct) {
+            sel.classList.add('is-valid');
+            if (fb) { fb.textContent = '✓ Правильно'; fb.classList.add('text-success'); }
+            correct++;
+        } else {
+            sel.classList.add('is-invalid');
+            if (fb) { fb.innerHTML = 'Неверно. Правильный: <strong>' + sel.dataset.correct + '</strong>'; fb.classList.add('text-danger'); }
+        }
+    });
+    let result = card.querySelector('.fill-in-result');
+    if (!result) {
+        result = document.createElement('div');
+        result.className = 'fill-in-result mt-3 fw-bold text-center';
+        card.appendChild(result);
+    }
+    result.className = 'fill-in-result mt-3 fw-bold text-center ' + (correct === total ? 'text-success' : 'text-danger');
+    result.textContent = correct === total
+        ? '✓ Все ' + total + ' ответов правильно!'
+        : 'Правильных: ' + correct + ' из ' + total;
+};
+
+// Показать/скрыть эталон ответа
+window.toggleAnswer = function(btn) {
+    const sample = btn.nextElementSibling;
+    if (sample.classList.contains('d-none')) {
+        sample.classList.remove('d-none');
+        btn.textContent = 'Скрыть эталон';
+    } else {
+        sample.classList.add('d-none');
+        btn.textContent = 'Показать эталон';
+    }
+};
+</script>
+
 
 </div>
