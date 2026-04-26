@@ -620,6 +620,8 @@ window.markLessonCompleted = function(lessonNum) {
 window.checkMCQ = function(btn) {
   const set = btn.closest('.mcq-set');
   if (!set) return;
+  // Карта латинских ключей → русские буквы (для отображения в фидбэке)
+  const ru = { a: 'а', b: 'б', c: 'в', d: 'г', e: 'д' };
   let correct = 0, total = 0;
   set.querySelectorAll('.question-block').forEach(block => {
     total++;
@@ -642,8 +644,9 @@ window.checkMCQ = function(btn) {
       correct++;
     } else {
       if (fb) {
+        const ruLabel = (ru[String(expected).toLowerCase()] || expected);
         fb.innerHTML = '<span class="text-danger">Неверно. Правильный: <strong>'
-          + String(expected).toUpperCase() + '</strong></span>'
+          + ruLabel + '</strong></span>'
           + (exp ? ' <span class="text-muted fw-normal">— ' + exp + '</span>' : '');
       }
       block.classList.add('border-danger');
