@@ -108,11 +108,14 @@ function initYesNoQuestions() {
         if (!selected) return;
 
         const val = (selected.value || '').trim().toLowerCase();
+        const exp = block.dataset.explanation || '';
         if (val === correct) {
-          feedback.textContent = 'Правильно!';
+          feedback.innerHTML = '<span class="text-success">Правильно!</span>'
+            + (exp ? ' <span class="text-muted fw-normal">— ' + exp + '</span>' : '');
           feedback.classList.add('text-success');
         } else {
-          feedback.textContent = `Неправильно. Правильно: ${block.dataset.answer}`;
+          feedback.innerHTML = '<span class="text-danger">Неправильно. Правильно: ' + block.dataset.answer + '</span>'
+            + (exp ? ' <span class="text-muted fw-normal">— ' + exp + '</span>' : '');
           feedback.classList.add('text-danger');
         }
       });
@@ -621,6 +624,7 @@ window.checkMCQ = function(btn) {
   set.querySelectorAll('.question-block').forEach(block => {
     total++;
     const expected = block.dataset.correct;
+    const exp = block.dataset.explanation || '';
     const checked = block.querySelector('input[type=radio]:checked');
     const fb = block.querySelector('.feedback');
     block.classList.remove('border-success','border-danger');
@@ -630,13 +634,17 @@ window.checkMCQ = function(btn) {
     if (!checked) {
       if (fb) { fb.textContent = 'Не выбран ответ'; fb.classList.add('text-warning'); }
     } else if (checked.value === expected) {
-      if (fb) { fb.textContent = 'Правильно!'; fb.classList.add('text-success'); }
+      if (fb) {
+        fb.innerHTML = '<span class="text-success">Правильно!</span>'
+          + (exp ? ' <span class="text-muted fw-normal">— ' + exp + '</span>' : '');
+      }
       block.classList.add('border-success');
       correct++;
     } else {
       if (fb) {
-        fb.innerHTML = 'Неверно. Правильный: <strong>' + String(expected).toUpperCase() + '</strong>';
-        fb.classList.add('text-danger');
+        fb.innerHTML = '<span class="text-danger">Неверно. Правильный: <strong>'
+          + String(expected).toUpperCase() + '</strong></span>'
+          + (exp ? ' <span class="text-muted fw-normal">— ' + exp + '</span>' : '');
       }
       block.classList.add('border-danger');
     }
@@ -651,4 +659,36 @@ window.checkMCQ = function(btn) {
   result.textContent = correct === total
     ? '✓ Все ' + total + ' вопросов правильно!'
     : 'Правильных ответов: ' + correct + ' из ' + total;
+};
+
+
+// ============================================================
+// checkAllYesNo — общая проверка yesno-блоков по кнопке «Проверить»
+// Использует data-answer и data-explanation на .yesno-question
+// ============================================================
+window.checkAllYesNo = function() {
+  document.querySelectorAll('.yesno-question').forEach(block => {
+    const correct = (block.dataset.answer || '').trim().toLowerCase();
+    const selected = block.querySelector('input[type=radio]:checked');
+    let fb = block.querySelector('.feedback');
+    if (!fb) {
+      fb = document.createElement('div');
+      fb.className = 'feedback mt-2 fw-bold';
+      block.appendChild(fb);
+    }
+    fb.classList.remove('d-none', 'text-success', 'text-danger', 'text-warning');
+    const exp = block.dataset.explanation || '';
+    if (!selected) {
+      fb.innerHTML = '<span class="text-warning">Выбери ответ</span>';
+      return;
+    }
+    const val = (selected.value || '').trim().toLowerCase();
+    if (val === correct) {
+      fb.innerHTML = '<span class="text-success">Правильно!</span>'
+        + (exp ? ' <span class="text-muted fw-normal">— ' + exp + '</span>' : '');
+    } else {
+      fb.innerHTML = '<span class="text-danger">Неправильно. Правильно: ' + block.dataset.answer + '</span>'
+        + (exp ? ' <span class="text-muted fw-normal">— ' + exp + '</span>' : '');
+    }
+  });
 };

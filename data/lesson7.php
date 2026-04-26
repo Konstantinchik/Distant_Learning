@@ -401,7 +401,7 @@
     <div class="card-body">
         <p class="text-muted mb-3">Прочитай каждое утверждение и нажми «да», если оно верно, «нет» — если неверно.</p>
         
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да">
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="именно так звучит определение в учебнике.">
                 <p class="fw-500 mb-2">1. Файл — это именованная область внешней памяти.</p>
                 <div class="btn-group btn-group-lg mb-2">
                     <input type="radio" class="btn-check" name="l7_yn1" value="да" id="l7_yn1_y">
@@ -411,7 +411,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет">
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="полное имя файла состоит из двух частей: имени и расширения.">
                 <p class="fw-500 mb-2">2. Полное имя файла состоит только из имени, без расширения.</p>
                 <div class="btn-group btn-group-lg mb-2">
                     <input type="radio" class="btn-check" name="l7_yn2" value="да" id="l7_yn2_y">
@@ -421,7 +421,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет">
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="корневой каталог только один — это имя диска. Остальные каталоги — вложенные.">
                 <p class="fw-500 mb-2">3. На внешнем носителе может быть несколько корневых каталогов.</p>
                 <div class="btn-group btn-group-lg mb-2">
                     <input type="radio" class="btn-check" name="l7_yn3" value="да" id="l7_yn3_y">
@@ -431,7 +431,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет">
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="драйверы относятся к системному уровню. На базовом уровне — BIOS.">
                 <p class="fw-500 mb-2">4. Драйверы относятся к программному обеспечению базового уровня.</p>
                 <div class="btn-group btn-group-lg mb-2">
                     <input type="radio" class="btn-check" name="l7_yn4" value="да" id="l7_yn4_y">
@@ -441,7 +441,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет">
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="нет" data-explanation="утилиты — это служебный уровень. Они проверяют и настраивают компьютер.">
                 <p class="fw-500 mb-2">5. Утилиты — это программы прикладного уровня.</p>
                 <div class="btn-group btn-group-lg mb-2">
                     <input type="radio" class="btn-check" name="l7_yn5" value="да" id="l7_yn5_y">
@@ -451,7 +451,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да">
+            <div class="yesno-question mb-3 p-3 border rounded bg-light" data-answer="да" data-explanation="BIOS — это базовая система ввода-вывода, она записана в ПЗУ и отвечает за начальную загрузку компьютера.">
                 <p class="fw-500 mb-2">6. BIOS относится к базовому уровню программного обеспечения.</p>
                 <div class="btn-group btn-group-lg mb-2">
                     <input type="radio" class="btn-check" name="l7_yn6" value="да" id="l7_yn6_y">
@@ -476,7 +476,7 @@
     <div class="card-body mcq-set">
         <p class="text-muted mb-3">В каждом вопросе только один правильный ответ.</p>
         
-            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b">
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="файл — это именно именованная область внешней памяти, где компьютер хранит данные.">
                 <p class="fw-bold mb-2">1. Что такое файл?</p>
                 
                 <div class="form-check">
@@ -497,7 +497,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b">
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="имя — это информация для пользователя, а расширение — для компьютера: оно подсказывает, какой программой открыть файл.">
                 <p class="fw-bold mb-2">2. Какая часть имени файла нужна компьютеру (для выбора программы)?</p>
                 
                 <div class="form-check">
@@ -518,7 +518,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="c">
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="c" data-explanation="четыре уровня: базовый, системный, служебный, прикладной.">
                 <p class="fw-bold mb-2">3. На сколько уровней делится программное обеспечение компьютера?</p>
                 
                 <div class="form-check">
@@ -539,7 +539,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="d">
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="d" data-explanation="пирамида ПО снизу вверх: базовый → системный → служебный → прикладной. Базовый — это BIOS.">
                 <p class="fw-bold mb-2">4. Какой уровень программного обеспечения самый низкий?</p>
                 
                 <div class="form-check">
@@ -560,7 +560,7 @@
                 </div>
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
-            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b">
+            <div class="question-block mb-4 p-3 border rounded bg-light" data-correct="b" data-explanation="драйверы — это системные программы, обеспечивающие взаимодействие с устройствами.">
                 <p class="fw-bold mb-2">5. К какому уровню программного обеспечения относятся драйверы устройств?</p>
                 
                 <div class="form-check">
