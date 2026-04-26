@@ -5,6 +5,7 @@
 ├── header.php
 ├── footer.php
 ├── structure.txt
+├── .gitignore             ← исключения для git (видео, архивы, служебное)
 │
 ├── assets/
 │   │
@@ -18,10 +19,12 @@
 │   ├── css/
 │   │   ├── bootstrap.min.css
 │   │   ├── bootstrap.min.css.map
-│   │   └── style.css                          ← минималистичный дизайн в стиле ТГТУ
+│   │   ├── style.css                          ← минималистичный дизайн в стиле ТГТУ
+│   │   └── pascal-trainer.css                 ← подсветка Pascal + стили мини-тренажёров (только для уроков 19-24)
 │   │
 │   ├── js/
-│   │   ├── main.js                            ← вся интерактивность
+│   │   ├── main.js                            ← общая интерактивность (TTS, drag&drop, проверки)
+│   │   ├── pascal-trainer.js                  ← подсветка Pascal + интерпретатор + 4 типа тренажёров (только для уроков 19-24)
 │   │   ├── bootstrap.bundle.js
 │   │   ├── bootstrap.bundle.js.map
 │   │   ├── bootstrap.bundle.min.js
@@ -48,13 +51,19 @@
 │       │   ├── Autocad2.mp4
 │       │   └── Autocad3.mp4
 │       │
-│       └── pre_test/                          ← тестовые/черновые видео (не для прода)
+│       ├── pre_test/                          ← тестовые/черновые видео (не для прода)
+│       │
+│       └── video_list.txt                     ← перечень видео
 │
 └── data/
     │
     ├── lesson1.php
     │   ...
-    ├── lesson24.php                           ← весь текст занятий в структурированном виде
+    ├── lesson18.php                           ← занятия 1-18: словарь + текст из рабочей тетради
+    │
+    ├── lesson19.php                           ← занятия 19-24: Pascal с интерактивными мини-тренажёрами
+    │   ...                                       (▶ Запустить, Что выведет?, Заполни пропуск, Расставь по порядку)
+    ├── lesson24.php
     │
     └── extra-lessons/
         ├── lesson-autocad.php
