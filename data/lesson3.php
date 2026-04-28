@@ -335,7 +335,7 @@
         </div>
 
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg" onclick="checkAdjTask3()">Проверить</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="checkAdjTask3()">Проверить</button>
         </div>
     </div>
 </div>
@@ -356,26 +356,26 @@
         </p>
 
         <div class="mb-4 p-3 border rounded bg-light" id="l3task4-wordbank">
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="Передача">Передача</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сканирование">сканирование</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="вводимый">вводимый</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сохранить">сохранить</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="обрабатывать">обрабатывать</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="вывод">вывод</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сканер">сканер</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="передавать">передавать</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="обрабатываемый">обрабатываемый</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="ввод">ввод</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="выводить">выводить</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="работа">работа</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="хранение">хранение</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="передаваемый">передаваемый</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сканировать">сканировать</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="выводимый">выводимый</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="вводить">вводить</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="обработка">обработка</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="хранить">хранить</button>
-            <button class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="работать">работать</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="Передача">Передача</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сканирование">сканирование</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="вводимый">вводимый</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сохранить">сохранить</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="обрабатывать">обрабатывать</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="вывод">вывод</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сканер">сканер</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="передавать">передавать</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="обрабатываемый">обрабатываемый</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="ввод">ввод</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="выводить">выводить</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="работа">работа</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="хранение">хранение</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="передаваемый">передаваемый</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сканировать">сканировать</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="выводимый">выводимый</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="вводить">вводить</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="обработка">обработка</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="хранить">хранить</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="работать">работать</button>
         </div>
 
         <div class="row g-3">
@@ -411,7 +411,7 @@
         </div>
 
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg" onclick="checkL3Task4()">Проверить задание 4</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="checkL3Task4()">Проверить задание 4</button>
         </div>
 
         <div id="l3task4-status" class="mt-3"></div>
@@ -678,7 +678,7 @@
         </ol>
 
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg px-5" onclick="checkL3Task8()">
+            <button type="button" class="btn btn-primary btn-lg px-5" onclick="checkL3Task8()">
                 Проверить задание 8
             </button>
         </div>
@@ -747,7 +747,7 @@ function checkL3Task8() {
             </div>`;
     }
 
-    status.scrollIntoView({ behavior: "smooth" });
+    window.__scrollToCheck(status);
 }
 </script>
 <!--Конец Задания 8-->
@@ -971,7 +971,7 @@ function checkL3Task8() {
         </ol>
 
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkL3Task9()">Проверить задание 9</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkL3Task9()">Проверить задание 9</button>
         </div>
 
         <div id="l3task9-status" class="mt-3"></div>
@@ -1036,7 +1036,7 @@ function checkL3Task9() {
         status.innerHTML = `<div class="alert alert-info text-center">Правильных ответов: ${correct} из ${total}. Можно попробовать ещё!</div>`;
     }
 
-    status.scrollIntoView({ behavior: "smooth" });
+    window.__scrollToCheck(status);
 }
 </script>
 <!--Конец задания 9-->
@@ -1206,7 +1206,7 @@ function checkL3Task9() {
         </ol>
 
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg px-5" onclick="checkL3Task10()">
+            <button type="button" class="btn btn-primary btn-lg px-5" onclick="checkL3Task10()">
                 Проверить задание 10
             </button>
         </div>
@@ -1309,7 +1309,7 @@ function checkL3Task10() {
             </div>`;
     }
 
-    status.scrollIntoView({behavior:'smooth'});
+    window.__scrollToCheck(status);
 }
 
 // запускаем инициализацию после загрузки DOM
@@ -1453,7 +1453,7 @@ document.addEventListener('DOMContentLoaded', initL3Task10);
         </div>
 
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkL3Task11()">
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkL3Task11()">
                 Проверить задание 11
             </button>
         </div>
@@ -1644,7 +1644,7 @@ function checkL3Task11() {
             </div>`;
     }
 
-    status.scrollIntoView({behavior: 'smooth'});
+    window.__scrollToCheck(status);
 }
 </script>
 <!-- Конец задания 11 -->
@@ -1731,7 +1731,7 @@ function checkL3Task11() {
         </div>
 
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkL3Task12()">
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkL3Task12()">
                 Проверить задание 12
             </button>
         </div>
@@ -1929,7 +1929,7 @@ function checkL3Task12() {
             </div>`;
     }
 
-    status.scrollIntoView({behavior:'smooth'});
+    window.__scrollToCheck(status);
 }
 </script>
 <!-- Конец задания 12 -->

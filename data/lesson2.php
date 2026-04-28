@@ -428,10 +428,10 @@
                 </tr>
 
                 <tr>
-                    <td class="fs-5">Это… </td>
-                    <td class="fs-5">Это… </td>
-                    <td class="fs-5">Это… </td>
-                    <td class="fs-5">Это… </td>
+                    <td class="fs-5"><button type="button" class="btn btn-sm btn-outline-primary me-2 speak-btn" data-text="Это системный блок" title="Прослушать">▶</button>Это…</td>
+                    <td class="fs-5"><button type="button" class="btn btn-sm btn-outline-primary me-2 speak-btn" data-text="Это внешняя память" title="Прослушать">▶</button>Это…</td>
+                    <td class="fs-5"><button type="button" class="btn btn-sm btn-outline-primary me-2 speak-btn" data-text="Это процессор" title="Прослушать">▶</button>Это…</td>
+                    <td class="fs-5"><button type="button" class="btn btn-sm btn-outline-primary me-2 speak-btn" data-text="Это внутренняя память" title="Прослушать">▶</button>Это…</td>
                 </tr>
 
             </table>
@@ -1091,7 +1091,7 @@
         </ol>
 
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg px-5" onclick="checkRootsL2Task3()">
+            <button type="button" class="btn btn-primary btn-lg px-5" onclick="checkRootsL2Task3()">
                 Проверить задание 3
             </button>
         </div>
@@ -1139,7 +1139,7 @@ function checkRootsL2Task3() {
     } else {
         result.innerHTML = `<div class="alert alert-warning text-center">Ошибок: ${errors}. Попробуйте ещё раз.</div>`;
     }
-    result.scrollIntoView({behavior: 'smooth'});
+    window.__scrollToCheck(result);
 }
 </script>
 <!--Конец Задания 3-->
@@ -1330,7 +1330,7 @@ function checkRootsL2Task3() {
 
         <!-- Кнопка проверки всех ответов -->
         <div class="text-center">
-            <button class="btn btn-primary btn-lg px-5" onclick="checkAllYesNo_L2()">Проверить все ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-5" onclick="checkAllYesNo_L2()">Проверить все ответы</button>
         </div>
     </div>
 </div>
@@ -1496,7 +1496,7 @@ function checkAllYesNo_L2() {
 
         <!-- Кнопка -->
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkL2Task6Select()">
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkL2Task6Select()">
                 Проверить ответы
             </button>
         </div>
@@ -1544,7 +1544,7 @@ function checkL2Task6Select() {
             Правильных ответов: ${correctCount} из ${total}. Попробуйте ещё раз.
         </div>`;
     }
-    status.scrollIntoView({behavior: 'smooth'});
+    window.__scrollToCheck(status);
 }
 </script>
 <!--Конец задания 6-->
@@ -1564,7 +1564,7 @@ function checkL2Task6Select() {
     <div class="card-body fs-5">
 
         <!-- Текст задания 4 для наглядности -->
-        <button class="btn btn-outline-secondary mb-3" 
+        <button type="button" class="btn btn-outline-secondary mb-3" 
                 type="button" 
                 data-bs-toggle="collapse" 
                 data-bs-target="#l2task7-text">
@@ -1739,7 +1739,7 @@ function checkL2Task6Select() {
 
         <!-- Кнопка -->
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg px-5" onclick="checkL2Task7()">
+            <button type="button" class="btn btn-primary btn-lg px-5" onclick="checkL2Task7()">
                 Проверить задание 7
             </button>
         </div>
@@ -1817,7 +1817,7 @@ function checkL2Task7() {
         `;
     }
 
-    result.scrollIntoView({behavior: 'smooth'});
+    window.__scrollToCheck(result);
 }
 
 </script>
@@ -1928,7 +1928,7 @@ function checkL2Task7() {
 
         <!-- Кнопка -->
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg px-5" onclick="checkL2Task8()">
+            <button type="button" class="btn btn-primary btn-lg px-5" onclick="checkL2Task8()">
                 Проверить ответы
             </button>
         </div>
@@ -2010,7 +2010,7 @@ function checkL2Task8() {
             </div>`;
     }
 
-    status.scrollIntoView({behavior: 'smooth'});
+    window.__scrollToCheck(status);
 }
 </script>
 <!--Конец задания 8-->
@@ -2112,7 +2112,7 @@ function checkL2Task8() {
 
         <!-- Кнопка проверки -->
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg px-5" onclick="checkL2Task9()">
+            <button type="button" class="btn btn-primary btn-lg px-5" onclick="checkL2Task9()">
                 Проверить задание 9
             </button>
         </div>
@@ -2192,7 +2192,7 @@ function checkL2Task9() {
             </div>`;
     }
 
-    status.scrollIntoView({behavior: 'smooth'});
+    window.__scrollToCheck(status);
 }
 </script>
 <!--Конец задания 9-->

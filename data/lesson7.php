@@ -447,7 +447,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -486,7 +486,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -518,7 +518,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -571,7 +571,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -588,7 +588,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">создание</td>
                     <td>
-                        <select class="form-select" data-correct="создать">
+                        <select class="form-select" data-no-instant data-correct="создать">
                             <option value="">— корень —</option>
                             <option value="создать">создать</option><option value="копировать">копировать</option><option value="хранить">хранить</option><option value="расширить">расширить</option>
                         </select>
@@ -597,7 +597,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">копирование</td>
                     <td>
-                        <select class="form-select" data-correct="копировать">
+                        <select class="form-select" data-no-instant data-correct="копировать">
                             <option value="">— корень —</option>
                             <option value="удалить">удалить</option><option value="копировать">копировать</option><option value="переименовать">переименовать</option><option value="загрузить">загрузить</option>
                         </select>
@@ -606,7 +606,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">переименованный</td>
                     <td>
-                        <select class="form-select" data-correct="переименовать">
+                        <select class="form-select" data-no-instant data-correct="переименовать">
                             <option value="">— корень —</option>
                             <option value="переименовать">переименовать</option><option value="сохранить">сохранить</option><option value="удалить">удалить</option><option value="обеспечить">обеспечить</option>
                         </select>
@@ -615,7 +615,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">удаление</td>
                     <td>
-                        <select class="form-select" data-correct="удалить">
+                        <select class="form-select" data-no-instant data-correct="удалить">
                             <option value="">— корень —</option>
                             <option value="удалить">удалить</option><option value="обеспечить">обеспечить</option><option value="автоматизировать">автоматизировать</option><option value="хранить">хранить</option>
                         </select>
@@ -624,7 +624,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">обеспечение</td>
                     <td>
-                        <select class="form-select" data-correct="обеспечить">
+                        <select class="form-select" data-no-instant data-correct="обеспечить">
                             <option value="">— корень —</option>
                             <option value="обеспечить">обеспечить</option><option value="хранить">хранить</option><option value="удалить">удалить</option><option value="пользоваться">пользоваться</option>
                         </select>
@@ -633,7 +633,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">пользователь</td>
                     <td>
-                        <select class="form-select" data-correct="пользоваться">
+                        <select class="form-select" data-no-instant data-correct="пользоваться">
                             <option value="">— корень —</option>
                             <option value="хранить">хранить</option><option value="пользоваться">пользоваться</option><option value="обеспечить">обеспечить</option><option value="загрузить">загрузить</option>
                         </select>
@@ -642,7 +642,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">загрузка</td>
                     <td>
-                        <select class="form-select" data-correct="загрузить">
+                        <select class="form-select" data-no-instant data-correct="загрузить">
                             <option value="">— корень —</option>
                             <option value="сохранить">сохранить</option><option value="удалить">удалить</option><option value="загрузить">загрузить</option><option value="копировать">копировать</option>
                         </select>
@@ -651,7 +651,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">файловый</td>
                     <td>
-                        <select class="form-select" data-correct="файл">
+                        <select class="form-select" data-no-instant data-correct="файл">
                             <option value="">— корень —</option>
                             <option value="хранить">хранить</option><option value="файл">файл</option><option value="пользоваться">пользоваться</option><option value="удалить">удалить</option>
                         </select>
@@ -660,7 +660,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -679,7 +679,7 @@
             <p class="mb-2 text-muted small">Составь предложения по образцу:</p>
             <p class="mb-1">— Драйверы — программное обеспечение системного уровня.</p><p class="mb-1">— Средства для создания приложений — программное обеспечение прикладного уровня.</p><p class="mb-1">— Пакеты прикладных программ — программное обеспечение прикладного уровня.</p>
             <textarea class="form-control mt-2" rows="3" placeholder="Запиши свои предложения здесь…"></textarea>
-            <button class="btn btn-sm btn-outline-secondary mt-2" onclick="toggleAnswer(this)">Показать варианты ответов</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary mt-2" onclick="toggleAnswer(this)">Показать варианты ответов</button>
             <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                 <strong class="text-success">Возможные предложения:</strong>
                 <p class="mb-1">• Драйверы входят в состав программного обеспечения системного уровня.</p><p class="mb-1">• Средства для создания приложений входят в состав программного обеспечения прикладного уровня.</p><p class="mb-1">• Пакеты прикладных программ входят в состав программного обеспечения прикладного уровня.</p>
@@ -691,7 +691,7 @@
             <p class="mb-2 text-muted small">Составь предложения по образцу:</p>
             <p class="mb-1">— Программы системного уровня — программы базового уровня.</p><p class="mb-1">— Программы служебного уровня — программы системного уровня.</p><p class="mb-1">— Каждый уровень программного обеспечения — программы предшествующих уровней.</p>
             <textarea class="form-control mt-2" rows="3" placeholder="Запиши свои предложения здесь…"></textarea>
-            <button class="btn btn-sm btn-outline-secondary mt-2" onclick="toggleAnswer(this)">Показать варианты ответов</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary mt-2" onclick="toggleAnswer(this)">Показать варианты ответов</button>
             <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                 <strong class="text-success">Возможные предложения:</strong>
                 <p class="mb-1">• Программы системного уровня взаимодействуют с программами базового уровня.</p><p class="mb-1">• Программы служебного уровня взаимодействуют с программами системного уровня.</p><p class="mb-1">• Каждый уровень программного обеспечения взаимодействует с программами предшествующих уровней.</p>
@@ -703,7 +703,7 @@
             <p class="mb-2 text-muted small">Составь предложения по образцу:</p>
             <p class="mb-1">— Задача программ системного уровня — пользователь.</p><p class="mb-1">— Задача программ системного уровня — устройства компьютера.</p><p class="mb-1">— Задача ядра операционной системы — человек, компьютер.</p>
             <textarea class="form-control mt-2" rows="3" placeholder="Запиши свои предложения здесь…"></textarea>
-            <button class="btn btn-sm btn-outline-secondary mt-2" onclick="toggleAnswer(this)">Показать варианты ответов</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary mt-2" onclick="toggleAnswer(this)">Показать варианты ответов</button>
             <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                 <strong class="text-success">Возможные предложения:</strong>
                 <p class="mb-1">• Задача программ системного уровня — взаимодействие с пользователем.</p><p class="mb-1">• Задача программ системного уровня — взаимодействие с устройствами компьютера.</p><p class="mb-1">• Задача ядра операционной системы — взаимодействие человека с компьютером.</p>
@@ -803,7 +803,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
         </div>
     </div>
 </div>
@@ -923,7 +923,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
         </div>
     </div>
 </div>
@@ -939,24 +939,24 @@
         <ol class="list-unstyled mb-0">
             
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">1. Полное имя файла имеет две части — имя и <select class="form-select d-inline-block w-auto mx-1" data-correct="расширение"><option value="">— выбери —</option><option value="размер">размер</option><option value="расширение">расширение</option><option value="путь">путь</option><option value="тип">тип</option></select>.</span>
+                    <span class="fs-5">1. Полное имя файла имеет две части — имя и <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="расширение"><option value="">— выбери —</option><option value="размер">размер</option><option value="расширение">расширение</option><option value="путь">путь</option><option value="тип">тип</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">2. На внешнем носителе всегда есть только один <select class="form-select d-inline-block w-auto mx-1" data-correct="корневой"><option value="">— выбери —</option><option value="вложенный">вложенный</option><option value="системный">системный</option><option value="корневой">корневой</option><option value="временный">временный</option></select> каталог.</span>
+                    <span class="fs-5">2. На внешнем носителе всегда есть только один <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="корневой"><option value="">— выбери —</option><option value="вложенный">вложенный</option><option value="системный">системный</option><option value="корневой">корневой</option><option value="временный">временный</option></select> каталог.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">3. Программы для проверки и настройки компьютера называются <select class="form-select d-inline-block w-auto mx-1" data-correct="утилиты"><option value="">— выбери —</option><option value="драйверы">драйверы</option><option value="утилиты">утилиты</option><option value="браузеры">браузеры</option><option value="редакторы">редакторы</option></select>.</span>
+                    <span class="fs-5">3. Программы для проверки и настройки компьютера называются <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="утилиты"><option value="">— выбери —</option><option value="драйверы">драйверы</option><option value="утилиты">утилиты</option><option value="браузеры">браузеры</option><option value="редакторы">редакторы</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">4. Базовое программное обеспечение записано в микросхеме <select class="form-select d-inline-block w-auto mx-1" data-correct="ПЗУ"><option value="">— выбери —</option><option value="оперативной памяти">оперативной памяти</option><option value="процессора">процессора</option><option value="ПЗУ">ПЗУ</option><option value="видеокарты">видеокарты</option></select>.</span>
+                    <span class="fs-5">4. Базовое программное обеспечение записано в микросхеме <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="ПЗУ"><option value="">— выбери —</option><option value="оперативной памяти">оперативной памяти</option><option value="процессора">процессора</option><option value="ПЗУ">ПЗУ</option><option value="видеокарты">видеокарты</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
         </ol>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -976,7 +976,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">1. Что такое файл?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Файл — это именованная область внешней памяти.
                     </div>
@@ -984,7 +984,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">2. Какие основные операции с файлами?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Создание, переименование, копирование, перемещение, удаление файлов.
                     </div>
@@ -992,7 +992,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">3. На какие уровни делится программное обеспечение компьютера?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Базовый, системный, служебный, прикладной.
                     </div>
@@ -1000,7 +1000,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">4. Что такое утилиты и какая их задача?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Утилиты — это программы служебного уровня. Их задача — автоматизация работ по проверке и настройке компьютерной системы, расширение и улучшение функций системных программ.
                     </div>
@@ -1008,7 +1008,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">5. Что такое пакет прикладных программ?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Пакет прикладных программ — это комплекс программ для решения задач пользователя.
                     </div>
@@ -1027,7 +1027,7 @@
         <p>Когда ответил на все тесты — попробуй <strong>устно или письменно</strong> рассказать о теме урока, опираясь на блок «Краткая теория».</p>
         <textarea class="form-control mb-3" rows="6" placeholder="Можешь написать здесь свой развёрнутый рассказ для тренировки…"></textarea>
         <div class="text-center">
-            <button class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(7); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
+            <button type="button" class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(7); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
                 Я разобрал тему
             </button>
         </div>

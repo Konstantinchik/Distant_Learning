@@ -194,7 +194,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -211,7 +211,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">сетевой</td>
                     <td>
-                        <select class="form-select" data-correct="сеть">
+                        <select class="form-select" data-no-instant data-correct="сеть">
                             <option value="">— корень —</option>
                             <option value="сеть">сеть</option><option value="сено">сено</option><option value="север">север</option><option value="середина">середина</option>
                         </select>
@@ -220,7 +220,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">информационный</td>
                     <td>
-                        <select class="form-select" data-correct="информация">
+                        <select class="form-select" data-no-instant data-correct="информация">
                             <option value="">— корень —</option>
                             <option value="информация">информация</option><option value="использование">использование</option><option value="изменение">изменение</option><option value="издание">издание</option>
                         </select>
@@ -229,7 +229,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">цифровой</td>
                     <td>
-                        <select class="form-select" data-correct="цифра">
+                        <select class="form-select" data-no-instant data-correct="цифра">
                             <option value="">— корень —</option>
                             <option value="цифра">цифра</option><option value="цикл">цикл</option><option value="центр">центр</option><option value="цвет">цвет</option>
                         </select>
@@ -238,7 +238,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">компьютерный</td>
                     <td>
-                        <select class="form-select" data-correct="компьютер">
+                        <select class="form-select" data-no-instant data-correct="компьютер">
                             <option value="">— корень —</option>
                             <option value="компьютер">компьютер</option><option value="команда">команда</option><option value="комплекс">комплекс</option><option value="коробка">коробка</option>
                         </select>
@@ -247,7 +247,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -329,7 +329,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
         </div>
     </div>
 </div>
@@ -428,7 +428,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
         </div>
     </div>
 </div>
@@ -444,20 +444,20 @@
         <ol class="list-unstyled mb-0">
             
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">1. Уникальное имя узла в Интернете — это <select class="form-select d-inline-block w-auto mx-1" data-correct="IP"><option value="">— выбери —</option><option value="MAC">MAC</option><option value="IP">IP</option><option value="HTTP">HTTP</option><option value="URL">URL</option></select>-адрес.</span>
+                    <span class="fs-5">1. Уникальное имя узла в Интернете — это <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="IP"><option value="">— выбери —</option><option value="MAC">MAC</option><option value="IP">IP</option><option value="HTTP">HTTP</option><option value="URL">URL</option></select>-адрес.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">2. Программа для просмотра веб-страниц — это <select class="form-select d-inline-block w-auto mx-1" data-correct="браузер"><option value="">— выбери —</option><option value="почта">почта</option><option value="браузер">браузер</option><option value="файл">файл</option><option value="редактор">редактор</option></select>.</span>
+                    <span class="fs-5">2. Программа для просмотра веб-страниц — это <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="браузер"><option value="">— выбери —</option><option value="почта">почта</option><option value="браузер">браузер</option><option value="файл">файл</option><option value="редактор">редактор</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">3. Прообраз Интернета — американская сеть <select class="form-select d-inline-block w-auto mx-1" data-correct="ARPAnet"><option value="">— выбери —</option><option value="ARPAnet">ARPAnet</option><option value="Bitnet">Bitnet</option><option value="Usenet">Usenet</option><option value="Skynet">Skynet</option></select>.</span>
+                    <span class="fs-5">3. Прообраз Интернета — американская сеть <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="ARPAnet"><option value="">— выбери —</option><option value="ARPAnet">ARPAnet</option><option value="Bitnet">Bitnet</option><option value="Usenet">Usenet</option><option value="Skynet">Skynet</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
         </ol>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -477,7 +477,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">1. Что такое Интернет?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Глобальная транснациональная компьютерная сеть, объединяющая компьютеры всего мира в единое информационное пространство.
                     </div>
@@ -485,7 +485,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">2. Что такое IP-адрес?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Уникальное имя узла в пространстве сети Интернет. Бывают фиксированные (постоянные) и временные.
                     </div>
@@ -493,7 +493,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">3. Чем числовой IP-адрес отличается от доменного?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Числовой адрес понятнее компьютеру, доменный — человеку. Они дополняют друг друга.
                     </div>
@@ -501,7 +501,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">4. Назовите примеры браузеров.</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Internet Explorer, Edge, Opera, Mozilla Firefox, Google Chrome, Yandex Browser.
                     </div>
@@ -520,7 +520,7 @@
         <p>Когда ответил на все тесты — попробуй <strong>устно или письменно</strong> рассказать о теме урока, опираясь на блок «Краткая теория».</p>
         <textarea class="form-control mb-3" rows="6" placeholder="Можешь написать здесь свой развёрнутый рассказ для тренировки…"></textarea>
         <div class="text-center">
-            <button class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(18); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
+            <button type="button" class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(18); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
                 Я разобрал тему
             </button>
         </div>

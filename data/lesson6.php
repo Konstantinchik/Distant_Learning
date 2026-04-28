@@ -435,7 +435,7 @@
     </div>
 
     <div class="text-center mt-4">
-      <button class="btn btn-primary btn-lg px-4" onclick="checkL6Task2()">Проверить задание 2</button>
+      <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkL6Task2()">Проверить задание 2</button>
     </div>
 
     <div id="l6task2-status" class="mt-3"></div>
@@ -538,7 +538,7 @@ function checkL6Task2() {
   } else {
     status.innerHTML = `<div class="alert alert-info text-center">Правильно: ${correct} из ${total}. Нажмите на слово в группе, чтобы вернуть его и попробовать ещё раз.</div>`;
   }
-  status.scrollIntoView({behavior:'smooth'});
+  window.__scrollToCheck(status);
 }
 </script>
 
@@ -1430,7 +1430,7 @@ function checkL6Task2() {
     </div>
 
     <div class="text-center mt-4">
-      <button class="btn btn-primary btn-lg px-4" type="button" onclick="checkL6Task8()">
+      <button type="button" class="btn btn-primary btn-lg px-4" type="button" onclick="checkL6Task8()">
         Проверить задание 8
       </button>
     </div>
@@ -1519,7 +1519,7 @@ function checkL6Task8() {
     </div>`;
   }
 
-  status.scrollIntoView({behavior:'smooth', block:'start'});
+  window.__scrollToCheck(status);
 }
 </script>
 
@@ -1613,7 +1613,7 @@ function checkL6Task8() {
             а какие ещё можно добавить. Неверные строки не «ругаем» — просто пометим как «не найдено в списке».
           </p>
 
-          <button class="btn btn-primary" type="button" onclick="checkL6Task9()">
+          <button type="button" class="btn btn-primary" type="button" onclick="checkL6Task9()">
             Проверить задание 9
           </button>
 
@@ -1723,7 +1723,7 @@ function checkL6Task9() {
     </div>
   `;
 
-  status.scrollIntoView({behavior:'smooth', block:'start'});
+  window.__scrollToCheck(status);
 }
 </script>
 
@@ -2845,7 +2845,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 
     <div class="text-center mt-3">
-      <button class="btn btn-primary btn-lg" type="button" onclick="checkTask17()">
+      <button type="button" class="btn btn-primary btn-lg" type="button" onclick="checkTask17()">
         Проверить (мягко)
       </button>
     </div>
@@ -2902,7 +2902,7 @@ function checkTask17() {
     status.innerHTML = `<div class="alert alert-info text-center mb-0">Верно: ${correct} из ${inputs.length}. Исправьте отмеченные поля.</div>`;
   }
 
-  status.scrollIntoView({behavior:'smooth'});
+  window.__scrollToCheck(status);
 }
 </script>
 <!-- Конец задания 17 -->
@@ -2955,7 +2955,7 @@ function checkTask17() {
     </div>
 
     <div class="text-center mt-3">
-      <button class="btn btn-primary btn-lg" type="button" onclick="checkTask18()">
+      <button type="button" class="btn btn-primary btn-lg" type="button" onclick="checkTask18()">
         Проверить (мягко)
       </button>
     </div>
@@ -3012,7 +3012,7 @@ function checkTask18() {
     status.innerHTML = `<div class="alert alert-info text-center mb-0">Верно: ${correct} из ${inputs.length}. Исправьте отмеченные поля.</div>`;
   }
 
-  status.scrollIntoView({behavior:'smooth'});
+  window.__scrollToCheck(status);
 }
 </script>
 <!-- Конец задания 18 -->

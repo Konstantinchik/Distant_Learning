@@ -413,7 +413,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -430,7 +430,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">графический</td>
                     <td>
-                        <select class="form-select" data-correct="графика">
+                        <select class="form-select" data-no-instant data-correct="графика">
                             <option value="">— корень —</option>
                             <option value="графика">графика</option><option value="группа">группа</option><option value="грань">грань</option><option value="главный">главный</option>
                         </select>
@@ -439,7 +439,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">изображение</td>
                     <td>
-                        <select class="form-select" data-correct="образ">
+                        <select class="form-select" data-no-instant data-correct="образ">
                             <option value="">— корень —</option>
                             <option value="образ">образ</option><option value="источник">источник</option><option value="издание">издание</option><option value="известие">известие</option>
                         </select>
@@ -448,7 +448,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">растровый</td>
                     <td>
-                        <select class="form-select" data-correct="растр">
+                        <select class="form-select" data-no-instant data-correct="растр">
                             <option value="">— корень —</option>
                             <option value="растр">растр</option><option value="расти">расти</option><option value="ракета">ракета</option><option value="разработка">разработка</option>
                         </select>
@@ -457,7 +457,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">векторный</td>
                     <td>
-                        <select class="form-select" data-correct="вектор">
+                        <select class="form-select" data-no-instant data-correct="вектор">
                             <option value="">— корень —</option>
                             <option value="вектор">вектор</option><option value="версия">версия</option><option value="ветка">ветка</option><option value="ввод">ввод</option>
                         </select>
@@ -466,7 +466,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -548,7 +548,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
         </div>
     </div>
 </div>
@@ -647,7 +647,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
         </div>
     </div>
 </div>
@@ -663,20 +663,20 @@
         <ol class="list-unstyled mb-0">
             
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">1. Изображения, состоящие из точек, обрабатывают в <select class="form-select d-inline-block w-auto mx-1" data-correct="растровых"><option value="">— выбери —</option><option value="векторных">векторных</option><option value="растровых">растровых</option><option value="3D">3D</option><option value="текстовых">текстовых</option></select> редакторах.</span>
+                    <span class="fs-5">1. Изображения, состоящие из точек, обрабатывают в <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="растровых"><option value="">— выбери —</option><option value="векторных">векторных</option><option value="растровых">растровых</option><option value="3D">3D</option><option value="текстовых">текстовых</option></select> редакторах.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">2. Программа Paint — это <select class="form-select d-inline-block w-auto mx-1" data-correct="растровый"><option value="">— выбери —</option><option value="векторный">векторный</option><option value="растровый">растровый</option><option value="3D">3D</option><option value="текстовый">текстовый</option></select> редактор.</span>
+                    <span class="fs-5">2. Программа Paint — это <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="растровый"><option value="">— выбери —</option><option value="векторный">векторный</option><option value="растровый">растровый</option><option value="3D">3D</option><option value="текстовый">текстовый</option></select> редактор.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">3. Для рекламы и оформления полиграфии чаще используют <select class="form-select d-inline-block w-auto mx-1" data-correct="векторные"><option value="">— выбери —</option><option value="растровые">растровые</option><option value="векторные">векторные</option><option value="3D">3D</option><option value="табличные">табличные</option></select> редакторы.</span>
+                    <span class="fs-5">3. Для рекламы и оформления полиграфии чаще используют <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="векторные"><option value="">— выбери —</option><option value="растровые">растровые</option><option value="векторные">векторные</option><option value="3D">3D</option><option value="табличные">табличные</option></select> редакторы.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
         </ol>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -696,7 +696,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">1. Назовите три группы графических редакторов.</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Растровые, векторные, 3D-редакторы.
                     </div>
@@ -704,7 +704,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">2. Чем отличается растровый редактор от векторного?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> В растровом редакторе изображение состоит из точек (пикселей), в векторном — из линий, описываемых математическими формулами.
                     </div>
@@ -712,7 +712,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">3. Для чего используются 3D-редакторы?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Для создания и обработки трёхмерных изображений: моделей сцены, проекций, поверхностей с разными визуальными свойствами.
                     </div>
@@ -720,7 +720,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">4. Приведите примеры графических редакторов разных типов.</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Растровые: Paint, Photoshop. Векторные: CorelDraw, Illustrator. 3D: 3ds Max, Blender.
                     </div>
@@ -739,7 +739,7 @@
         <p>Когда ответил на все тесты — попробуй <strong>устно или письменно</strong> рассказать о теме урока, опираясь на блок «Краткая теория».</p>
         <textarea class="form-control mb-3" rows="6" placeholder="Можешь написать здесь свой развёрнутый рассказ для тренировки…"></textarea>
         <div class="text-center">
-            <button class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(14); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
+            <button type="button" class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(14); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
                 Я разобрал тему
             </button>
         </div>

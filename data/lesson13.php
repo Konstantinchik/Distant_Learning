@@ -278,7 +278,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -295,7 +295,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">операционный</td>
                     <td>
-                        <select class="form-select" data-correct="операция">
+                        <select class="form-select" data-no-instant data-correct="операция">
                             <option value="">— корень —</option>
                             <option value="операция">операция</option><option value="оперативный">оперативный</option><option value="основной">основной</option><option value="объект">объект</option>
                         </select>
@@ -304,7 +304,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">системный</td>
                     <td>
-                        <select class="form-select" data-correct="система">
+                        <select class="form-select" data-no-instant data-correct="система">
                             <option value="">— корень —</option>
                             <option value="система">система</option><option value="сила">сила</option><option value="состав">состав</option><option value="свойство">свойство</option>
                         </select>
@@ -313,7 +313,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">графический</td>
                     <td>
-                        <select class="form-select" data-correct="графика">
+                        <select class="form-select" data-no-instant data-correct="графика">
                             <option value="">— корень —</option>
                             <option value="графика">графика</option><option value="группа">группа</option><option value="грань">грань</option><option value="главный">главный</option>
                         </select>
@@ -322,7 +322,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">объектный</td>
                     <td>
-                        <select class="form-select" data-correct="объект">
+                        <select class="form-select" data-no-instant data-correct="объект">
                             <option value="">— корень —</option>
                             <option value="объект">объект</option><option value="объём">объём</option><option value="область">область</option><option value="оболочка">оболочка</option>
                         </select>
@@ -331,7 +331,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -413,7 +413,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
         </div>
     </div>
 </div>
@@ -512,7 +512,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
         </div>
     </div>
 </div>
@@ -528,20 +528,20 @@
         <ol class="list-unstyled mb-0">
             
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">1. Главная задача ОС — управление <select class="form-select d-inline-block w-auto mx-1" data-correct="ресурсами"><option value="">— выбери —</option><option value="задачами">задачами</option><option value="ресурсами">ресурсами</option><option value="программами">программами</option><option value="пользователями">пользователями</option></select> компьютера.</span>
+                    <span class="fs-5">1. Главная задача ОС — управление <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="ресурсами"><option value="">— выбери —</option><option value="задачами">задачами</option><option value="ресурсами">ресурсами</option><option value="программами">программами</option><option value="пользователями">пользователями</option></select> компьютера.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">2. Современные версии Windows — это <select class="form-select d-inline-block w-auto mx-1" data-correct="графические"><option value="">— выбери —</option><option value="консольные">консольные</option><option value="графические">графические</option><option value="мобильные">мобильные</option><option value="сетевые">сетевые</option></select> операционные системы.</span>
+                    <span class="fs-5">2. Современные версии Windows — это <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="графические"><option value="">— выбери —</option><option value="консольные">консольные</option><option value="графические">графические</option><option value="мобильные">мобильные</option><option value="сетевые">сетевые</option></select> операционные системы.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">3. Объект в Windows объединяет данные и <select class="form-select d-inline-block w-auto mx-1" data-correct="действия (алгоритмы) над ними"><option value="">— выбери —</option><option value="цвет">цвет</option><option value="форму">форму</option><option value="действия (алгоритмы) над ними">действия (алгоритмы) над ними</option><option value="имя">имя</option></select>.</span>
+                    <span class="fs-5">3. Объект в Windows объединяет данные и <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="действия (алгоритмы) над ними"><option value="">— выбери —</option><option value="цвет">цвет</option><option value="форму">форму</option><option value="действия (алгоритмы) над ними">действия (алгоритмы) над ними</option><option value="имя">имя</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
         </ol>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -561,7 +561,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">1. Что такое операционная система?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Комплекс взаимосвязанных программ. Её задача — управление ресурсами компьютера и организация взаимодействия с пользователем.
                     </div>
@@ -569,7 +569,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">2. Назовите примеры операционных систем.</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Microsoft Windows, UNIX, Macintosh X, Free BSD, Linux.
                     </div>
@@ -577,7 +577,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">3. Что такое графический интерфейс?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Интерфейс, в котором для взаимодействия человека и компьютера используются графические средства (окна, кнопки, иконки).
                     </div>
@@ -585,7 +585,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">4. Что такое объект в Windows?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Объект объединяет в себе данные и алгоритмы, которые обрабатывают эти данные.
                     </div>
@@ -604,7 +604,7 @@
         <p>Когда ответил на все тесты — попробуй <strong>устно или письменно</strong> рассказать о теме урока, опираясь на блок «Краткая теория».</p>
         <textarea class="form-control mb-3" rows="6" placeholder="Можешь написать здесь свой развёрнутый рассказ для тренировки…"></textarea>
         <div class="text-center">
-            <button class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(13); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
+            <button type="button" class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(13); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
                 Я разобрал тему
             </button>
         </div>

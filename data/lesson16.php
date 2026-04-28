@@ -202,7 +202,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -219,7 +219,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">вычисление</td>
                     <td>
-                        <select class="form-select" data-correct="вычислить">
+                        <select class="form-select" data-no-instant data-correct="вычислить">
                             <option value="">— корень —</option>
                             <option value="число">число</option><option value="выбор">выбор</option><option value="вычислить">вычислить</option><option value="выражение">выражение</option>
                         </select>
@@ -228,7 +228,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">электронный</td>
                     <td>
-                        <select class="form-select" data-correct="электрон">
+                        <select class="form-select" data-no-instant data-correct="электрон">
                             <option value="">— корень —</option>
                             <option value="электрон">электрон</option><option value="эффективный">эффективный</option><option value="эпизод">эпизод</option><option value="экран">экран</option>
                         </select>
@@ -237,7 +237,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">числовой</td>
                     <td>
-                        <select class="form-select" data-correct="число">
+                        <select class="form-select" data-no-instant data-correct="число">
                             <option value="">— корень —</option>
                             <option value="число">число</option><option value="часть">часть</option><option value="часы">часы</option><option value="чтение">чтение</option>
                         </select>
@@ -246,7 +246,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">табличный</td>
                     <td>
-                        <select class="form-select" data-correct="таблица">
+                        <select class="form-select" data-no-instant data-correct="таблица">
                             <option value="">— корень —</option>
                             <option value="таблица">таблица</option><option value="техника">техника</option><option value="тема">тема</option><option value="точка">точка</option>
                         </select>
@@ -255,7 +255,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -337,7 +337,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
         </div>
     </div>
 </div>
@@ -436,7 +436,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
         </div>
     </div>
 </div>
@@ -452,20 +452,20 @@
         <ol class="list-unstyled mb-0">
             
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">1. Минимальный элемент электронной таблицы для хранения данных — это <select class="form-select d-inline-block w-auto mx-1" data-correct="ячейка"><option value="">— выбери —</option><option value="формула">формула</option><option value="ячейка">ячейка</option><option value="столбец">столбец</option><option value="строка">строка</option></select>.</span>
+                    <span class="fs-5">1. Минимальный элемент электронной таблицы для хранения данных — это <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="ячейка"><option value="">— выбери —</option><option value="формула">формула</option><option value="ячейка">ячейка</option><option value="столбец">столбец</option><option value="строка">строка</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">2. Адрес ячейки состоит из <select class="form-select d-inline-block w-auto mx-1" data-correct="буквы"><option value="">— выбери —</option><option value="цифры">цифры</option><option value="буквы">буквы</option><option value="знака">знака</option><option value="цвета">цвета</option></select> столбца и номера строки.</span>
+                    <span class="fs-5">2. Адрес ячейки состоит из <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="буквы"><option value="">— выбери —</option><option value="цифры">цифры</option><option value="буквы">буквы</option><option value="знака">знака</option><option value="цвета">цвета</option></select> столбца и номера строки.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">3. Информация-результат, который вычисляется по другим ячейкам — это <select class="form-select d-inline-block w-auto mx-1" data-correct="производная"><option value="">— выбери —</option><option value="исходная">исходная</option><option value="производная">производная</option><option value="временная">временная</option><option value="конечная">конечная</option></select> информация.</span>
+                    <span class="fs-5">3. Информация-результат, который вычисляется по другим ячейкам — это <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="производная"><option value="">— выбери —</option><option value="исходная">исходная</option><option value="производная">производная</option><option value="временная">временная</option><option value="конечная">конечная</option></select> информация.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
         </ol>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -485,7 +485,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">1. Что такое ячейка электронной таблицы?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Минимальный элемент для хранения данных. Каждая ячейка имеет уникальный адрес.
                     </div>
@@ -493,7 +493,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">2. Из чего состоит адрес ячейки?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Из буквы столбца (A, B, C...) и номера строки (1, 2, 3...). Например: A1, B5, D12.
                     </div>
@@ -501,7 +501,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">3. Что такое исходная и производная информация?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Исходная — начальные данные, введённые пользователем. Производная — результат вычислений над исходной информацией.
                     </div>
@@ -509,7 +509,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">4. Где применяются электронные таблицы?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> В бухучёте, финансовом анализе, обработке результатов измерений, статистике, везде, где нужно автоматизировать повторяющиеся вычисления.
                     </div>
@@ -528,7 +528,7 @@
         <p>Когда ответил на все тесты — попробуй <strong>устно или письменно</strong> рассказать о теме урока, опираясь на блок «Краткая теория».</p>
         <textarea class="form-control mb-3" rows="6" placeholder="Можешь написать здесь свой развёрнутый рассказ для тренировки…"></textarea>
         <div class="text-center">
-            <button class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(16); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
+            <button type="button" class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(16); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
                 Я разобрал тему
             </button>
         </div>

@@ -185,7 +185,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -202,7 +202,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">циклический</td>
                     <td>
-                        <select class="form-select" data-correct="цикл">
+                        <select class="form-select" data-no-instant data-correct="цикл">
                             <option value="">— корень —</option>
                             <option value="цикл">цикл</option><option value="цифра">цифра</option><option value="цвет">цвет</option><option value="центр">центр</option>
                         </select>
@@ -211,7 +211,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">счётчик</td>
                     <td>
-                        <select class="form-select" data-correct="считать">
+                        <select class="form-select" data-no-instant data-correct="считать">
                             <option value="">— корень —</option>
                             <option value="считать">считать</option><option value="сначала">сначала</option><option value="совсем">совсем</option><option value="связь">связь</option>
                         </select>
@@ -220,7 +220,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">повторение</td>
                     <td>
-                        <select class="form-select" data-correct="повторить">
+                        <select class="form-select" data-no-instant data-correct="повторить">
                             <option value="">— корень —</option>
                             <option value="второй">второй</option><option value="повторить">повторить</option><option value="праздник">праздник</option><option value="покой">покой</option>
                         </select>
@@ -229,7 +229,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">параметрический</td>
                     <td>
-                        <select class="form-select" data-correct="параметр">
+                        <select class="form-select" data-no-instant data-correct="параметр">
                             <option value="">— корень —</option>
                             <option value="параметр">параметр</option><option value="параграф">параграф</option><option value="паук">паук</option><option value="пауза">пауза</option>
                         </select>
@@ -238,7 +238,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -320,7 +320,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
         </div>
     </div>
 </div>
@@ -419,7 +419,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
         </div>
     </div>
 </div>
@@ -435,20 +435,20 @@
         <ol class="list-unstyled mb-0">
             
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">1. Часть цикла, в которой описывается условие — это <select class="form-select d-inline-block w-auto mx-1" data-correct="заголовок"><option value="">— выбери —</option><option value="тело">тело</option><option value="заголовок">заголовок</option><option value="начало">начало</option><option value="конец">конец</option></select> цикла.</span>
+                    <span class="fs-5">1. Часть цикла, в которой описывается условие — это <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="заголовок"><option value="">— выбери —</option><option value="тело">тело</option><option value="заголовок">заголовок</option><option value="начало">начало</option><option value="конец">конец</option></select> цикла.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">2. Переменная, считающая итерации цикла — это <select class="form-select d-inline-block w-auto mx-1" data-correct="счётчик"><option value="">— выбери —</option><option value="параметр">параметр</option><option value="счётчик">счётчик</option><option value="условие">условие</option><option value="заголовок">заголовок</option></select>.</span>
+                    <span class="fs-5">2. Переменная, считающая итерации цикла — это <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="счётчик"><option value="">— выбери —</option><option value="параметр">параметр</option><option value="счётчик">счётчик</option><option value="условие">условие</option><option value="заголовок">заголовок</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">3. Цикл, в котором заранее известно число повторений — это цикл <select class="form-select d-inline-block w-auto mx-1" data-correct="с параметром"><option value="">— выбери —</option><option value="с предусловием">с предусловием</option><option value="с постусловием">с постусловием</option><option value="с параметром">с параметром</option><option value="бесконечный">бесконечный</option></select>.</span>
+                    <span class="fs-5">3. Цикл, в котором заранее известно число повторений — это цикл <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="с параметром"><option value="">— выбери —</option><option value="с предусловием">с предусловием</option><option value="с постусловием">с постусловием</option><option value="с параметром">с параметром</option><option value="бесконечный">бесконечный</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
         </ol>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -468,7 +468,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">1. Что такое циклический алгоритм?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Алгоритм, в котором набор команд (тело цикла) выполняется несколько раз.
                     </div>
@@ -476,7 +476,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">2. Назовите три вида циклов.</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Цикл с параметром, цикл с предусловием, цикл с постусловием.
                     </div>
@@ -484,7 +484,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">3. Что такое счётчик цикла?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Переменная, которая в начале цикла получает начальное значение, во время работы изменяется по заданному правилу и определяет, выполнять ли тело цикла ещё раз.
                     </div>
@@ -492,7 +492,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">4. Чем цикл с предусловием отличается от цикла с постусловием?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> В цикле с предусловием условие проверяется в начале — тело может не выполниться ни разу. В цикле с постусловием условие в конце — тело выполняется минимум один раз.
                     </div>
@@ -511,7 +511,7 @@
         <p>Когда ответил на все тесты — попробуй <strong>устно или письменно</strong> рассказать о теме урока, опираясь на блок «Краткая теория».</p>
         <textarea class="form-control mb-3" rows="6" placeholder="Можешь написать здесь свой развёрнутый рассказ для тренировки…"></textarea>
         <div class="text-center">
-            <button class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(12); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
+            <button type="button" class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(12); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
                 Я разобрал тему
             </button>
         </div>

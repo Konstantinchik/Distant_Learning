@@ -459,7 +459,7 @@
 
         </div>
 
-        <button class="btn btn-primary mt-4" id="checkTask2">Проверить</button>
+        <button type="button" class="btn btn-primary mt-4" id="checkTask2">Проверить</button>
         <p class="mt-3 fw-semibold" id="resultTask2"></p>
 
     </div>
@@ -701,7 +701,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkL4Task3()">
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkL4Task3()">
                 Проверить задание 3
             </button>
         </div>
@@ -881,7 +881,7 @@ function checkL4Task3() {
             </div>`;
     }
 
-    status.scrollIntoView({behavior:'smooth'});
+    window.__scrollToCheck(status);
 }
 </script>
 

@@ -1,3 +1,19 @@
+
+// Helper: плавно подскролить так, чтобы элемент стал видимым (не уезжая вверх страницы)
+window.__scrollToCheck = function(el) {
+  if (!el) return;
+  // requestAnimationFrame, чтобы DOM обновился до измерения позиции
+  requestAnimationFrame(function() {
+    try {
+      const rect = el.getBoundingClientRect();
+      const inViewport = rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+      if (!inViewport) {
+        el.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
+    } catch (e) {}
+  });
+};
+
 // main.js — универсальная интерактивность сайта (адаптивная версия 2026)
 // Работает на ПК + мобильных (touch). Минимум дублирования.
 // Идея: задания “подключаются” через классы/атрибуты в HTML, а main.js сам всё инициализирует.
@@ -343,6 +359,8 @@ function initWordGroups() {
 // ──────────────────────────────────────────────────────────────────────────────
 function initSelectChecks() {
   document.querySelectorAll('select[data-correct]').forEach(select => {
+    // Пропускаем select-ы, где проверка должна быть только по кнопке «Проверить»
+    if (select.hasAttribute('data-no-instant') || select.closest('[data-no-instant]')) return;
     select.addEventListener('change', () => {
       const feedback = select.nextElementSibling || createFeedback(select.parentElement);
       feedback.className = 'feedback small mt-1';
@@ -662,6 +680,7 @@ window.checkMCQ = function(btn) {
   result.textContent = correct === total
     ? '✓ Все ' + total + ' вопросов правильно!'
     : 'Правильных ответов: ' + correct + ' из ' + total;
+  window.__scrollToCheck(result);
 };
 
 
@@ -694,6 +713,9 @@ window.checkAllYesNo = function() {
         + (exp ? ' <span class="text-muted fw-normal">— ' + exp + '</span>' : '');
     }
   });
+  // Подскроллим к первому ответу с фидбэком, чтобы он был виден
+  const firstFb = document.querySelector('.yesno-question .feedback');
+  window.__scrollToCheck(firstFb);
 };
 
 // ============================================================
@@ -729,4 +751,5 @@ window.checkInputs = function(btn) {
   result.textContent = correct === total
     ? '✓ Все ' + total + ' ответов правильно!'
     : 'Правильно: ' + correct + ' из ' + total + ' (наведи курсор на красные поля — увидишь правильный ответ)';
+  window.__scrollToCheck(result);
 };

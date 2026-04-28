@@ -334,7 +334,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -394,7 +394,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -411,7 +411,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">моделирование</td>
                     <td>
-                        <select class="form-select" data-correct="модель">
+                        <select class="form-select" data-no-instant data-correct="модель">
                             <option value="">— корень —</option>
                             <option value="модель">модель</option><option value="мочь">мочь</option><option value="метод">метод</option><option value="масса">масса</option>
                         </select>
@@ -420,7 +420,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">программирование</td>
                     <td>
-                        <select class="form-select" data-correct="программа">
+                        <select class="form-select" data-no-instant data-correct="программа">
                             <option value="">— корень —</option>
                             <option value="программа">программа</option><option value="прибор">прибор</option><option value="процесс">процесс</option><option value="причина">причина</option>
                         </select>
@@ -429,7 +429,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">тестирование</td>
                     <td>
-                        <select class="form-select" data-correct="тест">
+                        <select class="form-select" data-no-instant data-correct="тест">
                             <option value="">— корень —</option>
                             <option value="тест">тест</option><option value="техника">техника</option><option value="тип">тип</option><option value="трасса">трасса</option>
                         </select>
@@ -438,7 +438,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">алгоритмизация</td>
                     <td>
-                        <select class="form-select" data-correct="алгоритм">
+                        <select class="form-select" data-no-instant data-correct="алгоритм">
                             <option value="">— корень —</option>
                             <option value="арифметика">арифметика</option><option value="автомат">автомат</option><option value="алгоритм">алгоритм</option><option value="анализ">анализ</option>
                         </select>
@@ -447,7 +447,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">исполнение</td>
                     <td>
-                        <select class="form-select" data-correct="исполнить">
+                        <select class="form-select" data-no-instant data-correct="исполнить">
                             <option value="">— корень —</option>
                             <option value="использовать">использовать</option><option value="исполнить">исполнить</option><option value="исправить">исправить</option><option value="изменить">изменить</option>
                         </select>
@@ -456,7 +456,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -475,7 +475,7 @@
             <p class="mb-2 text-muted small">Составь предложения по образцу:</p>
             <p class="mb-1">— Условие a ≠ 0 — выполнить № 3 — выполнить № 1.</p><p class="mb-1">— Условие D ≥ 0 — выполнить № 5 — выполнить № 6.</p><p class="mb-1">— Программа без ошибок — описать результаты — найти и исправить ошибки.</p>
             <textarea class="form-control mt-2" rows="3" placeholder="Запиши свои предложения здесь…"></textarea>
-            <button class="btn btn-sm btn-outline-secondary mt-2" onclick="toggleAnswer(this)">Показать варианты ответов</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary mt-2" onclick="toggleAnswer(this)">Показать варианты ответов</button>
             <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                 <strong class="text-success">Возможные предложения:</strong>
                 <p class="mb-1">• Если условие a ≠ 0 верно, то выполнить № 3, иначе выполнить № 1.</p><p class="mb-1">• Если условие D ≥ 0 верно, то выполнить № 5, иначе выполнить № 6.</p><p class="mb-1">• Если программа без ошибок, то описать результаты, иначе найти и исправить ошибки.</p>
@@ -571,7 +571,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
         </div>
     </div>
 </div>
@@ -691,7 +691,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
         </div>
     </div>
 </div>
@@ -707,24 +707,24 @@
         <ol class="list-unstyled mb-0">
             
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">1. На этапе постановки задачи нужно ответить на вопросы: «<select class="form-select d-inline-block w-auto mx-1" data-correct="Что дано?"><option value="">— выбери —</option><option value="Что дано?">Что дано?</option><option value="Кто решает?">Кто решает?</option><option value="Где хранить?">Где хранить?</option><option value="Когда закончить?">Когда закончить?</option></select>» и «Что надо найти?».</span>
+                    <span class="fs-5">1. На этапе постановки задачи нужно ответить на вопросы: «<select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="Что дано?"><option value="">— выбери —</option><option value="Что дано?">Что дано?</option><option value="Кто решает?">Кто решает?</option><option value="Где хранить?">Где хранить?</option><option value="Когда закончить?">Когда закончить?</option></select>» и «Что надо найти?».</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">2. Языки программирования используют для записи <select class="form-select d-inline-block w-auto mx-1" data-correct="алгоритмов"><option value="">— выбери —</option><option value="ошибок">ошибок</option><option value="алгоритмов">алгоритмов</option><option value="файлов">файлов</option><option value="носителей">носителей</option></select>.</span>
+                    <span class="fs-5">2. Языки программирования используют для записи <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="алгоритмов"><option value="">— выбери —</option><option value="ошибок">ошибок</option><option value="алгоритмов">алгоритмов</option><option value="файлов">файлов</option><option value="носителей">носителей</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">3. Тестирование — сравнение результатов тестов с результатами <select class="form-select d-inline-block w-auto mx-1" data-correct="компьютера"><option value="">— выбери —</option><option value="компьютера">компьютера</option><option value="человека">человека</option><option value="программиста">программиста</option><option value="учителя">учителя</option></select>.</span>
+                    <span class="fs-5">3. Тестирование — сравнение результатов тестов с результатами <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="компьютера"><option value="">— выбери —</option><option value="компьютера">компьютера</option><option value="человека">человека</option><option value="программиста">программиста</option><option value="учителя">учителя</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">4. После исправления всех ошибок наступает этап <select class="form-select d-inline-block w-auto mx-1" data-correct="анализа результатов"><option value="">— выбери —</option><option value="программирования">программирования</option><option value="постановки задачи">постановки задачи</option><option value="отладки">отладки</option><option value="анализа результатов">анализа результатов</option></select>.</span>
+                    <span class="fs-5">4. После исправления всех ошибок наступает этап <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="анализа результатов"><option value="">— выбери —</option><option value="программирования">программирования</option><option value="постановки задачи">постановки задачи</option><option value="отладки">отладки</option><option value="анализа результатов">анализа результатов</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
         </ol>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -744,7 +744,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">1. Что такое обработка информации?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Преобразование одних информационных объектов в другие при выполнении алгоритмов.
                     </div>
@@ -752,7 +752,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">2. Назовите шесть этапов решения задачи на компьютере.</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> 1) Постановка задачи. 2) Математическое моделирование. 3) Алгоритмизация. 4) Программирование. 5) Тестирование и отладка. 6) Анализ результатов.
                     </div>
@@ -760,7 +760,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">3. Что такое программа?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Программа — один из способов записи алгоритма на языке программирования.
                     </div>
@@ -768,7 +768,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">4. Что такое отладка программы?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Проверка программы на наличие технических, грамматических и алгоритмических ошибок.
                     </div>
@@ -776,7 +776,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">5. Что такое тестирование?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Сравнение известных результатов тестов с результатами, полученными при работе компьютера.
                     </div>
@@ -795,7 +795,7 @@
         <p>Когда ответил на все тесты — попробуй <strong>устно или письменно</strong> рассказать о теме урока, опираясь на блок «Краткая теория».</p>
         <textarea class="form-control mb-3" rows="6" placeholder="Можешь написать здесь свой развёрнутый рассказ для тренировки…"></textarea>
         <div class="text-center">
-            <button class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(8); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
+            <button type="button" class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(8); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
                 Я разобрал тему
             </button>
         </div>

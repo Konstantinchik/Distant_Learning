@@ -326,7 +326,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkInputs(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -343,7 +343,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">алгоритмический</td>
                     <td>
-                        <select class="form-select" data-correct="алгоритм">
+                        <select class="form-select" data-no-instant data-correct="алгоритм">
                             <option value="">— корень —</option>
                             <option value="арифметика">арифметика</option><option value="алгоритм">алгоритм</option><option value="автомат">автомат</option><option value="анализ">анализ</option>
                         </select>
@@ -352,7 +352,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">исполнитель</td>
                     <td>
-                        <select class="form-select" data-correct="исполнить">
+                        <select class="form-select" data-no-instant data-correct="исполнить">
                             <option value="">— корень —</option>
                             <option value="использовать">использовать</option><option value="исполнить">исполнить</option><option value="изменить">изменить</option><option value="исправить">исправить</option>
                         </select>
@@ -361,7 +361,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">конечность</td>
                     <td>
-                        <select class="form-select" data-correct="конец">
+                        <select class="form-select" data-no-instant data-correct="конец">
                             <option value="">— корень —</option>
                             <option value="конец">конец</option><option value="команда">команда</option><option value="компьютер">компьютер</option><option value="корень">корень</option>
                         </select>
@@ -370,7 +370,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">результативность</td>
                     <td>
-                        <select class="form-select" data-correct="результат">
+                        <select class="form-select" data-no-instant data-correct="результат">
                             <option value="">— корень —</option>
                             <option value="результат">результат</option><option value="решение">решение</option><option value="разработка">разработка</option><option value="реализация">реализация</option>
                         </select>
@@ -379,7 +379,7 @@
                 <tr>
                     <td class="text-end pe-3 fw-500">дискретный</td>
                     <td>
-                        <select class="form-select" data-correct="дискретность">
+                        <select class="form-select" data-no-instant data-correct="дискретность">
                             <option value="">— корень —</option>
                             <option value="дискретность">дискретность</option><option value="действие">действие</option><option value="деление">деление</option><option value="детальный">детальный</option>
                         </select>
@@ -388,7 +388,7 @@
             </tbody>
         </table>
         <div class="text-center mt-3">
-            <button class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -480,7 +480,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkAllYesNo()">Проверить все ответы</button>
         </div>
     </div>
 </div>
@@ -600,7 +600,7 @@
                 <div class="feedback mt-2 fw-bold d-none"></div>
             </div>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkMCQ(this)">Проверить ответы</button>
         </div>
     </div>
 </div>
@@ -616,20 +616,20 @@
         <ol class="list-unstyled mb-0">
             
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">1. Свойство, при котором алгоритм состоит из отдельных команд, называется <select class="form-select d-inline-block w-auto mx-1" data-correct="дискретность"><option value="">— выбери —</option><option value="массовость">массовость</option><option value="дискретность">дискретность</option><option value="понятность">понятность</option><option value="эффективность">эффективность</option></select>.</span>
+                    <span class="fs-5">1. Свойство, при котором алгоритм состоит из отдельных команд, называется <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="дискретность"><option value="">— выбери —</option><option value="массовость">массовость</option><option value="дискретность">дискретность</option><option value="понятность">понятность</option><option value="эффективность">эффективность</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">2. Универсальный исполнитель алгоритмов в информатике — это <select class="form-select d-inline-block w-auto mx-1" data-correct="компьютер"><option value="">— выбери —</option><option value="человек">человек</option><option value="компьютер">компьютер</option><option value="язык программирования">язык программирования</option><option value="блок-схема">блок-схема</option></select>.</span>
+                    <span class="fs-5">2. Универсальный исполнитель алгоритмов в информатике — это <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="компьютер"><option value="">— выбери —</option><option value="человек">человек</option><option value="компьютер">компьютер</option><option value="язык программирования">язык программирования</option><option value="блок-схема">блок-схема</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <span class="fs-5">3. Графический способ записи алгоритма — это <select class="form-select d-inline-block w-auto mx-1" data-correct="блок-схема"><option value="">— выбери —</option><option value="блок-схема">блок-схема</option><option value="псевдокод">псевдокод</option><option value="программа">программа</option><option value="словарь">словарь</option></select>.</span>
+                    <span class="fs-5">3. Графический способ записи алгоритма — это <select class="form-select d-inline-block w-auto mx-1" data-no-instant data-correct="блок-схема"><option value="">— выбери —</option><option value="блок-схема">блок-схема</option><option value="псевдокод">псевдокод</option><option value="программа">программа</option><option value="словарь">словарь</option></select>.</span>
                     <div class="feedback mt-2 fw-bold d-none"></div>
                 </li>
         </ol>
         <div class="text-center mt-3">
-            <button class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
+            <button type="button" class="btn btn-primary btn-lg px-4" onclick="checkFillIn(this)">Проверить</button>
         </div>
     </div>
 </div>
@@ -649,7 +649,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">1. Что такое алгоритм?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Последовательность действий, которая приводит к решению поставленной задачи.
                     </div>
@@ -657,7 +657,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">2. Перечислите шесть свойств алгоритма.</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Дискретность, определённость, понятность, результативность (конечность), массовость, эффективность.
                     </div>
@@ -665,7 +665,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">3. Что такое исполнитель алгоритма?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Абстрактная или реальная система, которая понимает действия в алгоритме и может их выполнить (человек, устройство, компьютер).
                     </div>
@@ -673,7 +673,7 @@
                 <li class="list-group-item p-3 mb-3 bg-light border rounded">
                     <p class="fw-500 mb-2 fs-5">4. Какие бывают способы записи алгоритма?</p>
                     <textarea class="form-control mb-2" rows="3" placeholder="Сформулируй свой ответ…"></textarea>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAnswer(this)">Показать эталон</button>
                     <div class="answer-sample d-none mt-2 p-2 bg-white border-start border-success border-3 rounded">
                         <strong class="text-success">Эталон:</strong> Словесный, графический (блок-схема), псевдокоды, язык программирования.
                     </div>
@@ -692,7 +692,7 @@
         <p>Когда ответил на все тесты — попробуй <strong>устно или письменно</strong> рассказать о теме урока, опираясь на блок «Краткая теория».</p>
         <textarea class="form-control mb-3" rows="6" placeholder="Можешь написать здесь свой развёрнутый рассказ для тренировки…"></textarea>
         <div class="text-center">
-            <button class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(9); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
+            <button type="button" class="btn btn-success btn-lg px-5" onclick="markLessonCompleted(9); this.outerHTML='<div class=\'alert alert-success mb-0\'><h5 class=\'mb-0\'>✓ Занятие отмечено как пройденное!</h5></div>';">
                 Я разобрал тему
             </button>
         </div>

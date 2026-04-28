@@ -197,7 +197,7 @@
             </div>
 
             <div class="text-center mt-4">
-                <button class="btn btn-primary btn-lg px-5" onclick="checkTask2()">Проверить</button>
+                <button type="button" class="btn btn-primary btn-lg px-5" onclick="checkTask2()">Проверить</button>
             </div>
 
             <div class="mt-3 d-none" id="task2-result"></div>
@@ -334,7 +334,7 @@
             </table>
         </div>
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg" onclick="checkTask3()">Проверить</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="checkTask3()">Проверить</button>
         </div>
     </div>
 </div>
@@ -342,11 +342,11 @@
 <script>
 function checkTask3() {
     const pairs = {
-        'основной': ['состав'],
+        'основной':    ['состав'],
         'техническая': ['система'],
         'электронное': ['устройство'],
-        'системный': ['блок'],
-        'основное': ['устройство']
+        'системный':   ['блок'],
+        'основное':    ['устройство']
     };
 
     const rows = document.querySelectorAll('#task3-table tbody tr');
@@ -354,18 +354,34 @@ function checkTask3() {
         const adj = row.dataset.adj;
         const select = row.querySelector('.noun-select');
         const result = row.querySelector('.result');
-        result.textContent = '';
+        // Очищаем содержимое
+        result.innerHTML = '';
         result.className = 'result';
 
-        if (select.value === '') return;
+        // Правильное сочетание: с заглавной буквы
+        const correctNoun = pairs[adj][0];
+        const fullPhrase = adj.charAt(0).toUpperCase() + adj.slice(1) + ' ' + correctNoun;
 
-        if (pairs[adj].includes(select.value)) {
-            result.textContent = 'Правильно';
-            result.classList.add('text-success', 'fw-bold');
-        } else {
-            result.textContent = 'Неправильно';
-            result.classList.add('text-danger', 'fw-bold');
+        if (select.value === '') {
+            result.textContent = '— не выбрано';
+            result.classList.add('text-warning');
+            return;
         }
+
+        const isCorrect = pairs[adj].includes(select.value);
+        const verdict = document.createElement('span');
+        verdict.className = isCorrect ? 'text-success fw-bold' : 'text-danger fw-bold';
+        verdict.textContent = isCorrect ? '✓ Правильно' : '✗ Неправильно';
+        result.appendChild(verdict);
+
+        // Кнопка озвучки правильного сочетания
+        const speakBtn = document.createElement('button');
+        speakBtn.type = 'button';
+        speakBtn.className = 'btn btn-sm btn-outline-primary speak-btn ms-2';
+        speakBtn.textContent = '▶';
+        speakBtn.title = 'Прослушать: ' + fullPhrase;
+        speakBtn.dataset.text = fullPhrase;
+        result.appendChild(speakBtn);
     });
 }
 </script>
@@ -376,12 +392,17 @@ function checkTask3() {
         4. Согласуйте прилагательные и существительные.
     </div>
     <div class="card-body fs-5">
-        <p id="task4-text">
-            Электронн<select class="ending-select" data-correct="ое"></select> устройство, основн<select class="ending-select" data-correct="ые"></select> устройства, электронн<select class="ending-select" data-correct="ые"></select> устройства,<br>
-            основн<select class="ending-select" data-correct="ое"></select> устройство, основн<select class="ending-select" data-correct="ой"></select> состав, техническ<select class="ending-select" data-correct="ая"></select> система, системн<select class="ending-select" data-correct="ый"></select> блок.
-        </p>
+        <ol id="task4-text" class="list-group list-group-numbered">
+            <li class="list-group-item bg-light border rounded mb-2 p-3">Электронн<select class="ending-select" data-no-instant data-correct="ое"></select> устройство</li>
+            <li class="list-group-item bg-light border rounded mb-2 p-3">Основн<select class="ending-select" data-no-instant data-correct="ые"></select> устройства</li>
+            <li class="list-group-item bg-light border rounded mb-2 p-3">Электронн<select class="ending-select" data-no-instant data-correct="ые"></select> устройства</li>
+            <li class="list-group-item bg-light border rounded mb-2 p-3">Основн<select class="ending-select" data-no-instant data-correct="ое"></select> устройство</li>
+            <li class="list-group-item bg-light border rounded mb-2 p-3">Основн<select class="ending-select" data-no-instant data-correct="ой"></select> состав</li>
+            <li class="list-group-item bg-light border rounded mb-2 p-3">Техническ<select class="ending-select" data-no-instant data-correct="ая"></select> система</li>
+            <li class="list-group-item bg-light border rounded mb-2 p-3">Системн<select class="ending-select" data-no-instant data-correct="ый"></select> блок</li>
+        </ol>
         <div class="text-center mt-4">
-            <button class="btn btn-primary btn-lg" onclick="checkTask4()">Проверить</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="checkTask4()">Проверить</button>
         </div>
     </div>
 </div>
@@ -389,21 +410,67 @@ function checkTask3() {
 <script>
 function checkTask4() {
     const selects = document.querySelectorAll('#task4-text .ending-select');
+    let correctCount = 0, total = 0;
     selects.forEach(select => {
+        total++;
         const correct = select.dataset.correct;
-        const result = select.nextSibling || document.createElement('span');
-        result.className = 'ms-1 fw-bold';
-        if (select.value === correct) {
-            result.textContent = ' (Правильно)';
-            result.classList.add('text-success');
-        } else if (select.value !== '') {
-            result.textContent = ' (Неправильно)';
-            result.classList.add('text-danger');
-        } else {
-            result.textContent = '';
+        const li = select.closest('.list-group-item');
+
+        // Найдём (или создадим) отдельный span для фидбэка — НЕ трогаем текст слова
+        let fb = li.querySelector('.task4-feedback');
+        if (!fb) {
+            fb = document.createElement('span');
+            fb.className = 'task4-feedback ms-2 fw-bold';
+            li.appendChild(fb);
         }
-        if (!select.nextSibling) select.after(result);
+        fb.classList.remove('text-success', 'text-danger', 'text-warning');
+        li.classList.remove('border-success', 'border-danger', 'bg-success-subtle', 'bg-danger-subtle');
+
+        if (select.value === '') {
+            fb.textContent = '— не выбрано';
+            fb.classList.add('text-warning');
+        } else if (select.value === correct) {
+            fb.textContent = '✓ правильно';
+            fb.classList.add('text-success');
+            li.classList.add('border-success', 'bg-success-subtle');
+            correctCount++;
+        } else {
+            fb.innerHTML = '✗ правильно: <em>' + correct + '</em>';
+            fb.classList.add('text-danger');
+            li.classList.add('border-danger', 'bg-danger-subtle');
+        }
+
+        // Собираем правильное предложение и добавляем (или обновляем) кнопку озвучки
+        const prefix = (select.previousSibling && select.previousSibling.nodeType === 3)
+            ? select.previousSibling.textContent : '';
+        const suffix = (select.nextSibling && select.nextSibling.nodeType === 3)
+            ? select.nextSibling.textContent : '';
+        const fullSentence = (prefix + correct + suffix).replace(/\s+/g, ' ').trim();
+        let speakBtn = li.querySelector('.task4-speak');
+        if (!speakBtn) {
+            speakBtn = document.createElement('button');
+            speakBtn.type = 'button';
+            speakBtn.className = 'task4-speak btn btn-sm btn-outline-primary ms-2 speak-btn';
+            speakBtn.textContent = '▶';
+            speakBtn.title = 'Прослушать правильное предложение';
+            li.appendChild(speakBtn);
+        }
+        speakBtn.dataset.text = fullSentence;
     });
+
+    // Общий результат под кнопкой
+    const ol = document.getElementById('task4-text');
+    let result = ol.parentElement.querySelector('.task4-result');
+    if (!result) {
+        result = document.createElement('div');
+        result.className = 'task4-result mt-3 fw-bold text-center';
+        ol.parentElement.appendChild(result);
+    }
+    result.className = 'task4-result mt-3 fw-bold text-center ' + (correctCount === total ? 'text-success' : 'text-danger');
+    result.textContent = correctCount === total
+        ? '✓ Все ' + total + ' окончаний правильно!'
+        : 'Правильных: ' + correctCount + ' из ' + total;
+    window.__scrollToCheck && window.__scrollToCheck(result);
 }
 
 // Заполнение выпадающих списков возможными окончаниями
@@ -424,10 +491,42 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="card mb-5 border-primary">
         <div class="card-header bg-primary text-white fw-bold">5. Прочитайте текст.</div>
         <div class="card-body fs-5 lh-lg">
-        	<p style="text-indent: 35px;"><em>Компьютер</em> — это электронное устройство. Компьютер — это устройство, которое сделал человек.
-        	Компьютер — это техническая система. Компьютер — это система устройств. Состав компьютера — это набор устройств.
-        	Монитор — это устройство. Клавиатура, мышь, динамики — это тоже устройства. Системный блок — это набор устройств.
-        	Системный блок, монитор, клавиатура, мышь, динамики — это <em>основной состав компьютера</em>.</p>
+            <p class="mb-2 d-flex align-items-start gap-2">
+                <button type="button" class="btn btn-sm btn-outline-primary speak-btn flex-shrink-0" data-text="Компьютер — это электронное устройство." title="Прослушать предложение">▶</button>
+                <span><em>Компьютер</em> — это электронное устройство.</span>
+            </p>
+            <p class="mb-2 d-flex align-items-start gap-2">
+                <button type="button" class="btn btn-sm btn-outline-primary speak-btn flex-shrink-0" data-text="Компьютер — это устройство, которое сделал человек." title="Прослушать предложение">▶</button>
+                <span>Компьютер — это устройство, которое сделал человек.</span>
+            </p>
+            <p class="mb-2 d-flex align-items-start gap-2">
+                <button type="button" class="btn btn-sm btn-outline-primary speak-btn flex-shrink-0" data-text="Компьютер — это техническая система." title="Прослушать предложение">▶</button>
+                <span>Компьютер — это техническая система.</span>
+            </p>
+            <p class="mb-2 d-flex align-items-start gap-2">
+                <button type="button" class="btn btn-sm btn-outline-primary speak-btn flex-shrink-0" data-text="Компьютер — это система устройств." title="Прослушать предложение">▶</button>
+                <span>Компьютер — это система устройств.</span>
+            </p>
+            <p class="mb-2 d-flex align-items-start gap-2">
+                <button type="button" class="btn btn-sm btn-outline-primary speak-btn flex-shrink-0" data-text="Состав компьютера — это набор устройств." title="Прослушать предложение">▶</button>
+                <span>Состав компьютера — это набор устройств.</span>
+            </p>
+            <p class="mb-2 d-flex align-items-start gap-2">
+                <button type="button" class="btn btn-sm btn-outline-primary speak-btn flex-shrink-0" data-text="Монитор — это устройство." title="Прослушать предложение">▶</button>
+                <span>Монитор — это устройство.</span>
+            </p>
+            <p class="mb-2 d-flex align-items-start gap-2">
+                <button type="button" class="btn btn-sm btn-outline-primary speak-btn flex-shrink-0" data-text="Клавиатура, мышь, динамики — это тоже устройства." title="Прослушать предложение">▶</button>
+                <span>Клавиатура, мышь, динамики — это тоже устройства.</span>
+            </p>
+            <p class="mb-2 d-flex align-items-start gap-2">
+                <button type="button" class="btn btn-sm btn-outline-primary speak-btn flex-shrink-0" data-text="Системный блок — это набор устройств." title="Прослушать предложение">▶</button>
+                <span>Системный блок — это набор устройств.</span>
+            </p>
+            <p class="mb-2 d-flex align-items-start gap-2">
+                <button type="button" class="btn btn-sm btn-outline-primary speak-btn flex-shrink-0" data-text="Системный блок, монитор, клавиатура, мышь, динамики — это основной состав компьютера." title="Прослушать предложение">▶</button>
+                <span>Системный блок, монитор, клавиатура, мышь, динамики — это <em>основной состав компьютера</em>.</span>
+            </p>
         </div>
     </div>
 
@@ -493,7 +592,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="text-center">
-                <button class="btn btn-primary btn-lg px-5" onclick="checkAllYesNo()">Проверить все ответы</button>
+                <button type="button" class="btn btn-primary btn-lg px-5" onclick="checkAllYesNo()">Проверить все ответы</button>
             </div>
         </div>
     </div>
@@ -592,7 +691,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <!-- Кнопка проверки -->
             <div class="text-center">
-                <button class="btn btn-primary btn-lg px-5" onclick="checkTask7()">Проверить все ответы</button>
+                <button type="button" class="btn btn-primary btn-lg px-5" onclick="checkTask7()">Проверить все ответы</button>
             </div>
         </div>
     </div>
@@ -630,72 +729,100 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="card-body fs-5">
             <p class="mb-3"><strong>Образец:</strong> Компью́тер — это … .</p>
 
-            <ol class="list-group list-group-numbered">
+            <!-- Спойлер: текст из Задания 5 — можно подсмотреть -->
+            <div class="mb-3">
+                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="
+                    const t=document.getElementById('task8-text');
+                    t.classList.toggle('d-none');
+                    this.textContent = t.classList.contains('d-none') ? 'Показать текст занятия 5' : 'Скрыть текст';
+                ">Показать текст занятия 5</button>
+                <div id="task8-text" class="mt-2 p-3 bg-light border rounded d-none">
+                    <p class="mb-0" style="text-indent: 35px;">
+                        <em>Компьютер</em> — это электронное устройство. Компьютер — это устройство, которое сделал человек.
+                        Компьютер — это техническая система. Компьютер — это система устройств. Состав компьютера — это набор устройств.
+                        Монитор — это устройство. Клавиатура, мышь, динамики — это тоже устройства. Системный блок — это набор устройств.
+                        Системный блок, монитор, клавиатура, мышь, динамики — это <em>основной состав компьютера</em>.
+                    </p>
+                </div>
+            </div>
+
+            <ol class="list-group list-group-numbered" id="task8-list">
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <textarea class="form-control" rows="2" placeholder="Компью́тер — это электро́нное устро́йство."></textarea>
+                    <textarea class="form-control" rows="2" placeholder="Компью́тер — это ..."></textarea>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <textarea class="form-control" rows="2" placeholder="Компью́тер — это устро́йство, которое сде́лал челове́к."></textarea>
+                    <textarea class="form-control" rows="2" placeholder="Компью́тер — это ..."></textarea>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <textarea class="form-control" rows="2" placeholder="Компью́тер — это техни́ческая систе́ма."></textarea>
+                    <textarea class="form-control" rows="2" placeholder="Компью́тер — это ..."></textarea>
                 </li>
                 <li class="list-group-item p-3 mb-2 bg-light border rounded">
-                    <textarea class="form-control" rows="2" placeholder="Компью́тер — это систе́ма устро́йств."></textarea>
+                    <textarea class="form-control" rows="2" placeholder="Компью́тер — это ..."></textarea>
                 </li>
             </ol>
 
             <div class="text-center mt-4">
-                <button class="btn btn-success btn-lg px-5" onclick="checkTask8()">Проверить задание 8</button>
+                <button type="button" class="btn btn-success btn-lg px-5" onclick="checkTask8()">Проверить задание 8</button>
             </div>
 
-            <div class="mt-3 alert alert-info d-none" id="task8-result">
-                <strong>Правильные ответы:</strong><br>
-                1. Компью́тер — это электро́нное устро́йство.<br>
-                2. Компью́тер — это устро́йство, которое сде́лал челове́к.<br>
-                3. Компью́тер — это техни́ческая систе́ма.<br>
-                4. Компью́тер — это систе́ма устро́йств.
-            </div>
+            <div class="mt-3 d-none" id="task8-result"></div>
         </div>
     </div>
 
     <script>
     function checkTask8() {
-        const correctAnswers = [
+        // Ключевые слова, которые должны быть в правильных ответах
+        const keyPhrases = [
             "электронное устройство",
-            "устройство, которое сделал человек",
+            "сделал человек",
             "техническая система",
             "система устройств"
         ];
 
-        let allCorrect = true;
-        document.querySelectorAll('#task8-result ~ .list-group-item textarea').forEach((ta, i) => {
-            const userText = ta.value.trim().toLowerCase()
-                .replace(/[.,;]/g, '')
+        const items = document.querySelectorAll('#task8-list .list-group-item');
+        const matchedFlags = new Array(keyPhrases.length).fill(false);
+
+        // Для каждого textarea — определяем, какой(ие) ключ(и) он покрывает
+        items.forEach(item => {
+            const ta = item.querySelector('textarea');
+            const text = (ta.value || '').trim().toLowerCase()
+                .replace(/[ё]/g, 'е')
+                .replace(/[́]/g, '')   // убираем знак ударения
+                .replace(/[.,;:!?]/g, '')
                 .replace(/\s+/g, ' ');
-
-            const correct = correctAnswers[i].toLowerCase();
-            const parent = ta.closest('.list-group-item');
-
-            parent.classList.remove('border-success', 'border-danger', 'bg-light');
-            if (userText.includes(correctAnswers[i].toLowerCase().split(' ')[0]) && userText.length > 10) {
-                parent.classList.add('border-success', 'bg-success-subtle');
+            item.classList.remove('border-success', 'border-danger', 'bg-success-subtle', 'bg-danger-subtle');
+            if (!text || text.length < 5) {
+                item.classList.add('border-danger', 'bg-danger-subtle');
+                return;
+            }
+            // Проверяем — покрывает ли этот ответ один из непокрытых ключей
+            let foundIdx = -1;
+            for (let i = 0; i < keyPhrases.length; i++) {
+                if (matchedFlags[i]) continue;
+                if (text.includes(keyPhrases[i])) { foundIdx = i; break; }
+            }
+            if (foundIdx >= 0) {
+                matchedFlags[foundIdx] = true;
+                item.classList.add('border-success', 'bg-success-subtle');
             } else {
-                parent.classList.add('border-danger', 'bg-danger-subtle');
-                allCorrect = false;
+                item.classList.add('border-danger', 'bg-danger-subtle');
             }
         });
 
+        const correctCount = matchedFlags.filter(Boolean).length;
+        const total = keyPhrases.length;
         const result = document.getElementById('task8-result');
         result.classList.remove('d-none');
-        if (allCorrect) {
-            result.classList.remove('alert-info');
-            result.classList.add('alert-success');
-            result.innerHTML = '<strong>Молодец! Всё правильно!</strong>';
+        result.className = 'mt-3 alert ' + (correctCount === total ? 'alert-success' : 'alert-warning');
+        if (correctCount === total) {
+            result.innerHTML = '<strong>✓ Молодец! Все 4 предложения правильно выписаны!</strong>';
         } else {
-            result.classList.add('alert-info');
+            const missing = keyPhrases.map((kp, i) => matchedFlags[i] ? null : '<li>' + kp + '</li>').filter(Boolean).join('');
+            result.innerHTML = '<strong>Найдено правильных: ' + correctCount + ' из ' + total + '.</strong>' +
+                (missing ? '<br>Не хватает предложений с ключевыми словами:<ul class="mb-0">' + missing + '</ul>' : '') +
+                '<br><small class="text-muted">Можно подсмотреть текст занятия 5 кнопкой выше.</small>';
         }
-        result.scrollIntoView({ behavior: 'smooth' });
+        window.__scrollToCheck && window.__scrollToCheck(result);
     }
     </script>
     <!-- Конц задания 8 -->
@@ -709,10 +836,10 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="card-body fs-5">
 
-            <ol class="list-group list-group-numbered mb-4">
+            <ol class="list-group list-group-numbered mb-4" id="task9-list">
                 <li class="list-group-item p-4 bg-light border rounded mb-3">
                     <strong>Состав компьютера — это</strong>
-                    <select class="form-select w-75 mt-2 ms-3" data-correct="набор устройств">
+                    <select class="form-select w-75 mt-2 ms-3" data-no-instant data-correct="набор устройств">
                         <option value="">— выберите —</option>
                         <option>набор устройств</option>
                         <option>одно устройство</option>
@@ -724,7 +851,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <li class="list-group-item p-4 bg-light border rounded mb-3">
                     <strong>Системный блок — это</strong>
-                    <select class="form-select w-75 mt-2 ms-3" data-correct="набор устройств">
+                    <select class="form-select w-75 mt-2 ms-3" data-no-instant data-correct="набор устройств">
                         <option value="">— выберите —</option>
                         <option>одно устройство</option>
                         <option>набор устройств</option>
@@ -736,7 +863,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <li class="list-group-item p-4 bg-light border rounded mb-3">
                     <strong>Мышь, динамики, клавиатура — это</strong>
-                    <select class="form-select w-75 mt-2 ms-3" data-correct="устройства">
+                    <select class="form-select w-75 mt-2 ms-3" data-no-instant data-correct="устройства">
                         <option value="">— выберите —</option>
                         <option>программы</option>
                         <option>устройства</option>
@@ -748,7 +875,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <li class="list-group-item p-4 bg-light border rounded mb-3">
                     <strong>Монитор — это</strong>
-                    <select class="form-select w-75 mt-2 ms-3" data-correct="устройство">
+                    <select class="form-select w-75 mt-2 ms-3" data-no-instant data-correct="устройство">
                         <option value="">— выберите —</option>
                         <option>устройство</option>
                         <option>набор устройств</option>
@@ -760,7 +887,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <li class="list-group-item p-4 bg-light border rounded mb-3">
                     <strong>Основной состав компьютера — это</strong>
-                    <select class="form-select w-100 mt-2" data-correct="системный блок, монитор, клавиатура, мышь, динамики">
+                    <select class="form-select w-100 mt-2" data-no-instant data-correct="системный блок, монитор, клавиатура, мышь, динамики">
                         <option value="">— выберите —</option>
                         <option>только системный блок</option>
                         <option>монитор и клавиатура</option>
@@ -773,7 +900,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <!-- Кнопка точно как в задании 8 -->
             <div class="text-center mt-4">
-                <button class="btn btn-success btn-lg px-5" onclick="checkTask9()">Проверить задание 9</button>
+                <button type="button" class="btn btn-success btn-lg px-5" onclick="checkTask9()">Проверить задание 9</button>
             </div>
 
             <!-- Результат — красивый блок внизу -->
@@ -787,7 +914,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let allCorrect = true;
         let errors = 0;
 
-        document.querySelectorAll('select[data-correct]').forEach(sel => {
+        document.querySelectorAll('#task9-list select[data-correct]').forEach(sel => {
             const correct = sel.dataset.correct;
             const value = sel.value;
             const item = sel.closest('.list-group-item');
@@ -823,7 +950,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             result.innerHTML = `<div class="alert alert-warning"><h5>Ошибок: ${errors}. Исправь и нажми «Проверить задание 9» ещё раз.</h5></div>`;
         }
-        result.scrollIntoView({behavior: 'smooth'});
+        window.__scrollToCheck(result);
     }
     </script>
     <!-- Конец задания 9 -->
@@ -935,9 +1062,10 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>
 
-        <!-- Кнопка проверки -->
+        <!-- Кнопки -->
         <div class="text-center mt-5">
-            <button class="btn btn-success btn-lg px-5" onclick="checkTask10()">Проверить задание 10</button>
+            <button type="button" class="btn btn-success btn-lg px-4 me-2" onclick="checkTask10()">Проверить задание 10</button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="resetTask10()">Сбросить</button>
         </div>
 
         <!-- Результат -->
@@ -947,79 +1075,148 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- Полный рабочий скрипт -->
 <script>
-document.querySelectorAll('.device-tile').forEach(tile => {
-    tile.draggable = true;
-    tile.ondragstart = function(e) {
-        const name = this.closest('.device-item').dataset.name;
-        const html = this.outerHTML;
-        e.dataTransfer.setData('name', name);
-        e.dataTransfer.setData('html', html);
-    };
-});
+(function() {
+    // === Задание 10: drag & drop с возвратом в банк ===
+    const bank = document.getElementById('devices-bank');
+    const zones = document.querySelectorAll('.drop-zone');
 
-document.querySelectorAll('.drop-zone').forEach(zone => {
-    zone.ondragover = e => e.preventDefault();
-    zone.ondrop = function(e) {
-        e.preventDefault();
-        const name = e.dataTransfer.getData('name');
-        const html = e.dataTransfer.getData('html');
+    // Сохранить начальное состояние банка для функции сброса
+    const initialBankHTML = bank.innerHTML;
 
-        // Убираем placeholder
-        this.querySelector('.placeholder-text')?.remove();
+    // Правильные устройства (основной состав компьютера — 5 шт.)
+    const REQUIRED = ['системный блок', 'монитор', 'клавиатура', 'мышь', 'динамики'];
 
-        // Вставляем плитку
-        this.innerHTML = html;
-        this.querySelector('.device-tile').draggable = true;
-
-        // Записываем ответ
-        this.nextElementSibling.value = name;
-
-        // Удаляем из банка
-        document.querySelector(`.device-item[data-name="${name}"]`)?.remove();
-
-        // Возможность вернуть обратно
-        this.querySelector('.device-tile').ondragstart = ev => {
-            ev.dataTransfer.setData('name', name);
-            ev.dataTransfer.setData('html', html);
+    // === Включить drag для всех плиток в банке ===
+    function enableDrag(tile) {
+        tile.draggable = true;
+        tile.ondragstart = function(e) {
+            const item = tile.closest('.device-item');
+            const name = item.dataset.name;
+            e.dataTransfer.setData('name', name);
+            // Запомним id перетаскиваемого элемента, чтобы потом его перенести (а не клонировать)
+            item.id = '__dragging__';
+            e.dataTransfer.setData('id', '__dragging__');
         };
+        tile.ondragend = function() {
+            const it = document.getElementById('__dragging__');
+            if (it) it.id = '';
+        };
+    }
+    bank.querySelectorAll('.device-tile').forEach(enableDrag);
+
+    // === Drop-зоны ===
+    zones.forEach(zone => {
+        const hiddenInput = zone.nextElementSibling;
+        zone.ondragover = e => e.preventDefault();
+        zone.ondrop = function(e) {
+            e.preventDefault();
+            const draggedItem = document.getElementById('__dragging__');
+            if (!draggedItem) return;
+            const name = draggedItem.dataset.name;
+
+            // Если в этой зоне уже есть устройство — вернуть его в банк
+            const existing = zone.querySelector('.device-item');
+            if (existing) {
+                bank.appendChild(existing);
+                hiddenInput.value = '';
+            }
+
+            // Убрать placeholder
+            zone.querySelector('.placeholder-text')?.remove();
+
+            // Перенести (не копировать) элемент в зону
+            zone.appendChild(draggedItem);
+            hiddenInput.value = name;
+
+            // Сбросить визуальные подсветки от прошлой проверки
+            zone.classList.remove('border-success', 'border-danger', 'bg-success-subtle', 'bg-danger-subtle', 'border-warning');
+            const r = document.getElementById('task10-result');
+            if (r) r.classList.add('d-none');
+        };
+    });
+
+    // === Возврат в банк через drop в банк ===
+    bank.ondragover = e => e.preventDefault();
+    bank.ondrop = function(e) {
+        e.preventDefault();
+        const draggedItem = document.getElementById('__dragging__');
+        if (!draggedItem) return;
+        // Если перетянули из drop-zone — обнулить связанный hiddenInput
+        const fromZone = draggedItem.closest('.drop-zone');
+        if (fromZone) {
+            const inp = fromZone.nextElementSibling;
+            if (inp && inp.classList.contains('user-answer')) inp.value = '';
+            // Восстановить placeholder в опустевшей зоне
+            if (!fromZone.querySelector('.device-item')) {
+                const p = document.createElement('div');
+                p.className = 'placeholder-text text-muted fs-4';
+                p.textContent = '?';
+                fromZone.innerHTML = '';
+                fromZone.appendChild(p);
+            }
+        }
+        bank.appendChild(draggedItem);
     };
-});
 
-// Проверка задания 10
-function checkTask10() {
-    const answers = Array.from(document.querySelectorAll('.user-answer'))
-        .map(input => input.value.trim())
-        .filter(Boolean);
+    // === Кнопка проверки ===
+    window.checkTask10 = function() {
+        const answers = Array.from(document.querySelectorAll('.user-answer'))
+            .map(i => i.value.trim()).filter(Boolean);
 
-    const required = ['системный блок', 'монитор', 'клавиатура', 'мышь'];
-    const hasRequired = required.every(item => answers.includes(item));
-    const hasFive = answers.length === 5;
-    const isCorrect = hasRequired && hasFive;
+        // Все 5 ответов должны быть из REQUIRED, и их должно быть ровно 5
+        const allCorrect = answers.length === 5 && answers.every(a => REQUIRED.includes(a));
 
-    // Подсветка ячеек
-    document.querySelectorAll('.drop-zone').forEach(zone => {
-        const value = zone.nextElementSibling.value;
-        zone.classList.remove('border-success', 'border-danger', 'bg-success-subtle', 'bg-danger-subtle', 'border-warning');
-        
-        if (value) {
-            if (isCorrect || required.includes(value)) {
+        // Подсветка зон
+        zones.forEach(zone => {
+            const v = zone.nextElementSibling.value;
+            zone.classList.remove('border-success', 'border-danger', 'bg-success-subtle', 'bg-danger-subtle', 'border-warning');
+            if (!v) {
+                zone.classList.add('border-warning');
+            } else if (REQUIRED.includes(v)) {
                 zone.classList.add('border-success', 'bg-success-subtle');
             } else {
                 zone.classList.add('border-danger', 'bg-danger-subtle');
             }
+        });
+
+        const correctCount = answers.filter(a => REQUIRED.includes(a)).length;
+        const result = document.getElementById('task10-result');
+        result.classList.remove('d-none');
+        if (allCorrect) {
+            result.innerHTML = '<div class="alert alert-success text-center"><h4>✓ Отлично! Основной состав компьютера указан верно!</h4></div>';
+        } else if (answers.length === 0) {
+            result.innerHTML = '<div class="alert alert-warning text-center"><h5>Перетащи устройства в пустые ячейки.</h5></div>';
+        } else if (answers.length < 5) {
+            result.innerHTML = '<div class="alert alert-info text-center"><h5>Заполнено ' + answers.length + ' из 5. Из них правильных: ' + correctCount + '. Заполни все ячейки и проверь снова.</h5></div>';
         } else {
-            zone.classList.add('border-warning');
+            result.innerHTML = '<div class="alert alert-warning text-center"><h5>Правильно ' + correctCount + ' из 5. Замени ошибочные устройства (выделены красным) и проверь снова.</h5></div>';
         }
-    });
+        window.__scrollToCheck && window.__scrollToCheck(result);
+    };
 
-    const result = document.getElementById('task10-result');
-    result.classList.remove('d-none');
-    result.innerHTML = isCorrect
-        ? '<div class="alert alert-success text-center"><h4>Отлично! Основной состав компьютера указан верно!</h4></div>'
-        : '<div class="alert alert-warning text-center"><h5>Попробуй ещё раз!</h5></div>';
-
-    result.scrollIntoView({behavior: 'smooth'});
-}
+    // === Кнопка сброса ===
+    window.resetTask10 = function() {
+        // Очистить все zones и вернуть placeholder
+        zones.forEach(zone => {
+            zone.innerHTML = '';
+            const p = document.createElement('div');
+            p.className = 'placeholder-text text-muted fs-4';
+            p.textContent = '?';
+            zone.appendChild(p);
+            zone.classList.remove('border-success', 'border-danger', 'bg-success-subtle', 'bg-danger-subtle', 'border-warning');
+            zone.nextElementSibling.value = '';
+        });
+        // Восстановить банк
+        bank.innerHTML = initialBankHTML;
+        bank.querySelectorAll('.device-tile').forEach(enableDrag);
+        // Спрятать результат
+        const r = document.getElementById('task10-result');
+        if (r) {
+            r.classList.add('d-none');
+            r.innerHTML = '';
+        }
+    };
+})();
 </script>
     <!-- Конец задания 10 -->
     
@@ -1035,15 +1232,15 @@ function checkTask10() {
         <div class="alert alert-light border-start border-primary border-4">
             <h5 class="text-primary mb-3">Опирайтесь на эти вопросы:</h5>
             <ol class="fs-5 mb-0">
-                <li>Что такое компьютер?</li>
-                <li>Что такое состав компьютера?</li>
-                <li>Что такое монитор?</li>
-                <li>Что такое клавиатура, мышь, динамики?</li>
-                <li>Что такое системный блок?</li>
-                <li>Какие устройства являются основными в составе компьютера?</li>
-                <li>Какое устройство компьютер?</li>
-                <li>Какая система компьютер?</li>
-                <li>Какой основной состав компьютера?</li>
+                <li class="mb-2"><button type="button" class="btn btn-sm btn-outline-primary me-2 speak-btn" data-text="Что такое компьютер?" title="Прослушать вопрос">▶</button>Что такое компьютер?</li>
+                <li class="mb-2"><button type="button" class="btn btn-sm btn-outline-primary me-2 speak-btn" data-text="Что такое состав компьютера?" title="Прослушать вопрос">▶</button>Что такое состав компьютера?</li>
+                <li class="mb-2"><button type="button" class="btn btn-sm btn-outline-primary me-2 speak-btn" data-text="Что такое монитор?" title="Прослушать вопрос">▶</button>Что такое монитор?</li>
+                <li class="mb-2"><button type="button" class="btn btn-sm btn-outline-primary me-2 speak-btn" data-text="Что такое клавиатура, мышь, динамики?" title="Прослушать вопрос">▶</button>Что такое клавиатура, мышь, динамики?</li>
+                <li class="mb-2"><button type="button" class="btn btn-sm btn-outline-primary me-2 speak-btn" data-text="Что такое системный блок?" title="Прослушать вопрос">▶</button>Что такое системный блок?</li>
+                <li class="mb-2"><button type="button" class="btn btn-sm btn-outline-primary me-2 speak-btn" data-text="Какие устройства являются основными в составе компьютера?" title="Прослушать вопрос">▶</button>Какие устройства являются основными в составе компьютера?</li>
+                <li class="mb-2"><button type="button" class="btn btn-sm btn-outline-primary me-2 speak-btn" data-text="Какое устройство компьютер?" title="Прослушать вопрос">▶</button>Какое устройство компьютер?</li>
+                <li class="mb-2"><button type="button" class="btn btn-sm btn-outline-primary me-2 speak-btn" data-text="Какая система компьютер?" title="Прослушать вопрос">▶</button>Какая система компьютер?</li>
+                <li class="mb-2"><button type="button" class="btn btn-sm btn-outline-primary me-2 speak-btn" data-text="Какой основной состав компьютера?" title="Прослушать вопрос">▶</button>Какой основной состав компьютера?</li>
             </ol>
         </div>
 
@@ -1053,15 +1250,15 @@ function checkTask10() {
                 Напишите или расскажите ваш ответ здесь (необязательно, для тренировки):
             </label>
             <textarea class="form-control fs-5" id="oral-answer" rows="10" 
-                      placeholder="Например: Компьютер — это электронное устройство и техническая система. Состав компьютера — это набор устройств. Основной состав компьютера состоит из системного блока, монитора, клавиатуры и мыши. Системный блок — это основное устройство, в котором находится процессор, память и другие важные части..."></textarea>
+                      placeholder="Например: Компьютер — это ..."></textarea>
         </div>
 
         <!-- Кнопка "Я ответил устно" + красивый результат -->
         <div class="text-center mt-4">
-            <button class="btn btn-outline-success btn-lg px-5 me-3" onclick="markAsDone()">
+            <button type="button" class="btn btn-outline-success btn-lg px-5 me-3" onclick="markAsDone()">
                 Я рассказал устно
             </button>
-            <button class="btn btn-success btn-lg px-5" onclick="showSampleAnswer()">
+            <button type="button" class="btn btn-success btn-lg px-5" onclick="showSampleAnswer()">
                 Показать образец ответа
             </button>
         </div>
@@ -1094,12 +1291,12 @@ function markAsDone() {
             <h4>Молодец! Вы рассказали о составе компьютера!</h4>
             <p>Занятие 1 полностью выполнено!</p>
         </div>`;
-    document.getElementById('task11-result').scrollIntoView({behavior: 'smooth'});
+    window.__scrollToCheck(document.getElementById('task11-result'));
 }
 
 function showSampleAnswer() {
     document.getElementById('sample-answer').classList.remove('d-none');
-    document.getElementById('sample-answer').scrollIntoView({behavior: 'smooth'});
+    window.__scrollToCheck(document.getElementById('sample-answer'));
 }
 </script>
 <!-- Конц задания 11 -->
