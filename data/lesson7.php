@@ -381,7 +381,7 @@
 <!-- lang-word-formation -->
 <div class="card mb-4 border-warning">
     <div class="card-header bg-warning-subtle fw-bold">
-        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> Образуй существительное от глагола
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> 2. Образуй существительное от глагола
     </div>
     <div class="card-body">
         <p class="mb-2"><strong>Образец:</strong> <code>представить → представление</code></p>
@@ -455,7 +455,7 @@
 <!-- lang-word-formation -->
 <div class="card mb-4 border-warning">
     <div class="card-header bg-warning-subtle fw-bold">
-        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> Образуй существительное от глагола
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> 3. Образуй существительное от глагола
     </div>
     <div class="card-body">
         <p class="mb-2"><strong>Образец:</strong> <code>понимать → понимание</code></p>
@@ -494,7 +494,7 @@
 <!-- lang-word-formation -->
 <div class="card mb-4 border-warning">
     <div class="card-header bg-warning-subtle fw-bold">
-        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> Образуй существительное от глагола
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> 4. Образуй существительное от глагола
     </div>
     <div class="card-body">
         <p class="mb-2"><strong>Образец:</strong> <code>преподавать → преподаватель</code></p>
@@ -526,7 +526,7 @@
 <!-- lang-word-formation -->
 <div class="card mb-4 border-warning">
     <div class="card-header bg-warning-subtle fw-bold">
-        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> Образуй существительное от глагола
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> 5. Образуй существительное от глагола
     </div>
     <div class="card-body">
         <p class="mb-2"><strong>Образец:</strong> <code>проверить → проверка</code></p>
@@ -579,7 +579,7 @@
 <!-- lang-roots -->
 <div class="card mb-4 border-warning">
     <div class="card-header bg-warning-subtle fw-bold">
-        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> К какому корню относится слово?
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> 6. К какому корню относится слово?
     </div>
     <div class="card-body">
         <p class="text-muted mb-3">Выбери корень для каждого слова.</p>
@@ -668,7 +668,7 @@
 <!-- lang-constructions -->
 <div class="card mb-4 border-warning">
     <div class="card-header bg-warning-subtle fw-bold">
-        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> Учим конструкции
+        <span class="badge bg-warning text-dark me-2">📝 Лексика</span> 7. Учим конструкции
     </div>
     <div class="card-body">
         <p class="text-muted mb-3">Изучи каждую конструкцию, посмотри образец и попробуй составить свои предложения.</p>
@@ -737,7 +737,7 @@
 <!-- yesno-test -->
 <div class="card mb-4">
     <div class="card-header bg-warning-subtle fw-bold fs-5">
-        <span class="badge bg-warning text-dark me-2">Понимание</span> Тест: верно ли утверждение?
+        <span class="badge bg-warning text-dark me-2">Понимание</span> 8. Тест: верно ли утверждение?
     </div>
     <div class="card-body">
         <p class="text-muted mb-3">Прочитай каждое утверждение и нажми «да», если оно верно, «нет» — если неверно.</p>
@@ -812,7 +812,7 @@
 <!-- mcq-test -->
 <div class="card mb-4">
     <div class="card-header bg-primary text-white fw-bold fs-5">
-        <span class="badge bg-light text-primary me-2">Выбор ответа</span> Тест: выбери правильный вариант
+        <span class="badge bg-light text-primary me-2">Выбор ответа</span> 9. Тест: выбери правильный вариант
     </div>
     <div class="card-body mcq-set">
         <p class="text-muted mb-3">В каждом вопросе только один правильный ответ.</p>
@@ -932,7 +932,7 @@
 <!-- fill-in -->
 <div class="card mb-4">
     <div class="card-header bg-success-subtle fw-bold fs-5">
-        <span class="badge bg-success me-2">Заполни пропуск</span> Тест: закончи предложение
+        <span class="badge bg-success me-2">Заполни пропуск</span> 10. Тест: закончи предложение
     </div>
     <div class="card-body">
         <p class="text-muted mb-3">Выбери из выпадающего списка слово, которое лучше всего подходит.</p>
@@ -965,7 +965,7 @@
 <!-- open-questions -->
 <div class="card mb-4">
     <div class="card-header bg-secondary text-white fw-bold fs-5">
-        <span class="badge bg-light text-secondary me-2">Развёрнутый ответ</span> Сформулируй своими словами
+        <span class="badge bg-light text-secondary me-2">Развёрнутый ответ</span> 11. Сформулируй своими словами
     </div>
     <div class="card-body">
         <p class="text-muted mb-3">
