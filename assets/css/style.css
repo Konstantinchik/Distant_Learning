@@ -1,4 +1,10 @@
-/* style.css — красивый и адаптивный дизайн в стиле ТГТУ */
+/* style.css — общие стили сайта.
+   Минималистичный дизайн в стиле ТГТУ/ПГУ.
+   Все Pascal-специфичные стили — в pascal-trainer.css. */
+
+/* ============================================================
+   Базовая типографика
+   ============================================================ */
 body {
     font-family: "Segoe UI", Arial, sans-serif;
     background: #f8f9fa;
@@ -11,12 +17,14 @@ h1, h2, h3, h4, h5 {
     font-weight: 600;
 }
 
+/* ============================================================
+   Карточки и кнопки (общие переопределения Bootstrap)
+   ============================================================ */
 .card {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     border-radius: 10px;
     overflow: hidden;
 }
-
 .card-header {
     font-weight: 600;
     font-size: 1.1rem;
@@ -26,32 +34,44 @@ h1, h2, h3, h4, h5 {
     background-color: #0d6efd;
     border: none;
 }
-
 .btn-primary:hover {
     background-color: #0b5ed7;
 }
 
-/* Красивые радиокнопки да/нет */
+/* Радиокнопки да/нет */
 .btn-check:checked + .btn-outline-success {
     background-color: #198754;
-    color: white;
+    color: #fff;
 }
 .btn-check:checked + .btn-outline-danger {
     background-color: #dc3545;
-    color: white;
+    color: #fff;
 }
 
-/* Чтобы картинки не растягивались на весь экран на телефоне */
+/* ============================================================
+   Активная вкладка в navbar (поверх Bootstrap)
+   ============================================================ */
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 2px solid #fff;
+}
+
+/* ============================================================
+   Картинки
+   ============================================================ */
 .img-fluid {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
     margin: 10px auto;
     display: block;
 }
 
-/* Прогресс-бар в шапке */
+/* ============================================================
+   Прогресс-бар в шапке урока
+   ============================================================ */
 .progress {
     height: 8px;
     background: #e9ecef;
@@ -59,137 +79,160 @@ h1, h2, h3, h4, h5 {
     margin: 15px 0;
 }
 
-/* Удобно на маленьких экранах */
+/* ============================================================
+   Сетка кнопок-номеров занятий (1..24)
+   Заменяет .btn-group + flex-wrap (которые конфликтовали).
+   ============================================================ */
+.lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 0.4rem;
+}
+.lesson-grid__btn {
+    padding: 0.4rem 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 6px;
+    min-width: 0;          /* чтобы grid сжимал кнопки на узких экранах */
+}
+.lesson-grid__btn.active {
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+@media (max-width: 991.98px) {
+    .lesson-grid { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+}
+@media (max-width: 575.98px) {
+    .lesson-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 0.3rem;
+    }
+    .lesson-grid__btn {
+        font-size: 0.85rem;
+        padding: 0.3rem 0;
+    }
+}
+
+/* ============================================================
+   Адаптив для уроков
+   ============================================================ */
 @media (max-width: 768px) {
     .container {
         padding-left: 15px;
         padding-right: 15px;
     }
-    h2 {
-        font-size: 1.5rem;
-    }
-    .btn-group .btn {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.6rem;
-    }
+    h2 { font-size: 1.5rem; }
 }
-
-/* Placeholder в карточках групп (задание 4) */
-/* Placeholder в карточках групп (задание 4) */
-.l3-placeholder {
-    color: #212529 !important;      /* почти чёрный, отличная читабельность */
-    font-style: italic;
-    opacity: 1;
-    margin-top: 6px;
-    display: inline-block;
-    padding: 2px 6px;
-    border-radius: 4px;
-    background: #fff3cd;            /* мягкий жёлтый (как alert-warning) */
-}
-
-
-
 
 /* ============================================================
-   Word Grouping — однокоренные слова (универсальный модуль)
+   Кнопка озвучки .speak-btn — состояние «играет»
+   (см. main.js → отмечает класс .is-playing на время речи)
+   ============================================================ */
+.speak-btn.is-playing {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+    border-color: #ffc107 !important;
+}
+
+/* ============================================================
+   Word Grouping — однокоренные слова
    ============================================================ */
 .word-grouping .word-bank {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  padding: 0.75rem;
-  min-height: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+
+    /* Sticky-банк: всегда виден сверху, чтобы перетаскивать удобно */
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 1rem;
+    padding: 0.6rem 0.8rem;
+    max-height: 35vh;
+    overflow-y: auto;
 }
 .word-grouping .word-chip {
-  user-select: none;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+    user-select: none;
+    font-size: 0.88rem;
+    padding: 0.2rem 0.55rem;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 .word-grouping .word-chip:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 .word-grouping .word-chip.selected {
-  background-color: #ffc107 !important;
-  color: #212529 !important;
-  border-color: #ffc107 !important;
-  box-shadow: 0 0 0 0.2rem rgba(255,193,7,0.3);
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+    border-color: #ffc107 !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.3);
 }
+
 .word-grouping .root-card {
-  border: 2px dashed #adb5bd;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: border-color 0.15s, background-color 0.15s;
+    border: 2px dashed #adb5bd;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: border-color 0.15s, background-color 0.15s;
+    font-size: 0.92rem;
 }
 .word-grouping .root-card:hover {
-  border-color: #0d6efd;
-  background: #f0f7ff;
+    border-color: #0d6efd;
+    background: #f0f7ff;
 }
+.word-grouping .root-card .card-header {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+}
+.word-grouping .root-card .card-body {
+    padding: 0.5rem 0.6rem;
+    min-height: 4.5rem;
+}
+
 .word-grouping .root-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  min-height: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    min-height: 2rem;
 }
-.word-grouping .root-list:empty + .l3-placeholder,
-.word-grouping .root-list:empty ~ .l3-placeholder {
-  display: block;
+
+/* Placeholder в карточках групп: показываем только когда корзина пуста */
+.l3-placeholder {
+    color: #6c757d;
+    font-style: italic;
+    text-align: center;
+    padding: 0.25rem;
+    margin-top: 6px;
+    display: inline-block;
+    border-radius: 4px;
+    background: #fff3cd;
 }
 .word-grouping .root-list:not(:empty) + .l3-placeholder,
 .word-grouping .root-list:not(:empty) ~ .l3-placeholder {
-  display: none;
-}
-.word-grouping .l3-placeholder {
-  color: #6c757d;
-  font-style: italic;
-  text-align: center;
-  padding: 0.25rem;
+    display: none;
 }
 
-/* Адаптив: на узких экранах карточки складываются вертикально */
+/* Адаптив word-grouping */
 @media (max-width: 575.98px) {
-  .word-grouping .word-bank { gap: 0.3rem; padding: 0.5rem; }
-  .word-grouping .word-chip { font-size: 0.85rem; padding: 0.25rem 0.5rem; }
+    .word-grouping .word-bank {
+        gap: 0.3rem;
+        padding: 0.5rem;
+        max-height: 22vh;       /* меньше на телефоне, чтобы корзины были видны */
+    }
+    .word-grouping .word-chip {
+        font-size: 0.85rem;
+        padding: 0.25rem 0.5rem;
+    }
 }
-
-/* === Sticky банк слов в word-grouping (заметно компактнее для уроков с 10+ групп) === */
-.word-grouping .word-bank {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  background: #f8f9fa;
-  border-bottom: 2px solid #dee2e6;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  margin-bottom: 1rem;
-  padding: 0.6rem 0.8rem !important;
-  max-height: 35vh;
-  overflow-y: auto;
-}
-/* Компактные карточки групп */
-.word-grouping .root-card {
-  font-size: 0.92rem;
-}
-.word-grouping .root-card .card-header {
-  padding: 0.4rem 0.6rem;
-  font-size: 0.9rem;
-}
-.word-grouping .root-card .card-body {
-  padding: 0.5rem 0.6rem;
-  min-height: 4.5rem;
-}
-.word-grouping .root-list {
-  min-height: 2rem;
-}
-.word-grouping .word-chip {
-  font-size: 0.88rem;
-  padding: 0.2rem 0.55rem;
-}
-/* На очень широких экранах (xl ≥1200px) — 4 колонки в word-grouping */
 @media (min-width: 1200px) {
-  .word-grouping .row > [class*="col-"] {
-    flex: 0 0 auto;
-    width: 25%;
-  }
+    /* На широких экранах — 4 колонки корзин */
+    .word-grouping .row > [class*="col-"] {
+        flex: 0 0 auto;
+        width: 25%;
+    }
 }

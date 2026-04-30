@@ -206,6 +206,8 @@
     font-family: 'Consolas', monospace;
     cursor: grab;
     user-select: none;
+    /* touch-action: none — позволяет нашему touchmove работать без вмешательства браузерного скролла */
+    touch-action: none;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     border-left: 3px solid transparent;
     transition: border-color 0.2s, transform 0.15s;

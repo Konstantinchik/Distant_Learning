@@ -715,7 +715,8 @@
     }
 
     // ============================================================
-    //  ТРЕНАЖЁР «Расставь по порядку» (HTML5 drag&drop)
+    //  ТРЕНАЖЁР «Расставь по порядку»
+    //  Поддерживает HTML5 drag&drop (десктоп) + touch (мобильные).
     // ============================================================
 
     function initReorder() {
@@ -734,12 +735,44 @@
             items.forEach(it => {
                 it.draggable = true;
                 list.appendChild(it);
+                // ── Десктоп: HTML5 drag&drop ──────────────────────
                 it.addEventListener('dragstart', e => {
                     it.classList.add('dragging');
-                    e.dataTransfer.effectAllowed = 'move';
+                    if (e.dataTransfer) e.dataTransfer.effectAllowed = 'move';
                 });
                 it.addEventListener('dragend', () => it.classList.remove('dragging'));
+
+                // ── Мобильные: touch ──────────────────────────────
+                // Эмулируем drag, перемещая элемент в DOM при touchmove.
+                let touchActive = false;
+                it.addEventListener('touchstart', (e) => {
+                    // Не блокируем скролл пока пользователь явно не «взял» элемент:
+                    // считаем drag начавшимся после небольшого удержания/движения.
+                    touchActive = true;
+                    it.classList.add('dragging');
+                }, { passive: true });
+
+                it.addEventListener('touchmove', (e) => {
+                    if (!touchActive) return;
+                    // Блокируем скролл только во время реального перетаскивания
+                    e.preventDefault();
+                    const touch = e.touches[0];
+                    if (!touch) return;
+                    const after = getDragAfter(list, touch.clientY);
+                    if (after == null) list.appendChild(it);
+                    else if (after !== it) list.insertBefore(it, after);
+                }, { passive: false });
+
+                const endTouch = () => {
+                    if (!touchActive) return;
+                    touchActive = false;
+                    it.classList.remove('dragging');
+                };
+                it.addEventListener('touchend', endTouch, { passive: true });
+                it.addEventListener('touchcancel', endTouch, { passive: true });
             });
+
+            // dragover на контейнере — для десктопа
             list.addEventListener('dragover', e => {
                 e.preventDefault();
                 const dragging = list.querySelector('.dragging');
@@ -748,6 +781,7 @@
                 if (after == null) list.appendChild(dragging);
                 else list.insertBefore(dragging, after);
             });
+
             const scope = box.closest('.card-body') || box.parentElement || box;
             const btn = scope.querySelector('[data-check]');
             const fb = scope.querySelector('.pas-reorder-feedback');

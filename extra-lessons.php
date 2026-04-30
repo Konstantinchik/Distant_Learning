@@ -36,7 +36,7 @@ if ($id && isset($extraLessons[$id])) {
 require __DIR__ . '/header.php';
 ?>
 
-<div class="container py-5">
+<div class="py-4">
 
     <?php if (!$id): ?>
         <!-- Режим СПИСОК всех доп. занятий -->

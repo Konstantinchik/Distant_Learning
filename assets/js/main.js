@@ -42,7 +42,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4) Глобальный прогресс
   updateGlobalProgress();
+
+  // 5) Автозакрытие мобильного navbar после клика по ссылке
+  initNavbarAutoClose();
 });
+
+// ──────────────────────────────────────────────────────────────────────────────
+// Автозакрытие мобильного меню Bootstrap navbar после клика по nav-link
+// (Bootstrap по умолчанию этого не делает.)
+// ──────────────────────────────────────────────────────────────────────────────
+function initNavbarAutoClose() {
+  const navMenu = document.getElementById('navMenu');
+  if (!navMenu) return;
+
+  navMenu.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      // Закрываем меню, только если оно реально раскрыто (мобильный режим)
+      if (!navMenu.classList.contains('show')) return;
+      // Используем Bootstrap Collapse API, если он есть, иначе fallback
+      if (window.bootstrap && window.bootstrap.Collapse) {
+        const collapse = window.bootstrap.Collapse.getOrCreateInstance(navMenu, { toggle: false });
+        collapse.hide();
+      } else {
+        navMenu.classList.remove('show');
+      }
+    });
+  });
+}
 
 // ──────────────────────────────────────────────────────────────────────────────
 // 1. ОЗВУЧКА — глобальная для кнопок .speak-btn
@@ -67,11 +93,19 @@ function initSpeechSynthesis() {
   speechSynthesis.onvoiceschanged = loadVoices;
   loadVoices();
 
-  function speak(text, lang = 'ru-RU') {
+  function speak(text, lang = 'ru-RU', sourceBtn = null) {
     if (!text) return;
 
-    // Останавливаем предыдущую озвучку
+    // Останавливаем предыдущую озвучку и сбрасываем визуальное состояние всех кнопок
     speechSynthesis.cancel();
+    document.querySelectorAll('.speak-btn.is-playing').forEach(b => {
+      b.classList.remove('is-playing');
+      // Возвращаем оригинальный текст кнопки, если он был сохранён
+      if (b.dataset.originalLabel != null) {
+        b.textContent = b.dataset.originalLabel;
+        delete b.dataset.originalLabel;
+      }
+    });
 
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = lang;
@@ -85,6 +119,23 @@ function initSpeechSynthesis() {
     utterance.rate = 1.05;
     utterance.pitch = 1.0;
 
+    // Визуальная индикация на кнопке-источнике
+    if (sourceBtn) {
+      sourceBtn.dataset.originalLabel = sourceBtn.textContent;
+      sourceBtn.textContent = '⏸';
+      sourceBtn.classList.add('is-playing');
+
+      const cleanup = () => {
+        sourceBtn.classList.remove('is-playing');
+        if (sourceBtn.dataset.originalLabel != null) {
+          sourceBtn.textContent = sourceBtn.dataset.originalLabel;
+          delete sourceBtn.dataset.originalLabel;
+        }
+      };
+      utterance.onend = cleanup;
+      utterance.onerror = cleanup;
+    }
+
     speechSynthesis.speak(utterance);
   }
 
@@ -93,10 +144,21 @@ function initSpeechSynthesis() {
     const btn = e.target.closest('.speak-btn');
     if (!btn) return;
 
+    // Повторный клик по играющей кнопке — остановить озвучку
+    if (btn.classList.contains('is-playing')) {
+      speechSynthesis.cancel();
+      btn.classList.remove('is-playing');
+      if (btn.dataset.originalLabel != null) {
+        btn.textContent = btn.dataset.originalLabel;
+        delete btn.dataset.originalLabel;
+      }
+      return;
+    }
+
     const text = (btn.dataset.text || btn.textContent || '').trim();
     const lang = (btn.dataset.lang || 'ru-RU').trim();
 
-    speak(text, lang);
+    speak(text, lang, btn);
   });
 }
 

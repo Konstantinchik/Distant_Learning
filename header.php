@@ -1,12 +1,43 @@
 <?php
-// header.php
+// header.php — общая шапка сайта.
+// $pageTitle — необязательная переменная: можно задать перед include
+// для подстановки кастомного <title>. Если не задана, используется дефолт.
+
+if (!isset($pageTitle) || $pageTitle === '') {
+    $pageTitle = 'ПГУ • Информатика';
+}
+
+// Определяем текущую страницу для подсветки активной вкладки в меню.
+// SCRIPT_NAME даёт например "/lessons.php" или "/index.php".
+$__currentScript = basename($_SERVER['SCRIPT_NAME'] ?? '');
+
+// Хелпер: возвращает 'active' если страница совпадает.
+if (!function_exists('navActive')) {
+    function navActive(string $page, string $current): string {
+        return $page === $current ? 'active' : '';
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ПГУ • Информатика</title>
+    <title><?= htmlspecialchars($pageTitle) ?></title>
+
+    <!-- SEO + соцсети -->
+    <meta name="description" content="Подготовительный курс по информатике для иностранных студентов ПГУ: 24 занятия, словари, интерактивные задания, тренажёры по Pascal.">
+    <meta name="theme-color" content="#0d6efd">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<?= htmlspecialchars($pageTitle) ?>">
+    <meta property="og:description" content="Подготовительный курс по информатике для иностранных студентов. 24 занятия с интерактивными заданиями.">
+    <meta property="og:image" content="/assets/images/icons/favicon128.png">
+    <meta property="og:locale" content="ru_RU">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="<?= htmlspecialchars($pageTitle) ?>">
+    <meta name="twitter:description" content="Подготовительный курс по информатике для иностранных студентов.">
 
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="/assets/images/icons/favicon.png">
@@ -19,6 +50,15 @@
 
     <!-- Custom styles -->
     <link href="/assets/css/style.css" rel="stylesheet">
+
+    <?php
+    // Если страница урока 19–24 — подключаем стили Pascal-тренажёра.
+    // Это делается через переменную $loadPascalAssets, которую урочная страница
+    // может выставить ДО include 'header.php'.
+    if (!empty($loadPascalAssets)):
+    ?>
+    <link href="/assets/css/pascal-trainer.css" rel="stylesheet">
+    <?php endif; ?>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100">
@@ -39,10 +79,18 @@
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/lessons.php">Курс</a>
+                    <a class="nav-link <?= navActive('lessons.php', $__currentScript) ?>"
+                       href="/lessons.php"
+                       <?= $__currentScript === 'lessons.php' ? 'aria-current="page"' : '' ?>>
+                        Курс
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/extra-lessons.php">Дополнительные занятия</a>
+                    <a class="nav-link <?= navActive('extra-lessons.php', $__currentScript) ?>"
+                       href="/extra-lessons.php"
+                       <?= $__currentScript === 'extra-lessons.php' ? 'aria-current="page"' : '' ?>>
+                        Дополнительные занятия
+                    </a>
                 </li>
             </ul>
         </div>
