@@ -387,70 +387,103 @@
     </div>
 
     <div class="card-body fs-5">
-      <p class="mb-3">
-        Перетащите слова в подходящие группы. На телефоне можно перетаскивать пальцем.
-      </p>
+      <div class="word-grouping" data-grouping-id="l5t2">
 
-      <div class="mb-4 p-3 border rounded bg-light">
-        <div class="fw-bold mb-2">Слова:</div>
+        <div class="alert alert-info py-2 mb-3 small">
+            <div><strong>Как работать:</strong></div>
+            <div>1. Нажмите на слово в «облаке» — оно подсветится жёлтым.</div>
+            <div>2. Нажмите на <strong>свободное место</strong> в карточке группы — слово переместится туда.</div>
+            <div>3. Если нажать на слово, которое уже в карточке — оно вернётся в банк.</div>
+        </div>
 
-        <div id="l5-bank" class="d-flex flex-wrap">
-          <!-- список из пособия (стр. 2) -->
+        <div class="mb-4 p-3 border rounded bg-light">
+          <div class="fw-bold mb-2">Слова:</div>
+          <div id="l5-bank" class="word-bank">
+            <?php
+            // Словарь слово → корень (правильная группа)
+            $word_to_root = [
+              "Сбор" => "сбор", "сборщик" => "сбор", "сборка" => "сбор", "собрать" => "сбор", "собирать" => "сбор",
+              "знающий" => "знать", "узнать" => "знать", "знать" => "знать", "знание" => "знать",
+              "звучать" => "звук", "звучание" => "звук", "звук" => "звук", "звуковой" => "звук",
+              "информировать" => "информ", "информатор" => "информ", "информация" => "информ", "информационный" => "информ",
+              "зрительница" => "зр", "зрение" => "зр", "зрительный" => "зр",
+              "понятный" => "понят", "понять" => "понят", "понятность" => "понят", "понимать" => "понят",
+              "полно" => "полн", "полный" => "полн", "полнота" => "полн",
+              "осязать" => "осяз", "осязание" => "осяз", "осязательный" => "осяз",
+              "обонять" => "обон", "обонятельный" => "обон", "обоняние" => "обон",
+              "полезно" => "полез", "польза" => "полез", "полезность" => "полез", "полезный" => "полез",
+              "достоверный" => "достовер", "достоверно" => "достовер", "достоверность" => "достовер",
+              "актуальность" => "актуал", "актуально" => "актуал", "актуальный" => "актуал",
+            ];
+            foreach ($word_to_root as $w => $r) {
+              echo '<button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="'.htmlspecialchars($w).'" data-correct-root="'.$r.'">'.$w.'</button>';
+            }
+            ?>
+          </div>
+        </div>
+
+        <div class="row g-3">
           <?php
-          $words = [
-            "Сбор","знающий","звучать","информировать","зрительница","понятный","полно",
-            "осязать","обонять","полезно","достоверный","актуальность","сборщик","полный",
-            "информатор","узнать","зрение","достоверно","польза","обонятельный","звучание",
-            "информация","актуально","понять","осязание","знать","сборка","полезность",
-            "понятность","актуальный","обоняние","собрать","звук","зрительный",
-            "информационный","понимать","достоверность","полнота","полезный","осязательный",
-            "знание","собирать","звуковой"
-          ];
-          foreach ($words as $w) {
-            $id = mb_strtolower($w, 'UTF-8');
-            echo '<button type="button" class="btn btn-outline-secondary btn-sm m-1 draggable" draggable="true" data-id="'.$id.'">'.$w.'</button>';
+          $groups = ["сбор","знать","звук","информ","зр","понят","полн","осяз","обон","полез","достовер","актуал"];
+          foreach ($groups as $g) {
+            echo '
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 root-card" data-root="'.$g.'">
+                  <div class="card-header fw-bold text-center">Группа «'.$g.'…»</div>
+                  <div class="card-body">
+                    <ul class="root-list" data-root="'.$g.'"></ul>
+                    <div class="l3-placeholder small">Нажмите на слово, затем сюда.</div>
+                  </div>
+                </div>
+              </div>
+            ';
           }
           ?>
         </div>
 
-        <div class="small text-muted mt-2">
-          Если слово попало не туда — просто перетащите его в другую группу (или обновите страницу).
+        <div class="text-center mt-4">
+            <button type="button" class="btn btn-primary btn-lg" onclick="checkL5Task2()">Проверить задание 2</button>
         </div>
-      </div>
 
-      <div class="row g-3">
-        <?php
-        $groups = [
-          "сбор",
-          "знать",
-          "звук",
-          "информ",
-          "зр",
-          "понят",
-          "полн",
-          "осяз",
-          "обон",
-          "полез",
-          "достовер",
-          "актуал"
-        ];
-        foreach ($groups as $g) {
-          echo '
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card h-100 drop-zone" data-root="'.$g.'">
-                <div class="card-header fw-bold text-center">Группа «'.$g.'…»</div>
-                <div class="card-body">
-                  <ul class="list-unstyled mb-0"></ul>
-                  <div class="small text-muted">Перетащите слова сюда.</div>
-                </div>
-              </div>
-            </div>
-          ';
-        }
-        ?>
-      </div>
+        <div id="l5t2-status" class="mt-3"></div>
+      </div><!-- /.word-grouping -->
     </div>
   </div>
+
+<script>
+window.checkL5Task2 = function() {
+    const grouping = document.querySelector('.word-grouping[data-grouping-id="l5t2"]');
+    if (!grouping) return;
+    const status = document.getElementById('l5t2-status');
+    let correct = 0, total = 0, wrongInRoots = 0, missedInBank = 0;
+    grouping.querySelectorAll('.word-chip').forEach(chip => {
+        total++;
+        const expected = chip.dataset.correctRoot || '';
+        const inList = chip.closest('.root-list');
+        chip.classList.remove('btn-success','btn-danger','btn-outline-success','btn-outline-danger','btn-outline-secondary','btn-outline-primary');
+        if (inList) {
+            if (inList.dataset.root === expected) { chip.classList.add('btn-success'); correct++; }
+            else { chip.classList.add('btn-danger'); wrongInRoots++; }
+        } else {
+            if (expected === '') { chip.classList.add('btn-outline-success'); correct++; }
+            else { chip.classList.add('btn-outline-danger'); missedInBank++; }
+        }
+    });
+    if (status) {
+        let html;
+        if (correct === total) {
+            html = '<div class="alert alert-success text-center"><h5 class="mb-0">✓ Отлично! Все ' + total + ' слов на своих местах!</h5></div>';
+        } else {
+            html = '<div class="alert alert-warning"><h6>Правильно: ' + correct + ' из ' + total + '.</h6>';
+            if (wrongInRoots) html += '<div>В группах ошибочно: <strong>' + wrongInRoots + '</strong>.</div>';
+            if (missedInBank) html += '<div>Не разнесены по группам: <strong>' + missedInBank + '</strong>.</div>';
+            html += '</div>';
+        }
+        status.innerHTML = html;
+        if (window.__scrollToCheck) window.__scrollToCheck(status);
+    }
+};
+</script>
   <!-- Конец задания 2 -->
 
 

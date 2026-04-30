@@ -373,28 +373,42 @@
   </div>
 
   <div class="card-body fs-5">
-    <p class="mb-3">
-      Нажмите на слово в «облаке», затем нажмите на карточку группы, куда оно подходит.
-      Чтобы вернуть слово — нажмите на него в группе.
-    </p>
+    <div class="word-grouping" data-grouping-id="l6t2">
+
+    <div class="alert alert-info py-2 mb-3 small">
+        <div><strong>Как работать:</strong></div>
+        <div>1. Нажмите на слово в «облаке» — оно подсветится жёлтым.</div>
+        <div>2. Нажмите на <strong>свободное место</strong> в карточке группы — слово переместится туда.</div>
+        <div>3. Если нажать на слово, которое уже в карточке — оно вернётся в банк.</div>
+    </div>
 
     <div class="mb-4 p-3 border rounded bg-light">
       <div class="fw-bold mb-2">Слова для группировки:</div>
-      <div id="l6task2-wordbank">
+      <div id="l6task2-wordbank" class="word-bank">
         <?php
-        $words = [
-          'Символ','кодовый','вектор','звук','представить','изобразить','байт','непрерывность',
-          'код','звучать','растровый','числовой','представление','изображаемый','последовательно',
-          'символьный','закодированный','векторный','число','графический','аналог','дискретный',
-          'цифра','кодирование','растр','изображение','байтовый','последовательность','кодировать',
-          'цифровой','графика','звуковой','представлять','непрерывный','изображать','аналоговый',
-          'дискретность','последовательный'
+        $word_to_root = [
+          'Символ' => 'символ', 'символьный' => 'символ',
+          'код' => 'код', 'кодовый' => 'код', 'кодирование' => 'код', 'кодировать' => 'код', 'закодированный' => 'код',
+          'вектор' => 'вектор', 'векторный' => 'вектор',
+          'звук' => 'звук', 'звучать' => 'звук', 'звуковой' => 'звук',
+          'представить' => 'представ', 'представление' => 'представ', 'представлять' => 'представ',
+          'изобразить' => 'изображ', 'изображение' => 'изображ', 'изображать' => 'изображ', 'изображаемый' => 'изображ',
+          'байт' => 'байт', 'байтовый' => 'байт',
+          'непрерывность' => 'непрерыв', 'непрерывный' => 'непрерыв',
+          'числовой' => 'числ', 'число' => 'числ',
+          'графический' => 'граф', 'графика' => 'граф',
+          'аналог' => 'аналог', 'аналоговый' => 'аналог',
+          'дискретный' => 'дискрет', 'дискретность' => 'дискрет',
+          'цифра' => 'цифр', 'цифровой' => 'цифр',
+          'растр' => 'растр', 'растровый' => 'растр',
+          'последовательно' => 'последоват', 'последовательность' => 'последоват', 'последовательный' => 'последоват',
         ];
-        foreach ($words as $w):
+        foreach ($word_to_root as $w => $r):
         ?>
           <button type="button"
-                  class="btn btn-outline-secondary btn-sm m-1 l6-word-chip"
-                  data-word="<?= htmlspecialchars($w) ?>"><?= htmlspecialchars($w) ?></button>
+                  class="btn btn-outline-secondary btn-sm m-1 word-chip"
+                  data-word="<?= htmlspecialchars($w) ?>"
+                  data-correct-root="<?= $r ?>"><?= htmlspecialchars($w) ?></button>
         <?php endforeach; ?>
       </div>
     </div>
@@ -422,11 +436,11 @@
       foreach ($groups as $root => $title):
       ?>
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100 l6-root-card" data-root="<?= htmlspecialchars($root) ?>">
+          <div class="card h-100 root-card" data-root="<?= htmlspecialchars($root) ?>">
             <div class="card-header fw-bold"><?= htmlspecialchars($title) ?></div>
             <div class="card-body">
-              <ul class="list-unstyled mb-0 l6-root-list" data-root="<?= htmlspecialchars($root) ?>"></ul>
-              <div class="l6-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
+              <ul class="list-unstyled mb-0 root-list" data-root="<?= htmlspecialchars($root) ?>"></ul>
+              <div class="l3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
             </div>
           </div>
         </div>
@@ -439,107 +453,43 @@
     </div>
 
     <div id="l6task2-status" class="mt-3"></div>
+    </div><!-- /.word-grouping -->
   </div>
 </div>
 
 <script>
-/* lesson6 task2 — отдельный (не конфликтует с main.js) */
-const l6task2Groups = {
-  'символ': ['Символ','символьный'],
-  'код': ['код','кодовый','кодирование','кодировать','закодированный'],
-  'вектор': ['вектор','векторный'],
-  'звук': ['звук','звучать','звуковой'],
-  'представ': ['представить','представление','представлять'],
-  'изображ': ['изобразить','изображение','изображать','изображаемый'],
-  'байт': ['байт','байтовый'],
-  'непрерыв': ['непрерывность','непрерывный'],
-  'числ': ['числовой','число'],
-  'граф': ['графический','графика'],
-  'аналог': ['аналог','аналоговый'],
-  'дискрет': ['дискретный','дискретность'],
-  'цифр': ['цифра','цифровой'],
-  'растр': ['растр','растровый'],
-  'последоват': ['последовательно','последовательность','последовательный']
+window.checkL6Task2 = function() {
+    const grouping = document.querySelector('.word-grouping[data-grouping-id="l6t2"]');
+    if (!grouping) return;
+    const status = document.getElementById('l6task2-status');
+    let correct = 0, total = 0, wrongInRoots = 0, missedInBank = 0;
+    grouping.querySelectorAll('.word-chip').forEach(chip => {
+        total++;
+        const expected = chip.dataset.correctRoot || '';
+        const inList = chip.closest('.root-list');
+        chip.classList.remove('btn-success','btn-danger','btn-outline-success','btn-outline-danger','btn-outline-secondary','btn-outline-primary');
+        if (inList) {
+            if (inList.dataset.root === expected) { chip.classList.add('btn-success'); correct++; }
+            else { chip.classList.add('btn-danger'); wrongInRoots++; }
+        } else {
+            if (expected === '') { chip.classList.add('btn-outline-success'); correct++; }
+            else { chip.classList.add('btn-outline-danger'); missedInBank++; }
+        }
+    });
+    if (status) {
+        let html;
+        if (correct === total) {
+            html = '<div class="alert alert-success text-center"><h5 class="mb-0">✓ Отлично! Все ' + total + ' слов на своих местах!</h5></div>';
+        } else {
+            html = '<div class="alert alert-warning"><h6>Правильно: ' + correct + ' из ' + total + '.</h6>';
+            if (wrongInRoots) html += '<div>В группах ошибочно: <strong>' + wrongInRoots + '</strong>.</div>';
+            if (missedInBank) html += '<div>Не разнесены по группам: <strong>' + missedInBank + '</strong>.</div>';
+            html += '</div>';
+        }
+        status.innerHTML = html;
+        if (window.__scrollToCheck) window.__scrollToCheck(status);
+    }
 };
-
-let l6SelectedBtn = null;
-
-document.getElementById('l6task2-wordbank').addEventListener('click', (e) => {
-  const btn = e.target.closest('.l6-word-chip');
-  if (!btn) return;
-
-  document.querySelectorAll('.l6-word-chip').forEach(b => b.classList.remove('btn-secondary'));
-  btn.classList.add('btn-secondary');
-  l6SelectedBtn = btn;
-});
-
-document.querySelectorAll('.l6-root-card').forEach(card => {
-  card.addEventListener('click', function () {
-    if (!l6SelectedBtn) return;
-
-    const word = l6SelectedBtn.dataset.word;
-    const list = this.querySelector('.l6-root-list');
-    const placeholder = this.querySelector('.l6-placeholder');
-
-    const li = document.createElement('li');
-    li.textContent = word;
-    li.dataset.word = word;
-    li.className = 'py-1 px-2 border rounded mb-1 bg-white';
-
-    li.addEventListener('click', function (ev) {
-      ev.stopPropagation();
-
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'btn btn-outline-secondary btn-sm m-1 l6-word-chip';
-      btn.dataset.word = word;
-      btn.textContent = word;
-
-      document.getElementById('l6task2-wordbank').appendChild(btn);
-      this.remove();
-
-      if (!list.querySelector('li') && placeholder) placeholder.style.display = 'inline-block';
-    });
-
-    list.appendChild(li);
-    if (placeholder) placeholder.style.display = 'none';
-
-    l6SelectedBtn.remove();
-    l6SelectedBtn = null;
-  });
-});
-
-function checkL6Task2() {
-  document.querySelectorAll('.l6-root-list li')
-    .forEach(li => li.className = 'py-1 px-2 border rounded mb-1 bg-white');
-
-  let correct = 0;
-  let total = 0;
-
-  for (const [root, words] of Object.entries(l6task2Groups)) {
-    total += words.length;
-    const list = document.querySelector(`.l6-root-list[data-root="${root}"]`);
-    if (!list) continue;
-
-    list.querySelectorAll('li').forEach(li => {
-      const w = li.dataset.word;
-      if (words.includes(w)) {
-        li.classList.add('border-success','bg-success-subtle');
-        correct++;
-      } else {
-        li.classList.add('border-danger','bg-danger-subtle');
-      }
-    });
-  }
-
-  const status = document.getElementById('l6task2-status');
-  if (correct === total) {
-    status.innerHTML = `<div class="alert alert-success text-center">Отлично! Все слова сгруппированы правильно: ${correct} из ${total}.</div>`;
-  } else {
-    status.innerHTML = `<div class="alert alert-info text-center">Правильно: ${correct} из ${total}. Нажмите на слово в группе, чтобы вернуть его и попробовать ещё раз.</div>`;
-  }
-  window.__scrollToCheck(status);
-}
 </script>
 
 <!-- ==================================================

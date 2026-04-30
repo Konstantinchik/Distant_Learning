@@ -351,31 +351,35 @@
 
     <div class="card-body fs-5">
 
-        <p class="mb-3">
-            Нажмите на слово в «облаке», затем нажмите на карточку группы.
-        </p>
+        <div class="alert alert-info py-2 mb-3 small">
+            <div><strong>Как работать:</strong></div>
+            <div>1. Нажмите на слово в «облаке» — оно подсветится жёлтым.</div>
+            <div>2. Нажмите на <strong>свободное место</strong> в карточке группы — слово переместится туда.</div>
+            <div>3. Если нажать на слово, которое уже находится в карточке группы — оно вернётся обратно в банк.</div>
+        </div>
 
-        <div class="mb-4 p-3 border rounded bg-light" id="l3task4-wordbank">
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="Передача">Передача</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сканирование">сканирование</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="вводимый">вводимый</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сохранить">сохранить</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="обрабатывать">обрабатывать</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="вывод">вывод</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сканер">сканер</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="передавать">передавать</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="обрабатываемый">обрабатываемый</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="ввод">ввод</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="выводить">выводить</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="работа">работа</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="хранение">хранение</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="передаваемый">передаваемый</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сканировать">сканировать</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="выводимый">выводимый</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="вводить">вводить</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="обработка">обработка</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="хранить">хранить</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="работать">работать</button>
+        <div class="word-grouping" data-grouping-id="l3task4">
+        <div class="mb-4 p-3 border rounded bg-light word-bank" id="l3task4-wordbank">
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="Передача" data-correct-root="передача">Передача</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сканирование" data-correct-root="сканирование">сканирование</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="вводимый" data-correct-root="ввод">вводимый</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сохранить" data-correct-root="">сохранить</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="обрабатывать" data-correct-root="">обрабатывать</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="вывод" data-correct-root="">вывод</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сканер" data-correct-root="сканирование">сканер</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="передавать" data-correct-root="передача">передавать</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="обрабатываемый" data-correct-root="">обрабатываемый</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="ввод" data-correct-root="ввод">ввод</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="выводить" data-correct-root="">выводить</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="работа" data-correct-root="">работа</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="хранение" data-correct-root="">хранение</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="передаваемый" data-correct-root="передача">передаваемый</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сканировать" data-correct-root="сканирование">сканировать</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="выводимый" data-correct-root="">выводимый</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="вводить" data-correct-root="ввод">вводить</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="обработка" data-correct-root="">обработка</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="хранить" data-correct-root="">хранить</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="работать" data-correct-root="">работать</button>
         </div>
 
         <div class="row g-3">
@@ -415,6 +419,7 @@
         </div>
 
         <div id="l3task4-status" class="mt-3"></div>
+        </div><!-- /.word-grouping -->
     </div>
 </div>
 
@@ -689,6 +694,97 @@
 </div>
 
 <script>
+// === Задание 3: Подбор существительных к прилагательным ===
+function checkAdjTask3() {
+    const pairs = [
+        { sel: 'sel1', adj: 'Оперативная', noun: 'память' },
+        { sel: 'sel2', adj: 'Системная',   noun: 'плата'  },
+        { sel: 'sel3', adj: 'Внутренняя',  noun: 'память' },
+        { sel: 'sel4', adj: 'Жёсткий',     noun: 'диск'   },
+        { sel: 'sel5', adj: 'Постоянная',  noun: 'память' },
+        { sel: 'sel6', adj: 'Оптический',  noun: 'диск'   },
+        { sel: 'sel7', adj: 'Внешняя',     noun: 'память' },
+        { sel: 'sel8', adj: 'Системный',   noun: 'блок'   },
+    ];
+    let correctCount = 0;
+    pairs.forEach((p, i) => {
+        const sel = document.getElementById(p.sel);
+        const res = document.getElementById('res' + (i + 1));
+        if (!sel || !res) return;
+        res.innerHTML = '';
+        res.className = '';
+        const fullPhrase = p.adj + ' ' + p.noun;
+        if (!sel.value) {
+            res.innerHTML = '<span class="text-warning fw-bold">— не выбрано</span>';
+            return;
+        }
+        const isCorrect = sel.value.toLowerCase() === p.noun.toLowerCase();
+        if (isCorrect) correctCount++;
+        const verdict = document.createElement('span');
+        verdict.className = isCorrect ? 'text-success fw-bold' : 'text-danger fw-bold';
+        verdict.textContent = isCorrect ? '✓ Правильно' : '✗ Неправильно';
+        res.appendChild(verdict);
+        const speakBtn = document.createElement('button');
+        speakBtn.type = 'button';
+        speakBtn.className = 'btn btn-sm btn-outline-primary speak-btn ms-2';
+        speakBtn.textContent = '▶';
+        speakBtn.title = 'Прослушать: ' + fullPhrase;
+        speakBtn.dataset.text = fullPhrase;
+        res.appendChild(speakBtn);
+    });
+    // Если есть кнопка — подскроллим к последней проверенной строке
+    const lastRes = document.getElementById('res' + pairs.length);
+    if (lastRes && window.__scrollToCheck) window.__scrollToCheck(lastRes);
+}
+
+// === Задание 4: Сгруппируйте однокоренные слова ===
+function checkL3Task4() {
+    const grouping = document.querySelector('.word-grouping[data-grouping-id="l3task4"]');
+    if (!grouping) return;
+    const status = document.getElementById('l3task4-status');
+    let placed = 0, correctPlaced = 0, total = 0, wrongInRoots = 0, missedInBank = 0;
+    // Проходим по каждому слову (и в банке, и в корзинах)
+    grouping.querySelectorAll('.word-chip').forEach(chip => {
+        total++;
+        const expected = chip.dataset.correctRoot || '';
+        const inList = chip.closest('.root-list');
+        chip.classList.remove('btn-success', 'btn-danger', 'btn-outline-success', 'btn-outline-danger', 'btn-outline-secondary');
+        if (inList) {
+            placed++;
+            const placedRoot = inList.dataset.root;
+            if (placedRoot === expected) {
+                chip.classList.add('btn-success');
+                correctPlaced++;
+            } else {
+                chip.classList.add('btn-danger');
+                wrongInRoots++;
+            }
+        } else {
+            // в банке: правильно если expected пустое (лишнее слово)
+            if (expected === '') {
+                chip.classList.add('btn-outline-success');
+                correctPlaced++;
+            } else {
+                chip.classList.add('btn-outline-danger');
+                missedInBank++;
+            }
+        }
+    });
+    if (status) {
+        let html;
+        if (correctPlaced === total) {
+            html = '<div class="alert alert-success text-center"><h5 class="mb-0">✓ Отлично! Все ' + total + ' слов на своих местах!</h5></div>';
+        } else {
+            html = '<div class="alert alert-warning"><h6>Правильно: ' + correctPlaced + ' из ' + total + '.</h6>';
+            if (wrongInRoots) html += '<div>В группах ошибочно: <strong>' + wrongInRoots + '</strong> (красные).</div>';
+            if (missedInBank) html += '<div>Не разнесены по группам: <strong>' + missedInBank + '</strong> (красная рамка в банке).</div>';
+            html += '</div>';
+        }
+        status.innerHTML = html;
+        if (window.__scrollToCheck) window.__scrollToCheck(status);
+    }
+}
+
 function checkL3Task8() {
     // правильные ответы
     const correctAnswers = {

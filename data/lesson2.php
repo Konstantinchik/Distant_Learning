@@ -442,707 +442,192 @@
 
 
 
-   <!-- ==================================================
-     3. Сгруппируйте однокоренные слова
-     ================================================== -->
 <!-- ==================================================
-     3. Сгруппируйте однокоренные слова
+     3. Сгруппируйте однокоренные слова (word-grouping)
      ================================================== -->
 <div class="card mb-5">
     <div class="card-header bg-light fw-bold fs-5">
         3. Сгруппируйте однокоренные слова.
     </div>
-    
-    <!-- Набор слов для ознакомления -->
-        <div class="mb-4 p-3 bg-light rounded">
-            <p class="fw-semibold mb-2">Слова:</p>
-            <p class="mb-0">
-                Обраба́тывать, вво́д, переда́ча, выводи́ть, элеме́нтарный, управле́ние,
-                вну́тренний, хране́ние, обрабо́тка, це́нтр, перемеща́ть, элеме́нт,
-                передава́ть, манипуля́тор, рабо́та, сохране́ние, внутри́, вводи́ть,
-                вы́вод, перемести́ть, храни́ть, рабо́тать, центра́льный, сохрани́ть,
-                перемеще́ние, ме́сто, манипуля́торный, управля́ть.
-            </p>
+    <div class="card-body fs-5">
+        <div class="word-grouping" data-grouping-id="l2t3">
+
+        <div class="alert alert-info py-2 mb-3 small">
+            <div><strong>Как работать:</strong></div>
+            <div>1. Нажмите на слово в «облаке» — оно подсветится жёлтым.</div>
+            <div>2. Нажмите на <strong>свободное место</strong> в карточке группы — слово переместится туда.</div>
+            <div>3. Если нажать на слово, которое уже в карточке — оно вернётся в банк.</div>
         </div>
 
-    <div class="card-body">
-        <p class="mb-3">
-            Выберите для каждого слова группу (однокоренное слово-образец).
-        </p>
+        <div class="word-bank">
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="Обрабатывать" data-correct-root="работ">Обрабатывать</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="обработка" data-correct-root="работ">обработка</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="ввод" data-correct-root="вод">ввод</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="вводить" data-correct-root="вод">вводить</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="передача" data-correct-root="да">передача</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="передавать" data-correct-root="да">передавать</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="элементарный" data-correct-root="элемент">элементарный</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="элемент" data-correct-root="элемент">элемент</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="управление" data-correct-root="прав">управление</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="управлять" data-correct-root="прав">управлять</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="внутренний" data-correct-root="внутр">внутренний</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="внутри" data-correct-root="внутр">внутри</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="хранение" data-correct-root="хран">хранение</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="хранить" data-correct-root="хран">хранить</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сохранение" data-correct-root="хран">сохранение</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сохранить" data-correct-root="хран">сохранить</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="перемещать" data-correct-root="мест">перемещать</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="перемещение" data-correct-root="мест">перемещение</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="переместить" data-correct-root="мест">переместить</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="работа" data-correct-root="работ">работа</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="работать" data-correct-root="работ">работать</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="центр" data-correct-root="центр">центр</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="центральный" data-correct-root="центр">центральный</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="манипулятор" data-correct-root="манипулят">манипулятор</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="манипуляторный" data-correct-root="манипулят">манипуляторный</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="выводить" data-correct-root="вод">выводить</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="вывод" data-correct-root="вод">вывод</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="место" data-correct-root="мест">место</button>
+        </div>
 
-        <ol class="list-group list-group-numbered">
-
-            <!-- 1. Обрабатывать -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Обраба́тывать</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="obr">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 2. Ввод -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Вво́д</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="vvod">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 3. Передача -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Переда́ча</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="pered">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 4. Выводить -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Выводи́ть</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="vyvod">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 5. Элементарный -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Элемента́рный</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="elem">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 6. Управление -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Управле́ние</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="upr">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 7. Внутренний -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Вну́тренний</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="vnutr">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 8. Хранение -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Хране́ние</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="hran">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 9. Обработка -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Обрабо́тка</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="obr">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 10. Центр -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Це́нтр</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="centr">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 11. Перемещать -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Перемеща́ть</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="perem">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 12. Элемент -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Элеме́нт</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="elem">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 13. Передавать -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Передава́ть</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="pered">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 14. Манипулятор -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Манипуля́тор</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="manip">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 15. Работа -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Рабо́та</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="rab">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 16. Сохранение -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Сохране́ние</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="hran">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 17. Внутри -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Внутри́</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="vnutr">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 18. Вводить -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Вводи́ть</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="vvod">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 19. Вывод -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Вы́вод</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="vyvod">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 20. Переместить -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Перемести́ть</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="perem">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 21. Хранить -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Храни́ть</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="hran">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 22. Работать -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Рабо́тать</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="rab">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 23. Центральный -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Центра́льный</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="centr">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 24. Сохранить -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Сохрани́ть</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="hran">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 25. Перемещение -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Перемеще́ние</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="perem">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 26. Место -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Ме́сто</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="mesto">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 27. Манипуляторный -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Манипуля́торный</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="manip">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-            <!-- 28. Управлять -->
-            <li class="list-group-item d-flex flex-column flex-md-row align-items-md-center">
-                <span class="me-md-3 mb-2 mb-md-0 fw-semibold">Управля́ть</span>
-                <select class="form-select form-select-sm root-select w-100 flex-grow-1" data-correct="upr">
-                    <option value="">— выберите группу —</option>
-                    <option value="obr">обрабо́тка / обраба́тывать</option>
-                    <option value="vvod">вво́д / вводи́ть</option>
-                    <option value="pered">переда́ча / передава́ть</option>
-                    <option value="elem">элеме́нт / элеме́нтарный</option>
-                    <option value="upr">управле́ние / управля́ть</option>
-                    <option value="vnutr">вну́тренний / внутри́</option>
-                    <option value="hran">хране́ние / храни́ть / сохране́ние / сохрани́ть</option>
-                    <option value="perem">перемеще́ние / перемеща́ть / перемести́ть</option>
-                    <option value="rab">рабо́та / рабо́тать</option>
-                    <option value="centr">це́нтр / центра́льный</option>
-                    <option value="manip">манипуля́тор / манипуля́торный</option>
-                    <option value="vyvod">вы́вод / выводи́ть</option>
-                    <option value="mesto">ме́сто</option>
-                </select>
-                <div class="feedback small mt-2"></div>
-            </li>
-
-        </ol>
+        <div class="row g-3">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 root-card" data-root="вод">
+                        <div class="card-header fw-bold text-center">корень «-вод-»</div>
+                        <div class="card-body">
+                            <ul class="root-list" data-root="вод"></ul>
+                            <div class="l3-placeholder small">Нажмите на слово, затем сюда.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 root-card" data-root="да">
+                        <div class="card-header fw-bold text-center">корень «-да-»</div>
+                        <div class="card-body">
+                            <ul class="root-list" data-root="да"></ul>
+                            <div class="l3-placeholder small">Нажмите на слово, затем сюда.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 root-card" data-root="элемент">
+                        <div class="card-header fw-bold text-center">корень «-элемент-»</div>
+                        <div class="card-body">
+                            <ul class="root-list" data-root="элемент"></ul>
+                            <div class="l3-placeholder small">Нажмите на слово, затем сюда.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 root-card" data-root="прав">
+                        <div class="card-header fw-bold text-center">корень «-прав-»</div>
+                        <div class="card-body">
+                            <ul class="root-list" data-root="прав"></ul>
+                            <div class="l3-placeholder small">Нажмите на слово, затем сюда.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 root-card" data-root="внутр">
+                        <div class="card-header fw-bold text-center">корень «-внутр-»</div>
+                        <div class="card-body">
+                            <ul class="root-list" data-root="внутр"></ul>
+                            <div class="l3-placeholder small">Нажмите на слово, затем сюда.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 root-card" data-root="хран">
+                        <div class="card-header fw-bold text-center">корень «-хран-»</div>
+                        <div class="card-body">
+                            <ul class="root-list" data-root="хран"></ul>
+                            <div class="l3-placeholder small">Нажмите на слово, затем сюда.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 root-card" data-root="работ">
+                        <div class="card-header fw-bold text-center">корень «-работ-»</div>
+                        <div class="card-body">
+                            <ul class="root-list" data-root="работ"></ul>
+                            <div class="l3-placeholder small">Нажмите на слово, затем сюда.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 root-card" data-root="центр">
+                        <div class="card-header fw-bold text-center">корень «-центр-»</div>
+                        <div class="card-body">
+                            <ul class="root-list" data-root="центр"></ul>
+                            <div class="l3-placeholder small">Нажмите на слово, затем сюда.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 root-card" data-root="манипулят">
+                        <div class="card-header fw-bold text-center">корень «-манипулят-»</div>
+                        <div class="card-body">
+                            <ul class="root-list" data-root="манипулят"></ul>
+                            <div class="l3-placeholder small">Нажмите на слово, затем сюда.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 root-card" data-root="мест">
+                        <div class="card-header fw-bold text-center">корень «-мест-»</div>
+                        <div class="card-body">
+                            <ul class="root-list" data-root="мест"></ul>
+                            <div class="l3-placeholder small">Нажмите на слово, затем сюда.</div>
+                        </div>
+                    </div>
+                </div>
+        </div>
 
         <div class="text-center mt-4">
-            <button type="button" class="btn btn-primary btn-lg px-5" onclick="checkRootsL2Task3()">
-                Проверить задание 3
-            </button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="checkRootsL2Task3()">Проверить задание 3</button>
         </div>
 
-        <div id="roots3-result" class="mt-3"></div>
+        <div id="l2t3-status" class="mt-3"></div>
+        </div><!-- /.word-grouping -->
     </div>
 </div>
 
 <script>
-function checkRootsL2Task3() {
-    let allCorrect = true;
-    let errors = 0;
-
-    document.querySelectorAll('.root-select').forEach(sel => {
-        const correct = sel.dataset.correct;
-        const value = sel.value;
-        const item = sel.closest('.list-group-item');
-        const fb = item.querySelector('.feedback');
-
-        // сброс оформления
-        item.classList.remove('border-success','border-danger','bg-success-subtle','bg-danger-subtle');
-        fb.className = 'feedback small mt-2';
-
-        if (!value) {
-            fb.textContent = 'Выберите группу';
-            fb.classList.add('text-warning');
-            allCorrect = false;
-            errors++;
-        } else if (value === correct) {
-            fb.textContent = 'Правильно!';
-            fb.classList.add('text-success','fw-bold');
-            item.classList.add('border-success','bg-success-subtle');
+window.checkRootsL2Task3 = function() {
+    const grouping = document.querySelector('.word-grouping[data-grouping-id="l2t3"]');
+    if (!grouping) return;
+    const status = document.getElementById('l2t3-status');
+    let correct = 0, total = 0, wrongInRoots = 0, missedInBank = 0;
+    grouping.querySelectorAll('.word-chip').forEach(chip => {
+        total++;
+        const expected = chip.dataset.correctRoot || '';
+        const inList = chip.closest('.root-list');
+        chip.classList.remove('btn-success','btn-danger','btn-outline-success','btn-outline-danger','btn-outline-secondary','btn-outline-primary');
+        if (inList) {
+            if (inList.dataset.root === expected) { chip.classList.add('btn-success'); correct++; }
+            else { chip.classList.add('btn-danger'); wrongInRoots++; }
         } else {
-            fb.textContent = 'Неправильно';
-            fb.classList.add('text-danger','fw-bold');
-            item.classList.add('border-danger','bg-danger-subtle');
-            allCorrect = false;
-            errors++;
+            if (expected === '') { chip.classList.add('btn-outline-success'); correct++; }
+            else { chip.classList.add('btn-outline-danger'); missedInBank++; }
         }
     });
-
-    const result = document.getElementById('roots3-result');
-    if (allCorrect) {
-        result.innerHTML = '<div class="alert alert-success text-center">Отлично! Все слова сгруппированы правильно.</div>';
-    } else {
-        result.innerHTML = `<div class="alert alert-warning text-center">Ошибок: ${errors}. Попробуйте ещё раз.</div>`;
+    if (status) {
+        let html;
+        if (correct === total) {
+            html = '<div class="alert alert-success text-center"><h5 class="mb-0">✓ Отлично! Все ' + total + ' слов на своих местах!</h5></div>';
+        } else {
+            html = '<div class="alert alert-warning"><h6>Правильно: ' + correct + ' из ' + total + '.</h6>';
+            if (wrongInRoots) html += '<div>В группах ошибочно: <strong>' + wrongInRoots + '</strong>.</div>';
+            if (missedInBank) html += '<div>Не разнесены по группам: <strong>' + missedInBank + '</strong>.</div>';
+            html += '</div>';
+        }
+        status.innerHTML = html;
+        if (window.__scrollToCheck) window.__scrollToCheck(status);
     }
-    window.__scrollToCheck(result);
-}
+};
 </script>
 <!--Конец Задания 3-->
+
     
 
 

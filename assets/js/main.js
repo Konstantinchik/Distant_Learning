@@ -753,3 +753,74 @@ window.checkInputs = function(btn) {
     : 'Правильно: ' + correct + ' из ' + total + ' (наведи курсор на красные поля — увидишь правильный ответ)';
   window.__scrollToCheck(result);
 };
+
+// ============================================================
+// Word Grouping — универсальная click-based группировка слов по корням.
+// Ожидаемая разметка:
+//   <div class="word-grouping" data-grouping-id="...">
+//     <div class="word-bank">
+//       <button class="word-chip" data-word="..." data-correct-root="...">...</button>
+//       ...
+//     </div>
+//     <div class="row">
+//       <div class="root-card" data-root="rootname">
+//         <ul class="root-list" data-root="rootname"></ul>
+//         <div class="l3-placeholder">...</div>
+//       </div>
+//     </div>
+//   </div>
+//
+// Логика:
+// - 1-й клик по слову — выделяет его (toggle .selected).
+// - Клик по любой root-card / root-list — переносит выделенное слово в эту корзину.
+// - Клик по слову в корзине — возвращает в банк.
+// ============================================================
+(function() {
+  function getSelectedWord(grouping) {
+    return grouping.querySelector('.word-chip.selected');
+  }
+
+  function moveWordToBank(grouping, chip) {
+    const bank = grouping.querySelector('.word-bank');
+    if (bank) bank.appendChild(chip);
+    chip.classList.remove('selected', 'btn-success', 'btn-danger', 'btn-outline-success', 'btn-outline-danger');
+    chip.classList.add('btn-outline-secondary');
+  }
+
+  function moveWordToRootList(rootList, chip) {
+    rootList.appendChild(chip);
+    chip.classList.remove('selected', 'btn-success', 'btn-danger', 'btn-outline-success', 'btn-outline-danger', 'btn-outline-secondary');
+    chip.classList.add('btn-outline-primary');
+  }
+
+  document.addEventListener('click', function(e) {
+    const grouping = e.target.closest('.word-grouping');
+    if (!grouping) return;
+
+    // Клик по слову (.word-chip)
+    const chip = e.target.closest('.word-chip');
+    if (chip && grouping.contains(chip)) {
+      // Если слово в корзине — вернуть в банк
+      if (chip.closest('.root-list')) {
+        moveWordToBank(grouping, chip);
+        return;
+      }
+      // Иначе — выделяем (или снимаем выделение)
+      grouping.querySelectorAll('.word-chip.selected').forEach(c => {
+        if (c !== chip) c.classList.remove('selected');
+      });
+      chip.classList.toggle('selected');
+      return;
+    }
+
+    // Клик по корзине → переносим выделенное слово
+    const rootCard = e.target.closest('.root-card');
+    const rootList = rootCard ? rootCard.querySelector('.root-list') : null;
+    if (rootList && grouping.contains(rootList)) {
+      const selected = getSelectedWord(grouping);
+      if (selected) {
+        moveWordToRootList(rootList, selected);
+      }
+    }
+  });
+})();

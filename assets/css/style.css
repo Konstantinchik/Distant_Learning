@@ -89,3 +89,107 @@ h1, h2, h3, h4, h5 {
 
 
 
+
+/* ============================================================
+   Word Grouping — однокоренные слова (универсальный модуль)
+   ============================================================ */
+.word-grouping .word-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.75rem;
+  min-height: 3rem;
+}
+.word-grouping .word-chip {
+  user-select: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.word-grouping .word-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.word-grouping .word-chip.selected {
+  background-color: #ffc107 !important;
+  color: #212529 !important;
+  border-color: #ffc107 !important;
+  box-shadow: 0 0 0 0.2rem rgba(255,193,7,0.3);
+}
+.word-grouping .root-card {
+  border: 2px dashed #adb5bd;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+.word-grouping .root-card:hover {
+  border-color: #0d6efd;
+  background: #f0f7ff;
+}
+.word-grouping .root-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  min-height: 2.5rem;
+}
+.word-grouping .root-list:empty + .l3-placeholder,
+.word-grouping .root-list:empty ~ .l3-placeholder {
+  display: block;
+}
+.word-grouping .root-list:not(:empty) + .l3-placeholder,
+.word-grouping .root-list:not(:empty) ~ .l3-placeholder {
+  display: none;
+}
+.word-grouping .l3-placeholder {
+  color: #6c757d;
+  font-style: italic;
+  text-align: center;
+  padding: 0.25rem;
+}
+
+/* Адаптив: на узких экранах карточки складываются вертикально */
+@media (max-width: 575.98px) {
+  .word-grouping .word-bank { gap: 0.3rem; padding: 0.5rem; }
+  .word-grouping .word-chip { font-size: 0.85rem; padding: 0.25rem 0.5rem; }
+}
+
+/* === Sticky банк слов в word-grouping (заметно компактнее для уроков с 10+ групп) === */
+.word-grouping .word-bank {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 1rem;
+  padding: 0.6rem 0.8rem !important;
+  max-height: 35vh;
+  overflow-y: auto;
+}
+/* Компактные карточки групп */
+.word-grouping .root-card {
+  font-size: 0.92rem;
+}
+.word-grouping .root-card .card-header {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+}
+.word-grouping .root-card .card-body {
+  padding: 0.5rem 0.6rem;
+  min-height: 4.5rem;
+}
+.word-grouping .root-list {
+  min-height: 2rem;
+}
+.word-grouping .word-chip {
+  font-size: 0.88rem;
+  padding: 0.2rem 0.55rem;
+}
+/* На очень широких экранах (xl ≥1200px) — 4 колонки в word-grouping */
+@media (min-width: 1200px) {
+  .word-grouping .row > [class*="col-"] {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+}

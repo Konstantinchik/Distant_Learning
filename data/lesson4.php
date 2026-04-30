@@ -511,65 +511,68 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 
     <div class="card-body fs-5">
+        <div class="word-grouping" data-grouping-id="l4t3">
 
-        <p class="mb-3">
-            Нажмите на слово в «облаке», затем нажмите на карточку группы,
-            куда это слово подходит по смыслу и корню.
-        </p>
+        <div class="alert alert-info py-2 mb-3 small">
+            <div><strong>Как работать:</strong></div>
+            <div>1. Нажмите на слово в «облаке» — оно подсветится жёлтым.</div>
+            <div>2. Нажмите на <strong>свободное место</strong> в карточке группы — слово переместится туда.</div>
+            <div>3. Если нажать на слово, которое уже в карточке — оно вернётся в банк.</div>
+        </div>
 
         <!-- Облако слов -->
         <div class="mb-4 p-3 border rounded bg-light">
             <div class="fw-bold mb-2">Слова для группировки:</div>
 
-            <div id="l4t3-wordbank">
+            <div id="l4t3-wordbank" class="word-bank">
                 <!-- первая строка -->
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="разделять">разделять</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="формирование">формирование</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="программа">программа</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="звуковой">звуковой</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="сетевой">сетевой</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="подключённый">подключённый</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="получение">получение</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="выполнять">выполнять</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="разделять" data-correct-root="раздел">разделять</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="формирование" data-correct-root="форм">формирование</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="программа" data-correct-root="программ">программа</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="звуковой" data-correct-root="звук">звуковой</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сетевой" data-correct-root="сеть">сетевой</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="подключённый" data-correct-root="подключ">подключённый</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="получение" data-correct-root="получ">получение</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="выполнять" data-correct-root="выполн">выполнять</button>
 
                 <!-- вторая строка -->
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="решить">решить</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="включение">включение</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="описанный">описанный</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="разделение">разделение</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="письмо">письмо</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="сеть">сеть</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="звучать">звучать</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="включать">включать</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="писать">писать</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="формировать">формировать</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="решить" data-correct-root="реш">решить</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="включение" data-correct-root="включ">включение</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="описанный" data-correct-root="опис">описанный</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="разделение" data-correct-root="раздел">разделение</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="письмо" data-correct-root="пис">письмо</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сеть" data-correct-root="сеть">сеть</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="звучать" data-correct-root="звук">звучать</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="включать" data-correct-root="включ">включать</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="писать" data-correct-root="пис">писать</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="формировать" data-correct-root="форм">формировать</button>
 
                 <!-- третья строка -->
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="программный">программный</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="звук">звук</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="получать">получать</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="описать">описать</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="решать">решать</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="разделённый">разделённый</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="выполнение">выполнение</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="описание">описание</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="решение">решение</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="программировать">программировать</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="разделить">разделить</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="сформированный">сформированный</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="программный" data-correct-root="программ">программный</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="звук" data-correct-root="звук">звук</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="получать" data-correct-root="получ">получать</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="описать" data-correct-root="опис">описать</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="решать" data-correct-root="реш">решать</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="разделённый" data-correct-root="раздел">разделённый</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="выполнение" data-correct-root="выполн">выполнение</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="описание" data-correct-root="опис">описание</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="решение" data-correct-root="реш">решение</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="программировать" data-correct-root="программ">программировать</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="разделить" data-correct-root="раздел">разделить</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="сформированный" data-correct-root="форм">сформированный</button>
 
                 <!-- четвёртая строка -->
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="звучание">звучание</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="подключить">подключить</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="выполнить">выполнить</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="решённый">решённый</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="включить">включить</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="описывать">описывать</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="полученный">полученный</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="программирование">программирование</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="включённый">включённый</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="подключение">подключение</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm m-1 l4t3-word" data-word="получить">получить</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="звучание" data-correct-root="звук">звучание</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="подключить" data-correct-root="подключ">подключить</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="выполнить" data-correct-root="выполн">выполнить</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="решённый" data-correct-root="реш">решённый</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="включить" data-correct-root="включ">включить</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="описывать" data-correct-root="опис">описывать</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="полученный" data-correct-root="получ">полученный</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="программирование" data-correct-root="программ">программирование</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="включённый" data-correct-root="включ">включённый</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="подключение" data-correct-root="подключ">подключение</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm m-1 word-chip" data-word="получить" data-correct-root="получ">получить</button>
             </div>
         </div>
 
@@ -577,11 +580,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="row g-3">
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 l4t3-root-card" data-root="раздел">
+                <div class="card h-100 root-card" data-root="раздел">
                     <div class="card-header fw-bold">Группа «раздел»</div>
                     <div class="card-body">
-                        <ul class="list-unstyled mb-0 l4t3-root-list" data-root="раздел"></ul>
-                        <div class="l4t3-placeholder small text-muted">
+                        <ul class="list-unstyled mb-0 root-list" data-root="раздел"></ul>
+                        <div class="l3-placeholder small text-muted">
                             Нажмите на слово, затем сюда.
                         </div>
                     </div>
@@ -589,111 +592,111 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 l4t3-root-card" data-root="форм">
+                <div class="card h-100 root-card" data-root="форм">
                     <div class="card-header fw-bold">Группа «формирование»</div>
                     <div class="card-body">
-                        <ul class="list-unstyled mb-0 l4t3-root-list" data-root="форм"></ul>
-                        <div class="l4t3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
+                        <ul class="list-unstyled mb-0 root-list" data-root="форм"></ul>
+                        <div class="l3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
                     </div>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 l4t3-root-card" data-root="программ">
+                <div class="card h-100 root-card" data-root="программ">
                     <div class="card-header fw-bold">Группа «программа»</div>
                     <div class="card-body">
-                        <ul class="list-unstyled mb-0 l4t3-root-list" data-root="программ"></ul>
-                        <div class="l4t3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
+                        <ul class="list-unstyled mb-0 root-list" data-root="программ"></ul>
+                        <div class="l3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
                     </div>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 l4t3-root-card" data-root="звук">
+                <div class="card h-100 root-card" data-root="звук">
                     <div class="card-header fw-bold">Группа «звук»</div>
                     <div class="card-body">
-                        <ul class="list-unstyled mb-0 l4t3-root-list" data-root="звук"></ul>
-                        <div class="l4t3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
+                        <ul class="list-unstyled mb-0 root-list" data-root="звук"></ul>
+                        <div class="l3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
                     </div>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 l4t3-root-card" data-root="сеть">
+                <div class="card h-100 root-card" data-root="сеть">
                     <div class="card-header fw-bold">Группа «сеть»</div>
                     <div class="card-body">
-                        <ul class="list-unstyled mb-0 l4t3-root-list" data-root="сеть"></ul>
-                        <div class="l4t3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
+                        <ul class="list-unstyled mb-0 root-list" data-root="сеть"></ul>
+                        <div class="l3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
                     </div>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 l4t3-root-card" data-root="подключ">
+                <div class="card h-100 root-card" data-root="подключ">
                     <div class="card-header fw-bold">Группа «подключить»</div>
                     <div class="card-body">
-                        <ul class="list-unstyled mb-0 l4t3-root-list" data-root="подключ"></ul>
-                        <div class="l4t3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
+                        <ul class="list-unstyled mb-0 root-list" data-root="подключ"></ul>
+                        <div class="l3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
                     </div>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 l4t3-root-card" data-root="получ">
+                <div class="card h-100 root-card" data-root="получ">
                     <div class="card-header fw-bold">Группа «получение»</div>
                     <div class="card-body">
-                        <ul class="list-unstyled mb-0 l4t3-root-list" data-root="получ"></ul>
-                        <div class="l4t3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
+                        <ul class="list-unstyled mb-0 root-list" data-root="получ"></ul>
+                        <div class="l3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
                     </div>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 l4t3-root-card" data-root="выполн">
+                <div class="card h-100 root-card" data-root="выполн">
                     <div class="card-header fw-bold">Группа «выполнить»</div>
                     <div class="card-body">
-                        <ul class="list-unstyled mb-0 l4t3-root-list" data-root="выполн"></ul>
-                        <div class="l4t3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
+                        <ul class="list-unstyled mb-0 root-list" data-root="выполн"></ul>
+                        <div class="l3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
                     </div>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 l4t3-root-card" data-root="реш">
+                <div class="card h-100 root-card" data-root="реш">
                     <div class="card-header fw-bold">Группа «решение»</div>
                     <div class="card-body">
-                        <ul class="list-unstyled mb-0 l4t3-root-list" data-root="реш"></ul>
-                        <div class="l4t3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
+                        <ul class="list-unstyled mb-0 root-list" data-root="реш"></ul>
+                        <div class="l3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
                     </div>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 l4t3-root-card" data-root="включ">
+                <div class="card h-100 root-card" data-root="включ">
                     <div class="card-header fw-bold">Группа «включить»</div>
                     <div class="card-body">
-                        <ul class="list-unstyled mb-0 l4t3-root-list" data-root="включ"></ul>
-                        <div class="l4t3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
+                        <ul class="list-unstyled mb-0 root-list" data-root="включ"></ul>
+                        <div class="l3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
                     </div>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 l4t3-root-card" data-root="опис">
+                <div class="card h-100 root-card" data-root="опис">
                     <div class="card-header fw-bold">Группа «описание»</div>
                     <div class="card-body">
-                        <ul class="list-unstyled mb-0 l4t3-root-list" data-root="опис"></ul>
-                        <div class="l4t3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
+                        <ul class="list-unstyled mb-0 root-list" data-root="опис"></ul>
+                        <div class="l3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
                     </div>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 l4t3-root-card" data-root="пис">
+                <div class="card h-100 root-card" data-root="пис">
                     <div class="card-header fw-bold">Группа «писать»</div>
                     <div class="card-body">
-                        <ul class="list-unstyled mb-0 l4t3-root-list" data-root="пис"></ul>
-                        <div class="l4t3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
+                        <ul class="list-unstyled mb-0 root-list" data-root="пис"></ul>
+                        <div class="l3-placeholder small text-muted">Нажмите на слово, затем сюда.</div>
                     </div>
                 </div>
             </div>
@@ -707,182 +710,44 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
         <div id="l4t3-status" class="mt-3"></div>
+        </div><!-- /.word-grouping -->
     </div>
 </div>
 
 
 <script>
-// ====== Озвучка слова (локальная для задания 3) ======
-function speakL4Word(text) {
-    if (!text) return;
-
-    // Если у тебя уже есть глобальная функция озвучки — используем её
-    if (typeof window.speakText === 'function') {
-        window.speakText(text);
-        return;
-    }
-
-    // Встроенный Web Speech API
-    if (!('speechSynthesis' in window)) return;
-
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'ru-RU';
-
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(utterance);
-}
-
-// правильные группы
-const l4t3Groups = {
-    'раздел': ['разделять','разделение','разделённый','разделить'],
-    'форм': ['формирование','формировать','сформированный'],
-    'программ': ['программа','программный','программировать','программирование'],
-    'звук': ['звуковой','звук','звучать','звучание'],
-    'сеть': ['сетевой','сеть'],
-    'подключ': ['подключённый','подключить','подключение'],
-    'получ': ['получение','получать','полученный','получить'],
-    'выполн': ['выполнять','выполнение','выполнить'],
-    'реш': ['решить','решать','решение','решённый'],
-    'включ': ['включение','включать','включить','включённый'],
-    'опис': ['описанный','описать','описание','описывать'],
-    'пис': ['письмо','писать']
-};
-
-let l4t3SelectedBtn = null;
-
-// выбор слова в облаке + озвучка
-document.getElementById('l4t3-wordbank').addEventListener('click', e => {
-    const btn = e.target.closest('.l4t3-word');
-    if (!btn) return;
-
-    document.querySelectorAll('#l4t3-wordbank .l4t3-word')
-        .forEach(b => b.classList.remove('btn-secondary'));
-
-    btn.classList.add('btn-secondary');
-    l4t3SelectedBtn = btn;
-
-    const word = btn.dataset.word || btn.textContent.trim();
-    speakL4Word(word);
-});
-
-// генерация элемента в группе
-function createL4T3Item(word) {
-    const li = document.createElement('li');
-    li.dataset.word = word;
-    li.className = 'd-flex justify-content-between align-items-center py-1 px-2 border rounded mb-1 bg-white';
-
-    // текст слова
-    const span = document.createElement('span');
-    span.textContent = word;
-    span.className = 'me-2';
-    // по клику по тексту — озвучиваем, но НЕ останавливаем всплытие,
-    // чтобы клик также сработал как клик по карточке группы
-    span.addEventListener('click', () => {
-        speakL4Word(word);
-    });
-
-    // кнопка-крестик для возврата слова в облако
-    const closeBtn = document.createElement('button');
-    closeBtn.type = 'button';
-    closeBtn.className = 'btn btn-sm btn-outline-danger';
-    closeBtn.innerHTML = '&times;';
-
-    closeBtn.addEventListener('click', ev => {
-        ev.stopPropagation(); // здесь важно не добавлять выбранное слово в группу
-
-        // создаём кнопку в "облаке"
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'btn btn-outline-secondary btn-sm m-1 l4t3-word';
-        btn.dataset.word = word;
-        btn.textContent = word;
-        document.getElementById('l4t3-wordbank').appendChild(btn);
-
-        const parentList = li.parentElement;
-        li.remove();
-        const placeholder = parentList.parentElement.querySelector('.l4t3-placeholder');
-        if (!parentList.querySelector('li') && placeholder) {
-            placeholder.style.display = 'inline-block';
-        }
-    });
-
-    li.appendChild(span);
-    li.appendChild(closeBtn);
-    return li;
-}
-
-// размещение выбранного слова в группе
-document.querySelectorAll('.l4t3-root-card').forEach(card => {
-    card.addEventListener('click', () => {
-        if (!l4t3SelectedBtn) return;
-
-        const word = l4t3SelectedBtn.dataset.word;
-        const list = card.querySelector('.l4t3-root-list');
-        const placeholder = card.querySelector('.l4t3-placeholder');
-
-        const li = createL4T3Item(word);
-        list.appendChild(li);
-        if (placeholder) placeholder.style.display = 'none';
-
-        l4t3SelectedBtn.remove();
-        l4t3SelectedBtn = null;
-    });
-});
-
-// проверка
-function checkL4Task3() {
-    // сброс стилей
-    document.querySelectorAll('.l4t3-root-list li').forEach(li => {
-        li.className = 'd-flex justify-content-between align-items-center py-1 px-2 border rounded mb-1 bg-white';
-    });
-    document.querySelectorAll('#l4t3-wordbank .l4t3-word')
-        .forEach(b => b.classList.remove('border-warning'));
-
-    const totalWords = 41;
-    let correct = 0;
-    const usedWords = new Set();
-
-    for (const [root, words] of Object.entries(l4t3Groups)) {
-        const list = document.querySelector(`.l4t3-root-list[data-root="${root}"]`);
-        if (!list) continue;
-
-        list.querySelectorAll('li').forEach(li => {
-            const w = li.dataset.word;
-            usedWords.add(w);
-
-            if (words.includes(w)) {
-                li.classList.add('border-success','bg-success-subtle');
-                correct++;
-            } else {
-                li.classList.add('border-danger','bg-danger-subtle');
-            }
-        });
-    }
-
-    // оставшиеся в облаке — подсветим как незаполненные
-    document.querySelectorAll('#l4t3-wordbank .l4t3-word').forEach(btn => {
-        const w = btn.dataset.word;
-        if (!usedWords.has(w)) {
-            btn.classList.add('border-warning');
-        }
-    });
-
+window.checkL4Task3 = function() {
+    const grouping = document.querySelector('.word-grouping[data-grouping-id="l4t3"]');
+    if (!grouping) return;
     const status = document.getElementById('l4t3-status');
-    if (correct === totalWords) {
-        status.innerHTML = `
-            <div class="alert alert-success text-center">
-                Отлично! Все ${correct} слов(а) сгруппированы правильно.
-            </div>`;
-    } else {
-        status.innerHTML = `
-            <div class="alert alert-info text-center">
-                Правильно сгруппировано: ${correct} из ${totalWords}.<br>
-                Чтобы убрать слово из группы, нажмите на крестик справа.
-            </div>`;
+    let correct = 0, total = 0, wrongInRoots = 0, missedInBank = 0;
+    grouping.querySelectorAll('.word-chip').forEach(chip => {
+        total++;
+        const expected = chip.dataset.correctRoot || '';
+        const inList = chip.closest('.root-list');
+        chip.classList.remove('btn-success','btn-danger','btn-outline-success','btn-outline-danger','btn-outline-secondary','btn-outline-primary');
+        if (inList) {
+            if (inList.dataset.root === expected) { chip.classList.add('btn-success'); correct++; }
+            else { chip.classList.add('btn-danger'); wrongInRoots++; }
+        } else {
+            if (expected === '') { chip.classList.add('btn-outline-success'); correct++; }
+            else { chip.classList.add('btn-outline-danger'); missedInBank++; }
+        }
+    });
+    if (status) {
+        let html;
+        if (correct === total) {
+            html = '<div class="alert alert-success text-center"><h5 class="mb-0">✓ Отлично! Все ' + total + ' слов на своих местах!</h5></div>';
+        } else {
+            html = '<div class="alert alert-warning"><h6>Правильно: ' + correct + ' из ' + total + '.</h6>';
+            if (wrongInRoots) html += '<div>В группах ошибочно: <strong>' + wrongInRoots + '</strong>.</div>';
+            if (missedInBank) html += '<div>Не разнесены по группам: <strong>' + missedInBank + '</strong>.</div>';
+            html += '</div>';
+        }
+        status.innerHTML = html;
+        if (window.__scrollToCheck) window.__scrollToCheck(status);
     }
-
-    window.__scrollToCheck(status);
-}
+};
 </script>
 
 <!--Конец задания 3-->
